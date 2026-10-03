@@ -1,4 +1,5 @@
+# Vercel entrypoint for the Probashi Bondhu Flask demo.
+# Vercel detects Flask automatically when app.py exposes `app`.
 from server import app
 
-if __name__ == "__main__":
-    app.run()
+__all__ = ['app']

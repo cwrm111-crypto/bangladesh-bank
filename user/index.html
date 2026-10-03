@@ -1,0 +1,2586 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#D81B60">
+<title>Probashi Bondhu — Virtual Banking Demo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ============================================================ TOKENS */
+:root{
+  --pink:#D81B60; --pink2:#E91E63; --pink-dark:#C2185B;
+  --cyan:#29B6F6; --cyan-light:#4FC3F7;
+  --bg:#F4F6FA; --dark:#1E2233; --mid:#5A6178; --muted:#9AA1B5;
+  --border:#F0F2F7; --input-bg:#F8F9FE;
+  --success:#4CAF50; --danger:#FF4757; --warning:#FFC107;
+  --blue:#2196F3;
+  --radius:14px;
+  --shadow:0 4px 14px rgba(20,25,50,.06);
+  --shadow-lg:0 12px 32px rgba(20,25,50,.12);
+  --hdr-h:58px; --nav-h:68px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font-family:'Hind Siliguri','Inter',system-ui,sans-serif;
+  background:var(--bg);color:var(--dark);
+  -webkit-font-smoothing:antialiased;overflow:hidden;
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,textarea,select{font-family:inherit;color:inherit}
+img{max-width:100%;display:block}
+
+/* ============================================================ APP SHELL */
+.app-shell{
+  width:100%;max-width:440px;margin:0 auto;height:100dvh;
+  display:flex;flex-direction:column;background:var(--bg);
+  position:relative;overflow:hidden;
+}
+
+/* ============================================================ HEADER */
+.app-header{
+  flex-shrink:0;height:var(--hdr-h);
+  background:linear-gradient(90deg,#D81B60 0%,#E91E63 50%,#C2185B 100%);
+  color:#FFF;padding:0 14px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 2px 10px rgba(216,27,96,.18);z-index:30;
+}
+.app-header.hidden{display:none}
+.app-header .back-btn,
+.app-header .hdr-icon{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#FFF;font-size:15px;flex-shrink:0;transition:.2s;position:relative;
+}
+.app-header .back-btn{background:rgba(255,255,255,.14)}
+.app-header .back-btn:active{transform:scale(.92)}
+.app-header h1{
+  flex:1;text-align:center;font-size:15.5px;font-weight:700;
+  letter-spacing:.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.app-header .hdr-badge{
+  position:absolute;top:3px;right:3px;min-width:16px;height:16px;
+  background:#1E2233;color:#FFF;font-size:9px;font-weight:700;
+  border-radius:99px;display:flex;align-items:center;justify-content:center;
+  padding:0 4px;border:1.5px solid #D81B60;font-family:'Inter',sans-serif;
+}
+
+/* ============================================================ VIEW */
+.view-container{flex:1;position:relative;overflow:hidden}
+.view{
+  display:none;position:absolute;inset:0;
+  overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:20px;scroll-behavior:smooth;
+}
+.view.active{display:block;animation:viewIn .28s ease both}
+.view.chat-view.active{display:flex;flex-direction:column;overflow:hidden;padding-bottom:0}
+@keyframes viewIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.view::-webkit-scrollbar{width:4px}
+.view::-webkit-scrollbar-thumb{background:#D9DEE8;border-radius:99px}
+
+/* ============================================================ BOTTOM NAV */
+.bottom-nav{
+  flex-shrink:0;height:var(--nav-h);background:#FFF;
+  border-top:1px solid var(--border);
+  display:grid;grid-template-columns:repeat(6,1fr);
+  padding:5px 0 calc(6px + env(safe-area-inset-bottom));
+  z-index:40;box-shadow:0 -4px 20px rgba(20,25,50,.06);
+}
+.nav-item{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  color:var(--muted);font-size:9.5px;font-weight:600;
+  position:relative;transition:color .2s;padding:2px 0;
+}
+.nav-item i{font-size:17px}
+.nav-item.active{color:var(--blue)}
+.nav-item.active::before{
+  content:'';position:absolute;top:-5px;
+  width:22px;height:3px;background:var(--blue);
+  border-radius:0 0 4px 4px;
+}
+
+/* ============================================================ COMPONENTS */
+.section-card{
+  background:#FFF;margin:14px 16px 0;border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);border:1px solid var(--border);
+}
+.section-title{
+  font-size:14px;font-weight:700;color:var(--dark);
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.section-title i{color:var(--pink);font-size:13px}
+.form-row{margin-bottom:14px}
+.form-row:last-child{margin-bottom:0}
+.form-row label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:7px}
+.form-row label .req{color:var(--danger);margin-left:3px}
+.input-wrap{
+  display:flex;align-items:center;gap:10px;background:var(--input-bg);
+  border:1.5px solid var(--border);border-radius:11px;padding:12px 14px;transition:.2s;
+}
+.input-wrap:focus-within{border-color:var(--pink);background:#FFF;box-shadow:0 0 0 4px rgba(216,27,96,.10)}
+.input-wrap.error{border-color:var(--danger);background:#FFF5F5}
+.input-wrap i.lead{color:var(--muted);font-size:14px;flex-shrink:0;transition:.2s}
+.input-wrap:focus-within i.lead{color:var(--pink)}
+.input-wrap input,.input-wrap textarea,.input-wrap select{
+  flex:1;border:none;background:transparent;outline:none;
+  font-size:14px;color:var(--dark);font-weight:500;min-width:0;appearance:none;
+}
+.input-wrap textarea{resize:vertical;min-height:70px;font-family:inherit;line-height:1.5}
+.input-wrap input::placeholder,.input-wrap textarea::placeholder{color:var(--muted);font-weight:400}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 22px;border-radius:11px;font-weight:700;font-size:14.5px;
+  transition:.2s;letter-spacing:.005em;white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#E91E63 0%,#D81B60 100%);
+  color:#FFF;box-shadow:0 8px 20px rgba(216,27,96,.30);
+}
+.btn-primary:hover{filter:brightness(1.05);box-shadow:0 12px 26px rgba(216,27,96,.42)}
+.btn-primary:active{transform:scale(.98)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+.btn-outline{background:#FFF;color:var(--pink);border:1.5px solid var(--pink)}
+.btn-outline:hover{background:#FCE4EC}
+.btn-ghost{background:var(--input-bg);color:var(--mid)}
+.btn-block{width:100%}
+.btn-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:18px 16px 6px}
+
+.btn-danger{
+  background:linear-gradient(135deg,#FF4757,#E53935);
+  color:#FFF; box-shadow:0 8px 20px rgba(255,71,87,.32);
+}
+.btn-danger:hover{filter:brightness(1.05)}
+.btn-danger:active{transform:scale(.97)}
+
+/* Toast */
+.toast{
+  position:fixed;bottom:calc(var(--nav-h) + 20px);
+  left:50%;transform:translateX(-50%) translateY(140%);
+  background:linear-gradient(135deg,#4CAF50,#388E3C);
+  color:#FFF;padding:13px 20px;border-radius:12px;
+  font-size:13.5px;font-weight:600;
+  box-shadow:0 12px 32px rgba(76,175,80,.38);
+  z-index:999;max-width:calc(100% - 32px);
+  transition:transform .5s cubic-bezier(.34,1.56,.64,1);
+  display:flex;align-items:center;gap:10px;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.error{background:linear-gradient(135deg,#FF4757,#E53935);box-shadow:0 12px 32px rgba(255,71,87,.38)}
+.toast.info{background:linear-gradient(135deg,#29B6F6,#0288D1);box-shadow:0 12px 32px rgba(41,182,246,.38)}
+
+/* ============================================================ DASHBOARD */
+.dash-hero{
+  background:linear-gradient(180deg,#C2185B 0%,#E91E63 8%,#29B6F6 55%,#B3E5FC 100%);
+  padding:18px 18px 26px;color:#FFF;
+}
+.dash-hero .greet{font-size:13px;opacity:.92;font-weight:500}
+.dash-hero .name{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
+.balance-card{
+  margin-top:16px;
+  background:linear-gradient(135deg,rgba(155,130,220,.95),rgba(110,130,220,.92));
+  border-radius:18px;padding:18px 20px;color:#FFF;
+  box-shadow:0 14px 34px rgba(110,130,220,.35);
+  position:relative;overflow:hidden;
+}
+.balance-card::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:150px;height:150px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%);
+}
+.balance-card .lbl{font-size:11.5px;opacity:.9;font-weight:500;letter-spacing:.03em;text-transform:uppercase}
+.balance-card .amount{
+  font-family:'Inter',sans-serif;font-size:30px;font-weight:800;
+  letter-spacing:-.02em;margin:6px 0 14px;
+}
+.balance-card .amount .cur{font-size:19px;opacity:.9;margin-right:4px}
+.balance-card .split{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  border-top:1px solid rgba(255,255,255,.22);
+  padding-top:12px;position:relative;z-index:1;
+}
+.balance-card .split .it .k{font-size:10.5px;opacity:.85;margin-bottom:2px}
+.balance-card .split .it .v{font-family:'Inter',sans-serif;font-size:14.5px;font-weight:700}
+
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 16px 0}
+.quick-tile{
+  background:#FFF;border:1px solid var(--border);border-radius:14px;
+  padding:12px 6px 10px;display:flex;flex-direction:column;align-items:center;gap:7px;
+  box-shadow:var(--shadow);transition:.2s;font-size:11px;font-weight:600;color:var(--mid);
+}
+.quick-tile:active{transform:scale(.95)}
+.quick-tile .qi{
+  width:38px;height:38px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;color:#FFF;
+}
+.qi.p1{background:linear-gradient(135deg,#E91E63,#D81B60)}
+.qi.p2{background:linear-gradient(135deg,#29B6F6,#0288D1)}
+.qi.p3{background:linear-gradient(135deg,#FFB300,#F57C00)}
+.qi.p4{background:linear-gradient(135deg,#66BB6A,#388E3C)}
+
+.tx-list{display:flex;flex-direction:column}
+.tx-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.tx-item:last-child{border-bottom:none}
+.tx-item .ic{
+  width:38px;height:38px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.tx-item .ic.in{background:#E8F5E9;color:#2E7D32}
+.tx-item .ic.out{background:#FFEBEE;color:#C62828}
+.tx-item .mid{flex:1;min-width:0}
+.tx-item .mid .t{font-size:13.5px;font-weight:600;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tx-item .mid .d{font-size:11px;color:var(--muted);margin-top:2px}
+.tx-item .amt{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.tx-item .amt.in{color:#2E7D32}
+.tx-item .amt.out{color:#C62828}
+
+/* ============================================================ LOAN */
+.step-header{background:#FFF;padding:16px 18px 18px;border-bottom:1px solid var(--border)}
+.step-header .step-label{color:var(--pink);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:5px}
+.step-header h2{font-size:19px;font-weight:700;color:var(--dark);margin-bottom:4px;letter-spacing:-.01em}
+.step-header p{font-size:12.5px;color:var(--mid);margin-bottom:16px}
+.progress-steps{display:flex;align-items:center;justify-content:space-between;position:relative;padding:0 8px}
+.progress-steps::before{content:'';position:absolute;top:14px;left:34px;right:34px;height:2px;background:#EEF0F7;z-index:1}
+.progress-steps .fill{position:absolute;top:14px;left:34px;height:2px;background:var(--pink);z-index:1;transition:width .35s ease;max-width:calc(100% - 68px)}
+.step-dot{
+  width:28px;height:28px;border-radius:50%;background:#EEF0F7;color:#9AA1B5;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;
+  position:relative;z-index:2;transition:.3s;
+}
+.step-dot.active{background:var(--pink);color:#FFF;box-shadow:0 4px 12px rgba(216,27,96,.30)}
+.step-dot.done{background:var(--pink);color:#FFF}
+.step-dot.done i{font-size:11px}
+.loan-step{display:none;animation:viewIn .25s ease both}
+.loan-step.active{display:block}
+
+.tenure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.tenure-tile{
+  background:#FFF;border:1.5px solid var(--border);border-radius:14px;
+  padding:16px 6px 12px;text-align:center;transition:.2s;
+  box-shadow:0 2px 6px rgba(20,25,50,.03);
+}
+.tenure-tile:hover{border-color:#F8BBD0}
+.tenure-tile.selected{
+  background:linear-gradient(135deg,#E91E63 0%,#D81B60 100%);
+  border-color:var(--pink);color:#FFF;
+  box-shadow:0 8px 20px rgba(216,27,96,.30);transform:translateY(-2px);
+}
+.tenure-tile .num{font-family:'Inter',sans-serif;font-size:21px;font-weight:800;color:var(--pink);line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.tenure-tile.selected .num{color:#FFF}
+.tenure-tile .unit{font-size:11.5px;font-weight:600;color:var(--mid)}
+.tenure-tile.selected .unit{color:rgba(255,255,255,.92)}
+
+.amount-list{background:#FFF;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.amount-row{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border);transition:.2s;cursor:pointer}
+.amount-row:last-child{border-bottom:none}
+.amount-row:hover{background:#FAFBFD}
+.amount-row.selected{background:linear-gradient(135deg,#E91E63 0%,#D81B60 100%);color:#FFF}
+.amount-row .amt-left{display:flex;align-items:center;gap:11px}
+.amt-ico{
+  width:26px;height:26px;border-radius:50%;background:#FCE4EC;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Inter',sans-serif;font-weight:700;font-size:12px;
+  color:var(--pink);transition:.2s;flex-shrink:0;
+}
+.amount-row.selected .amt-ico{background:rgba(255,255,255,.22);color:#FFF}
+.amt-val{font-family:'Inter',sans-serif;font-size:14.5px;font-weight:700;color:var(--dark);letter-spacing:-.005em}
+.amount-row.selected .amt-val{color:#FFF}
+.amount-row .amt-right{text-align:right}
+.inst-lbl{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.04em;display:block;margin-bottom:2px;text-transform:uppercase}
+.inst-val{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:700;color:var(--pink)}
+.amount-row.selected .inst-lbl{color:rgba(255,255,255,.75)}
+.amount-row.selected .inst-val{color:#FFF}
+
+.loan-summary{
+  background:#FFF;margin:14px 16px 0;border-radius:var(--radius);
+  padding:14px;border:1px solid var(--border);box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.summary-item{background:var(--input-bg);border-radius:11px;padding:11px 13px;border:1px solid var(--border);position:relative}
+.summary-item .sm-ico{position:absolute;top:11px;right:11px;color:var(--muted);font-size:13px}
+.summary-item.pink .sm-ico{color:var(--pink)}
+.summary-item.cyan .sm-ico{color:var(--cyan)}
+.summary-item .lbl{font-size:10.5px;color:var(--mid);font-weight:600;margin-bottom:5px;letter-spacing:.02em}
+.summary-item .val{font-family:'Inter',sans-serif;font-size:15.5px;font-weight:800;color:var(--dark);letter-spacing:-.01em}
+.summary-item.pink .val{color:var(--pink)}
+
+.info-box{
+  margin:14px 16px 0;background:linear-gradient(135deg,#E91E63 0%,#D81B60 100%);
+  color:#FFF;border-radius:12px;padding:14px 16px;display:flex;gap:12px;
+  box-shadow:0 6px 18px rgba(216,27,96,.22);position:relative;overflow:hidden;
+}
+.info-box::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);
+}
+.info-box .ico{font-size:17px;flex-shrink:0;position:relative;z-index:1;margin-top:2px}
+.info-box .txt{font-size:12.5px;line-height:1.55;position:relative;z-index:1}
+.info-box .txt strong{font-weight:700;display:block;margin-bottom:2px;font-size:13px}
+
+.info-section{background:#FFF;margin:14px 16px 0;border-radius:var(--radius);padding:14px 16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.info-item{display:flex;align-items:center;gap:12px;padding:9px 0}
+.info-item .ico{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.info-item .ico.pink{background:#FCE4EC;color:var(--pink)}
+.info-item .ico.cyan{background:#E0F7FA;color:#00838F}
+.info-item .ico.green{background:#E8F5E9;color:#2E7D32}
+.info-item .txt{font-size:12.5px;color:var(--mid);line-height:1.45;flex:1}
+.info-item .txt strong{color:var(--dark);font-weight:600;display:block;font-size:13px;margin-bottom:1px}
+
+.review-list{display:flex;flex-direction:column;gap:0}
+.review-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border);font-size:13px}
+.review-row:last-child{border-bottom:none}
+.review-row .k{color:var(--mid);font-weight:500;flex-shrink:0}
+.review-row .v{color:var(--dark);font-weight:600;text-align:right;word-break:break-word}
+
+.check-row{
+  display:flex;align-items:flex-start;gap:11px;padding:13px 14px;
+  background:var(--input-bg);border-radius:11px;border:1.5px solid var(--border);
+  cursor:pointer;transition:.2s;
+}
+.check-row.checked{border-color:var(--pink);background:#FFF5F9}
+.check-row .box{
+  width:20px;height:20px;border-radius:6px;border:2px solid #C5CBDA;
+  flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;
+  transition:.2s;color:#FFF;font-size:11px;
+}
+.check-row.checked .box{background:var(--pink);border-color:var(--pink)}
+.check-row .box i{opacity:0;transition:.2s}
+.check-row.checked .box i{opacity:1}
+.check-row .txt{font-size:12.5px;line-height:1.55;color:var(--dark)}
+.check-row .txt a{color:var(--pink);font-weight:600;text-decoration:none}
+
+.terms-body{padding:20px 18px 30px;background:#FFF;margin:14px 16px 0;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow)}
+.terms-body h3{color:var(--pink);font-size:14px;font-weight:700;margin:18px 0 8px}
+.terms-body h3:first-child{margin-top:0}
+.terms-body p{font-size:13px;color:var(--dark);line-height:1.65;margin-bottom:10px}
+.terms-body ul{list-style:none;padding:0;margin-bottom:12px}
+.terms-body ul li{font-size:13px;color:var(--dark);line-height:1.6;padding-left:18px;position:relative;margin-bottom:6px}
+.terms-body ul li::before{content:'';position:absolute;left:4px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--pink)}
+
+.success-view{text-align:center;padding:40px 24px}
+.success-view .circle{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#66BB6A,#388E3C);
+  display:flex;align-items:center;justify-content:center;color:#FFF;font-size:34px;
+  margin:0 auto 20px;box-shadow:0 14px 34px rgba(76,175,80,.40);
+  animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.success-view h2{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.success-view p{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:24px}
+
+/* ============================================================ SCHEDULE */
+.inst-summary{background:#FFF;margin:14px 16px 0;border-radius:var(--radius);padding:16px 18px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.inst-summary-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.inst-summary-row:last-child{border-bottom:none}
+.inst-summary-row .lbl{color:var(--mid);font-weight:500}
+.inst-summary-row .val{font-family:'Inter',sans-serif;color:var(--dark);font-weight:700}
+.inst-summary-row.hl .val{color:var(--pink);font-size:15px}
+.inst-list{padding:14px 16px 8px}
+.inst-item{
+  background:#FFF;border-radius:12px;padding:13px 15px;margin-bottom:9px;
+  border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 2px 6px rgba(20,25,50,.03);transition:.2s;
+}
+.inst-item.paid{background:#F1F8E9;border-color:#DCEDC8}
+.inst-item .left{display:flex;flex-direction:column;gap:3px}
+.inst-item .inst-num{color:var(--pink);font-size:12px;font-weight:700}
+.inst-item.paid .inst-num{color:#558B2F}
+.inst-item .inst-date{color:var(--mid);font-size:11.5px}
+.inst-item .right{text-align:right}
+.inst-item .inst-amt{font-family:'Inter',sans-serif;font-size:14.5px;font-weight:800;color:var(--dark);margin-bottom:4px}
+.inst-item .inst-badge{display:inline-block;padding:2px 8px;border-radius:99px;background:#E3F2FD;color:#1976D2;font-size:9.5px;font-weight:700;letter-spacing:.04em}
+.inst-item.paid .inst-badge{background:#DCEDC8;color:#33691E}
+
+/* ============================================================ WALLET */
+.wallet-hero{
+  background:linear-gradient(135deg,#1E2233 0%,#2D3250 50%,#1E2233 100%);
+  padding:22px 18px 30px;color:#FFF;
+  border-radius:0 0 24px 24px;
+  position:relative;overflow:hidden;
+}
+.wallet-hero::before{
+  content:'';position:absolute;top:-50px;right:-50px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(216,27,96,.4),transparent 70%);
+}
+.wallet-hero::after{
+  content:'';position:absolute;bottom:-60px;left:-40px;
+  width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(41,182,246,.3),transparent 70%);
+}
+.wallet-head{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;margin-bottom:8px}
+.wallet-head .wh-title{font-size:13px;font-weight:600;opacity:.85;display:flex;align-items:center;gap:6px}
+.wallet-head .wh-title i{color:#4FC3F7}
+.wallet-head button{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:#FFF;font-size:14px;
+}
+.wallet-label{font-size:11px;opacity:.7;letter-spacing:.05em;text-transform:uppercase;font-weight:500;position:relative;z-index:1}
+.wallet-amount{
+  font-family:'Inter',sans-serif;font-size:34px;font-weight:800;
+  letter-spacing:-.02em;margin:4px 0 4px;position:relative;z-index:1;
+}
+.wallet-amount .cur{font-size:20px;opacity:.85;margin-right:4px}
+.wallet-sub{font-size:12px;opacity:.7;margin-bottom:18px;position:relative;z-index:1;display:flex;align-items:center;gap:6px}
+.wallet-sub i{color:#4CAF50;font-size:10px}
+.wallet-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+  position:relative;z-index:1;
+  background:rgba(255,255,255,.08);
+  border-radius:14px;padding:12px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08);
+}
+.wallet-stats .it .k{font-size:10px;opacity:.7;margin-bottom:3px}
+.wallet-stats .it .v{font-family:'Inter',sans-serif;font-size:13px;font-weight:700}
+
+.wallet-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 16px 0}
+.wallet-act{
+  background:#FFF;border:1px solid var(--border);border-radius:14px;
+  padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;
+  box-shadow:var(--shadow);transition:.2s;font-size:10.5px;font-weight:600;color:var(--mid);
+}
+.wallet-act:active{transform:scale(.95)}
+.wallet-act .wa-ic{
+  width:36px;height:36px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:#FFF;
+}
+.wa-ic.pink{background:linear-gradient(135deg,#E91E63,#D81B60)}
+.wa-ic.blue{background:linear-gradient(135deg,#29B6F6,#0288D1)}
+.wa-ic.green{background:linear-gradient(135deg,#66BB6A,#388E3C)}
+.wa-ic.orange{background:linear-gradient(135deg,#FFB300,#F57C00)}
+
+.filter-row{display:flex;gap:6px;padding:0 16px;margin-top:16px;overflow-x:auto;scrollbar-width:none}
+.filter-row::-webkit-scrollbar{display:none}
+.filter-chip{
+  flex-shrink:0;padding:6px 14px;background:#FFF;
+  border:1.5px solid var(--border);border-radius:99px;
+  font-size:11.5px;font-weight:600;color:var(--mid);transition:.2s;
+}
+.filter-chip.active{background:var(--pink);border-color:var(--pink);color:#FFF}
+
+.wallet-cards{
+  display:flex;gap:10px;overflow-x:auto;padding:0 16px;
+  margin-top:14px;scrollbar-width:none;
+}
+.wallet-cards::-webkit-scrollbar{display:none}
+.bank-card{
+  flex-shrink:0;width:240px;height:140px;
+  border-radius:16px;padding:16px 18px;color:#FFF;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+  box-shadow:0 12px 28px rgba(20,25,50,.22);
+}
+.bank-card.c1{background:linear-gradient(135deg,#D81B60 0%,#C2185B 100%)}
+.bank-card.c2{background:linear-gradient(135deg,#1E2233 0%,#2D3250 100%)}
+.bank-card::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.2),transparent 70%);
+}
+.bank-card .bc-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}
+.bank-card .bc-top .bname{font-size:12px;font-weight:700;letter-spacing:.02em}
+.bank-card .bc-top .btype{font-size:9.5px;opacity:.75;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.bank-card .bc-num{
+  font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
+  letter-spacing:.12em;position:relative;z-index:1;
+}
+.bank-card .bc-bot{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:1}
+.bank-card .bc-bot .lbl{font-size:9px;opacity:.7;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.bank-card .bc-bot .v{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700}
+
+/* ============================================================ PROFILE */
+.profile-hero{
+  background:linear-gradient(180deg,#D81B60 0%,#E91E63 40%,#29B6F6 100%);
+  padding:24px 18px 44px;color:#FFF;text-align:center;
+  position:relative;overflow:hidden;
+}
+.profile-hero::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);
+}
+.profile-avatar{
+  width:88px;height:88px;border-radius:50%;
+  background:linear-gradient(135deg,#FFF,#FCE4EC);
+  display:flex;align-items:center;justify-content:center;
+  font-size:34px;font-weight:800;color:var(--pink);
+  margin:0 auto 12px;
+  border:4px solid rgba(255,255,255,.35);
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  font-family:'Inter',sans-serif;position:relative;
+  z-index:1;cursor:pointer;overflow:hidden;
+}
+.profile-avatar img{
+  width:100%;height:100%;
+  object-fit:cover;border-radius:50%;
+  display:none;
+}
+.profile-avatar.has-img img{display:block}
+.profile-avatar.has-img #avatarInitials{display:none}
+.profile-avatar .edit-badge{
+  position:absolute;bottom:0;right:0;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--pink);border:3px solid #FFF;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:#FFF;cursor:pointer;
+  z-index:2;
+}
+.profile-name{font-size:20px;font-weight:700;margin-bottom:4px;position:relative;z-index:1}
+.profile-meta{font-size:12.5px;opacity:.88;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:6px}
+.profile-meta i{font-size:11px}
+.profile-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:12px;background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.35);
+  padding:5px 12px;border-radius:99px;
+  font-size:11px;font-weight:600;backdrop-filter:blur(6px);
+  position:relative;z-index:1;
+}
+.profile-badge i{font-size:10px;color:#4CAF50}
+
+.profile-body{margin-top:-26px;background:var(--bg);border-radius:24px 24px 0 0;padding-top:20px;position:relative;z-index:1}
+
+.menu-group{
+  background:#FFF;margin:0 16px 12px;border-radius:var(--radius);
+  border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;
+}
+.menu-group-title{
+  font-size:10.5px;font-weight:700;color:var(--muted);
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:14px 16px 6px;
+}
+.menu-item{
+  display:flex;align-items:center;gap:12px;
+  padding:13px 16px;border-bottom:1px solid var(--border);
+  width:100%;text-align:left;transition:.2s;
+}
+.menu-item:last-child{border-bottom:none}
+.menu-item:active{background:#FAFBFD}
+.menu-item .mi-ic{
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.mi-ic.pink{background:#FCE4EC;color:#D81B60}
+.mi-ic.blue{background:#E3F2FD;color:#1976D2}
+.mi-ic.green{background:#E8F5E9;color:#2E7D32}
+.mi-ic.orange{background:#FFF3E0;color:#EF6C00}
+.mi-ic.purple{background:#F3E5F5;color:#7B1FA2}
+.mi-ic.cyan{background:#E0F7FA;color:#00838F}
+.mi-ic.red{background:#FFEBEE;color:#C62828}
+.menu-item .mi-txt{flex:1;min-width:0}
+.menu-item .mi-txt .t{font-size:13.5px;font-weight:600;color:var(--dark);margin-bottom:2px}
+.menu-item .mi-txt .s{font-size:11px;color:var(--muted)}
+.menu-item .mi-arr{color:var(--muted);font-size:12px}
+.menu-item .mi-tag{
+  font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:99px;
+  background:#E3F2FD;color:#1976D2;letter-spacing:.03em;
+}
+.menu-item .mi-tag.warn{background:#FFF3E0;color:#EF6C00}
+.menu-item .mi-tag.danger{background:#FFEBEE;color:#C62828}
+
+/* 2FA toggle switch */
+.switch{
+  position:relative;
+  width:46px; height:26px;
+  background:#E4E7F2;
+  border-radius:99px;
+  transition:background .28s ease;
+  flex-shrink:0;
+}
+.switch::after{
+  content:''; position:absolute;
+  top:3px; left:3px;
+  width:20px; height:20px; border-radius:50%;
+  background:#FFF;
+  box-shadow:0 2px 6px rgba(0,0,0,.22);
+  transition:left .28s cubic-bezier(.34,1.4,.64,1);
+}
+.switch.on{background:linear-gradient(135deg,#66BB6A,#388E3C)}
+.switch.on::after{left:23px}
+
+.referral-card{
+  margin:0 16px 12px;
+  background:linear-gradient(135deg,#FFB300 0%,#F57C00 100%);
+  border-radius:var(--radius);padding:16px 18px;color:#FFF;
+  box-shadow:0 10px 24px rgba(245,124,0,.28);
+  position:relative;overflow:hidden;
+}
+.referral-card::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);
+}
+.referral-card .rc-title{font-size:14px;font-weight:700;margin-bottom:4px;position:relative;z-index:1}
+.referral-card .rc-sub{font-size:11.5px;opacity:.92;margin-bottom:12px;position:relative;z-index:1}
+.referral-code{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.22);
+  border:1.5px dashed rgba(255,255,255,.5);
+  border-radius:10px;padding:10px 14px;
+  position:relative;z-index:1;
+}
+.referral-code .code{
+  flex:1;font-family:'Inter',sans-serif;font-size:16px;
+  font-weight:800;letter-spacing:.12em;
+}
+.referral-code button{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(255,255,255,.25);color:#FFF;font-size:13px;
+  display:flex;align-items:center;justify-content:center;transition:.2s;
+}
+.referral-code button:active{transform:scale(.9)}
+.referral-code button.copied{
+  background:#FFF;
+  color:#F57C00 !important;
+}
+
+.version-tag{text-align:center;font-size:11px;color:var(--muted);padding:16px 16px 28px}
+
+/* ============================================================ MODAL */
+.modal-overlay{
+  position:fixed; inset:0;
+  background:rgba(20,25,50,.55);
+  backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px);
+  display:none; align-items:center; justify-content:center;
+  z-index:1000; padding:20px;
+  animation:fadeIn .2s ease both;
+}
+.modal-overlay.show{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{
+  background:#FFF; border-radius:18px;
+  padding:24px 22px 18px;
+  max-width:340px; width:100%; text-align:center;
+  box-shadow:0 30px 70px rgba(0,0,0,.28);
+  animation:popIn .35s cubic-bezier(.34,1.56,.64,1) both;
+}
+.modal-box .mi-circle{
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,#FFEBEE,#FFCDD2);
+  color:#C62828; font-size:24px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;
+}
+.modal-box h3{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.modal-box p{font-size:13px;color:var(--mid);line-height:1.55;margin-bottom:20px}
+.modal-box .modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-box .btn{padding:12px;font-size:14px}
+
+/* ============================================================ CHAT */
+.chat-view{background:#F5EDE4}
+.chat-header{
+  flex-shrink:0;
+  background:linear-gradient(90deg,#D81B60 0%,#E91E63 50%,#C2185B 100%);
+  color:#FFF;padding:10px 12px;display:flex;align-items:center;gap:10px;
+  box-shadow:0 4px 14px rgba(216,27,96,.22);z-index:20;
+}
+.chat-header .back-btn{
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#FFF;font-size:15px;flex-shrink:0;transition:.2s;
+}
+.chat-header .back-btn:active{background:rgba(255,255,255,.18)}
+.chat-header .agent-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,#FFF 0%,#FCE4EC 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;color:var(--pink);position:relative;flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+.chat-header .agent-avatar::after{
+  content:'';position:absolute;bottom:1px;right:1px;
+  width:11px;height:11px;border-radius:50%;background:#4CAF50;
+  border:2px solid #D81B60;box-shadow:0 0 6px rgba(76,175,80,.7);
+}
+.chat-header .agent-info{flex:1;min-width:0}
+.chat-header .agent-info .name{font-size:15px;font-weight:700;line-height:1.2;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-header .agent-info .status{font-size:11.5px;opacity:.92;display:flex;align-items:center;gap:5px}
+.chat-header .agent-info .status .dot{width:7px;height:7px;border-radius:50%;background:#4CAF50;animation:pulseDot 1.6s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
+.chat-header .hdr-actions{display:flex;gap:0;flex-shrink:0}
+.chat-header .hdr-actions button{width:36px;height:36px;border-radius:50%;color:#FFF;font-size:15px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.chat-header .hdr-actions button:active{background:rgba(255,255,255,.18)}
+
+.chat-area{
+  flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 12px 10px;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(216,27,96,.04),transparent 45%),
+    radial-gradient(circle at 85% 90%,rgba(41,182,246,.05),transparent 45%),
+    #F5EDE4;
+  scroll-behavior:smooth;
+}
+.chat-area::-webkit-scrollbar{width:4px}
+.chat-area::-webkit-scrollbar-thumb{background:#D9D2C9;border-radius:99px}
+.date-divider{text-align:center;margin:6px 0 14px}
+.date-divider span{
+  display:inline-block;background:rgba(255,255,255,.85);
+  padding:5px 14px;border-radius:99px;
+  font-size:11px;font-weight:600;color:var(--mid);
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.msg-row{display:flex;margin-bottom:8px;animation:msgIn .35s cubic-bezier(.2,.9,.3,1.15) both}
+@keyframes msgIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.msg-row.user{justify-content:flex-end}
+.msg-row.agent{justify-content:flex-start}
+.bubble{
+  max-width:78%;padding:9px 13px 7px;border-radius:14px;
+  font-size:14px;line-height:1.5;position:relative;
+  word-wrap:break-word;box-shadow:0 1px 2px rgba(0,0,0,.08);
+}
+.msg-row.user .bubble{background:linear-gradient(135deg,#D81B60 0%,#E91E63 100%);color:#FFF;border-bottom-right-radius:3px}
+.msg-row.agent .bubble{background:#FFF;color:var(--dark);border-bottom-left-radius:3px}
+.msg-row.user .bubble::before{content:'';position:absolute;bottom:0;right:-6px;width:0;height:0;border-left:8px solid #D81B60;border-top:8px solid transparent}
+.msg-row.agent .bubble::before{content:'';position:absolute;bottom:0;left:-6px;width:0;height:0;border-right:8px solid #FFF;border-top:8px solid transparent}
+.bubble .bubble-text{margin-bottom:3px;word-break:break-word}
+.bubble .bubble-text b{font-weight:700}
+.bubble .bubble-time{font-size:10.5px;text-align:right;opacity:.72;font-family:'Inter',sans-serif;font-weight:500;display:flex;align-items:center;justify-content:flex-end;gap:4px;margin-top:1px}
+.msg-row.user .bubble .bubble-time{color:rgba(255,255,255,.92)}
+.msg-row.agent .bubble .bubble-time{color:#9AA1B5}
+.bubble-time .check{font-size:11px;color:rgba(255,255,255,.85)}
+.bubble-time .check.read{color:#4FC3F7}
+.msg-row.agent .agent-mini{
+  width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,#D81B60,#E91E63);
+  display:flex;align-items:center;justify-content:center;
+  color:#FFF;font-size:11px;flex-shrink:0;
+  margin-right:8px;align-self:flex-end;
+  box-shadow:0 2px 6px rgba(216,27,96,.25);
+}
+.typing-bubble{
+  background:#FFF;padding:12px 16px;border-radius:14px;
+  border-bottom-left-radius:3px;display:inline-flex;align-items:center;gap:5px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08);position:relative;
+  margin-left:34px;margin-bottom:8px;
+}
+.typing-bubble::before{content:'';position:absolute;bottom:0;left:-6px;width:0;height:0;border-right:8px solid #FFF;border-top:8px solid transparent}
+.typing-bubble span{width:7px;height:7px;border-radius:50%;background:#C5CBDA;animation:typing 1.3s ease-in-out infinite}
+.typing-bubble span:nth-child(2){animation-delay:.15s}
+.typing-bubble span:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+
+.quick-replies{
+  display:flex;gap:8px;overflow-x:auto;padding:10px 12px;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-top:1px solid rgba(238,240,247,.7);
+  scrollbar-width:none;flex-shrink:0;
+}
+.quick-replies::-webkit-scrollbar{display:none}
+.chip{
+  flex-shrink:0;padding:8px 14px;background:#FFF;
+  border:1.5px solid #FCE4EC;border-radius:99px;
+  font-size:12.5px;font-weight:600;color:var(--pink);
+  transition:.2s;white-space:nowrap;
+  box-shadow:0 2px 6px rgba(20,25,50,.04);
+}
+.chip:hover{background:#FCE4EC;border-color:var(--pink)}
+.chip:active{transform:scale(.95)}
+
+.chat-input-area{
+  background:#FFF;padding:8px 10px calc(10px + env(safe-area-inset-bottom));
+  display:flex;align-items:flex-end;gap:7px;
+  border-top:1px solid var(--border);flex-shrink:0;
+}
+.icon-btn-input{
+  width:42px;height:42px;border-radius:50%;background:#F5F6FA;
+  color:var(--mid);display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;transition:.2s;
+}
+.icon-btn-input:active{background:#EBEEF5;transform:scale(.94)}
+.chat-input-wrap{
+  flex:1;background:#F5F6FA;border-radius:24px;
+  display:flex;align-items:flex-end;padding:4px 4px 4px 14px;
+  min-height:44px;transition:.2s;border:1.5px solid transparent;
+}
+.chat-input-wrap:focus-within{background:#FFF;border-color:var(--pink);box-shadow:0 0 0 4px rgba(216,27,96,.08)}
+#chatInput{
+  flex:1;border:none;background:transparent;outline:none;
+  font-size:14.5px;color:var(--dark);
+  padding:8px 6px 8px 0;resize:none;
+  max-height:100px;font-family:inherit;line-height:1.4;min-height:20px;
+}
+#chatInput::placeholder{color:var(--muted)}
+.emoji-btn{width:36px;height:36px;border-radius:50%;color:var(--muted);font-size:17px;display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+.emoji-btn:active{background:#EBEEF5}
+.send-btn{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,#D81B60,#E91E63);
+  color:#FFF;display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;transition:.2s;
+  box-shadow:0 4px 12px rgba(216,27,96,.32);
+}
+.send-btn:active{transform:scale(.9)}
+.send-btn:disabled{background:#E4E7F2;box-shadow:none;color:#9AA1B5;cursor:not-allowed}
+
+.emoji-picker{
+  position:absolute;bottom:calc(var(--nav-h) + 60px);
+  left:12px;right:12px;background:#FFF;border-radius:16px;padding:10px;
+  box-shadow:0 20px 50px rgba(20,25,50,.22);
+  border:1px solid var(--border);
+  display:none;grid-template-columns:repeat(6,1fr);gap:4px;
+  z-index:100;animation:fadeUp .22s ease both;
+}
+.emoji-picker.show{display:grid}
+.emoji-picker button{
+  width:100%;aspect-ratio:1;border-radius:9px;
+  font-size:20px;display:flex;align-items:center;justify-content:center;transition:.15s;
+}
+.emoji-picker button:hover{background:#F5F6FA}
+.emoji-picker button:active{transform:scale(.85)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ============================================================ RESPONSIVE */
+@media (min-width:500px){
+  body{background:#DDEAF5;padding:18px 0}
+  .app-shell{height:calc(100dvh - 36px);border-radius:26px;box-shadow:0 30px 80px rgba(20,25,50,.18)}
+  .bottom-nav{border-radius:0 0 26px 26px}
+  .toast{bottom:calc(var(--nav-h) + 30px)}
+}
+@media (max-width:360px){
+  .bubble{max-width:84%;font-size:13.5px}
+  .balance-card .amount{font-size:26px}
+  .quick-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .quick-tile{font-size:10px;padding:10px 4px 8px}
+  .nav-item{font-size:9px}
+  .nav-item i{font-size:15px}
+}
+
+.demo-ribbon{position:fixed;top:0;left:0;right:0;z-index:9999;background:#151821;color:#fff;text-align:center;padding:5px 8px;font:700 9px/1.2 Inter,system-ui;letter-spacing:.08em}.demo-ribbon span{color:#ff4d8f}
+body{padding-top:20px}.app-shell{height:calc(100dvh - 20px)}
+.wallet-method-section{margin-top:12px}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.method-tile{display:flex;align-items:center;gap:10px;text-align:left;background:#fff;border:1px solid var(--border);border-radius:13px;padding:11px;box-shadow:var(--shadow)}.method-tile>div:nth-child(2){flex:1;min-width:0}.method-tile b{display:block;font-size:12.5px}.method-tile small{display:block;font-size:9.5px;color:var(--muted);margin-top:2px}.method-tile>i{font-size:10px;color:var(--muted)}.method-logo{width:35px;height:35px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;background:#f2f3f6;color:#455}.method-tile.bkash .method-logo{background:#ffe5f0;color:#d81b60}.method-tile.nagad .method-logo{background:#e4f7e8;color:#2e7d32}.method-tile.bank .method-logo{background:#e3f2fd;color:#1976d2}.method-tile.other .method-logo,.method-tile.control .method-logo{background:#f3e5f5;color:#7b1fa2}
+.wallet-modal-box{background:#fff;width:calc(100% - 30px);max-width:380px;border-radius:20px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.28);position:relative}.modal-x{position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:50%;background:#f4f5f8;color:#7b8190}.wallet-modal-head{display:flex;align-items:center;gap:11px;margin-bottom:16px}.wallet-modal-icon{width:46px;height:46px;border-radius:13px;background:#fce4ec;color:#d81b60;display:flex;align-items:center;justify-content:center;font-size:18px}.wallet-modal-title{font-size:17px;font-weight:800}.wallet-modal-sub{font-size:11px;color:#8b91a1;margin-top:2px}.method-form{display:flex;flex-direction:column;gap:11px}.method-form label{font-size:11px;font-weight:700;color:#5a6178;display:flex;flex-direction:column;gap:6px}.kyc-input{width:100%;border:1.5px solid var(--border);background:var(--input-bg);border-radius:11px;padding:11px 12px;font:inherit;font-size:13px;outline:none}.kyc-input:focus{border-color:var(--pink);background:#fff;box-shadow:0 0 0 4px rgba(216,27,96,.08)}.demo-alert{background:#fff8e6;color:#7b5e00;border-radius:11px;padding:10px;font-size:10.5px;line-height:1.5;display:flex;gap:7px}.history-box{max-height:330px;overflow:auto}.history-row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);font-size:12px}.history-row small{display:block;color:var(--muted);font-size:9.5px;margin-top:2px}.empty-state{text-align:center;padding:30px;color:var(--muted);font-size:12px}
+.kyc-status-card{display:flex;align-items:center;gap:12px;margin:14px 16px 0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:13px;box-shadow:var(--shadow)}.kyc-status-icon{width:40px;height:40px;border-radius:11px;background:#e3f2fd;color:#1976d2;display:flex;align-items:center;justify-content:center}.kyc-status-card>div:nth-child(2){flex:1}.kyc-status-card strong{display:block;font-size:13px}.kyc-status-card small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.kyc-pill{padding:5px 9px;border-radius:99px;background:#fff3e0;color:#ef6c00;font-size:9px;font-weight:800}.kyc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kyc-grid label,.kyc-wide{font-size:11px;font-weight:700;color:#5a6178}.kyc-wide{display:block;margin-top:10px}.selfie-card .kyc-note{font-size:11px;color:var(--mid);line-height:1.5;margin-bottom:12px}.camera-box{position:relative;height:360px;border-radius:18px;overflow:hidden;background:#0c1016;display:flex;align-items:center;justify-content:center}.camera-box video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}#kycCanvas{display:none}.face-guide{position:absolute;width:190px;height:255px;border:2px solid rgba(255,255,255,.85);border-radius:50%/55%;box-shadow:0 0 0 9999px rgba(0,0,0,.24)}.camera-countdown{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:rgba(216,27,96,.92);color:#fff;display:none;align-items:center;justify-content:center;font:800 20px Inter}.camera-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:#aeb5c3;font-size:11px}.camera-placeholder i{font-size:28px}.camera-actions{display:flex;gap:10px;margin-top:12px}.camera-actions .btn{flex:1}.selfie-preview{margin-top:12px;display:flex;align-items:center;gap:10px;background:#e8f5e9;border-radius:12px;padding:8px;color:#2e7d32;font-size:11px}.selfie-preview img{width:48px;height:48px;object-fit:cover;border-radius:10px}.selfie-preview span{font-weight:700}.kyc-check{margin:12px 0 14px}
+@media(max-width:380px){.method-grid{grid-template-columns:1fr}.kyc-grid{grid-template-columns:1fr}.camera-box{height:320px}}
+</style>
+</head>
+<body>
+<div class="demo-ribbon"><span>VIRTUAL DEMO</span> • REAL BANK / GOVT SERVICE নয় • NO REAL-MONEY TRANSFERS</div>
+
+<div class="app-shell" id="app">
+
+  <!-- ============================================================ HEADER -->
+  <header class="app-header" id="appHeader">
+    <button class="back-btn hidden" id="headerBack" onclick="handleHeaderBack()" aria-label="Back">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <h1 id="headerTitle">বাংলাদেশ ব্যাংক</h1>
+    <button class="hdr-icon" id="headerAction" onclick="headerActionClick()" aria-label="Action">
+      <i class="fa-solid fa-bell" id="headerActionIcon"></i>
+      <span class="hdr-badge" id="headerBadge">2</span>
+    </button>
+  </header>
+
+  <!-- ============================================================ VIEW CONTAINER -->
+  <div class="view-container" id="viewContainer">
+
+    <!-- ================= DASHBOARD ================= -->
+    <section class="view active" id="view-dashboard">
+      <div class="dash-hero">
+        <div class="greet">শালা, আসসালামু আলাইকুম</div>
+        <div class="name" id="dashboardName">Rakib Hasan</div>
+
+        <div class="balance-card">
+          <div class="lbl">Available Balance</div>
+          <div class="amount"><span class="cur">৳</span>45,820<span style="font-size:18px;opacity:.7">.50</span></div>
+          <div class="split">
+            <div class="it">
+              <div class="k">Loan Amount</div>
+              <div class="v">৳ 50,000</div>
+            </div>
+            <div class="it">
+              <div class="k">Due This Month</div>
+              <div class="v">৳ 4,442</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-grid">
+        <button class="quick-tile" onclick="showView('loan')">
+          <div class="qi p1"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <span>লোন</span>
+        </button>
+        <button class="quick-tile" onclick="showView('wallet')">
+          <div class="qi p2"><i class="fa-solid fa-wallet"></i></div>
+          <span>ওয়ালেট</span>
+        </button>
+        <button class="quick-tile" onclick="showView('schedule')">
+          <div class="qi p3"><i class="fa-solid fa-calendar-check"></i></div>
+          <span>কিস্তি</span>
+        </button>
+        <button class="quick-tile" onclick="showView('support')">
+          <div class="qi p4"><i class="fa-solid fa-headset"></i></div>
+          <span>সাপোর্ট</span>
+        </button>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title"><i class="fa-solid fa-bolt"></i> দ্রুত কাজ</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <button class="btn btn-outline" style="padding:12px" onclick="showView('loan')">
+            <i class="fa-solid fa-plus"></i> নতুন লোন
+          </button>
+          <button class="btn btn-ghost" style="padding:12px" onclick="showToast('Bill payment demo screen','info')">
+            <i class="fa-solid fa-receipt"></i> বিল পে
+          </button>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> সাম্প্রতিক লেনদেন</div>
+        <div class="tx-list">
+          <div class="tx-item">
+            <div class="ic in"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="mid">
+              <div class="t">লোন ডিসবার্সমেন্ট</div>
+              <div class="d">২৭ সেপ্টেম্বর, ২০২৬ • ১০:৩০ AM</div>
+            </div>
+            <div class="amt in">+৳ 48,000</div>
+          </div>
+          <div class="tx-item">
+            <div class="ic out"><i class="fa-solid fa-arrow-up"></i></div>
+            <div class="mid">
+              <div class="t">কিস্তি পরিশোধ #১</div>
+              <div class="d">২৭ সেপ্টেম্বর, ২০২৬ • ১১:১৫ AM</div>
+            </div>
+            <div class="amt out">−৳ 4,442</div>
+          </div>
+          <div class="tx-item">
+            <div class="ic in"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="mid">
+              <div class="t">রেমিট্যান্স — দুবাই</div>
+              <div class="d">২৫ সেপ্টেম্বর, ২০২৬ • ০৩:৫০ PM</div>
+            </div>
+            <div class="amt in">+৳ 15,000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <i class="fa-solid fa-shield-halved ico"></i>
+        <div class="txt">
+          <strong>নিরাপদ ব্যাংকিং</strong>
+          আপনার তথ্য এনক্রিপ্টেড এবং সুরক্ষিত। কখনো কারো সাথে OTP শেয়ার করবেন না।
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WALLET ================= -->
+    <section class="view" id="view-wallet">
+      <div class="wallet-hero">
+        <div class="wallet-head">
+          <div class="wh-title"><i class="fa-solid fa-wallet"></i> আমার ওয়ালেট</div>
+          <button onclick="showView('wallet')" aria-label="Cards">
+            <i class="fa-solid fa-credit-card"></i>
+          </button>
+        </div>
+
+        <div class="wallet-label">Total Balance</div>
+        <div class="wallet-amount"><span class="cur">৳</span>1,25,820<span style="font-size:20px;opacity:.7">.50</span></div>
+        <div class="wallet-sub">
+          <i class="fa-solid fa-circle"></i> সর্বশেষ আপডেট: এইমাত্র
+        </div>
+
+        <div class="wallet-stats">
+          <div class="it">
+            <div class="k">Available</div>
+            <div class="v">৳ 45,820</div>
+          </div>
+          <div class="it">
+            <div class="k">On Hold</div>
+            <div class="v">৳ 5,000</div>
+          </div>
+          <div class="it">
+            <div class="k">Loan Bal.</div>
+            <div class="v">৳ 75,000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wallet-actions">
+        <button class="wallet-act" onclick="openWalletMethod('send')">
+          <div class="wa-ic pink"><i class="fa-solid fa-paper-plane"></i></div>
+          <span>পাঠান</span>
+        </button>
+        <button class="wallet-act" onclick="openWalletMethod('receive')">
+          <div class="wa-ic blue"><i class="fa-solid fa-download"></i></div>
+          <span>রিসিভ</span>
+        </button>
+        <button class="wallet-act" onclick="openWalletMethod('recharge')">
+          <div class="wa-ic green"><i class="fa-solid fa-mobile-screen"></i></div>
+          <span>রিচার্জ</span>
+        </button>
+        <button class="wallet-act" onclick="openWalletMethod('bill')">
+          <div class="wa-ic orange"><i class="fa-solid fa-receipt"></i></div>
+          <span>বিল পে</span>
+        </button>
+      </div>
+
+      <div class="section-card" style="padding-bottom:6px">
+        <div class="section-title" style="margin-bottom:0"><i class="fa-solid fa-credit-card"></i> লিংকড কার্ড</div>
+      </div>
+      <div class="wallet-cards">
+        <div class="bank-card c1">
+          <div class="bc-top">
+            <div>
+              <div class="bname">PROBASHI BONDHU</div>
+              <div class="btype">Debit Card</div>
+            </div>
+            <i class="fa-brands fa-cc-visa" style="font-size:22px;opacity:.95"></i>
+          </div>
+          <div class="bc-num">•••• •••• •••• 4829</div>
+          <div class="bc-bot">
+            <div>
+              <div class="lbl">Card Holder</div>
+              <div class="v">RAKIB HASAN</div>
+            </div>
+            <div>
+              <div class="lbl">Expires</div>
+              <div class="v">09/29</div>
+            </div>
+          </div>
+        </div>
+        <div class="bank-card c2">
+          <div class="bc-top">
+            <div>
+              <div class="bname">PROBASHI BONDHU</div>
+              <div class="btype">Credit Card</div>
+            </div>
+            <i class="fa-brands fa-cc-mastercard" style="font-size:22px;opacity:.95"></i>
+          </div>
+          <div class="bc-num">•••• •••• •••• 7125</div>
+          <div class="bc-bot">
+            <div>
+              <div class="lbl">Card Holder</div>
+              <div class="v">RAKIB HASAN</div>
+            </div>
+            <div>
+              <div class="lbl">Expires</div>
+              <div class="v">11/27</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card wallet-method-section">
+        <div class="section-title"><i class="fa-solid fa-wallet"></i> টাকা যোগ / পেমেন্ট</div>
+        <div class="method-grid">
+          <button class="method-tile bkash" onclick="openWalletMethod('bkash')"><span class="method-logo">bK</span><div><b>bKash</b><small>Deposit request</small></div><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="method-tile nagad" onclick="openWalletMethod('nagad')"><span class="method-logo">N</span><div><b>Nagad</b><small>Deposit request</small></div><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="method-tile bank" onclick="openWalletMethod('bank')"><span class="method-logo"><i class="fa-solid fa-building-columns"></i></span><div><b>Bank Account</b><small>Manual deposit</small></div><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="method-tile other" onclick="openWalletMethod('other')"><span class="method-logo"><i class="fa-solid fa-layer-group"></i></span><div><b>Other Wallet</b><small>Manual request</small></div><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="section-card wallet-method-section">
+        <div class="section-title"><i class="fa-solid fa-shield-halved"></i> Wallet controls</div>
+        <div class="method-grid">
+          <button class="method-tile control" onclick="openWalletMethod('withdraw')"><span class="method-logo"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><div><b>Withdraw</b><small>Submit withdrawal request</small></div><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="method-tile control" onclick="openWalletMethod('history')"><span class="method-logo"><i class="fa-solid fa-clock-rotate-left"></i></span><div><b>Wallet History</b><small>View demo requests</small></div><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="filter-row" id="walletFilters">
+        <button class="filter-chip active" onclick="filterWallet(this,'all')">সব</button>
+        <button class="filter-chip" onclick="filterWallet(this,'in')">ইনকাম</button>
+        <button class="filter-chip" onclick="filterWallet(this,'out')">খরচ</button>
+        <button class="filter-chip" onclick="filterWallet(this,'loan')">লোন</button>
+      </div>
+
+      <div class="section-card" style="margin-top:12px">
+        <div class="section-title"><i class="fa-solid fa-list"></i> ওয়ালেট লেনদেন</div>
+        <div class="tx-list" id="walletTxList">
+          <div class="tx-item" data-type="in">
+            <div class="ic in"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="mid">
+              <div class="t">রেমিট্যান্স — দুবাই</div>
+              <div class="d">২৫ সেপ্টেম্বর, ২০২৬ • ০৩:৫০ PM</div>
+            </div>
+            <div class="amt in">+৳ 15,000</div>
+          </div>
+          <div class="tx-item" data-type="loan">
+            <div class="ic in"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <div class="mid">
+              <div class="t">লোন ডিসবার্সমেন্ট</div>
+              <div class="d">২৭ সেপ্টেম্বর, ২০২৬ • ১০:৩০ AM</div>
+            </div>
+            <div class="amt in">+৳ 48,000</div>
+          </div>
+          <div class="tx-item" data-type="out">
+            <div class="ic out"><i class="fa-solid fa-arrow-up"></i></div>
+            <div class="mid">
+              <div class="t">কিস্তি পরিশোধ #১</div>
+              <div class="d">২৭ সেপ্টেম্বর, ২০২৬ • ১১:১৫ AM</div>
+            </div>
+            <div class="amt out">−৳ 4,442</div>
+          </div>
+          <div class="tx-item" data-type="out">
+            <div class="ic out"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div class="mid">
+              <div class="t">মোবাইল রিচার্জ</div>
+              <div class="d">২৬ সেপ্টেম্বর, ২০২৬ • ০৯:২০ AM</div>
+            </div>
+            <div class="amt out">−৳ 500</div>
+          </div>
+          <div class="tx-item" data-type="in">
+            <div class="ic in"><i class="fa-solid fa-arrow-down"></i></div>
+            <div class="mid">
+              <div class="t">রেফারেল বোনাস</div>
+              <div class="d">২৪ সেপ্টেম্বর, ২০২৬ • ০১:১৫ PM</div>
+            </div>
+            <div class="amt in">+৳ 200</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <i class="fa-solid fa-lock ico"></i>
+        <div class="txt">
+          <strong>ডেমো সিকিউরিটি</strong>
+          এই prototype-এ কোনো বাস্তব ব্যাংক বা payment network সংযুক্ত নেই।
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOAN ================= -->
+    <section class="view" id="view-loan">
+
+      <!-- Step 1 -->
+      <div class="loan-step active" id="loanStep1" data-step="1">
+        <div class="step-header">
+          <div class="step-label">ধাপ ১ / ৪</div>
+          <h2>ব্যক্তিগত তথ্য</h2>
+          <p>আপনার পরিচয় নিশ্চিত করুন</p>
+          <div class="progress-steps" id="progressSteps">
+            <div class="fill" id="progressFill" style="width:0"></div>
+            <div class="step-dot active">1</div>
+            <div class="step-dot">2</div>
+            <div class="step-dot">3</div>
+            <div class="step-dot">4</div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="form-row">
+            <label>পূর্ণ নাম <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user lead"></i>
+              <input type="text" id="f_fullName" placeholder="আপনার পূর্ণ নাম লিখুন">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>পিতার নাম <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user-tie lead"></i>
+              <input type="text" id="f_father" placeholder="পিতার নাম">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>মাতার নাম</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user-group lead"></i>
+              <input type="text" id="f_mother" placeholder="মাতার নাম">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>জন্ম তারিখ <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-cake-candles lead"></i>
+              <input type="date" id="f_dob">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>মোবাইল নম্বর <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-phone lead"></i>
+              <input type="tel" id="f_phone" placeholder="01XXXXXXXXX" maxlength="11">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>ইমেইল (ঐচ্ছিক)</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-envelope lead"></i>
+              <input type="email" id="f_email" placeholder="you@example.com">
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-actions">
+          <button class="btn btn-ghost" onclick="handleHeaderBack()">
+            <i class="fa-solid fa-arrow-left"></i> বাতিল
+          </button>
+          <button class="btn btn-primary" onclick="nextStep()">
+            পরবর্তী <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="loan-step" id="loanStep2" data-step="2">
+        <div class="step-header">
+          <div class="step-label">ধাপ ২ / ৪</div>
+          <h2>ঠিকানা ও পরিচয়</h2>
+          <p>NID ও ঠিকানার তথ্য দিন</p>
+        </div>
+        <div class="section-card">
+          <div class="form-row">
+            <label>NID নম্বর <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-id-card lead"></i>
+              <input type="text" id="f_nid" placeholder="১০ ডিজিটের NID নম্বর" maxlength="17">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>পেশা <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-briefcase lead"></i>
+              <select id="f_occupation">
+                <option value="">নির্বাচন করুন</option>
+                <option>প্রবাসী কর্মী</option>
+                <option>ব্যবসায়ী</option>
+                <option>চাকরিজীবী</option>
+                <option>কৃষক</option>
+                <option>শিক্ষার্থী</option>
+                <option>অন্যান্য</option>
+              </select>
+              <i class="fa-solid fa-chevron-down" style="color:var(--muted);font-size:12px"></i>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>মাসিক আয় (৳) <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-money-bill-wave lead"></i>
+              <input type="number" id="f_income" placeholder="যেমন: 25000">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>বর্তমান ঠিকানা <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-location-dot lead"></i>
+              <textarea id="f_address" rows="3" placeholder="গ্রাম/শহর, উপজেলা, জেলা"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>স্থায়ী ঠিকানা</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-house lead"></i>
+              <textarea id="f_permanent" rows="3" placeholder="যদি ভিন্ন হয়"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <button class="btn btn-ghost" onclick="prevStep()">
+            <i class="fa-solid fa-arrow-left"></i> পূর্ববর্তী
+          </button>
+          <button class="btn btn-primary" onclick="nextStep()">
+            পরবর্তী <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="loan-step" id="loanStep3" data-step="3">
+        <div class="step-header">
+          <div class="step-label">ধাপ ৩ / ৪</div>
+          <h2>লোন ক্যালকুলেটর</h2>
+          <p>মেয়াদ ও পরিমাণ নির্বাচন করুন</p>
+        </div>
+
+        <div class="loan-summary">
+          <div class="summary-item pink">
+            <i class="fa-solid fa-coins sm-ico"></i>
+            <div class="lbl">লোন পরিমাণ</div>
+            <div class="val" id="sumPrincipal">৳ 50,000</div>
+          </div>
+          <div class="summary-item cyan">
+            <i class="fa-solid fa-calendar sm-ico"></i>
+            <div class="lbl">মেয়াদ</div>
+            <div class="val" id="sumTenure">12 মাস</div>
+          </div>
+          <div class="summary-item pink">
+            <i class="fa-solid fa-receipt sm-ico"></i>
+            <div class="lbl">মাসিক কিস্তি</div>
+            <div class="val" id="sumEMI">৳ 4,442</div>
+          </div>
+          <div class="summary-item">
+            <i class="fa-solid fa-percent sm-ico"></i>
+            <div class="lbl">মোট সুদ</div>
+            <div class="val" id="sumInterest">৳ 3,300</div>
+          </div>
+        </div>
+
+        <div class="section-card" style="margin-top:14px">
+          <div class="section-title"><i class="fa-solid fa-clock"></i> মেয়াদ নির্বাচন করুন</div>
+          <div class="tenure-grid" id="tenureGrid"></div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-title"><i class="fa-solid fa-money-bill-1-wave"></i> লোন পরিমাণ</div>
+          <div class="amount-list" id="amountList"></div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-item">
+            <div class="ico pink"><i class="fa-solid fa-percent"></i></div>
+            <div class="txt">
+              <strong>সুদের হার</strong>
+              ডেমো হার • শুধুমাত্র ক্যালকুলেশন
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ico cyan"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div class="txt">
+              <strong>প্রসেসিং ফি</strong>
+              ডেমো ফি • কোনো বাস্তব চার্জ নয়
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ico green"><i class="fa-solid fa-shield-heart"></i></div>
+            <div class="txt">
+              <strong>বীমা</strong>
+              ডেমো ইনস্যুরেন্স • কোনো বাস্তব পলিসি নয়
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-actions">
+          <button class="btn btn-ghost" onclick="prevStep()">
+            <i class="fa-solid fa-arrow-left"></i> পূর্ববর্তী
+          </button>
+          <button class="btn btn-primary" onclick="nextStep()">
+            পরবর্তী <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="loan-step" id="loanStep4" data-step="4">
+        <div class="step-header">
+          <div class="step-label">ধাপ ৪ / ৪</div>
+          <h2>নিশ্চিতকরণ</h2>
+          <p>সব তথ্য যাচাই করে জমা দিন</p>
+        </div>
+        <div class="section-card">
+          <div class="section-title"><i class="fa-solid fa-user-check"></i> ব্যক্তিগত তথ্য</div>
+          <div class="review-list" id="reviewPersonal"></div>
+        </div>
+        <div class="section-card">
+          <div class="section-title"><i class="fa-solid fa-id-card"></i> পরিচয় ও ঠিকানা</div>
+          <div class="review-list" id="reviewAddress"></div>
+        </div>
+        <div class="section-card">
+          <div class="section-title"><i class="fa-solid fa-hand-holding-dollar"></i> লোন তথ্য</div>
+          <div class="review-list" id="reviewLoan"></div>
+        </div>
+        <div class="section-card">
+          <div class="section-title"><i class="fa-solid fa-file-contract"></i> শর্তাবলী ও সম্মতি</div>
+          <div class="terms-body" style="margin:0;padding:0;border:none;box-shadow:none">
+            <h3>১. লোন অনুমোদন</h3>
+            <p>লোন আবেদন যাচাই সাপেক্ষে অনুমোদিত হবে। ভুল তথ্য দিলে আবেদন বাতিল হতে পারে।</p>
+            <h3>২. কিস্তি পরিশোধ</h3>
+            <ul>
+              <li>প্রতি মাসের ২৭ তারিখে কিস্তি পরিশোধ করতে হবে</li>
+              <li>বিলম্বে ২% অতিরিক্ত চার্জ আরোপিত হবে</li>
+              <li>আগাম পরিশোধে কোনো জরিমানা নেই</li>
+            </ul>
+            <h3>৩. গোপনীয়তা</h3>
+            <p>আপনার ব্যক্তিগত তথ্য তৃতীয় পক্ষের সাথে শেয়ার করা হবে না।</p>
+          </div>
+          <div style="margin-top:14px">
+            <div class="check-row" id="agreeCheck" onclick="toggleAgree()">
+              <div class="box"><i class="fa-solid fa-check"></i></div>
+              <div class="txt">
+                আমি উপরের সব <a href="javascript:void(0)">শর্তাবলী</a> পড়েছি এবং সম্মত আছি।
+                দেওয়া তথ্য সত্য এবং সঠিক।
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <button class="btn btn-ghost" onclick="prevStep()">
+            <i class="fa-solid fa-arrow-left"></i> পূর্ববর্তী
+          </button>
+          <button class="btn btn-primary" id="submitBtn" disabled onclick="submitLoan()">
+            <i class="fa-solid fa-paper-plane"></i> আবেদন জমা দিন
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= KYC ================= -->
+    <section class="view" id="view-kyc">
+      <div class="step-header">
+        <div class="step-label">KYC / পরিচয় যাচাই</div>
+        <h2>আপনার KYC তথ্য</h2>
+        <p>তথ্য পূরণ করুন এবং selfie capture সম্পন্ন করুন।</p>
+      </div>
+
+      <div class="kyc-status-card">
+        <div class="kyc-status-icon"><i class="fa-solid fa-id-card"></i></div>
+        <div><strong id="kycStatusTitle">KYC তথ্য প্রয়োজন</strong><small id="kycStatusText">আপনার profile-এ KYC তথ্য সংরক্ষিত নেই</small></div>
+        <span class="kyc-pill" id="kycStatusPill">PENDING</span>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title"><i class="fa-solid fa-user-check"></i> Customer Information</div>
+        <div class="kyc-grid">
+          <label>পূর্ণ নাম<input id="kycName" class="kyc-input" placeholder="পূর্ণ নাম"></label>
+          <label>পিতার নাম<input id="kycFather" class="kyc-input" placeholder="পিতার নাম"></label>
+          <label>মাতার নাম<input id="kycMother" class="kyc-input" placeholder="মাতার নাম"></label>
+          <label>জন্ম তারিখ<input id="kycDob" type="date" class="kyc-input"></label>
+          <label>মোবাইল<input id="kycMobile" class="kyc-input" placeholder="01XXXXXXXXX"></label>
+          <label>NID নম্বর<input id="kycNid" class="kyc-input" placeholder="NID number"></label>
+          <label>পেশা<input id="kycOccupation" class="kyc-input" placeholder="পেশা"></label>
+          <label>মাসিক আয়<input id="kycIncome" type="number" class="kyc-input" placeholder="৳"></label>
+        </div>
+        <label class="kyc-wide">বর্তমান ঠিকানা<textarea id="kycAddress" class="kyc-input" rows="3" placeholder="বর্তমান ঠিকানা"></textarea></label>
+      </div>
+
+      <div class="section-card selfie-card">
+        <div class="section-title"><i class="fa-solid fa-camera"></i> Selfie Verification</div>
+        <p class="kyc-note">ক্যামেরা চালু করে মুখটি guide-এর মধ্যে রাখুন। ১০ সেকেন্ড countdown শেষে selfie capture হবে।</p>
+        <div class="camera-box" id="cameraBox">
+          <video id="kycVideo" playsinline muted></video>
+          <canvas id="kycCanvas"></canvas>
+          <div class="face-guide"></div>
+          <div class="camera-countdown" id="cameraCountdown">10</div>
+          <div class="camera-placeholder" id="cameraPlaceholder"><i class="fa-solid fa-camera"></i><span>Camera ready</span></div>
+        </div>
+        <div class="camera-actions">
+          <button class="btn btn-primary" id="cameraStartBtn" onclick="startKycCamera()"><i class="fa-solid fa-video"></i> ক্যামেরা চালু</button>
+          <button class="btn btn-outline" id="cameraAgainBtn" onclick="startKycCamera()" style="display:none"><i class="fa-solid fa-rotate-right"></i> আবার ছবি</button>
+        </div>
+        <div class="selfie-preview" id="selfiePreviewWrap" style="display:none"><img id="selfiePreview" alt="Selfie preview"><span><i class="fa-solid fa-circle-check"></i> Selfie captured</span></div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title"><i class="fa-solid fa-file-circle-check"></i> KYC Consent</div>
+        <label class="check-row kyc-check" id="kycAgree" onclick="toggleKycAgree()"><div class="box"><i class="fa-solid fa-check"></i></div><div class="txt">আমি নিশ্চিত করছি যে demo KYC form-এর তথ্য আমি প্রদান করেছি এবং এই prototype-এর verification workflow বুঝেছি।</div></label>
+        <button class="btn btn-primary btn-block" onclick="saveKyc()"><i class="fa-solid fa-floppy-disk"></i> KYC তথ্য সংরক্ষণ</button>
+      </div>
+    </section>
+
+    <!-- ================= SCHEDULE ================= -->
+    <section class="view" id="view-schedule">
+      <div class="step-header">
+        <div class="step-label">কিস্তি পরিকল্পনা</div>
+        <h2>ইনস্টলমেন্ট সূচি</h2>
+        <p id="scheduleSubtitle">আপনার লোনের কিস্তি বিবরণী</p>
+      </div>
+
+      <div class="inst-summary">
+        <div class="inst-summary-row">
+          <span class="lbl">লোন পরিমাণ</span>
+          <span class="val" id="schPrincipal">৳ 50,000</span>
+        </div>
+        <div class="inst-summary-row">
+          <span class="lbl">মেয়াদ</span>
+          <span class="val" id="schTenure">12 মাস</span>
+        </div>
+        <div class="inst-summary-row">
+          <span class="lbl">মাসিক কিস্তি</span>
+          <span class="val hl" id="schEMI">৳ 4,442</span>
+        </div>
+        <div class="inst-summary-row">
+          <span class="lbl">মোট সুদ</span>
+          <span class="val" id="schInterest">৳ 3,300</span>
+        </div>
+        <div class="inst-summary-row">
+          <span class="lbl">মোট পরিশোধযোগ্য</span>
+          <span class="val" id="schTotal">৳ 53,300</span>
+        </div>
+      </div>
+      <div class="inst-list" id="instList"></div>
+    </section>
+
+    <!-- ================= PROFILE ================= -->
+    <section class="view" id="view-profile">
+      <div class="profile-hero">
+        <div class="profile-avatar" id="profileAvatar" onclick="document.getElementById('avatarInput').click()">
+          <span id="avatarInitials">RH</span>
+          <img id="avatarImg" alt="Profile">
+          <div class="edit-badge"><i class="fa-solid fa-camera"></i></div>
+        </div>
+        <input type="file" id="avatarInput" accept="image/*" hidden onchange="handleAvatarUpload(event)">
+
+        <div class="profile-name" id="profileName">Rakib Hasan</div>
+        <div class="profile-meta">
+          <i class="fa-solid fa-phone"></i> <span id="profilePhone">+880 1712-345678</span>
+        </div>
+        <div class="profile-badge">
+          <i class="fa-solid fa-circle-check"></i>
+          KYC Status • Demo Profile
+        </div>
+      </div>
+
+      <div class="profile-body">
+
+        <!-- Referral -->
+        <div class="referral-card">
+          <div class="rc-title">🎁 রেফারেল বোনাস</div>
+          <div class="rc-sub">বন্ধুকে রেফার করুন, প্রতি রেফারে ৳ ২০০ পান</div>
+          <div class="referral-code">
+            <div class="code" id="referralCode">RAKIB200</div>
+            <button onclick="copyReferral()" aria-label="Copy">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Account -->
+        <div class="menu-group">
+          <div class="menu-group-title">অ্যাকাউন্ট</div>
+          <button class="menu-item" onclick="showView('profile');showToast('প্রোফাইল তথ্য নিচে দেখা যাচ্ছে','info')">
+            <div class="mi-ic pink"><i class="fa-solid fa-user"></i></div>
+            <div class="mi-txt">
+              <div class="t">ব্যক্তিগত তথ্য</div>
+              <div class="s">নাম, ইমেইল, ফোন</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="showView('kyc')">
+            <div class="mi-ic green"><i class="fa-solid fa-id-card"></i></div>
+            <div class="mi-txt">
+              <div class="t">KYC ভেরিফিকেশন</div>
+              <div class="s">NID, সেলফি, স্বাক্ষর</div>
+            </div>
+            <span class="mi-tag">সম্পন্ন</span>
+          </button>
+          <button class="menu-item" onclick="showView('wallet')">
+            <div class="mi-ic blue"><i class="fa-solid fa-wallet"></i></div>
+            <div class="mi-txt">
+              <div class="t">আমার ওয়ালেট</div>
+              <div class="s">ব্যালেন্স, কার্ড, লেনদেন</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="showView('schedule')">
+            <div class="mi-ic orange"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="mi-txt">
+              <div class="t">লোন ও কিস্তি</div>
+              <div class="s">সক্রিয় লোন, কিস্তি সূচি</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+        </div>
+
+        <!-- Security -->
+        <div class="menu-group">
+          <div class="menu-group-title">নিরাপত্তা</div>
+          <button class="menu-item" onclick="showView('profile')">
+            <div class="mi-ic purple"><i class="fa-solid fa-lock"></i></div>
+            <div class="mi-txt">
+              <div class="t">পাসওয়ার্ড পরিবর্তন</div>
+              <div class="s">সর্বশেষ পরিবর্তন: ২ মাস আগে</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="showView('profile')">
+            <div class="mi-ic cyan"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="mi-txt">
+              <div class="t">Transaction PIN</div>
+              <div class="s">৪-ডিজিট সিকিউরিটি কোড</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="toggle2FA()">
+            <div class="mi-ic green"><i class="fa-solid fa-fingerprint"></i></div>
+            <div class="mi-txt">
+              <div class="t">Two-Factor Auth</div>
+              <div class="s" id="twoFAStatus">সক্রিয় আছে</div>
+            </div>
+            <div class="switch on" id="twoFASwitch"></div>
+          </button>
+        </div>
+
+        <!-- Preferences -->
+        <div class="menu-group">
+          <div class="menu-group-title">পছন্দসমূহ</div>
+          <button class="menu-item" onclick="showToast('নোটিফিকেশন center চালু আছে','info')">
+            <div class="mi-ic orange"><i class="fa-solid fa-bell"></i></div>
+            <div class="mi-txt">
+              <div class="t">নোটিফিকেশন</div>
+              <div class="s">পুশ, SMS, ইমেইল</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="showToast('ভাষা: বাংলা','success')">
+            <div class="mi-ic blue"><i class="fa-solid fa-language"></i></div>
+            <div class="mi-txt">
+              <div class="t">ভাষা</div>
+              <div class="s">বাংলা</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+        </div>
+
+        <!-- Support -->
+        <div class="menu-group">
+          <div class="menu-group-title">সহায়তা</div>
+          <button class="menu-item" onclick="showView('support')">
+            <div class="mi-ic pink"><i class="fa-solid fa-headset"></i></div>
+            <div class="mi-txt">
+              <div class="t">লাইভ সাপোর্ট</div>
+              <div class="s">২৪/৭ চ্যাট সহায়তা</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="showView('support')">
+            <div class="mi-ic purple"><i class="fa-solid fa-circle-question"></i></div>
+            <div class="mi-txt">
+              <div class="t">সাধারণ জিজ্ঞাসা</div>
+              <div class="s">FAQ ও গাইড</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+          <button class="menu-item" onclick="showToast('Probashi Bondhu v2.4.1','info')">
+            <div class="mi-ic cyan"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="mi-txt">
+              <div class="t">অ্যাপ সম্পর্কে</div>
+              <div class="s">Version 2.4.1</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+        </div>
+
+        <!-- Logout -->
+        <div class="menu-group">
+          <button class="menu-item" onclick="confirmLogout()">
+            <div class="mi-ic red"><i class="fa-solid fa-right-from-bracket"></i></div>
+            <div class="mi-txt">
+              <div class="t" style="color:#C62828">লগআউট</div>
+              <div class="s">নিরাপদে বেরিয়ে যান</div>
+            </div>
+            <i class="fa-solid fa-chevron-right mi-arr"></i>
+          </button>
+        </div>
+
+        <div class="version-tag">
+          PROBASHI BONDHU © 2026<br>
+          Made with ❤️ for Bangladeshi expatriates
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SUPPORT ================= -->
+    <section class="view chat-view" id="view-support">
+      <header class="chat-header">
+        <button class="back-btn" onclick="showView('dashboard')" aria-label="Back">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="agent-avatar"><i class="fa-solid fa-headset"></i></div>
+        <div class="agent-info">
+          <div class="name">Support Team</div>
+          <div class="status">
+            <span class="dot"></span>
+            <span id="statusText">অনলাইন • ২৪/৭ সাপোর্ট</span>
+          </div>
+        </div>
+        <div class="hdr-actions">
+          <button onclick="callSupport()" aria-label="Call">
+            <i class="fa-solid fa-phone"></i>
+          </button>
+          <button onclick="showMenu()" aria-label="More">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="chat-area" id="chatArea">
+        <div class="date-divider"><span>আজ</span></div>
+        <div class="msg-row agent">
+          <div class="agent-mini"><i class="fa-solid fa-headset"></i></div>
+          <div class="bubble">
+            <div class="bubble-text">
+              আসসালামু আলাইকুম 🌸<br>
+              PROBASHI BONDHU-তে স্বাগতম! আমি আপনার সাপোর্ট এজেন্ট।<br><br>
+              কীভাবে সাহায্য করতে পারি?
+            </div>
+            <div class="bubble-time">এখন</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-replies" id="quickReplies">
+        <button class="chip" onclick="sendQuick('লোন স্ট্যাটাস')">💰 লোন স্ট্যাটাস</button>
+        <button class="chip" onclick="sendQuick('কিস্তি সংক্রান্ত')">📅 কিস্তি</button>
+        <button class="chip" onclick="sendQuick('ব্যালেন্স চেক')">💳 ব্যালেন্স</button>
+        <button class="chip" onclick="sendQuick('KYC সমস্যা')">🪪 KYC</button>
+        <button class="chip" onclick="sendQuick('পাসওয়ার্ড ভুলে গেছি')">🔒 পাসওয়ার্ড</button>
+        <button class="chip" onclick="sendQuick('মানুষের সাথে কথা বলতে চাই')">🙋 এজেন্ট</button>
+      </div>
+
+      <div class="chat-input-area">
+        <button class="icon-btn-input" onclick="attachFile()" aria-label="Attach">
+          <i class="fa-solid fa-paperclip"></i>
+        </button>
+        <div class="chat-input-wrap">
+          <textarea id="chatInput" rows="1" placeholder="বার্তা লিখুন..."
+            oninput="autoResize(this);toggleSend()"
+            onkeydown="handleKey(event)"></textarea>
+          <button class="emoji-btn" onclick="toggleEmoji(event)" aria-label="Emoji">
+            <i class="fa-regular fa-face-smile"></i>
+          </button>
+        </div>
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()" disabled aria-label="Send">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+
+      <div class="emoji-picker" id="emojiPicker">
+        <button onclick="insertEmoji('😀')">😀</button>
+        <button onclick="insertEmoji('😂')">😂</button>
+        <button onclick="insertEmoji('❤️')">❤️</button>
+        <button onclick="insertEmoji('👍')">👍</button>
+        <button onclick="insertEmoji('🙏')">🙏</button>
+        <button onclick="insertEmoji('🌸')">🌸</button>
+        <button onclick="insertEmoji('🎉')">🎉</button>
+        <button onclick="insertEmoji('💰')">💰</button>
+        <button onclick="insertEmoji('📱')">📱</button>
+        <button onclick="insertEmoji('✅')">✅</button>
+        <button onclick="insertEmoji('⚡')">⚡</button>
+        <button onclick="insertEmoji('🌟')">🌟</button>
+        <button onclick="insertEmoji('😊')">😊</button>
+        <button onclick="insertEmoji('🤝')">🤝</button>
+        <button onclick="insertEmoji('💯')">💯</button>
+        <button onclick="insertEmoji('🔥')">🔥</button>
+        <button onclick="insertEmoji('😢')">😢</button>
+        <button onclick="insertEmoji('😮')">😮</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============================================================ BOTTOM NAV -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-item active" data-view="dashboard" onclick="showView('dashboard')">
+      <i class="fa-solid fa-house"></i>
+      <span>হোম</span>
+    </button>
+    <button class="nav-item" data-view="loan" onclick="showView('loan')">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <span>লোন</span>
+    </button>
+    <button class="nav-item" data-view="wallet" onclick="showView('wallet')">
+      <i class="fa-solid fa-wallet"></i>
+      <span>ওয়ালেট</span>
+    </button>
+    <button class="nav-item" data-view="schedule" onclick="showView('schedule')">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span>কিস্তি</span>
+    </button>
+    <button class="nav-item" data-view="support" onclick="showView('support')">
+      <i class="fa-solid fa-headset"></i>
+      <span>সাপোর্ট</span>
+    </button>
+    <button class="nav-item" data-view="profile" onclick="showView('profile')">
+      <i class="fa-solid fa-user"></i>
+      <span>প্রোফাইল</span>
+    </button>
+  </nav>
+
+  <!-- ============================================================ LOGOUT MODAL -->
+  <div class="modal-overlay" id="logoutModal">
+    <div class="modal-box">
+      <div class="mi-circle"><i class="fa-solid fa-right-from-bracket"></i></div>
+      <h3>লগআউট করবেন?</h3>
+      <p>আপনি কি নিশ্চিত যে আপনি আপনার অ্যাকাউন্ট থেকে বেরিয়ে যেতে চান?</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeLogoutModal()">বাতিল</button>
+        <button class="btn btn-danger" onclick="doLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i> লগআউট
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ============================================================ STATE */
+const state = {
+  currentView: 'dashboard',
+  loanStep: 1,
+  tenure: 12,
+  amount: 50000,
+  rate: 12,
+  processingFeePct: 2,
+  insurancePct: 1,
+  agreed: false,
+  loanSubmitted: false,
+  schedule: null,
+  twoFA: true
+};
+
+const AMOUNTS = [10000, 20000, 30000, 50000, 75000, 100000];
+const TENURES = [3, 6, 9, 12, 18, 24];
+
+/* ============================================================ HELPERS */
+function fmt(n){ return '৳ ' + Math.round(n).toLocaleString('en-IN'); }
+function fmtPlain(n){ return Math.round(n).toLocaleString('en-IN'); }
+function nowTime(){
+  const d = new Date();
+  let h = d.getHours(), m = d.getMinutes();
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  return `${h}:${String(m).padStart(2,'0')} ${ampm}`;
+}
+
+/* ============================================================ VIEW NAV */
+const VIEW_TITLES = {
+  dashboard: 'Probashi Bondhu',
+  kyc: 'KYC যাচাই',
+  loan: 'লোন আবেদন',
+  wallet: 'আমার ওয়ালেট',
+  schedule: 'কিস্তি সূচি',
+  support: 'সাপোর্ট',
+  profile: 'প্রোফাইল'
+};
+
+function showView(name){
+  state.currentView = name;
+
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const el = document.getElementById('view-' + name);
+  if(el) el.classList.add('active');
+
+  document.querySelectorAll('.nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.view === name);
+  });
+
+  const header = document.getElementById('appHeader');
+  const headerBack = document.getElementById('headerBack');
+  const headerTitle = document.getElementById('headerTitle');
+  const headerAction = document.getElementById('headerAction');
+
+  if(name === 'support'){
+    header.classList.add('hidden');
+  } else {
+    header.classList.remove('hidden');
+    headerTitle.textContent = VIEW_TITLES[name] || 'Probashi Bondhu';
+
+    if(name === 'loan'){
+      headerBack.classList.remove('hidden');
+      headerAction.classList.add('hidden');
+    } else if(name === 'schedule' || name === 'wallet'){
+      headerBack.classList.remove('hidden');
+      headerAction.classList.remove('hidden');
+      document.getElementById('headerActionIcon').className = 'fa-solid fa-download';
+      document.getElementById('headerBadge').style.display = 'none';
+    } else if(name === 'profile'){
+      headerBack.classList.add('hidden');
+      headerAction.classList.remove('hidden');
+      document.getElementById('headerActionIcon').className = 'fa-solid fa-gear';
+      document.getElementById('headerBadge').style.display = 'none';
+    } else {
+      headerBack.classList.add('hidden');
+      headerAction.classList.remove('hidden');
+      document.getElementById('headerActionIcon').className = 'fa-solid fa-bell';
+      document.getElementById('headerBadge').style.display = 'flex';
+    }
+  }
+
+  if(el) el.scrollTop = 0;
+
+  if(name === 'schedule') renderSchedule();
+  if(name === 'support') setTimeout(() => {
+    const ca = document.getElementById('chatArea');
+    if(ca) ca.scrollTop = ca.scrollHeight;
+  }, 50);
+}
+
+function handleHeaderBack(){
+  if(state.currentView === 'loan'){
+    if(state.loanStep > 1){ prevStep(); }
+    else { showView('dashboard'); }
+  } else {
+    showView('dashboard');
+  }
+}
+
+function headerActionClick(){
+  if(state.currentView === 'schedule' || state.currentView === 'wallet'){
+    showToast('ডাউনলোড শুরু হয়েছে', 'info');
+  } else if(state.currentView === 'profile'){
+    showToast('অ্যাপ সেটিংস শীঘ্রই আসছে', 'info');
+  } else {
+    showToast('আপনার ২টি নতুন নোটিফিকেশন আছে', 'info');
+  }
+}
+
+/* ============================================================ STEP NAV */
+function updateProgress(){
+  const fill = document.getElementById('progressFill');
+  const pct = ((state.loanStep - 1) / 3) * 100;
+  fill.style.width = pct + '%';
+
+  document.querySelectorAll('#progressSteps .step-dot').forEach((dot, i) => {
+    const stepNum = i + 1;
+    dot.classList.remove('active','done');
+    if(stepNum < state.loanStep){ dot.classList.add('done'); dot.innerHTML = '<i class="fa-solid fa-check"></i>'; }
+    else if(stepNum === state.loanStep){ dot.classList.add('active'); dot.textContent = stepNum; }
+    else { dot.textContent = stepNum; }
+  });
+}
+
+function goStep(n){
+  state.loanStep = n;
+  document.querySelectorAll('.loan-step').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('loanStep' + n);
+  if(el) el.classList.add('active');
+  updateProgress();
+  const v = document.getElementById('view-loan');
+  if(v) v.scrollTop = 0;
+}
+
+function nextStep(){
+  if(!validateStep(state.loanStep)) return;
+  if(state.loanStep < 4){
+    goStep(state.loanStep + 1);
+    if(state.loanStep === 4) renderReview();
+  }
+}
+function prevStep(){ if(state.loanStep > 1) goStep(state.loanStep - 1); }
+
+/* ============================================================ VALIDATION */
+function setError(id, on){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const wrap = el.closest('.input-wrap');
+  if(wrap) wrap.classList.toggle('error', on);
+}
+
+function validateStep(step){
+  let ok = true;
+  const req = (id) => {
+    const el = document.getElementById(id);
+    const v = el ? el.value.trim() : '';
+    const bad = !v;
+    setError(id, bad);
+    if(bad) ok = false;
+    return v;
+  };
+
+  if(step === 1){
+    req('f_fullName');
+    req('f_father');
+    req('f_dob');
+    const phone = req('f_phone');
+    if(phone && !/^01[3-9]\d{8}$/.test(phone)){
+      setError('f_phone', true);
+      showToast('সঠিক মোবাইল নম্বর দিন (যেমন 017XXXXXXXX)', 'error');
+      return false;
+    }
+  }
+  if(step === 2){
+    const nid = req('f_nid');
+    if(nid && nid.replace(/\D/g,'').length < 10){
+      setError('f_nid', true);
+      showToast('NID কমপক্ষে ১০ ডিজিট হতে হবে', 'error');
+      return false;
+    }
+    req('f_occupation');
+    req('f_income');
+    req('f_address');
+  }
+
+  if(!ok){
+    showToast('অনুগ্রহ করে সব প্রয়োজনীয় ঘর পূরণ করুন', 'error');
+    return false;
+  }
+  return true;
+}
+
+/* ============================================================ CALCULATOR */
+function calcEMI(principal, months, annualRate){
+  const r = annualRate / 12 / 100;
+  if(r === 0) return principal / months;
+  const pow = Math.pow(1 + r, months);
+  return principal * r * pow / (pow - 1);
+}
+
+function calcLoan(){
+  const emi = calcEMI(state.amount, state.tenure, state.rate);
+  const total = emi * state.tenure;
+  const interest = total - state.amount;
+  const processing = state.amount * state.processingFeePct / 100;
+  const insurance = state.amount * state.insurancePct / 100;
+  return { emi, total, interest, processing, insurance };
+}
+
+function renderTenures(){
+  const grid = document.getElementById('tenureGrid');
+  grid.innerHTML = '';
+  TENURES.forEach(m => {
+    const tile = document.createElement('button');
+    tile.className = 'tenure-tile' + (m === state.tenure ? ' selected' : '');
+    tile.innerHTML = `<div class="num">${m}</div><div class="unit">মাস</div>`;
+    tile.onclick = () => {
+      state.tenure = m;
+      renderTenures();
+      renderAmounts();
+      renderLoanSummary();
+    };
+    grid.appendChild(tile);
+  });
+}
+
+function renderAmounts(){
+  const list = document.getElementById('amountList');
+  list.innerHTML = '';
+  AMOUNTS.forEach((a, i) => {
+    const emi = calcEMI(a, state.tenure, state.rate);
+    const row = document.createElement('div');
+    row.className = 'amount-row' + (a === state.amount ? ' selected' : '');
+    row.innerHTML = `
+      <div class="amt-left">
+        <div class="amt-ico">${i+1}</div>
+        <div class="amt-val">৳ ${fmtPlain(a)}</div>
+      </div>
+      <div class="amt-right">
+        <span class="inst-lbl">মাসিক কিস্তি</span>
+        <span class="inst-val">${fmt(emi)}</span>
+      </div>
+    `;
+    row.onclick = () => {
+      state.amount = a;
+      renderAmounts();
+      renderLoanSummary();
+    };
+    list.appendChild(row);
+  });
+}
+
+function renderLoanSummary(){
+  const c = calcLoan();
+  document.getElementById('sumPrincipal').textContent = fmt(state.amount);
+  document.getElementById('sumTenure').textContent = state.tenure + ' মাস';
+  document.getElementById('sumEMI').textContent = fmt(c.emi);
+  document.getElementById('sumInterest').textContent = fmt(c.interest);
+}
+
+/* ============================================================ REVIEW */
+function val(id){ const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function reviewRow(k, v){ return `<div class="review-row"><span class="k">${k}</span><span class="v">${v || '—'}</span></div>`; }
+
+function renderReview(){
+  document.getElementById('reviewPersonal').innerHTML =
+    reviewRow('নাম', val('f_fullName')) +
+    reviewRow('পিতা', val('f_father')) +
+    reviewRow('মাতা', val('f_mother')) +
+    reviewRow('জন্ম তারিখ', val('f_dob')) +
+    reviewRow('মোবাইল', val('f_phone')) +
+    reviewRow('ইমেইল', val('f_email'));
+
+  document.getElementById('reviewAddress').innerHTML =
+    reviewRow('NID', val('f_nid')) +
+    reviewRow('পেশা', val('f_occupation')) +
+    reviewRow('মাসিক আয়', val('f_income') ? '৳ ' + Number(val('f_income')).toLocaleString('en-IN') : '—') +
+    reviewRow('বর্তমান ঠিকানা', val('f_address')) +
+    reviewRow('স্থায়ী ঠিকানা', val('f_permanent'));
+
+  const c = calcLoan();
+  document.getElementById('reviewLoan').innerHTML =
+    reviewRow('লোন পরিমাণ', fmt(state.amount)) +
+    reviewRow('মেয়াদ', state.tenure + ' মাস') +
+    reviewRow('মাসিক কিস্তি', fmt(c.emi)) +
+    reviewRow('মোট সুদ', fmt(c.interest)) +
+    reviewRow('প্রসেসিং ফি', fmt(c.processing)) +
+    reviewRow('মোট পরিশোধযোগ্য', fmt(c.total));
+}
+
+function toggleAgree(){
+  state.agreed = !state.agreed;
+  document.getElementById('agreeCheck').classList.toggle('checked', state.agreed);
+  document.getElementById('submitBtn').disabled = !state.agreed;
+}
+
+/* ============================================================ SUBMIT */
+function submitLoan(){
+  if(!state.agreed){ showToast('শর্তাবলীতে সম্মতি দিন', 'error'); return; }
+
+  const c = calcLoan();
+  state.schedule = generateSchedule(state.amount, state.tenure, c.emi);
+  state.loanSubmitted = true;
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> জমা হচ্ছে...';
+
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> আবেদন জমা দিন';
+    btn.disabled = false;
+
+    const loanView = document.getElementById('view-loan');
+    loanView.innerHTML = `
+      <div class="success-view">
+        <div class="circle"><i class="fa-solid fa-check"></i></div>
+        <h2>আবেদন সফলভাবে জমা হয়েছে!</h2>
+        <p>আপনার লোন আবেদন যাচাই করা হচ্ছে।<br>ডেমো workflow-এ status update হবে; এটি কোনো বাস্তব ঋণ অনুমোদন নয়।</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="showView('schedule')">
+            <i class="fa-solid fa-calendar-check"></i> কিস্তি সূচি
+          </button>
+          <button class="btn btn-outline" onclick="showView('dashboard')">
+            <i class="fa-solid fa-house"></i> হোম
+          </button>
+        </div>
+      </div>
+    `;
+    showToast('আবেদন সফলভাবে জমা হয়েছে ✓', 'success');
+  }, 1400);
+}
+
+/* ============================================================ SCHEDULE */
+function generateSchedule(principal, months, emi){
+  const rows = [];
+  let balance = principal;
+  const r = state.rate / 12 / 100;
+  const start = new Date();
+  for(let i = 1; i <= months; i++){
+    const interest = balance * r;
+    const prin = emi - interest;
+    balance = Math.max(0, balance - prin);
+    const d = new Date(start);
+    d.setMonth(d.getMonth() + i);
+    rows.push({ n: i, date: d, amount: emi, principal: prin, interest: interest, balance: balance });
+  }
+  return rows;
+}
+
+function renderSchedule(){
+  if(!state.schedule){
+    const c = calcLoan();
+    state.schedule = generateSchedule(state.amount, state.tenure, c.emi);
+  }
+  const c = calcLoan();
+  document.getElementById('schPrincipal').textContent = fmt(state.amount);
+  document.getElementById('schTenure').textContent = state.tenure + ' মাস';
+  document.getElementById('schEMI').textContent = fmt(c.emi);
+  document.getElementById('schInterest').textContent = fmt(c.interest);
+  document.getElementById('schTotal').textContent = fmt(c.total);
+  document.getElementById('scheduleSubtitle').textContent =
+    state.loanSubmitted ? 'আপনার লোনের কিস্তি বিবরণী' : 'নমুনা কিস্তি সূচি';
+
+  const list = document.getElementById('instList');
+  list.innerHTML = '';
+  state.schedule.forEach(row => {
+    const isPaid = state.loanSubmitted && row.n === 1;
+    const dateStr = row.date.toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' });
+    const item = document.createElement('div');
+    item.className = 'inst-item' + (isPaid ? ' paid' : '');
+    item.innerHTML = `
+      <div class="left">
+        <div class="inst-num">কিস্তি #${row.n}</div>
+        <div class="inst-date">${dateStr}</div>
+      </div>
+      <div class="right">
+        <div class="inst-amt">${fmt(row.amount)}</div>
+        <div class="inst-badge">${isPaid ? 'পরিশোধিত' : 'আসন্ন'}</div>
+      </div>
+    `;
+    list.appendChild(item);
+  });
+}
+
+/* ============================================================ WALLET */
+function filterWallet(btn, type){
+  document.querySelectorAll('#walletFilters .filter-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('#walletTxList .tx-item').forEach(item => {
+    if(type === 'all'){ item.style.display = ''; return; }
+    item.style.display = (item.dataset.type === type) ? '' : 'none';
+  });
+}
+
+/* ============================================================ PROFILE */
+function copyReferral(){
+  const code = document.getElementById('referralCode').textContent.trim();
+  const btn = document.querySelector('.referral-code button');
+
+  const feedback = () => {
+    showToast('রেফারেল কোড কপি হয়েছে ✓', 'success');
+    if(btn){
+      const orig = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.classList.remove('copied');
+      }, 1500);
+    }
+  };
+
+  const doCopy = (text) => {
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      try {
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error('execCommand failed'));
+      } catch(err){
+        document.body.removeChild(ta);
+        reject(err);
+      }
+    });
+  };
+
+  doCopy(code)
+    .then(feedback)
+    .catch(() => showToast('কপি করতে পারেনি — কোড: ' + code, 'error'));
+}
+
+function toggle2FA(){
+  state.twoFA = !state.twoFA;
+  const sw = document.getElementById('twoFASwitch');
+  if(sw) sw.classList.toggle('on', state.twoFA);
+  document.getElementById('twoFAStatus').textContent =
+    state.twoFA ? 'সক্রিয় আছে' : 'নিষ্ক্রিয়';
+  try{ localStorage.setItem('pb_2fa', state.twoFA ? '1' : '0'); }catch(e){}
+  showToast(
+    state.twoFA ? '2FA চালু হয়েছে ✓' : '2FA বন্ধ করা হয়েছে',
+    state.twoFA ? 'success' : 'info'
+  );
+}
+
+/* -------- Avatar Upload -------- */
+function handleAvatarUpload(e){
+  const file = e.target.files && e.target.files[0];
+  if(!file) return;
+  if(!file.type.startsWith('image/')){
+    showToast('শুধু ছবি ফাইল আপলোড করুন', 'error');
+    return;
+  }
+  if(file.size > 5 * 1024 * 1024){
+    showToast('ছবি ৫MB এর চেয়ে ছোট হতে হবে', 'error');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const img = document.getElementById('avatarImg');
+    const avatar = document.getElementById('profileAvatar');
+    img.src = ev.target.result;
+    avatar.classList.add('has-img');
+    try{ localStorage.setItem('pb_avatar', ev.target.result); }catch(err){}
+    showToast('প্রোফাইল ছবি আপডেট হয়েছে ✓', 'success');
+  };
+  reader.onerror = () => showToast('ছবি পড়া যায়নি', 'error');
+  reader.readAsDataURL(file);
+}
+
+/* -------- Logout Modal -------- */
+function confirmLogout(){
+  document.getElementById('logoutModal').classList.add('show');
+}
+function closeLogoutModal(){
+  document.getElementById('logoutModal').classList.remove('show');
+}
+function doLogout(){
+  closeLogoutModal();
+  showToast('লগআউট করা হচ্ছে...', 'info');
+  setTimeout(() => {
+    showToast('সফলভাবে লগআউট হয়েছেন ✓', 'success');
+    try{
+      localStorage.removeItem('pb_avatar');
+      localStorage.removeItem('pb_2fa');
+    }catch(e){}
+  }, 1200);
+}
+
+document.addEventListener('click', (e) => {
+  if(e.target.id === 'logoutModal') closeLogoutModal();
+});
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') closeLogoutModal();
+});
+
+/* ============================================================ TOAST */
+let toastTimer = null;
+function showToast(msg, type){
+  let el = document.getElementById('toastEl');
+  if(!el){
+    el = document.createElement('div');
+    el.id = 'toastEl';
+    el.className = 'toast';
+    document.body.appendChild(el);
+  }
+  el.className = 'toast ' + (type || '');
+  el.innerHTML = `<i class="fa-solid ${
+    type === 'error' ? 'fa-circle-exclamation' :
+    type === 'info'  ? 'fa-circle-info' :
+    'fa-circle-check'
+  }"></i><span>${msg}</span>`;
+  requestAnimationFrame(() => el.classList.add('show'));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+/* ============================================================ CHAT */
+const chatArea = document.getElementById('chatArea');
+const chatInput = document.getElementById('chatInput');
+const sendBtn = document.getElementById('sendBtn');
+const emojiPicker = document.getElementById('emojiPicker');
+
+const BOT_REPLIES = [
+  { keys:['লোন','loan','ঋণ','স্ট্যাটাস','status'],
+    reply:'আপনার লোন স্ট্যাটাস চেক করতে <b>"ওয়ালেট"</b> বা <b>"কিস্তি"</b> পেজে যান।<br><br>📌 সাধারণত লোন approve হতে ১-৫ দিন লাগে।' },
+  { keys:['কিস্তি','installment','emi','মাসিক'],
+    reply:'আপনার কিস্তি সংক্রান্ত তথ্যের জন্য <b>কিস্তি</b> ট্যাব দেখুন।<br><br>📅 প্রতি মাসের ২৭ তারিখে কিস্তি কাটা হয়।' },
+  { keys:['ব্যালেন্স','balance','টাকা','taka','amount'],
+    reply:'আপনার বর্তমান ব্যালেন্স দেখতে <b>ওয়ালেট</b> পেজে যান।<br><br>💳 সেখানে Available, On Hold এবং Loan Balance সবই দেখতে পাবেন।' },
+  { keys:['kyc','কেওয়াইসি','ভেরিফিকেশন','verification','আইডি','nid'],
+    reply:'KYC ভেরিফিকেশনের জন্য প্রয়োজন:<br>✅ NID এর সামনের ও পিছনের ছবি<br>✅ সেলফি<br>✅ স্বাক্ষর<br><br>📤 <b>প্রোফাইল → KYC ভেরিফিকেশন</b> থেকে আপলোড করুন।' },
+  { keys:['পাসওয়ার্ড','password','লগইন','login','ভুলে'],
+    reply:'পাসওয়ার্ড ভুলে গেলে:<br>1️⃣ Login পেজে যান<br>2️⃣ "Forgot Password?" ক্লিক করুন<br>3️⃣ ফোন নাম্বার দিন<br>4️⃣ OTP verify করুন<br>5️⃣ নতুন পাসওয়ার্ড সেট করুন<br><br>🔐 সমস্যা হলে জানান।' },
+  { keys:['এজেন্ট','agent','মানুষ','human','কথা'],
+    reply:'আপনার live support message গ্রহণ করা হবে। এই demo-তে Admin Support Console থেকে reply পাঠাতে পারবেন।' },
+  { keys:['ধন্যবাদ','thanks','thank','ok','ঠিক আছে'],
+    reply:'আপনাকেও ধন্যবাদ! 🙏<br><br>আর কোনো সাহায্যের প্রয়োজন হলে জানাবেন। ভালো থাকুন! 🌸' },
+  { keys:['হ্যালো','hello','hi','assalam','আসসালামু','সালাম'],
+    reply:'ওয়া আলাইকুমুস সালাম! 🌸<br><br>আমি আপনাকে কীভাবে সাহায্য করতে পারি?' }
+];
+
+function getBotReply(text){
+  const t = text.toLowerCase();
+  for(const r of BOT_REPLIES){
+    if(r.keys.some(k => t.includes(k.toLowerCase()))) return r.reply;
+  }
+  return 'আপনার বার্তা পেয়েছি ✅<br><br>আমাদের টিম শীঘ্রই উত্তর দেবে। জরুরি হলে <b>+880 1700-000000</b> নাম্বারে কল করুন।';
+}
+
+function addUserMessage(text){
+  const row = document.createElement('div');
+  row.className = 'msg-row user';
+  row.innerHTML = `
+    <div class="bubble">
+      <div class="bubble-text">${escapeHtml(text)}</div>
+      <div class="bubble-time">${nowTime()} <i class="fa-solid fa-check-double check read"></i></div>
+    </div>
+  `;
+  chatArea.appendChild(row);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function addAgentMessage(html){
+  const row = document.createElement('div');
+  row.className = 'msg-row agent';
+  row.innerHTML = `
+    <div class="agent-mini"><i class="fa-solid fa-headset"></i></div>
+    <div class="bubble">
+      <div class="bubble-text">${html}</div>
+      <div class="bubble-time">${nowTime()}</div>
+    </div>
+  `;
+  chatArea.appendChild(row);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML.replace(/\n/g,'<br>');
+}
+
+let typingEl = null;
+function showTyping(){
+  if(typingEl) return;
+  typingEl = document.createElement('div');
+  typingEl.className = 'typing-bubble';
+  typingEl.id = 'typingBubble';
+  typingEl.innerHTML = '<span></span><span></span><span></span>';
+  chatArea.appendChild(typingEl);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+function hideTyping(){ if(typingEl){ typingEl.remove(); typingEl = null; } }
+
+function sendMessage(){
+  const text = chatInput.value.trim();
+  if(!text) return;
+  addUserMessage(text);
+  chatInput.value = '';
+  chatInput.style.height = 'auto';
+  toggleSend();
+  hideEmoji();
+  showTyping();
+  const delay = 900 + Math.random() * 900;
+  setTimeout(() => {
+    hideTyping();
+    addAgentMessage(getBotReply(text));
+  }, delay);
+}
+
+function sendQuick(text){chatInput.value=text;sendMessage();const t=String(text).toLowerCase();setTimeout(()=>{if(t.includes('loan')||t.includes('লোন'))showView('loan');else if(t.includes('installment')||t.includes('কিস্তি'))showView('schedule');else if(t.includes('balance')||t.includes('ব্যালেন্স'))showView('wallet');else if(t.includes('kyc')||t.includes('nid')||t.includes('কেওয়াইসি'))showView('kyc')},300)}
+
+function handleKey(e){
+  if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); sendMessage(); }
+}
+
+function autoResize(el){
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+}
+
+function toggleSend(){ sendBtn.disabled = chatInput.value.trim().length === 0; }
+
+function toggleEmoji(e){
+  if(e) e.stopPropagation();
+  emojiPicker.classList.toggle('show');
+}
+function hideEmoji(){ emojiPicker.classList.remove('show'); }
+
+function insertEmoji(emoji){
+  const start = chatInput.selectionStart;
+  const end = chatInput.selectionEnd;
+  const v = chatInput.value;
+  chatInput.value = v.slice(0, start) + emoji + v.slice(end);
+  chatInput.selectionStart = chatInput.selectionEnd = start + emoji.length;
+  chatInput.focus();
+  toggleSend();
+}
+
+let supportFileInput = null;
+function attachFile(){
+ if(!supportFileInput){
+  supportFileInput=document.createElement('input');supportFileInput.type='file';supportFileInput.accept='.jpg,.jpeg,.png,.webp,.pdf,.txt';supportFileInput.style.display='none';document.body.appendChild(supportFileInput);
+  supportFileInput.onchange=async()=>{const file=supportFileInput.files?.[0];supportFileInput.value='';if(!file)return;if(file.size>5*1024*1024)return showToast('ফাইল সর্বোচ্চ 5MB হতে পারবে','error');const fd=new FormData();fd.append('file',file);fd.append('sender_role','user');fd.append('sender_name',document.getElementById('profileName')?.textContent||'Customer');fd.append('conversation_id','user-'+demoUser());try{const r=await fetch('/api/chat/attachment',{method:'POST',body:fd});if(!r.ok)throw Error();addUserMessage('📎 '+file.name);showToast('Attachment পাঠানো হয়েছে ✓','success')}catch(e){addUserMessage('📎 '+file.name);showToast('Attachment demo preview যোগ হয়েছে','info')}}}
+ supportFileInput.click();
+}
+function callSupport(){showToast('Support: +880 1700-000000','info');setTimeout(()=>{try{location.href='tel:+8801700000000'}catch(e){}},250)}
+function showMenu(){
+ const old=document.getElementById('supportMenu');if(old){old.remove();return}
+ const el=document.createElement('div');el.id='supportMenu';el.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(20,25,50,.48);display:flex;align-items:flex-end';
+ el.innerHTML=`<div style="width:min(440px,100%);background:#fff;border-radius:22px 22px 0 0;padding:18px;box-shadow:0 -18px 50px rgba(0,0,0,.18)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><b style="font-size:17px">Support Options</b><button onclick="this.closest('#supportMenu').remove()" style="width:34px;height:34px;border-radius:50%;background:#f1f3f6">✕</button></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn btn-outline" onclick="this.closest('#supportMenu').remove();sendQuick('KYC Issues')">🪪 KYC Issues</button><button class="btn btn-outline" onclick="this.closest('#supportMenu').remove();sendQuick('Loan Status')">💰 Loan Status</button><button class="btn btn-outline" onclick="this.closest('#supportMenu').remove();showView('schedule')">📅 Installments</button><button class="btn btn-outline" onclick="this.closest('#supportMenu').remove();showView('wallet')">💳 Balance</button><button class="btn btn-outline" onclick="this.closest('#supportMenu').remove();showView('profile')">👤 Profile</button><button class="btn btn-outline" onclick="this.closest('#supportMenu').remove();showToast('FAQ section opened','info')">❓ FAQ</button></div></div>`;
+ document.body.appendChild(el);el.onclick=e=>{if(e.target===el)el.remove()}
+}
+
+document.addEventListener('click', (e) => {
+  if(!emojiPicker.contains(e.target) && !e.target.closest('.emoji-btn')){
+    hideEmoji();
+  }
+});
+
+/* ============================================================ INIT */
+(function init(){
+  renderTenures();
+  renderAmounts();
+  renderLoanSummary();
+  updateProgress();
+  showView('dashboard');
+
+  /* Restore saved avatar */
+  try{
+    const savedAvatar = localStorage.getItem('pb_avatar');
+    if(savedAvatar){
+      const img = document.getElementById('avatarImg');
+      const avatar = document.getElementById('profileAvatar');
+      if(img && avatar){
+        img.src = savedAvatar;
+        avatar.classList.add('has-img');
+      }
+    }
+    /* Restore 2FA state */
+    const saved2FA = localStorage.getItem('pb_2fa');
+    if(saved2FA !== null){
+      state.twoFA = saved2FA === '1';
+      const sw = document.getElementById('twoFASwitch');
+      if(sw) sw.classList.toggle('on', state.twoFA);
+      const st = document.getElementById('twoFAStatus');
+      if(st) st.textContent = state.twoFA ? 'সক্রিয় আছে' : 'নিষ্ক্রিয়';
+    }
+  }catch(e){}
+
+  const origShowView = showView;
+  window.showView = function(name){
+    origShowView(name);
+    if(name === 'support'){
+      setTimeout(() => chatInput && chatInput.focus(), 250);
+    }
+  };
+})();
+</script>
+
+<!-- Wallet / Payment Modal -->
+<div id="walletModal" class="modal-overlay" style="display:none;z-index:1200">
+  <div class="wallet-modal-box">
+    <button class="modal-x" onclick="closeWalletMethod()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="wallet-modal-head"><div class="wallet-modal-icon" id="wmIcon"><i class="fa-solid fa-wallet"></i></div><div><div class="wallet-modal-title" id="wmTitle">Wallet</div><div class="wallet-modal-sub" id="wmSub">Demo request</div></div></div>
+    <div id="wmBody"></div>
+  </div>
+</div>
+<script>
+const APP_API={};
+let kycStream=null, kycTimer=null, kycSeconds=10, kycAgree=false;
+const demoUser=()=>localStorage.getItem('pb_user_id')||'demo-user-001';
+const wmConfig={
+  bkash:['bKash Deposit','Deposit request','bkash','+880'], nagad:['Nagad Deposit','Deposit request','nagad','+880'], bank:['Bank Account Deposit','Manual bank request','bank',''], other:['Other Wallet','Manual wallet request','other',''],
+  send:['Send Money','Domestic demo transfer','send',''], receive:['Receive Money','Request demo receive','receive',''], recharge:['Mobile Recharge','Demo recharge request','recharge',''], bill:['Bill Pay','Demo bill request','bill',''], withdraw:['Withdraw from Wallet','Admin-reviewed withdrawal','withdraw',''], history:['Wallet History','Recent demo requests','history','']
+};
+function openWalletMethod(type){
+  const m=wmConfig[type]||wmConfig.bank; document.getElementById('wmTitle').textContent=m[0]; document.getElementById('wmSub').textContent=m[1];
+  const iconMap={bkash:'fa-mobile-screen',nagad:'fa-mobile-screen',bank:'fa-building-columns',other:'fa-layer-group',send:'fa-paper-plane',receive:'fa-download',recharge:'fa-mobile-screen',bill:'fa-receipt',withdraw:'fa-arrow-up-right-from-square',history:'fa-clock-rotate-left'};
+  document.getElementById('wmIcon').innerHTML='<i class="fa-solid '+(iconMap[type]||'fa-wallet')+'"></i>';
+  const body=document.getElementById('wmBody');
+  if(type==='history'){body.innerHTML='<div class="history-box" id="wmHistory"><div class="empty-state">লোড হচ্ছে…</div></div>';document.getElementById('walletModal').style.display='flex';loadWalletHistory();return;}
+  body.innerHTML=`<div class="method-form">
+    <label>Reference / Mobile<input id="wmRef" class="kyc-input" placeholder="${m[3]||'Reference'}"></label>
+    <label>Amount<input id="wmAmount" type="number" min="1" class="kyc-input" placeholder="৳"></label>
+    <label>Note<textarea id="wmNote" class="kyc-input" rows="3" placeholder="Optional note"></textarea></label>
+    <div class="demo-alert"><i class="fa-solid fa-circle-info"></i> এটি demo request। Admin review ছাড়া কোনো বাস্তব টাকা সরানো হবে না।</div>
+    <button class="btn btn-primary btn-block" onclick="submitWalletRequest('${type}')">Request Submit</button>
+  </div>`;
+  document.getElementById('walletModal').style.display='flex';
+}
+function closeWalletMethod(){document.getElementById('walletModal').style.display='none'}
+async function submitWalletRequest(type){const ref=document.getElementById('wmRef').value.trim(),amount=Number(document.getElementById('wmAmount').value||0),note=document.getElementById('wmNote').value.trim();if(!ref||amount<=0)return showToast('Reference এবং amount দিন','error');try{const r=await fetch('/api/user/wallet/requests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({user_id:demoUser(),method:type,reference:ref,amount,note})});const d=await r.json();if(!r.ok)throw Error(d.error||'Request failed');closeWalletMethod();showToast('Wallet request জমা হয়েছে: '+d.request_id,'success')}catch(e){showToast(e.message,'error')}}
+async function loadWalletHistory(){try{const r=await fetch('/api/user/wallet/requests?user_id='+encodeURIComponent(demoUser()));const d=await r.json();const box=document.getElementById('wmHistory');if(!d.requests?.length){box.innerHTML='<div class="empty-state">এখনো কোনো demo request নেই</div>';return}box.innerHTML=d.requests.map(x=>`<div class="history-row"><div><b>${escapeHtml(x.method)}</b><small>${escapeHtml(x.created_at)}</small></div><div style="text-align:right"><b>৳${Number(x.amount).toLocaleString('en-BD')}</b><small>${escapeHtml(x.status)}</small></div></div>`).join('')}catch(e){document.getElementById('wmHistory').innerHTML='<div class="empty-state">History load failed</div>'}}
+function toggleKycAgree(){kycAgree=!kycAgree;document.getElementById('kycAgree').classList.toggle('checked',kycAgree)}
+function kycVals(){return {full_name:document.getElementById('kycName')?.value.trim()||'',father_name:document.getElementById('kycFather')?.value.trim()||'',mother_name:document.getElementById('kycMother')?.value.trim()||'',dob:document.getElementById('kycDob')?.value||'',mobile:document.getElementById('kycMobile')?.value.trim()||'',nid:document.getElementById('kycNid')?.value.trim()||'',occupation:document.getElementById('kycOccupation')?.value.trim()||'',monthly_income:Number(document.getElementById('kycIncome')?.value||0),present_address:document.getElementById('kycAddress')?.value.trim()||''}}
+async function saveKyc(){const v=kycVals();if(!v.full_name||!v.mobile||!v.nid)return showToast('নাম, মোবাইল এবং NID দিন','error');if(!document.getElementById('selfiePreview')?.src||!kycAgree)return showToast('Selfie এবং KYC consent সম্পন্ন করুন','error');localStorage.setItem('pb_kyc',JSON.stringify({...v,status:'PENDING',selfie:document.getElementById('selfiePreview').src}));renderKycStatus('PENDING','KYC তথ্য সংরক্ষিত হয়েছে');showToast('KYC তথ্য সংরক্ষণ হয়েছে ✓','success')}
+function renderKycStatus(status,text){const map={PENDING:['KYC review pending','আপনার KYC তথ্য admin review-এর অপেক্ষায়'],'VERIFIED':['KYC verified','KYC review সম্পন্ন'],'REJECTED':['KYC rejected','KYC তথ্য পুনরায় যাচাই করুন']};const x=map[status]||map.PENDING;document.getElementById('kycStatusTitle').textContent=x[0];document.getElementById('kycStatusText').textContent=text||x[1];document.getElementById('kycStatusPill').textContent=status}
+function restoreKyc(){try{const d=JSON.parse(localStorage.getItem('pb_kyc')||'null');if(!d)return;[['kycName',d.full_name],['kycFather',d.father_name],['kycMother',d.mother_name],['kycDob',d.dob],['kycMobile',d.mobile],['kycNid',d.nid],['kycOccupation',d.occupation],['kycIncome',d.monthly_income],['kycAddress',d.present_address]].forEach(([id,v])=>{const e=document.getElementById(id);if(e)e.value=v??''});if(d.selfie){document.getElementById('selfiePreview').src=d.selfie;document.getElementById('selfiePreviewWrap').style.display='flex'}renderKycStatus(d.status||'PENDING') }catch(e){}}
+async function startKycCamera(){if(kycStream)kycStream.getTracks().forEach(t=>t.stop());try{kycStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:720},height:{ideal:960}},audio:false});const v=document.getElementById('kycVideo');v.srcObject=kycStream;await v.play();document.getElementById('cameraPlaceholder').style.display='none';document.getElementById('cameraCountdown').style.display='block';kycSeconds=10;document.getElementById('cameraCountdown').textContent=kycSeconds;clearInterval(kycTimer);kycTimer=setInterval(()=>{kycSeconds--;document.getElementById('cameraCountdown').textContent=kycSeconds;if(kycSeconds<=0){clearInterval(kycTimer);captureKycSelfie()}},1000)}catch(e){showToast('ক্যামেরা permission দিতে হবে','error')}}
+function captureKycSelfie(){const v=document.getElementById('kycVideo'),c=document.getElementById('kycCanvas'),ctx=c.getContext('2d');c.width=v.videoWidth||720;c.height=v.videoHeight||960;ctx.save();ctx.translate(c.width,0);ctx.scale(-1,1);ctx.drawImage(v,0,0,c.width,c.height);ctx.restore();const data=c.toDataURL('image/jpeg',.88);document.getElementById('selfiePreview').src=data;document.getElementById('selfiePreviewWrap').style.display='flex';document.getElementById('cameraAgainBtn').style.display='inline-flex';document.getElementById('cameraStartBtn').style.display='none';document.getElementById('cameraCountdown').style.display='none';try{localStorage.setItem('pb_avatar',data);const img=document.getElementById('avatarImg');const av=document.getElementById('profileAvatar');if(img&&av){img.src=data;av.classList.add('has-img')}}catch(e){}if(kycStream)kycStream.getTracks().forEach(t=>t.stop());showToast('Selfie saved as profile picture ✓','success')}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+const oldSendMessage=sendMessage;
+sendMessage=async function(){const text=chatInput.value.trim();if(!text)return;addUserMessage(text);chatInput.value='';chatInput.style.height='auto';toggleSend();hideEmoji();showTyping();try{const r=await fetch('/api/chat/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({conversation_id:'user-'+demoUser(),sender_role:'user',sender_name:document.getElementById('profileName')?.textContent||'Customer',message:text})});if(!r.ok)throw Error('chat');await new Promise(x=>setTimeout(x,350));pollUserChat()}catch(e){const delay=500+Math.random()*600;setTimeout(()=>{hideTyping();addAgentMessage(getBotReply(text))},delay)}};
+let userChatLast=0;async function pollUserChat(){try{const r=await fetch('/api/chat/messages?conversation_id='+encodeURIComponent('user-'+demoUser())+'&after_id='+userChatLast);const d=await r.json();(d.messages||[]).forEach(m=>{if(m.sender_role==='user')userChatLast=Math.max(userChatLast,Number(m.id));else{hideTyping();addAgentMessage(escapeHtml(m.message));userChatLast=Math.max(userChatLast,Number(m.id))}})}catch(e){}}
+setInterval(()=>{if(state.currentView==='support')pollUserChat()},1500);
+// Submit loan directly to backend, preserving the original calculator UI.
+const originalSubmitLoan=submitLoan;
+submitLoan=async function(){if(!state.agreed){showToast('শর্তাবলীতে সম্মতি দিন','error');return}const ids=['f_fullName','f_father','f_dob','f_phone','f_nid','f_occupation','f_income','f_address'];const ok=ids.every(id=>{const e=document.getElementById(id);return e&&String(e.value||'').trim()});if(!ok){showToast('Loan form-এর সব required তথ্য দিন','error');return}const btn=document.getElementById('submitBtn');btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> জমা হচ্ছে...';const payload={user_id:demoUser(),amount:state.amount,loan_type:'Personal',purpose:'General',tenure_months:state.tenure,full_name:val('f_fullName'),father_name:val('f_father'),mother_name:val('f_mother'),dob:val('f_dob'),mobile:val('f_phone'),nid:val('f_nid'),occupation:val('f_occupation'),monthly_income:Number(val('f_income')||0),present_address:val('f_address'),permanent_address:val('f_permanent')};try{const r=await fetch('/api/user/loans/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const d=await r.json();if(!r.ok)throw Error(d.error||'Application failed');state.loanSubmitted=true;state.schedule=generateSchedule(state.amount,state.tenure,calcLoan().emi);const loanView=document.getElementById('view-loan');loanView.innerHTML=`<div class="success-view"><div class="circle"><i class="fa-solid fa-check"></i></div><h2>আবেদন সফলভাবে জমা হয়েছে!</h2><p>Application ID: <b>${escapeHtml(d.application_id)}</b><br>বর্তমান status: <b>SUBMITTED</b></p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn btn-primary" onclick="showView('schedule')">কিস্তি সূচি</button><button class="btn btn-outline" onclick="showView('dashboard')">হোম</button></div></div>`;showToast('লোন আবেদন জমা হয়েছে ✓','success')}catch(e){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> আবেদন জমা দিন';showToast(e.message,'error')}};
+
+document.addEventListener('DOMContentLoaded',()=>{restoreKyc();applyDemoProfile()});
+function applyDemoProfile(){try{const p=JSON.parse(localStorage.getItem('pb_profile')||'{}');if(p.name){const n=document.getElementById('profileName');if(n)n.textContent=p.name;const d=document.getElementById('dashboardName');if(d)d.textContent=p.name}}catch(e){}}
+</script>
+</body>
+</html>

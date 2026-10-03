@@ -1,0 +1,18 @@
+FINAL ONE-CLICK DEPLOY
+
+1. Extract this ZIP.
+2. Open PowerShell in this extracted folder.
+3. Run:
+
+powershell -NoProfile -ExecutionPolicy Bypass -File .\FINAL-ONE-CLICK-DEPLOY.ps1
+
+The script will:
+- create/use .venv
+- install requirements
+- compile server.py
+- import-check Flask app
+- push to GitHub cwrm111-crypto/bangladesh-bank
+- create/link Vercel project bangladesh-bank-demo
+- deploy to Vercel production
+
+Do not use the old futuregrow-ai-hn15 Vercel project for this app.

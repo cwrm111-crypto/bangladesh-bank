@@ -1,0 +1,57 @@
+BANGLADESH BANK STYLED — UNOFFICIAL FINANCIAL DEMO
+====================================================
+
+This is NOT an official Bangladesh Bank / government service.
+
+LOCAL START
+-----------
+1. Extract the ZIP.
+2. Open PowerShell in the extracted project folder.
+3. Run:
+
+Set-ExecutionPolicy -Scope Process Bypass -Force
+.\RUN-NOW.ps1
+
+URLs:
+Landing : http://127.0.0.1:8080/
+App     : http://127.0.0.1:8080/app
+Admin   : http://127.0.0.1:8080/admin
+
+AUTH FLOW
+---------
+Landing
+  -> Login / Register
+  -> Flask session
+  -> /app customer dashboard
+
+LOGIN
+-----
+Email OR mobile + password.
+
+PASSWORD RESET
+--------------
+Demo OTP: 123456
+(no real SMS/email provider is connected)
+
+APK DOWNLOAD
+------------
+The landing page is wired for:
+downloads\probashi-bondhu-demo.apk
+
+Add the real APK binary with that exact filename.
+A fake APK is NOT included.
+
+GITHUB
+------
+.\GITHUB-PUSH.ps1
+
+Repository:
+https://github.com/cwrm111-crypto/bangladesh-bank
+
+VERCEL
+------
+.\VERCEL-DEPLOY.ps1
+
+ONE-COMMAND PUBLISH
+-------------------
+.\FINAL-PUBLISH.ps1

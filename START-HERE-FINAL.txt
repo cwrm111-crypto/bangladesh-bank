@@ -1,0 +1,17 @@
+PROBASHI BONDHU - FINAL ONE CLICK
+
+1. Extract this ZIP anywhere, preferably Downloads.
+2. Open PowerShell.
+3. Paste this command:
+
+powershell -NoProfile -ExecutionPolicy Bypass -File .\FINAL-ONE-CLICK-DEPLOY.ps1
+
+Or double-click RUN-FINAL.cmd.
+
+The script checks Python/Flask, compiles server.py, publishes to:
+https://github.com/cwrm111-crypto/bangladesh-bank
+
+Then it links/deploys the Flask app to the Vercel project:
+bangladesh-bank-demo
+
+Note: This is an unofficial educational/demo application. It is not an official Bangladesh Bank service.

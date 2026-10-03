@@ -1,0 +1,22 @@
+FINAL PUBLISH CHECKLIST
+=======================
+
+1. Run GitHub:
+   .\GITHUB-PUSH.ps1
+
+2. Verify:
+   https://github.com/cwrm111-crypto/bangladesh-bank
+
+3. Run Vercel:
+   .\VERCEL-DEPLOY.ps1
+
+4. Test after deployment:
+   /
+   /app
+   /admin
+
+5. For Android:
+   place the real APK at
+   downloads\probashi-bondhu-demo.apk
+
+Do not publish real KYC or financial credentials in this demo repository.
