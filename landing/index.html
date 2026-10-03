@@ -6,20 +6,20 @@
 <meta name="theme-color" content="#dc0f68" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c0c14" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
-<title>Bangladesh Bank Styled â€” Unofficial Financial Demo</title>
-<meta name="description" content="Bangladesh Bank styled unofficial financial demo â€” professional landing page, demo login, registration and app download flow.">
-<meta name="keywords" content="à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•, à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¬à§à¦¯à¦¾à¦‚à¦•à¦¿à¦‚, Mobile Banking, fintech Bangladesh">
+<title>Bangladesh Bank Styled — Unofficial Financial Demo</title>
+<meta name="description" content="Bangladesh Bank styled unofficial financial demo — professional landing page, demo login, registration and app download flow.">
+<meta name="keywords" content="বাংলাদেশ ব্যাংক, মোবাইল ব্যাংকিং, Mobile Banking, fintech Bangladesh">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://bd-bank.example.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bangladesh Bank Styled â€” Unofficial Financial Demo">
+<meta property="og:title" content="Bangladesh Bank Styled — Unofficial Financial Demo">
 <meta property="og:description" content="Unofficial educational financial demo with connected login, registration and app download flow.">
 <meta property="og:image" content="https://bd-bank.example.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bangladesh Bank Styled â€” Unofficial Financial Demo">
+<meta name="twitter:title" content="Bangladesh Bank Styled — Unofficial Financial Demo">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Bangladesh Bank Styled â€” Unofficial Financial Demo","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Bangladesh Bank Styled — Unofficial Financial Demo","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-/* â•â•â• DESIGN TOKENS â•â•â• */
+/* ═══ DESIGN TOKENS ═══ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Hind Siliguri','Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;text-rendering:optimizeLegibility;transition:background-color .4s var(--ease),color .4s var(--ease)}
@@ -92,11 +92,11 @@ ul{list-style:none}
 .skip-link{position:fixed;top:-100px;left:20px;z-index:9999;padding:14px 22px;border-radius:12px;background:var(--pink);color:#fff;font-size:14px;font-weight:700;box-shadow:var(--sh-lg);transition:top .3s var(--ease)}
 .skip-link:focus{top:20px}
 
-/* â•â•â• SCROLL PROGRESS â•â•â• */
+/* ═══ SCROLL PROGRESS ═══ */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad-brand);z-index:3000;transition:width .1s linear;box-shadow:0 0 12px rgba(220,15,104,.5)}
 
 
-/* â•â•â• DEMO NOTICE â•â•â• */
+/* ═══ DEMO NOTICE ═══ */
 .demo-notice{
   position:fixed;top:0;left:0;right:0;z-index:3100;
   padding:8px 18px;text-align:center;
@@ -109,7 +109,7 @@ ul{list-style:none}
 @media(max-width:640px){.demo-notice{font-size:9.5px;padding:7px 10px}.navbar{top:28px}}
 @media(min-width:641px){.navbar{top:31px}}
 
-/* â•â•â• NAVBAR â•â•â• */
+/* ═══ NAVBAR ═══ */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:transparent;transition:padding .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease)}
 .navbar.scrolled{padding:10px 0;background:rgba(255,255,255,.86);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 1px 0 rgba(12,12,20,.06),0 8px 28px rgba(12,12,20,.06);border-bottom:1px solid rgba(230,230,238,.6)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -151,7 +151,7 @@ ul{list-style:none}
 .lang-btn:hover{background:rgba(255,255,255,.14)}
 .navbar.scrolled .lang-btn:hover{background:var(--ink-100)}
 
-/* â•â•â• LOGIN / SIGNUP BUTTONS (ENHANCED) â•â•â• */
+/* ═══ LOGIN / SIGNUP BUTTONS (ENHANCED) ═══ */
 .btn-login{padding:10px 20px;border-radius:11px;font-size:14px;font-weight:700;transition:all .25s var(--ease);border:1.5px solid transparent}
 .navbar:not(.scrolled) .btn-login{color:rgba(255,255,255,.95);border-color:rgba(255,255,255,.28)}
 .navbar.scrolled .btn-login{color:var(--ink-700);border-color:var(--border)}
@@ -192,7 +192,7 @@ ul{list-style:none}
 .nav-toggle:hover{background:rgba(255,255,255,.14)}
 .nav-toggle svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
-/* â•â•â• COMMAND PALETTE â•â•â• */
+/* ═══ COMMAND PALETTE ═══ */
 .cmdk-overlay{position:fixed;inset:0;z-index:5000;background:rgba(12,12,20,.6);backdrop-filter:blur(8px);display:flex;align-items:flex-start;justify-content:center;padding:12vh 20px 20px;opacity:0;visibility:hidden;transition:all .25s var(--ease)}
 .cmdk-overlay.open{opacity:1;visibility:visible}
 .cmdk{width:100%;max-width:580px;background:var(--surface);border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.4);border:1px solid var(--border);overflow:hidden;transform:scale(.96) translateY(-12px);transition:transform .3s var(--ease-spring)}
@@ -218,7 +218,7 @@ ul{list-style:none}
 [data-theme="light"] .theme-icon-light{display:block}
 [data-theme="dark"] .theme-icon-dark{display:block}
 
-/* â•â•â• ENHANCED AUTH MODAL â•â•â• */
+/* ═══ ENHANCED AUTH MODAL ═══ */
 .auth-overlay{
   position:fixed;inset:0;z-index:3500;
   background:rgba(12,12,20,.65);
@@ -565,7 +565,7 @@ ul{list-style:none}
 .auth-success h3{font-size:24px;font-weight:800;color:var(--ink-900);margin-bottom:10px}
 .auth-success p{font-size:14.5px;color:var(--muted);line-height:1.7;margin-bottom:26px;max-width:320px;margin-left:auto;margin-right:auto}
 
-/* â•â•â• CHAT WIDGET â•â•â• */
+/* ═══ CHAT WIDGET ═══ */
 .chat-widget{position:fixed;bottom:26px;left:26px;width:56px;height:56px;border-radius:18px;background:var(--grad-brand);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(220,15,104,.4);z-index:950;transition:all .3s var(--ease-spring);animation:chatPulse 3s ease-in-out infinite}
 .chat-widget:hover{transform:scale(1.08) rotate(-4deg)}
 .chat-widget svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -604,7 +604,7 @@ ul{list-style:none}
 .chat-send:hover{transform:scale(1.08)}
 .chat-send svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
-/* â•â•â• COOKIE + BACK TOP + TOAST â•â•â• */
+/* ═══ COOKIE + BACK TOP + TOAST ═══ */
 .cookie-banner{position:fixed;bottom:26px;right:26px;max-width:380px;width:calc(100% - 52px);background:var(--surface);border-radius:var(--r-lg);padding:22px 24px;box-shadow:var(--sh-xl);border:1px solid var(--border);z-index:1200;transform:translateY(140%);transition:transform .5s cubic-bezier(.34,1.2,.64,1)}
 .cookie-banner.show{transform:translateY(0)}
 .cookie-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand);border-radius:var(--r-lg) var(--r-lg) 0 0}
@@ -646,7 +646,7 @@ ul{list-style:none}
 .toast-close:hover{background:var(--ink-100)}
 .toast-close svg{width:12px;height:12px;stroke:var(--ink-500);fill:none;stroke-width:2.6;stroke-linecap:round}
 
-/* â•â•â• DEMO PANEL â•â•â• */
+/* ═══ DEMO PANEL ═══ */
 .demo-overlay{position:fixed;inset:0;z-index:3300;background:rgba(12,12,20,.5);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:all .3s var(--ease)}
 .demo-overlay.show{opacity:1;visibility:visible}
 .demo-panel{position:fixed;top:0;right:-460px;width:min(440px,92vw);height:100vh;background:var(--surface);z-index:3400;box-shadow:-20px 0 60px rgba(0,0,0,.2);transition:right .4s cubic-bezier(.34,1.2,.64,1);display:flex;flex-direction:column;overflow:hidden}
@@ -791,7 +791,7 @@ ul{list-style:none}
 .demo-success-receipt-row .label{color:var(--muted);font-weight:500}
 .demo-success-receipt-row .value{color:var(--ink-900);font-weight:700;font-family:'Inter',sans-serif}
 
-/* â•â•â• ANNOUNCEMENT â•â•â• */
+/* ═══ ANNOUNCEMENT ═══ */
 .announcement{background:var(--ink-900);color:#fff;padding:10px 0;font-size:13px;position:relative;z-index:1100}
 [data-theme="dark"] .announcement{background:#000;border-bottom:1px solid var(--border)}
 .announcement-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center}
@@ -803,7 +803,7 @@ ul{list-style:none}
 .announcement-link:hover{color:#fff;gap:8px}
 .announcement-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 
-/* â•â•â• HERO â•â•â• */
+/* ═══ HERO ═══ */
 .hero{position:relative;min-height:100vh;padding:calc(72px + 90px) 0 90px;display:flex;align-items:center;background:radial-gradient(circle at 12% 18%,rgba(255,44,139,.38) 0%,transparent 42%),radial-gradient(circle at 88% 28%,rgba(41,182,246,.30) 0%,transparent 42%),radial-gradient(circle at 50% 105%,rgba(142,36,170,.40) 0%,transparent 52%),linear-gradient(135deg,#b8004f 0%,#dc0f68 38%,#8e24aa 72%,#5c6bc0 100%);overflow:hidden;color:#fff;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.09) 1px,transparent 0);background-size:34px 34px;opacity:.55;pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.18) 100%);pointer-events:none}
@@ -877,7 +877,7 @@ ul{list-style:none}
 .scroll-indicator .mouse::after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:8px;border-radius:2px;background:rgba(255,255,255,.85);animation:scrollDown 1.8s ease-in-out infinite}
 @keyframes scrollDown{0%{transform:translate(-50%,0);opacity:1}100%{transform:translate(-50%,14px);opacity:0}}
 
-/* â•â•â• SIMPLIFIED OTHER SECTIONS (kept from prior work) â•â•â• */
+/* ═══ SIMPLIFIED OTHER SECTIONS (kept from prior work) ═══ */
 .trust-bar{background:var(--bg);padding:32px 0;border-bottom:1px solid var(--border)}
 .trust-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
 .trust-label{font-size:11.5px;font-weight:700;letter-spacing:1.6px;color:var(--ink-400);text-transform:uppercase;font-family:'Inter',sans-serif}
@@ -1051,7 +1051,7 @@ ul{list-style:none}
 .menu-overlay{position:fixed;inset:0;background:rgba(10,10,15,.5);backdrop-filter:blur(4px);z-index:1500;opacity:0;visibility:hidden;transition:all .3s var(--ease)}
 .menu-overlay.show{opacity:1;visibility:visible}
 
-/* â•â•â• RESPONSIVE â•â•â• */
+/* ═══ RESPONSIVE ═══ */
 @media(max-width:1024px){
   .hero-grid{grid-template-columns:1fr;gap:60px;text-align:center}
   .hero-desc{margin-left:auto;margin-right:auto}
@@ -1125,7 +1125,7 @@ ul{list-style:none}
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">à¦®à§‚à¦² à¦•à¦¨à¦Ÿà§‡à¦¨à§à¦Ÿà§‡ à¦¯à¦¾à¦¨</a>
+<a href="#main-content" class="skip-link">মূল কনটেন্টে যান</a>
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
@@ -1134,22 +1134,22 @@ ul{list-style:none}
   <div class="container announcement-inner">
     <span class="announcement-badge">
       <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      à¦¨à¦¤à§à¦¨
+      নতুন
     </span>
-    <span class="announcement-text">à¦¸à¦‚à¦¸à§à¦•à¦°à¦£ <strong>à§¨.à§¦</strong> à¦šà¦¾à¦²à§ â€” <strong>à§«à§¦% à¦•à§à¦¯à¦¾à¦¶à¦¬à§à¦¯à¦¾à¦•</strong> à¦ªà§à¦°à¦¥à¦® à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡</span>
-    <a href="#download" class="announcement-link">à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤ <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <span class="announcement-text">সংস্করণ <strong>২.০</strong> চালু — <strong>৫০% ক্যাশব্যাক</strong> প্রথম লেনদেনে</span>
+    <a href="#download" class="announcement-link">বিস্তারিত <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
   </div>
 </div>
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
-    <a href="#" class="nav-brand" aria-label="à¦¹à§‹à¦®">
+    <a href="#" class="nav-brand" aria-label="হোম">
       <div class="nav-logo">
         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
           <defs><path id="topArcNav" d="M 72 192 A 132 132 0 0 1 328 192"/></defs>
           <text fill="#08752f" font-size="34" font-weight="700" font-family="Arial">
-            <textPath href="#topArcNav" startOffset="50%" text-anchor="middle">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</textPath>
+            <textPath href="#topArcNav" startOffset="50%" text-anchor="middle">বাংলাদেশ ব্যাংক</textPath>
           </text>
           <g fill="none" stroke="#08752f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M 140 154 L 200 111 L 260 154 Z" fill="#fff"/>
@@ -1160,33 +1160,33 @@ ul{list-style:none}
         </svg>
       </div>
       <div class="nav-brand-text">
-        <div class="nav-brand-title">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
+        <div class="nav-brand-title">বাংলাদেশ ব্যাংক</div>
         <div class="nav-brand-sub">MOBILE BANKING</div>
       </div>
     </a>
     <div class="nav-links">
-      <a href="#features" class="nav-link">à¦¸à§‡à¦¬à¦¾à¦¸à¦®à§‚à¦¹</a>
-      <a href="#security" class="nav-link">à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾</a>
-      <a href="#how" class="nav-link">à¦•à¦¿à¦­à¦¾à¦¬à§‡ à¦•à¦¾à¦œ à¦•à¦°à§‡</a>
-      <a href="#download" class="nav-link">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</a>
-      <a href="#faq" class="nav-link">à¦ªà§à¦°à¦¶à§à¦¨à§‹à¦¤à§à¦¤à¦°</a>
+      <a href="#features" class="nav-link">সেবাসমূহ</a>
+      <a href="#security" class="nav-link">নিরাপত্তা</a>
+      <a href="#how" class="nav-link">কিভাবে কাজ করে</a>
+      <a href="#download" class="nav-link">ডাউনলোড</a>
+      <a href="#faq" class="nav-link">প্রশ্নোত্তর</a>
     </div>
     <div class="nav-actions">
-      <button class="kbd-hint" onclick="openCmdK()" aria-label="à¦•à¦®à¦¾à¦¨à§à¦¡ à¦ªà§à¦¯à¦¾à¦²à§‡à¦Ÿ">
+      <button class="kbd-hint" onclick="openCmdK()" aria-label="কমান্ড প্যালেট">
         <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <kbd>âŒ˜K</kbd>
+        <kbd>⌘K</kbd>
       </button>
       <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
-      <button class="icon-btn" onclick="toggleTheme()" aria-label="à¦¥à¦¿à¦®">
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="থিম">
         <svg class="theme-icon-light" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="theme-icon-dark" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
       </button>
-      <button class="btn-login" onclick="openAuth('signin')">à¦²à¦—à¦‡à¦¨</button>
+      <button class="btn-login" onclick="openAuth('signin')">লগইন</button>
       <button class="btn-signup" onclick="openAuth('signup')">
         <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
-        <span>à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦°</span>
+        <span>রেজিস্টার</span>
       </button>
-      <button class="nav-toggle" id="navToggle" aria-label="à¦®à§‡à¦¨à§">
+      <button class="nav-toggle" id="navToggle" aria-label="মেনু">
         <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -1198,7 +1198,7 @@ ul{list-style:none}
   <div class="cmdk" role="dialog" aria-modal="true">
     <div class="cmdk-head">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" class="cmdk-input" id="cmdkInput" placeholder="à¦•à¦®à¦¾à¦¨à§à¦¡ à¦–à§à¦à¦œà§à¦¨..." autocomplete="off">
+      <input type="text" class="cmdk-input" id="cmdkInput" placeholder="কমান্ড খুঁজুন..." autocomplete="off">
       <span class="cmdk-esc">ESC</span>
     </div>
     <div class="cmdk-body" id="cmdkBody"></div>
@@ -1208,23 +1208,23 @@ ul{list-style:none}
 <!-- MOBILE MENU -->
 <div class="menu-overlay" id="menuOverlay" onclick="closeMobileMenu()"></div>
 <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="à¦¬à¦¨à§à¦§">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="বন্ধ">
     <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
   </button>
   <div class="mobile-menu-links">
-    <a href="#features" class="mobile-menu-link" onclick="closeMobileMenu()">à¦¸à§‡à¦¬à¦¾à¦¸à¦®à§‚à¦¹ <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
-    <a href="#security" class="mobile-menu-link" onclick="closeMobileMenu()">à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
-    <a href="#how" class="mobile-menu-link" onclick="closeMobileMenu()">à¦•à¦¿à¦­à¦¾à¦¬à§‡ à¦•à¦¾à¦œ à¦•à¦°à§‡ <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
-    <a href="#download" class="mobile-menu-link" onclick="closeMobileMenu()">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
-    <a href="#faq" class="mobile-menu-link" onclick="closeMobileMenu()">à¦ªà§à¦°à¦¶à§à¦¨à§‹à¦¤à§à¦¤à¦° <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#features" class="mobile-menu-link" onclick="closeMobileMenu()">সেবাসমূহ <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#security" class="mobile-menu-link" onclick="closeMobileMenu()">নিরাপত্তা <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#how" class="mobile-menu-link" onclick="closeMobileMenu()">কিভাবে কাজ করে <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#download" class="mobile-menu-link" onclick="closeMobileMenu()">ডাউনলোড <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#faq" class="mobile-menu-link" onclick="closeMobileMenu()">প্রশ্নোত্তর <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
   </div>
   <div class="mobile-menu-actions">
-    <button class="m-login" onclick="closeMobileMenu();openAuth('signin')">à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨</button>
-    <button class="m-signup" onclick="closeMobileMenu();openAuth('signup')">à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨</button>
+    <button class="m-login" onclick="closeMobileMenu();openAuth('signin')">লগইন করুন</button>
+    <button class="m-signup" onclick="closeMobileMenu();openAuth('signup')">রেজিস্টার করুন</button>
   </div>
 </aside>
 
-<div class="demo-notice"><span>UNOFFICIAL DEMO â€¢ NOT A GOVERNMENT OR BANK SERVICE â€¢ DO NOT USE REAL PERSONAL / NID DATA</span></div>
+<div class="demo-notice"><span>UNOFFICIAL DEMO • NOT A GOVERNMENT OR BANK SERVICE • DO NOT USE REAL PERSONAL / NID DATA</span></div>
 
 <main id="main-content">
 
@@ -1235,64 +1235,64 @@ ul{list-style:none}
   <div class="hero-blob b3"></div>
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span><span>UNOFFICIAL â€¢ EDUCATIONAL DEMO</span></div>
-      <h1 class="hero-title">à¦†à¦ªà¦¨à¦¾à¦° <span class="gradient-text">à¦†à¦°à§à¦¥à¦¿à¦• à¦¸à§à¦¬à¦¾à¦§à§€à¦¨à¦¤à¦¾</span><br>à¦à¦–à¦¨ à¦¹à¦¾à¦¤à§‡à¦° à¦®à§à¦ à§‹à¦¯à¦¼</h1>
-      <p class="hero-desc">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•-à¦¸à§à¦Ÿà¦¾à¦‡à¦²à§‡à¦° à¦à¦‡ unofficial demo experience-à¦ account flow, loan preview, wallet demo, support à¦à¦¬à¦‚ app download à¦à¦• à¦œà¦¾à¦¯à¦¼à¦—à¦¾à¦¯à¦¼ à¦¦à§‡à¦–à§à¦¨à¥¤</p>
+      <div class="hero-badge"><span class="dot"></span><span>UNOFFICIAL • EDUCATIONAL DEMO</span></div>
+      <h1 class="hero-title">আপনার <span class="gradient-text">আর্থিক স্বাধীনতা</span><br>এখন হাতের মুঠোয়</h1>
+      <p class="hero-desc">বাংলাদেশ ব্যাংক-স্টাইলের এই unofficial demo experience-এ account flow, loan preview, wallet demo, support এবং app download এক জায়গায় দেখুন।</p>
       <div class="hero-cta">
         <button class="btn-primary" onclick="openAuth('signup')">
           <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          <span>à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡ à¦¶à§à¦°à§ à¦•à¦°à§à¦¨</span>
+          <span>বিনামূল্যে শুরু করুন</span>
         </button>
-        <button class="btn-secondary" type="button" onclick="downloadApp('android')">
+        <button class="btn-secondary" type="button" onclick="window.location.href='/downloads/probashi-bondhu-demo.apk'">
           <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
-          <span>APK à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</span>
+          <span>APK ডাউনলোড</span>
         </button>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-value">à§§à§¦<span class="unit">à¦²à¦•à§à¦·+</span></div><div class="hero-stat-label">à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦°à¦•à¦¾à¦°à§€</div></div>
-        <div class="hero-stat"><div class="hero-stat-value">à§³à§«à§¦à§¦<span class="unit">à¦•à§‹à¦Ÿà¦¿+</span></div><div class="hero-stat-label">à¦¨à¦¿à¦°à¦¾à¦ªà¦¦ à¦²à§‡à¦¨à¦¦à§‡à¦¨</div></div>
-        <div class="hero-stat"><div class="hero-stat-value">à§ª.à§¯<span class="unit">/à§«</span></div><div class="hero-stat-label">à¦—à§à¦°à¦¾à¦¹à¦• à¦¸à¦¨à§à¦¤à§à¦·à§à¦Ÿà¦¿</div></div>
-        <div class="hero-stat"><div class="hero-stat-value">à§¨à§ª<span class="unit">/à§­</span></div><div class="hero-stat-label">à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿ à¦¸à§‡à¦¬à¦¾</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">১০<span class="unit">লক্ষ+</span></div><div class="hero-stat-label">সক্রিয় ব্যবহারকারী</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">৳৫০০<span class="unit">কোটি+</span></div><div class="hero-stat-label">নিরাপদ লেনদেন</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">৪.৯<span class="unit">/৫</span></div><div class="hero-stat-label">গ্রাহক সন্তুষ্টি</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">২৪<span class="unit">/৭</span></div><div class="hero-stat-label">সাপোর্ট সেবা</div></div>
       </div>
     </div>
     <div class="hero-visual">
       <div class="phone-mockup">
         <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="phone-status"><span>à§¯:à§ªà§§</span><span>â—â—â— ðŸ”‹</span></div>
+          <div class="phone-status"><span>৯:৪১</span><span>●●● 🔋</span></div>
           <div class="phone-balance-card">
-            <div class="phone-balance-label">à¦‰à¦ªà¦²à¦¬à§à¦§ à¦¬à§à¦¯à¦¾à¦²à§‡à¦¨à§à¦¸</div>
+            <div class="phone-balance-label">উপলব্ধ ব্যালেন্স</div>
             <div class="phone-balance-amount">
-              <span id="balanceText">à§³ 12,458.50</span>
+              <span id="balanceText">৳ 12,458.50</span>
               <span class="eye" onclick="toggleBalance()"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
             </div>
           </div>
           <div class="phone-actions">
-            <div class="phone-action" onclick="openDemo('send')"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>à¦ªà¦¾à¦ à¦¾à¦¨</span></div>
-            <div class="phone-action" onclick="openDemo('receive')"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg><span>à¦°à¦¿à¦¸à¦¿à¦­</span></div>
-            <div class="phone-action" onclick="openDemo('history')"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg><span>à¦²à§‡à¦¨à¦¦à§‡à¦¨</span></div>
-            <div class="phone-action" onclick="openDemo('loan')"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>à¦²à§‹à¦¨</span></div>
+            <div class="phone-action" onclick="openDemo('send')"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>পাঠান</span></div>
+            <div class="phone-action" onclick="openDemo('receive')"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg><span>রিসিভ</span></div>
+            <div class="phone-action" onclick="openDemo('history')"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg><span>লেনদেন</span></div>
+            <div class="phone-action" onclick="openDemo('loan')"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>লোন</span></div>
           </div>
           <div class="phone-tx">
             <div class="phone-tx-item" onclick="openDemo('history')">
               <div class="phone-tx-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></div>
-              <div class="phone-tx-info"><div class="phone-tx-title">à¦°à¦¿à¦¸à¦¿à¦­ â€” à¦•à¦°à¦¿à¦®</div><div class="phone-tx-amt">à¦†à¦œ, à§§à§¦:à§¨à§ª</div></div>
-              <div class="phone-tx-value">+à§³à§«à§¦à§¦</div>
+              <div class="phone-tx-info"><div class="phone-tx-title">রিসিভ — করিম</div><div class="phone-tx-amt">আজ, ১০:২৪</div></div>
+              <div class="phone-tx-value">+৳৫০০</div>
             </div>
             <div class="phone-tx-item" onclick="openDemo('history')">
               <div class="phone-tx-icon"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></div>
-              <div class="phone-tx-info"><div class="phone-tx-title">à¦ªà¦¾à¦ à¦¾à¦¨à§‹ â€” à¦°à¦¹à¦¿à¦®</div><div class="phone-tx-amt">à¦†à¦œ, à§¦à§¯:à§§à§«</div></div>
-              <div class="phone-tx-value">-à§³à§¨à§«à§¦</div>
+              <div class="phone-tx-info"><div class="phone-tx-title">পাঠানো — রহিম</div><div class="phone-tx-amt">আজ, ০৯:১৫</div></div>
+              <div class="phone-tx-value">-৳২৫০</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="float-badge b-1"><div class="fb-icon green"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div><div class="fb-title">à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨à§‹ à¦¹à¦¯à¦¼à§‡à¦›à§‡</div><div class="fb-sub">à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦¸à¦®à§à¦ªà¦¨à§à¦¨</div></div></div>
-      <div class="float-badge b-2"><div class="fb-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><div><div class="fb-title">à§§à§¦à§¦% à¦¨à¦¿à¦°à¦¾à¦ªà¦¦</div><div class="fb-sub">à¦à¦¨à¦•à§à¦°à¦¿à¦ªà§à¦Ÿà§‡à¦¡</div></div></div>
-      <div class="float-badge b-3"><div class="fb-icon pink"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><div class="fb-title">à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦‹à¦£</div><div class="fb-sub">à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼</div></div></div>
+      <div class="float-badge b-1"><div class="fb-icon green"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div><div class="fb-title">টাকা পাঠানো হয়েছে</div><div class="fb-sub">সফলভাবে সম্পন্ন</div></div></div>
+      <div class="float-badge b-2"><div class="fb-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><div><div class="fb-title">১০০% নিরাপদ</div><div class="fb-sub">এনক্রিপ্টেড</div></div></div>
+      <div class="float-badge b-3"><div class="fb-icon pink"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><div class="fb-title">তাৎক্ষণিক ঋণ</div><div class="fb-sub">২৪ ঘণ্টায়</div></div></div>
     </div>
   </div>
-  <div class="scroll-indicator"><div class="mouse"></div><span>à¦¸à§à¦•à§à¦°à¦² à¦•à¦°à§à¦¨</span></div>
+  <div class="scroll-indicator"><div class="mouse"></div><span>স্ক্রল করুন</span></div>
 </section>
 
 <!-- TRUST -->
@@ -1311,23 +1311,23 @@ ul{list-style:none}
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>à¦¡à¦¾à¦šà§-à¦¬à¦¾à¦‚à¦²à¦¾ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>à¦¬à§à¦°à§à¦¯à¦¾à¦• à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>à¦‡à¦¸à§à¦Ÿà¦¾à¦°à§à¦¨ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>à¦¸à¦¿à¦Ÿà¦¿ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>à¦‡à¦¸à¦²à¦¾à¦®à§€ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>à¦¡à¦¾à¦šà§-à¦¬à¦¾à¦‚à¦²à¦¾ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>à¦¬à§à¦°à§à¦¯à¦¾à¦• à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
-    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>à¦‡à¦¸à§à¦Ÿà¦¾à¦°à§à¦¨ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>বাংলাদেশ ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>ডাচ্-বাংলা ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>ব্র্যাক ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>ইস্টার্ন ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>সিটি ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>ইসলামী ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>বাংলাদেশ ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>ডাচ্-বাংলা ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>ব্র্যাক ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>ইস্টার্ন ব্যাংক</div>
   </div>
 </div>
 
 <!-- TICKER -->
 <div class="ticker">
   <div class="container ticker-inner">
-    <span class="ticker-label"><span class="pulse"></span>à¦²à¦¾à¦‡à¦­</span>
+    <span class="ticker-label"><span class="pulse"></span>লাইভ</span>
     <div class="ticker-track-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
   </div>
 </div>
@@ -1336,17 +1336,17 @@ ul{list-style:none}
 <section class="section section--alt" id="features">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag">à¦†à¦®à¦¾à¦¦à§‡à¦° à¦¸à§‡à¦¬à¦¾à¦¸à¦®à§‚à¦¹</div>
-      <h2 class="section-title">à¦¯à¦¾ à¦¯à¦¾ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à¦¬à§‡à¦¨</h2>
-      <p class="section-desc">à¦†à¦§à§à¦¨à¦¿à¦• à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿ à¦à¦¬à¦‚ à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾à¦° à¦¸à¦®à¦¨à§à¦¬à¦¯à¦¼à§‡ à¦†à¦ªà¦¨à¦¾à¦° à¦ªà§à¦°à¦¤à¦¿à¦¦à¦¿à¦¨à§‡à¦° à¦†à¦°à§à¦¥à¦¿à¦• à¦šà¦¾à¦¹à¦¿à¦¦à¦¾ à¦ªà§‚à¦°à¦£à§‡à¦° à¦¸à¦¬ à¦¸à§à¦¬à¦¿à¦§à¦¾ à¦à¦• à¦…à§à¦¯à¦¾à¦ªà§‡à¥¤</p>
+      <div class="section-tag">আমাদের সেবাসমূহ</div>
+      <h2 class="section-title">যা যা করতে পারবেন</h2>
+      <p class="section-desc">আধুনিক প্রযুক্তি এবং নিরাপত্তার সমন্বয়ে আপনার প্রতিদিনের আর্থিক চাহিদা পূরণের সব সুবিধা এক অ্যাপে।</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card" onclick="openFeatureDetail('send')"><div class="feature-icon pink"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div><h3 class="feature-title">à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨</h3><p class="feature-desc">à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦¬à¦¾ UID à¦¦à¦¿à¦¯à¦¼à§‡ à¦¸à§‡à¦•à§‡à¦¨à§à¦¡à§‡à¦° à¦®à¦§à§à¦¯à§‡ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨ â€” à¦•à§‹à¦¨ à¦šà¦¾à¦°à§à¦œ à¦›à¦¾à¦¡à¦¼à¦¾à¦‡à¥¤</p></div>
-      <div class="feature-card" onclick="openFeatureDetail('secure')"><div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="feature-title">à§§à§¦à§¦% à¦¨à¦¿à¦°à¦¾à¦ªà¦¦ à¦²à§‡à¦¨à¦¦à§‡à¦¨</h3><p class="feature-desc">à¦¬à§à¦¯à¦¾à¦‚à¦•-à¦—à§à¦°à§‡à¦¡ à¦à¦¨à¦•à§à¦°à¦¿à¦ªà¦¶à¦¨ à¦à¦¬à¦‚ à¦¬à¦¾à¦¯à¦¼à§‹à¦®à§‡à¦Ÿà§à¦°à¦¿à¦• à¦²à¦—à¦‡à¦¨ à¦¦à¦¿à¦¯à¦¼à§‡ à¦†à¦ªà¦¨à¦¾à¦° à¦…à¦°à§à¦¥ à¦¸à§à¦°à¦•à§à¦·à¦¿à¦¤à¥¤</p></div>
-      <div class="feature-card" onclick="openFeatureDetail('loan')"><div class="feature-icon green"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="feature-title">à¦¸à¦¹à¦œ à¦¶à¦°à§à¦¤à§‡ à¦‹à¦£</h3><p class="feature-desc">à¦•à§ƒà¦·à¦¿, à¦•à§à¦·à§à¦¦à§à¦° à¦¬à§à¦¯à¦¬à¦¸à¦¾ à¦¬à¦¾ à¦¸à§à¦Ÿà¦¾à¦°à§à¦Ÿà¦†à¦ªà§‡à¦° à¦œà¦¨à§à¦¯ à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼ à¦‹à¦£ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨à¥¤</p></div>
-      <div class="feature-card" onclick="openFeatureDetail('history')"><div class="feature-icon purple"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3 class="feature-title">à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦‡à¦¤à¦¿à¦¹à¦¾à¦¸</h3><p class="feature-desc">à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤ à¦°à§‡à¦•à¦°à§à¦¡ à¦à¦¬à¦‚ à¦¸à§à¦Ÿà§‡à¦Ÿà¦®à§‡à¦¨à§à¦Ÿ à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦¸à§à¦¬à¦¿à¦§à¦¾à¥¤</p></div>
-      <div class="feature-card" onclick="openFeatureDetail('notify')"><div class="feature-icon orange"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3 class="feature-title">à¦¸à§à¦®à¦¾à¦°à§à¦Ÿ à¦¨à§‹à¦Ÿà¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨</h3><p class="feature-desc">à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦†à¦ªà¦¡à§‡à¦Ÿ à¦à¦¬à¦‚ à¦—à§à¦°à§à¦¤à§à¦¬à¦ªà§‚à¦°à§à¦£ à¦¤à¦¥à§à¦¯ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦«à§‹à¦¨à§‡à¥¤</p></div>
-      <div class="feature-card" onclick="openChat()"><div class="feature-icon red"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><h3 class="feature-title">à§¨à§ª/à§­ à¦—à§à¦°à¦¾à¦¹à¦• à¦¸à§‡à¦¬à¦¾</h3><p class="feature-desc">à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦¸à¦®à¦¸à§à¦¯à¦¾à¦¯à¦¼ à¦¹à§‹à¦¯à¦¼à¦¾à¦Ÿà¦¸à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¾ à¦Ÿà§‡à¦²à¦¿à¦—à§à¦°à¦¾à¦®à§‡ à¦¸à¦¾à¦¥à§‡ à¦¸à¦¾à¦¥à§‡ à¦¸à¦¾à¦¹à¦¾à¦¯à§à¦¯ à¦ªà¦¾à¦¨à¥¤</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('send')"><div class="feature-icon pink"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div><h3 class="feature-title">তাৎক্ষণিক টাকা পাঠান</h3><p class="feature-desc">মোবাইল নম্বর বা UID দিয়ে সেকেন্ডের মধ্যে টাকা পাঠান — কোন চার্জ ছাড়াই।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('secure')"><div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="feature-title">১০০% নিরাপদ লেনদেন</h3><p class="feature-desc">ব্যাংক-গ্রেড এনক্রিপশন এবং বায়োমেট্রিক লগইন দিয়ে আপনার অর্থ সুরক্ষিত।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('loan')"><div class="feature-icon green"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="feature-title">সহজ শর্তে ঋণ</h3><p class="feature-desc">কৃষি, ক্ষুদ্র ব্যবসা বা স্টার্টআপের জন্য ২৪ ঘণ্টায় ঋণ অনুমোদন।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('history')"><div class="feature-icon purple"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3 class="feature-title">লেনদেনের ইতিহাস</h3><p class="feature-desc">প্রতিটি লেনদেনের বিস্তারিত রেকর্ড এবং স্টেটমেন্ট ডাউনলোড সুবিধা।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('notify')"><div class="feature-icon orange"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3 class="feature-title">স্মার্ট নোটিফিকেশন</h3><p class="feature-desc">প্রতিটি লেনদেনের তাৎক্ষণিক আপডেট এবং গুরুত্বপূর্ণ তথ্য সরাসরি ফোনে।</p></div>
+      <div class="feature-card" onclick="openChat()"><div class="feature-icon red"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><h3 class="feature-title">২৪/৭ গ্রাহক সেবা</h3><p class="feature-desc">যেকোনো সমস্যায় হোয়াটসঅ্যাপ বা টেলিগ্রামে সাথে সাথে সাহায্য পান।</p></div>
     </div>
   </div>
 </section>
@@ -1354,10 +1354,10 @@ ul{list-style:none}
 <!-- STATS -->
 <section class="stats-band">
   <div class="container stats-grid">
-    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div><div class="stat-number" data-count="1000000">à§¦</div><div class="stat-label">à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦°à¦•à¦¾à¦°à§€</div></div>
-    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-number" data-count="5000" data-suffix="+">à§¦</div><div class="stat-label">à¦•à§‹à¦Ÿà¦¿ à¦Ÿà¦¾à¦•à¦¾ à¦²à§‡à¦¨à¦¦à§‡à¦¨</div></div>
-    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><div class="stat-number" data-count="64">à§¦</div><div class="stat-label">à¦œà§‡à¦²à¦¾à¦¯à¦¼ à¦¸à§‡à¦¬à¦¾</div></div>
-    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="stat-number" data-count="99.9" data-suffix="%" data-decimal="1">à§¦</div><div class="stat-label">à¦†à¦ªà¦Ÿà¦¾à¦‡à¦®</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div><div class="stat-number" data-count="1000000">০</div><div class="stat-label">সক্রিয় ব্যবহারকারী</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-number" data-count="5000" data-suffix="+">০</div><div class="stat-label">কোটি টাকা লেনদেন</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><div class="stat-number" data-count="64">০</div><div class="stat-label">জেলায় সেবা</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="stat-number" data-count="99.9" data-suffix="%" data-decimal="1">০</div><div class="stat-label">আপটাইম</div></div>
   </div>
 </section>
 
@@ -1365,15 +1365,15 @@ ul{list-style:none}
 <section class="section" id="how">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag">à¦¸à¦¹à¦œ à§ª à¦§à¦¾à¦ª</div>
-      <h2 class="section-title">à¦•à¦¿à¦­à¦¾à¦¬à§‡ à¦¶à§à¦°à§ à¦•à¦°à¦¬à§‡à¦¨</h2>
-      <p class="section-desc">à¦®à¦¾à¦¤à§à¦° à¦•à¦¯à¦¼à§‡à¦• à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨ à¦à¦¬à¦‚ à¦¸à¦¾à¦¥à§‡ à¦¸à¦¾à¦¥à§‡ à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¶à§à¦°à§ à¦•à¦°à§à¦¨à¥¤</p>
+      <div class="section-tag">সহজ ৪ ধাপ</div>
+      <h2 class="section-title">কিভাবে শুরু করবেন</h2>
+      <p class="section-desc">মাত্র কয়েক মিনিটে অ্যাকাউন্ট খুলুন এবং সাথে সাথে লেনদেন শুরু করুন।</p>
     </div>
     <div class="steps-grid">
-      <div class="step-card" onclick="openStepDetail(1)"><div class="step-number"><span class="badge">à§§</span><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div><h3 class="step-title">à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà§à¦°à§‡à¦¶à¦¨</h3><p class="step-desc">à¦¨à¦¾à¦®, à¦«à§‹à¦¨ à¦à¦¬à¦‚ NID à¦¦à¦¿à¦¯à¦¼à§‡ à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨à¥¤</p></div>
-      <div class="step-card" onclick="openStepDetail(2)"><div class="step-number"><span class="badge">à§¨</span><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="step-title">KYC à¦­à§‡à¦°à¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨</h3><p class="step-desc">OTP à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à§‡ à¦¸à¦¹à¦œà§‡à¦‡ à¦†à¦ªà¦¨à¦¾à¦° à¦ªà¦°à¦¿à¦šà¦¯à¦¼ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤ à¦•à¦°à§à¦¨à¥¤</p></div>
-      <div class="step-card" onclick="openStepDetail(3)"><div class="step-number"><span class="badge">à§©</span><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg></div><h3 class="step-title">à¦…à§à¦¯à¦¾à¦ª à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</h3><p class="step-desc">Android à¦¬à¦¾ iOS à¦¡à¦¿à¦­à¦¾à¦‡à¦¸à§‡ à¦…à§à¦¯à¦¾à¦ª à¦‡à¦¨à¦¸à§à¦Ÿà¦² à¦•à¦°à§à¦¨à¥¤</p></div>
-      <div class="step-card" onclick="openStepDetail(4)"><div class="step-number"><span class="badge">à§ª</span><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="step-title">à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¶à§à¦°à§</h3><p class="step-desc">à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨, à¦°à¦¿à¦¸à¦¿à¦­ à¦•à¦°à§à¦¨, à¦‹à¦£ à¦¨à¦¿à¦¨ â€” à¦¸à¦¬à¦•à¦¿à¦›à§ à¦à¦• à¦œà¦¾à¦¯à¦¼à¦—à¦¾à¦¯à¦¼à¥¤</p></div>
+      <div class="step-card" onclick="openStepDetail(1)"><div class="step-number"><span class="badge">১</span><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div><h3 class="step-title">রেজিস্ট্রেশন</h3><p class="step-desc">নাম, ফোন এবং NID দিয়ে ২ মিনিটে অ্যাকাউন্ট খুলুন।</p></div>
+      <div class="step-card" onclick="openStepDetail(2)"><div class="step-number"><span class="badge">২</span><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="step-title">KYC ভেরিফিকেশন</h3><p class="step-desc">OTP যাচাই করে সহজেই আপনার পরিচয় নিশ্চিত করুন।</p></div>
+      <div class="step-card" onclick="openStepDetail(3)"><div class="step-number"><span class="badge">৩</span><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg></div><h3 class="step-title">অ্যাপ ডাউনলোড</h3><p class="step-desc">Android বা iOS ডিভাইসে অ্যাপ ইনস্টল করুন।</p></div>
+      <div class="step-card" onclick="openStepDetail(4)"><div class="step-number"><span class="badge">৪</span><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="step-title">লেনদেন শুরু</h3><p class="step-desc">টাকা পাঠান, রিসিভ করুন, ঋণ নিন — সবকিছু এক জায়গায়।</p></div>
     </div>
   </div>
 </section>
@@ -1382,31 +1382,31 @@ ul{list-style:none}
 <section class="download" id="download">
   <div class="container download-grid">
     <div class="download-content">
-      <div class="section-tag">à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦…à§à¦¯à¦¾à¦ª</div>
-      <h2 class="section-title">à¦†à¦ªà¦¨à¦¾à¦° à¦«à§‹à¦¨à§‡ à¦¨à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦¨</h2>
-      <p class="section-desc">Android APK download à¦•à¦°à§à¦¨ à¦…à¦¥à¦¬à¦¾ iOS store link configure à¦•à¦°à§à¦¨à¥¤ à¦à¦Ÿà¦¿ unofficial educational demo.</p>
+      <div class="section-tag">মোবাইল অ্যাপ</div>
+      <h2 class="section-title">আপনার ফোনে নিয়ে যান</h2>
+      <p class="section-desc">Android APK সরাসরি download করুন। এটি unofficial educational demo এবং offline assets bundled package।</p>
       <div class="download-actions">
-        <a href="/downloads/probashi-bondhu-demo.apk" class="store-btn primary" download="probashi-bondhu-demo.apk">
+        <a href="/downloads/probashi-bondhu-demo.apk" download="probashi-bondhu-demo.apk" class="store-btn primary">
           <svg viewBox="0 0 24 24"><path d="M3.6 1.8a1.2 1.2 0 0 0-.4.9v18.6a1.2 1.2 0 0 0 .4.9l10.4-10.2L3.6 1.8zm11.8 8.2L5.7 2.4l10.5 6.1-2.8 1.5zm0 4.5-2.8-1.5L5.7 21.6l11.7-6.7-.1-.4zm4.8-3.3-3.3-1.9-3.1 1.7 3.1 1.7 3.3-1.9c.7-.4.7-1.3 0-1.6z"/></svg>
-          <div><div class="store-btn-sub">Direct Download</div><div class="store-btn-title">Android APK</div></div>
+          <div><div class="store-btn-sub">Direct download</div><div class="store-btn-title">Android APK</div></div>
         </a>
         <a href="#" class="store-btn" onclick="event.preventDefault();downloadApp('ios')">
-          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.35 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           <div><div class="store-btn-sub">Download on the</div><div class="store-btn-title">App Store</div></div>
         </a>
       </div>
       <div class="download-features">
-        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à¦«à§à¦°à¦¿ à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</div>
-        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à¦®à¦¾à¦¤à§à¦° à§§à§¨ MB</div>
+        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ফ্রি ডাউনলোড</div>
+        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Offline assets • 70–80 MB target</div>
         <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Android 6.0+</div>
       </div>
     </div>
     <div class="download-visual">
       <div class="qr-card">
-        <div class="qr-title">à¦¸à§à¦•à§à¦¯à¦¾à¦¨ à¦•à¦°à§‡ à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦•à¦°à§à¦¨</div>
-        <div class="qr-sub">à¦•à§à¦¯à¦¾à¦®à§‡à¦°à¦¾ à¦¦à¦¿à¦¯à¦¼à§‡ QR à¦•à§‹à¦¡ à¦¸à§à¦•à§à¦¯à¦¾à¦¨ à¦•à¦°à§à¦¨</div>
+        <div class="qr-title">স্ক্যান করে ডাউনলোড করুন</div>
+        <div class="qr-sub">ক্যামেরা দিয়ে QR কোড স্ক্যান করুন</div>
         <div class="qr-code" id="qrCode"></div>
-        <div class="qr-footer"><span class="dot"></span><span>Version 2.0.0 â€” Latest</span></div>
+        <div class="qr-footer"><span class="dot"></span><span>Version 4.4.0 — Latest Demo</span></div>
       </div>
     </div>
   </div>
@@ -1416,22 +1416,22 @@ ul{list-style:none}
 <section class="cta-banner">
   <div class="container">
     <div class="cta-inner">
-      <h2>à¦†à¦œà¦‡ à¦¶à§à¦°à§ à¦•à¦°à§à¦¨ à¦†à¦ªà¦¨à¦¾à¦° à¦†à¦°à§à¦¥à¦¿à¦• à¦¯à¦¾à¦¤à§à¦°à¦¾</h2>
-      <p>à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨ â€” à¦®à¦¾à¦¤à§à¦° à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡à¥¤ à¦•à§‹à¦¨à§‹ à¦²à§à¦•à¦¾à¦¨à§‹ à¦šà¦¾à¦°à§à¦œ à¦¨à§‡à¦‡, à¦•à§‹à¦¨à§‹ à¦à¦¾à¦®à§‡à¦²à¦¾ à¦¨à§‡à¦‡à¥¤</p>
+      <h2>আজই শুরু করুন আপনার আর্থিক যাত্রা</h2>
+      <p>বিনামূল্যে অ্যাকাউন্ট খুলুন — মাত্র ২ মিনিটে। কোনো লুকানো চার্জ নেই, কোনো ঝামেলা নেই।</p>
       <div class="cta-buttons">
         <button class="btn-primary" onclick="openAuth('signup')">
           <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          <span>à¦«à§à¦°à¦¿ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨</span>
+          <span>ফ্রি অ্যাকাউন্ট খুলুন</span>
         </button>
         <a href="#download" class="btn-secondary">
           <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
-          <span>à¦…à§à¦¯à¦¾à¦ª à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</span>
+          <span>অ্যাপ ডাউনলোড</span>
         </a>
       </div>
       <div class="cta-trust">
-        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à¦•à§‹à¦¨à§‹ à¦²à§à¦•à¦¾à¦¨à§‹ à¦šà¦¾à¦°à§à¦œ à¦¨à§‡à¦‡</span>
-        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à§§à§¦à§¦% à¦¨à¦¿à¦°à¦¾à¦ªà¦¦</span>
-        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à§¨à§ª/à§­ à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿ</span>
+        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>কোনো লুকানো চার্জ নেই</span>
+        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>১০০% নিরাপদ</span>
+        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>২৪/৭ সাপোর্ট</span>
       </div>
     </div>
   </div>
@@ -1441,30 +1441,30 @@ ul{list-style:none}
 <section class="section section--alt" id="faq">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag">à¦ªà§à¦°à¦¶à§à¦¨à§‹à¦¤à§à¦¤à¦°</div>
-      <h2 class="section-title">à¦¸à¦¾à¦§à¦¾à¦°à¦£ à¦œà¦¿à¦œà§à¦žà¦¾à¦¸à¦¾</h2>
-      <p class="section-desc">à¦†à¦ªà¦¨à¦¾à¦° à¦ªà§à¦°à¦¶à§à¦¨à§‡à¦° à¦‰à¦¤à§à¦¤à¦° à¦à¦–à¦¾à¦¨à§‡ à¦¨à¦¾ à¦ªà§‡à¦²à§‡ à¦†à¦®à¦¾à¦¦à§‡à¦° à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿ à¦Ÿà¦¿à¦®à§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦¯à§‹à¦—à¦¾à¦¯à§‹à¦— à¦•à¦°à§à¦¨à¥¤</p>
+      <div class="section-tag">প্রশ্নোত্তর</div>
+      <h2 class="section-title">সাধারণ জিজ্ঞাসা</h2>
+      <p class="section-desc">আপনার প্রশ্নের উত্তর এখানে না পেলে আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।</p>
     </div>
     <div style="max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
       <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à¦¤à§‡ à¦•à¦¿ à¦–à¦°à¦š à¦¹à¦¯à¦¼? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">à¦¨à¦¾, à¦¸à¦®à§à¦ªà§‚à¦°à§à¦£ à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§‹à¦²à¦¾ à¦¯à¦¾à¦¯à¦¼à¥¤ à¦•à§‹à¦¨à§‹ à¦²à§à¦•à¦¾à¦¨à§‹ à¦šà¦¾à¦°à§à¦œ à¦¨à§‡à¦‡à¥¤ à¦¶à§à¦§à§à¦®à¦¾à¦¤à§à¦° NID à¦à¦¬à¦‚ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦¦à¦¿à¦¯à¦¼à§‡ à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡ à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà§à¦°à§‡à¦¶à¦¨ à¦¸à¦®à§à¦ªà¦¨à§à¦¨ à¦•à¦°à§à¦¨à¥¤</div>
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">অ্যাকাউন্ট খুলতে কি খরচ হয়? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">না, সম্পূর্ণ বিনামূল্যে অ্যাকাউন্ট খোলা যায়। কোনো লুকানো চার্জ নেই। শুধুমাত্র NID এবং মোবাইল নম্বর দিয়ে ২ মিনিটে রেজিস্ট্রেশন সম্পন্ন করুন।</div>
       </details>
       <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">à¦¦à§ˆà¦¨à¦¿à¦• à¦•à¦¤ à¦Ÿà¦¾à¦•à¦¾ à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦•à¦°à¦¾ à¦¯à¦¾à¦¯à¦¼? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡à¦° à¦§à¦°à¦¨ à¦…à¦¨à§à¦¯à¦¾à¦¯à¦¼à§€ à¦¦à§ˆà¦¨à¦¿à¦• à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¸à§€à¦®à¦¾ à¦¨à¦¿à¦°à§à¦§à¦¾à¦°à¦¿à¦¤ à¦¹à¦¯à¦¼à¥¤ à¦¸à¦¾à¦§à¦¾à¦°à¦£à¦¤ à§¨à§«,à§¦à§¦à§¦ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦°à§à¦¯à¦¨à§à¦¤ à¦ªà¦¾à¦ à¦¾à¦¨à§‹ à¦à¦¬à¦‚ à§«à§¦,à§¦à§¦à§¦ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦°à§à¦¯à¦¨à§à¦¤ à¦—à§à¦°à¦¹à¦£ à¦•à¦°à¦¾ à¦¯à¦¾à¦¯à¦¼à¥¤</div>
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">দৈনিক কত টাকা লেনদেন করা যায়? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">আপনার অ্যাকাউন্টের ধরন অনুযায়ী দৈনিক লেনদেনের সীমা নির্ধারিত হয়। সাধারণত ২৫,০০০ টাকা পর্যন্ত পাঠানো এবং ৫০,০০০ টাকা পর্যন্ত গ্রহণ করা যায়।</div>
       </details>
       <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦­à§à¦²à§‡ à¦—à§‡à¦²à§‡ à¦•à¦¿ à¦•à¦°à¦¬? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">à¦²à¦—à¦‡à¦¨ à¦¸à§à¦•à§à¦°à¦¿à¦¨à§‡ "à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦­à§à¦²à§‡ à¦—à§‡à¦›à§‡à¦¨?" à¦…à¦ªà¦¶à¦¨à§‡ à¦•à§à¦²à¦¿à¦• à¦•à¦°à§‡ à¦†à¦ªà¦¨à¦¾à¦° à¦¨à¦¿à¦¬à¦¨à§à¦§à¦¿à¦¤ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦°à§‡ OTP à¦ªà¦¾à¦ à¦¾à¦¨à¥¤ OTP à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à§‡ à¦¸à¦¹à¦œà§‡à¦‡ à¦¨à¦¤à§à¦¨ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à¦¬à§‡à¦¨à¥¤</div>
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">পাসওয়ার্ড ভুলে গেলে কি করব? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">লগইন স্ক্রিনে "পাসওয়ার্ড ভুলে গেছেন?" অপশনে ক্লিক করে আপনার নিবন্ধিত মোবাইল নম্বরে OTP পাঠান। OTP যাচাই করে সহজেই নতুন পাসওয়ার্ড সেট করতে পারবেন।</div>
       </details>
       <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">à¦‹à¦£ à¦ªà§‡à¦¤à§‡ à¦•à¦¤ à¦¸à¦®à¦¯à¦¼ à¦²à¦¾à¦—à§‡? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">KYC à¦¸à¦®à§à¦ªà¦¨à§à¦¨ à¦¥à¦¾à¦•à¦²à§‡ à¦¸à¦¾à¦§à¦¾à¦°à¦£à¦¤ à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦° à¦®à¦§à§à¦¯à§‡ à¦‹à¦£ à¦†à¦¬à§‡à¦¦à¦¨ à¦¯à¦¾à¦šà¦¾à¦‡ à¦“ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨ à¦¹à¦¯à¦¼à¥¤ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨à§‡à¦° à¦ªà¦° à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦•à¦­à¦¾à¦¬à§‡ à¦Ÿà¦¾à¦•à¦¾ à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦œà¦®à¦¾ à¦¹à¦¯à¦¼à¥¤</div>
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">ঋণ পেতে কত সময় লাগে? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">KYC সম্পন্ন থাকলে সাধারণত ২৪ ঘণ্টার মধ্যে ঋণ আবেদন যাচাই ও অনুমোদন হয়। অনুমোদনের পর তাৎক্ষণিকভাবে টাকা আপনার অ্যাকাউন্টে জমা হয়।</div>
       </details>
       <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">à¦†à¦®à¦¾à¦° à¦¤à¦¥à§à¦¯ à¦•à¦¿ à¦¨à¦¿à¦°à¦¾à¦ªà¦¦? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
-        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">à¦¹à§à¦¯à¦¾à¦, à§§à§¦à§¦%à¥¤ à¦†à¦®à¦°à¦¾ à§¨à§«à§¬-à¦¬à¦¿à¦Ÿ AES à¦à¦¨à¦•à§à¦°à¦¿à¦ªà¦¶à¦¨, à¦¬à¦¾à¦¯à¦¼à§‹à¦®à§‡à¦Ÿà§à¦°à¦¿à¦• à¦²à¦—à¦‡à¦¨ à¦à¦¬à¦‚ à§¨à§ª/à§­ à¦«à§à¦°à¦¡ à¦®à¦¨à¦¿à¦Ÿà¦°à¦¿à¦‚ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¿à¥¤ à¦†à¦ªà¦¨à¦¾à¦° à¦•à§‹à¦¨à§‹ à¦¤à¦¥à§à¦¯ à¦¤à§ƒà¦¤à§€à¦¯à¦¼ à¦ªà¦•à§à¦·à§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦¶à§‡à¦¯à¦¼à¦¾à¦° à¦•à¦°à¦¾ à¦¹à¦¯à¦¼ à¦¨à¦¾à¥¤</div>
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">আমার তথ্য কি নিরাপদ? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">হ্যাঁ, ১০০%। আমরা ২৫৬-বিট AES এনক্রিপশন, বায়োমেট্রিক লগইন এবং ২৪/৭ ফ্রড মনিটরিং ব্যবহার করি। আপনার কোনো তথ্য তৃতীয় পক্ষের সাথে শেয়ার করা হয় না।</div>
       </details>
     </div>
   </div>
@@ -1481,7 +1481,7 @@ ul{list-style:none}
           <div class="footer-logo">
             <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
               <defs><path id="topArcF" d="M 72 192 A 132 132 0 0 1 328 192"/></defs>
-              <text fill="#08752f" font-size="34" font-weight="700" font-family="Arial"><textPath href="#topArcF" startOffset="50%" text-anchor="middle">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</textPath></text>
+              <text fill="#08752f" font-size="34" font-weight="700" font-family="Arial"><textPath href="#topArcF" startOffset="50%" text-anchor="middle">বাংলাদেশ ব্যাংক</textPath></text>
               <g fill="none" stroke="#08752f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M 140 154 L 200 111 L 260 154 Z" fill="#fff"/>
                 <path d="M 145 154 L 255 154"/>
@@ -1491,51 +1491,51 @@ ul{list-style:none}
             </svg>
           </div>
           <div>
-            <div class="footer-brand-title">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</div>
+            <div class="footer-brand-title">বাংলাদেশ ব্যাংক</div>
             <div class="footer-brand-sub">MOBILE BANKING</div>
           </div>
         </div>
-        <p class="footer-brand-desc">à¦†à¦ªà¦¨à¦¾à¦° à¦¬à¦¿à¦¶à§à¦¬à¦¸à§à¦¤ à¦†à¦°à§à¦¥à¦¿à¦• à¦¸à¦™à§à¦—à§€à¥¤ à¦¨à¦¿à¦°à¦¾à¦ªà¦¦, à¦¦à§à¦°à§à¦¤ à¦à¦¬à¦‚ à¦¸à¦¹à¦œ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¬à§à¦¯à¦¾à¦‚à¦•à¦¿à¦‚ à¦¸à§‡à¦¬à¦¾ à¦¸à¦¬à¦¾à¦° à¦œà¦¨à§à¦¯à¥¤</p>
+        <p class="footer-brand-desc">আপনার বিশ্বস্ত আর্থিক সঙ্গী। নিরাপদ, দ্রুত এবং সহজ মোবাইল ব্যাংকিং সেবা সবার জন্য।</p>
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" class="fill"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07"/></svg></a>
           <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" class="fill"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.96 6.82H1.69l7.73-8.84L1.25 2.25h6.82l4.71 6.23 5.46-6.23zm-1.16 17.52h1.83L7.01 4.13H5.04l12.04 15.64z"/></svg></a>
           <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" class="fill"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
-          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.37 2.37 4.37 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>à¦¸à§‡à¦¬à¦¾à¦¸à¦®à§‚à¦¹</h4>
+        <h4>সেবাসমূহ</h4>
         <ul>
-          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨</a></li>
-          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">à¦Ÿà¦¾à¦•à¦¾ à¦°à¦¿à¦¸à¦¿à¦­</a></li>
-          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">à¦‹à¦£ à¦¸à§‡à¦¬à¦¾</a></li>
-          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">à¦¬à¦¿à¦² à¦ªà§‡à¦®à§‡à¦¨à§à¦Ÿ</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">টাকা পাঠান</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">টাকা রিসিভ</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">ঋণ সেবা</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">বিল পেমেন্ট</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>à¦•à§‹à¦®à§à¦ªà¦¾à¦¨à¦¿</h4>
+        <h4>কোম্পানি</h4>
         <ul>
-          <li><a href="#">à¦†à¦®à¦¾à¦¦à§‡à¦° à¦¸à¦®à§à¦ªà¦°à§à¦•à§‡</a></li>
-          <li><a href="#">à¦•à§à¦¯à¦¾à¦°à¦¿à¦¯à¦¼à¦¾à¦°</a></li>
-          <li><a href="#">à¦ªà§à¦°à§‡à¦¸ à¦•à¦¿à¦Ÿ</a></li>
-          <li><a href="#">à¦¬à§à¦²à¦—</a></li>
+          <li><a href="#">আমাদের সম্পর্কে</a></li>
+          <li><a href="#">ক্যারিয়ার</a></li>
+          <li><a href="#">প্রেস কিট</a></li>
+          <li><a href="#">ব্লগ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>à¦¸à¦¹à¦¾à¦¯à¦¼à¦¤à¦¾</h4>
+        <h4>সহায়তা</h4>
         <ul>
-          <li><a href="#" onclick="event.preventDefault();openChat()">à¦¯à§‹à¦—à¦¾à¦¯à§‹à¦—</a></li>
+          <li><a href="#" onclick="event.preventDefault();openChat()">যোগাযোগ</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#">à¦ªà§à¦°à¦¾à¦‡à¦­à§‡à¦¸à¦¿ à¦ªà¦²à¦¿à¦¸à¦¿</a></li>
-          <li><a href="#">à¦¶à¦°à§à¦¤à¦¾à¦¬à¦²à§€</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">শর্তাবলী</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>à¦¯à§‹à¦—à¦¾à¦¯à§‹à¦—</h4>
+        <h4>যোগাযোগ</h4>
         <ul class="footer-contact">
-          <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+880123456789">+à§®à§®à§¦ à§§à§¨à§©à§ª-à§«à§¬à§­à§®à§¯</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+880123456789">+৮৮০ ১২৩৪-৫৬৭৮৯</a></li>
           <li><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:support@bd-bank.com">support@bd-bank.com</a></li>
-          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>à¦¢à¦¾à¦•à¦¾, à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>ঢাকা, বাংলাদেশ</span></li>
         </ul>
       </div>
     </div>
@@ -1546,47 +1546,47 @@ ul{list-style:none}
       <span class="footer-badge"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Bangladesh Bank Licensed</span>
     </div>
     <div class="footer-bottom">
-      <div>Â© à§¨à§¦à§¨à§« à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦• à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¬à§à¦¯à¦¾à¦‚à¦•à¦¿à¦‚à¥¤ à¦¸à¦°à§à¦¬à¦¸à§à¦¬à¦¤à§à¦¬ à¦¸à¦‚à¦°à¦•à§à¦·à¦¿à¦¤à¥¤</div>
+      <div>© ২০২৫ বাংলাদেশ ব্যাংক মোবাইল ব্যাংকিং। সর্বস্বত্ব সংরক্ষিত।</div>
       <div class="footer-bottom-links">
-        <a href="#">à¦—à§‹à¦ªà¦¨à§€à¦¯à¦¼à¦¤à¦¾</a>
-        <a href="#">à¦¶à¦°à§à¦¤à¦¾à¦¬à¦²à§€</a>
-        <a href="#">à¦•à§à¦•à¦¿</a>
+        <a href="#">গোপনীয়তা</a>
+        <a href="#">শর্তাবলী</a>
+        <a href="#">কুকি</a>
       </div>
     </div>
   </div>
 </footer>
 
-<button class="back-to-top" id="backToTop" aria-label="à¦‰à¦ªà¦°à§‡ à¦¯à¦¾à¦¨"><svg viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg></button>
-<button class="chat-widget" id="chatWidget" aria-label="à¦šà§à¦¯à¦¾à¦Ÿ"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="chat-badge">à§§</span></button>
+<button class="back-to-top" id="backToTop" aria-label="উপরে যান"><svg viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg></button>
+<button class="chat-widget" id="chatWidget" aria-label="চ্যাট"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="chat-badge">১</span></button>
 
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
-    <div class="chat-head-avatar">à¦¬à¦†</div>
-    <div class="chat-head-info"><div class="chat-head-name">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦• à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿ</div><div class="chat-head-status"><span class="dot"></span>à¦…à¦¨à¦²à¦¾à¦‡à¦¨à§‡ à¦†à¦›à¦¿</div></div>
+    <div class="chat-head-avatar">বআ</div>
+    <div class="chat-head-info"><div class="chat-head-name">বাংলাদেশ ব্যাংক সাপোর্ট</div><div class="chat-head-status"><span class="dot"></span>অনলাইনে আছি</div></div>
     <button class="chat-head-close" onclick="closeChat()"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="chat-body" id="chatBody">
-    <div class="chat-msg bot">à¦†à¦¸à¦¸à¦¾à¦²à¦¾à¦®à§ à¦†à¦²à¦¾à¦‡à¦•à§à¦®! ðŸ‘‹<br>à¦†à¦®à¦¿ à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•à§‡à¦° à¦¡à¦¿à¦œà¦¿à¦Ÿà¦¾à¦² à¦¸à¦¹à¦•à¦¾à¦°à§€à¥¤ à¦•à§€à¦­à¦¾à¦¬à§‡ à¦¸à¦¾à¦¹à¦¾à¦¯à§à¦¯ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à¦¿?<div class="chat-msg-time">à¦à¦–à¦¨</div></div>
+    <div class="chat-msg bot">আসসালামু আলাইকুম! 👋<br>আমি বাংলাদেশ ব্যাংকের ডিজিটাল সহকারী। কীভাবে সাহায্য করতে পারি?<div class="chat-msg-time">এখন</div></div>
   </div>
   <div class="chat-quick">
-    <button class="chat-quick-btn" onclick="sendQuick('à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à¦¤à§‡ à¦šà¦¾à¦‡')">à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à¦¤à§‡ à¦šà¦¾à¦‡</button>
-    <button class="chat-quick-btn" onclick="sendQuick('à¦‹à¦£ à¦¨à¦¿à¦¤à§‡ à¦šà¦¾à¦‡')">à¦‹à¦£ à¦¨à¦¿à¦¤à§‡ à¦šà¦¾à¦‡</button>
-    <button class="chat-quick-btn" onclick="sendQuick('à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¸à§€à¦®à¦¾ à¦•à¦¤?')">à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¸à§€à¦®à¦¾</button>
-    <button class="chat-quick-btn" onclick="sendQuick('à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦²à¦¿à¦‚à¦•')">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</button>
+    <button class="chat-quick-btn" onclick="sendQuick('অ্যাকাউন্ট খুলতে চাই')">অ্যাকাউন্ট খুলতে চাই</button>
+    <button class="chat-quick-btn" onclick="sendQuick('ঋণ নিতে চাই')">ঋণ নিতে চাই</button>
+    <button class="chat-quick-btn" onclick="sendQuick('লেনদেন সীমা কত?')">লেনদেন সীমা</button>
+    <button class="chat-quick-btn" onclick="sendQuick('ডাউনলোড লিংক')">ডাউনলোড</button>
   </div>
   <form class="chat-foot" onsubmit="return sendChat(event)">
-    <input type="text" class="chat-input" id="chatInput" placeholder="à¦†à¦ªà¦¨à¦¾à¦° à¦ªà§à¦°à¦¶à§à¦¨ à¦²à¦¿à¦–à§à¦¨..." autocomplete="off">
-    <button type="submit" class="chat-send" aria-label="à¦ªà¦¾à¦ à¦¾à¦¨"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+    <input type="text" class="chat-input" id="chatInput" placeholder="আপনার প্রশ্ন লিখুন..." autocomplete="off">
+    <button type="submit" class="chat-send" aria-label="পাঠান"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
   </form>
 </div>
 
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1.2" fill="#fff" stroke="none"/><circle cx="15" cy="10" r="1.2" fill="#fff" stroke="none"/><circle cx="10" cy="15" r="1.2" fill="#fff" stroke="none"/></svg></div>
-  <div class="cookie-title">à¦•à§à¦•à¦¿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦°</div>
-  <div class="cookie-text">à¦†à¦®à¦°à¦¾ à¦†à¦ªà¦¨à¦¾à¦° à¦…à¦­à¦¿à¦œà§à¦žà¦¤à¦¾ à¦‰à¦¨à§à¦¨à¦¤ à¦•à¦°à¦¤à§‡ à¦•à§à¦•à¦¿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¿à¥¤</div>
+  <div class="cookie-title">কুকি ব্যবহার</div>
+  <div class="cookie-text">আমরা আপনার অভিজ্ঞতা উন্নত করতে কুকি ব্যবহার করি।</div>
   <div class="cookie-actions">
-    <button class="cookie-btn secondary" onclick="dismissCookie()">à¦ªà¦°à§‡</button>
-    <button class="cookie-btn primary" onclick="acceptCookie()">à¦¸à¦®à§à¦®à¦¤ à¦†à¦›à¦¿</button>
+    <button class="cookie-btn secondary" onclick="dismissCookie()">পরে</button>
+    <button class="cookie-btn primary" onclick="acceptCookie()">সম্মত আছি</button>
   </div>
 </div>
 
@@ -1595,7 +1595,7 @@ ul{list-style:none}
 <aside class="demo-panel" id="demoPanel" aria-hidden="true">
   <div class="demo-head">
     <div class="demo-head-icon" id="demoHeadIcon"></div>
-    <div class="demo-head-info"><div class="demo-head-title" id="demoHeadTitle">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•</div><div class="demo-head-sub" id="demoHeadSub">à¦¡à§‡à¦®à§‹ à¦®à§‹à¦¡</div></div>
+    <div class="demo-head-info"><div class="demo-head-title" id="demoHeadTitle">বাংলাদেশ ব্যাংক</div><div class="demo-head-sub" id="demoHeadSub">ডেমো মোড</div></div>
     <button class="demo-head-close" onclick="closeDemo()"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="demo-body" id="demoBody"></div>
@@ -1604,7 +1604,7 @@ ul{list-style:none}
 <!-- ENHANCED AUTH MODAL -->
 <div class="auth-overlay" id="authModal" onclick="if(event.target===this)closeAuth()">
   <div class="auth-modal" id="authModalInner">
-    <button class="auth-close" onclick="closeAuth()" aria-label="à¦¬à¦¨à§à¦§ à¦•à¦°à§à¦¨">
+    <button class="auth-close" onclick="closeAuth()" aria-label="বন্ধ করুন">
       <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
 
@@ -1614,15 +1614,15 @@ ul{list-style:none}
         <div class="auth-logo">
           <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
         </div>
-        <h2 id="authTitle">à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®!</h2>
-        <p id="authSub">à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦ªà§à¦°à¦¬à§‡à¦¶ à¦•à¦°à§à¦¨ à¦…à¦¥à¦¬à¦¾ à¦¨à¦¤à§à¦¨ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨</p>
+        <h2 id="authTitle">স্বাগতম!</h2>
+        <p id="authSub">আপনার অ্যাকাউন্টে প্রবেশ করুন অথবা নতুন অ্যাকাউন্ট খুলুন</p>
       </div>
 
       <div class="auth-body">
         <div class="auth-tabs" data-mode="signin" id="authTabs">
           <div class="auth-tab-slider"></div>
-          <button class="auth-tab active" data-tab="signin" onclick="switchTab('signin')">à¦²à¦—à¦‡à¦¨</button>
-          <button class="auth-tab" data-tab="signup" onclick="switchTab('signup')">à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦°</button>
+          <button class="auth-tab active" data-tab="signin" onclick="switchTab('signin')">লগইন</button>
+          <button class="auth-tab" data-tab="signup" onclick="switchTab('signup')">রেজিস্টার</button>
         </div>
 
         <form id="authForm" onsubmit="return submitAuth(event)" autocomplete="on">
@@ -1630,40 +1630,40 @@ ul{list-style:none}
           <div class="signup-field">
             <div class="auth-field">
               <input type="text" class="auth-field-input" id="fullName" placeholder=" " autocomplete="name">
-              <label class="auth-field-label" for="fullName">à¦ªà§‚à¦°à§à¦£ à¦¨à¦¾à¦®</label>
+              <label class="auth-field-label" for="fullName">পূর্ণ নাম</label>
             </div>
-            <div class="auth-error" id="err-fullName"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>à¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ à¦ªà§‚à¦°à§à¦£ à¦¨à¦¾à¦® à¦²à¦¿à¦–à§à¦¨</span></div>
+            <div class="auth-error" id="err-fullName"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>অনুগ্রহ করে পূর্ণ নাম লিখুন</span></div>
           </div>
 
           <div class="signup-field">
             <div class="auth-field">
               <input type="text" class="auth-field-input" id="nidInput" placeholder=" " inputmode="numeric" autocomplete="off">
-              <label class="auth-field-label" for="nidInput">NID (à¦¡à§‡à¦®à§‹à¦¤à§‡ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨)</label>
+              <label class="auth-field-label" for="nidInput">NID (ডেমোতে ব্যবহার করুন)</label>
             </div>
-            <div class="auth-error" id="err-nidInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>à§§à§¦ à¦¬à¦¾ à§§à§­ à¦¡à¦¿à¦œà¦¿à¦Ÿà§‡à¦° à¦¡à§‡à¦®à§‹ NID à¦¦à¦¿à¦¨</span></div>
+            <div class="auth-error" id="err-nidInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>১০ বা ১৭ ডিজিটের ডেমো NID দিন</span></div>
           </div>
 
           <div class="signup-field">
             <div class="auth-field">
               <input type="tel" class="auth-field-input" id="mobileInput" placeholder=" " inputmode="tel" autocomplete="tel">
-              <label class="auth-field-label" for="mobileInput">à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦°</label>
+              <label class="auth-field-label" for="mobileInput">মোবাইল নম্বর</label>
               <div class="auth-field-icon" id="mobileIcon"></div>
             </div>
-            <div class="auth-error" id="err-mobileInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>à¦¬à§ˆà¦§ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦²à¦¿à¦–à§à¦¨</span></div>
+            <div class="auth-error" id="err-mobileInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>বৈধ মোবাইল নম্বর লিখুন</span></div>
           </div>
 
           <!-- Email / mobile login -->
           <div class="auth-field">
             <input type="text" class="auth-field-input" id="emailInput" placeholder=" " autocomplete="username">
-            <label class="auth-field-label" for="emailInput">à¦‡à¦®à§‡à¦‡à¦² à¦¬à¦¾ à¦®à§‹à¦¬à¦¾à¦‡à¦²</label>
+            <label class="auth-field-label" for="emailInput">ইমেইল বা মোবাইল</label>
             <div class="auth-field-icon" id="emailIcon"></div>
           </div>
-          <div class="auth-error" id="err-emailInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>à¦‡à¦®à§‡à¦‡à¦² à¦¬à¦¾ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¸à¦ à¦¿à¦•à¦­à¦¾à¦¬à§‡ à¦¦à¦¿à¦¨</span></div>
+          <div class="auth-error" id="err-emailInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>ইমেইল বা মোবাইল সঠিকভাবে দিন</span></div>
 
           <!-- Password -->
           <div class="auth-field" style="margin-top:18px">
             <input type="password" class="auth-field-input" id="passwordInput" placeholder=" " autocomplete="current-password" oninput="checkPasswordStrength(this.value)">
-            <label class="auth-field-label" for="passwordInput">à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡</label>
+            <label class="auth-field-label" for="passwordInput">পাসওয়ার্ড</label>
             <div class="auth-field-icon" id="pwToggle" onclick="togglePassword()">
               <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
@@ -1676,13 +1676,13 @@ ul{list-style:none}
             </div>
             <div class="pw-meter-label" id="pwLabel"></div>
           </div>
-          <div class="auth-error" id="err-passwordInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦•à¦®à¦ªà¦•à§à¦·à§‡ à§¬ à¦…à¦•à§à¦·à¦°à§‡à¦° à¦¹à¦¤à§‡ à¦¹à¦¬à§‡</span></div>
+          <div class="auth-error" id="err-passwordInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে</span></div>
 
           <!-- Terms (signup only) -->
           <div class="signup-field">
             <label class="auth-terms">
               <input type="checkbox" id="termsCheck">
-              <span>à¦†à¦®à¦¿ <a href="#" onclick="event.preventDefault()">à¦¶à¦°à§à¦¤à¦¾à¦¬à¦²à§€</a> à¦“ <a href="#" onclick="event.preventDefault()">à¦ªà§à¦°à¦¾à¦‡à¦­à§‡à¦¸à¦¿ à¦ªà¦²à¦¿à¦¸à¦¿</a> à¦¤à§‡ à¦¸à¦®à§à¦®à¦¤ à¦†à¦›à¦¿</span>
+              <span>আমি <a href="#" onclick="event.preventDefault()">শর্তাবলী</a> ও <a href="#" onclick="event.preventDefault()">প্রাইভেসি পলিসি</a> তে সম্মত আছি</span>
             </label>
           </div>
 
@@ -1690,23 +1690,23 @@ ul{list-style:none}
           <div class="auth-options">
             <label class="auth-check signin-only-option">
               <input type="checkbox" id="rememberMe" checked>
-              <span>à¦®à¦¨à§‡ à¦°à¦¾à¦–à§à¦¨</span>
+              <span>মনে রাখুন</span>
             </label>
-            <a href="#" class="auth-link signin-only-option" onclick="event.preventDefault();forgotPassword()">à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦­à§à¦²à§‡ à¦—à§‡à¦›à§‡à¦¨?</a>
+            <a href="#" class="auth-link signin-only-option" onclick="event.preventDefault();forgotPassword()">পাসওয়ার্ড ভুলে গেছেন?</a>
           </div>
 
           <button type="submit" class="auth-submit" id="authSubmit">
             <span class="spinner"></span>
-            <span class="label" id="authBtnLabel">à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨</span>
+            <span class="label" id="authBtnLabel">লগইন করুন</span>
             <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
         </form>
 
-        <div class="auth-divider">à¦…à¦¥à¦¬à¦¾</div>
+        <div class="auth-divider">অথবা</div>
 
         <div class="auth-social">
           <button type="button" class="auth-social-btn" onclick="socialLogin('Google')">
-            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.36h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.31 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
             Google
           </button>
           <button type="button" class="auth-social-btn" onclick="socialLogin('Facebook')">
@@ -1716,7 +1716,7 @@ ul{list-style:none}
         </div>
 
         <div class="auth-foot" id="authFoot">
-          à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¨à§‡à¦‡? <a href="#" onclick="event.preventDefault();switchTab('signup')">à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨</a>
+          অ্যাকাউন্ট নেই? <a href="#" onclick="event.preventDefault();switchTab('signup')">রেজিস্টার করুন</a>
         </div>
       </div>
     </div>
@@ -1726,10 +1726,10 @@ ul{list-style:none}
       <div class="auth-success-icon">
         <svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>
       </div>
-      <h3 id="successTitle">à¦¸à¦«à¦² à¦¹à¦¯à¦¼à§‡à¦›à§‡!</h3>
-      <p id="successDesc">à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¤à§ˆà¦°à¦¿ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤ KYC à¦¸à¦®à§à¦ªà¦¨à§à¦¨ à¦•à¦°à§à¦¨à¥¤</p>
+      <h3 id="successTitle">সফল হয়েছে!</h3>
+      <p id="successDesc">আপনার অ্যাকাউন্ট তৈরি হয়েছে। KYC সম্পন্ন করুন।</p>
       <button class="auth-submit" onclick="closeAuth()" style="max-width:240px;margin:0 auto">
-        <span class="label">à¦¶à§à¦°à§ à¦•à¦°à§à¦¨</span>
+        <span class="label">শুরু করুন</span>
         <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </button>
     </div>
@@ -1739,21 +1739,21 @@ ul{list-style:none}
 <!-- DOWNLOAD MODAL -->
 <div class="auth-overlay" id="dlModal" onclick="if(event.target===this)closeDlModal()">
   <div class="auth-modal" style="max-width:420px">
-    <button class="auth-close" onclick="closeDlModal()" aria-label="à¦¬à¦¨à§à¦§ à¦•à¦°à§à¦¨"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <button class="auth-close" onclick="closeDlModal()" aria-label="বন্ধ করুন"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     <div class="auth-hero" style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(41,182,246,.06))">
       <div class="auth-logo" style="background:var(--grad-green);box-shadow:0 20px 40px rgba(22,163,74,.35)">
         <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
       </div>
-      <h2>à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦¶à§à¦°à§ à¦¹à¦šà§à¦›à§‡</h2>
-      <p id="dlModalSub">à¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ à¦…à¦ªà§‡à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨...</p>
+      <h2>ডাউনলোড শুরু হচ্ছে</h2>
+      <p id="dlModalSub">অনুগ্রহ করে অপেক্ষা করুন...</p>
     </div>
     <div class="auth-body">
       <div class="demo-form" style="margin-bottom:20px">
         <div style="display:flex;align-items:center;gap:14px">
           <div id="dlPlatformIcon" style="width:52px;height:52px;border-radius:14px;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-sm);flex-shrink:0"></div>
           <div style="flex:1">
-            <div style="font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:2px" id="dlPlatformName">à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦• à¦…à§à¦¯à¦¾à¦ª</div>
-            <div style="font-size:12.5px;color:var(--muted)" id="dlPlatformSize">à§§à§¨.à§ª MB</div>
+            <div style="font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:2px" id="dlPlatformName">বাংলাদেশ ব্যাংক অ্যাপ</div>
+            <div style="font-size:12.5px;color:var(--muted)" id="dlPlatformSize">১২.৪ MB</div>
           </div>
         </div>
       </div>
@@ -1761,39 +1761,39 @@ ul{list-style:none}
         <div id="dlProgressFill" style="height:100%;width:0;border-radius:4px;background:var(--grad-pink);transition:width .3s var(--ease);box-shadow:0 0 12px rgba(220,15,104,.4)"></div>
       </div>
       <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:22px">
-        <span id="dlProgressLabel">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦¹à¦šà§à¦›à§‡...</span>
-        <span class="pct" id="dlProgressPct" style="color:var(--pink);font-family:'Inter',sans-serif">à§¦%</span>
+        <span id="dlProgressLabel">ডাউনলোড হচ্ছে...</span>
+        <span class="pct" id="dlProgressPct" style="color:var(--pink);font-family:'Inter',sans-serif">০%</span>
       </div>
       <button class="auth-submit" id="dlDoneBtn" style="display:none;background:var(--grad-green)" onclick="finishDownload(window.__downloadPlatform||'android')">
         <svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>
-        <span class="label">à¦‡à¦¨à¦¸à§à¦Ÿà¦² à¦•à¦°à§à¦¨</span>
+        <span class="label">ইনস্টল করুন</span>
       </button>
     </div>
   </div>
 </div>
 
 <script>
-/* â•â•â• HELPERS â•â•â• */
-function toBn(n){const m=['à§¦','à§§','à§¨','à§©','à§ª','à§«','à§¬','à§­','à§®','à§¯'];return String(n).split('').map(c=>m[+c]!==undefined?m[+c]:c).join('')}
+/* ═══ HELPERS ═══ */
+function toBn(n){const m=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];return String(n).split('').map(c=>m[+c]!==undefined?m[+c]:c).join('')}
 function formatBn(n){return toBn(n.toLocaleString('en-IN'))}
 function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 
-/* â•â•â• THEME â•â•â• */
+/* ═══ THEME ═══ */
 const htmlEl=document.documentElement;
 const savedTheme=localStorage.getItem('theme');
 const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
 htmlEl.setAttribute('data-theme',savedTheme==='dark'||(!savedTheme&&prefersDark)?'dark':'light');
-function toggleTheme(){const c=htmlEl.getAttribute('data-theme');const n=c==='dark'?'light':'dark';htmlEl.setAttribute('data-theme',n);localStorage.setItem('theme',n);showToast('info',n==='dark'?'ðŸŒ™ à¦¡à¦¾à¦°à§à¦• à¦®à§‹à¦¡':'â˜€ï¸ à¦²à¦¾à¦‡à¦Ÿ à¦®à§‹à¦¡',n==='dark'?'à¦¡à¦¾à¦°à§à¦• à¦¥à¦¿à¦® à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤':'à¦²à¦¾à¦‡à¦Ÿ à¦¥à¦¿à¦® à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤')}
+function toggleTheme(){const c=htmlEl.getAttribute('data-theme');const n=c==='dark'?'light':'dark';htmlEl.setAttribute('data-theme',n);localStorage.setItem('theme',n);showToast('info',n==='dark'?'🌙 ডার্ক মোড':'☀️ লাইট মোড',n==='dark'?'ডার্ক থিম সক্রিয় করা হয়েছে।':'লাইট থিম সক্রিয় করা হয়েছে।')}
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',e=>{if(!localStorage.getItem('theme'))htmlEl.setAttribute('data-theme',e.matches?'dark':'light')});
 
-/* â•â•â• LANGUAGE â•â•â• */
+/* ═══ LANGUAGE ═══ */
 let currentLang=localStorage.getItem('lang')||'bn';
 function toggleLang(){
   currentLang=currentLang==='bn'?'en':'bn';
   localStorage.setItem('lang',currentLang);
   document.documentElement.setAttribute('lang',currentLang);
-  document.getElementById('langBtn').textContent=currentLang==='bn'?'EN':'à¦¬à¦¾à¦‚';
-  const map={bn:{login:'à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨',signup:'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨',welcome:'à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®!',welcomeSub:'à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦ªà§à¦°à¦¬à§‡à¦¶ à¦•à¦°à§à¦¨ à¦…à¦¥à¦¬à¦¾ à¦¨à¦¤à§à¦¨ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨',signupTitle:'à¦¨à¦¤à§à¦¨ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ',signupSub:'à¦®à¦¾à¦¤à§à¦° à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡ à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨',email:'à¦‡à¦®à§‡à¦‡à¦² à¦ à¦¿à¦•à¦¾à¦¨à¦¾',password:'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡',fullName:'à¦ªà§‚à¦°à§à¦£ à¦¨à¦¾à¦®',nid:'NID à¦¨à¦®à§à¦¬à¦° (à§§à§¦ à¦¬à¦¾ à§§à§­ à¦¡à¦¿à¦œà¦¿à¦Ÿ)',remember:'à¦®à¦¨à§‡ à¦°à¦¾à¦–à§à¦¨',forgot:'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦­à§à¦²à§‡ à¦—à§‡à¦›à§‡à¦¨?',or:'à¦…à¦¥à¦¬à¦¾',noAccount:'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¨à§‡à¦‡?',haveAccount:'à¦‡à¦¤à¦¿à¦®à¦§à§à¦¯à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦†à¦›à§‡?',registerHere:'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨',loginHere:'à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨'},en:{login:'Login',signup:'Register',welcome:'Welcome!',welcomeSub:'Sign in to your account or create a new one',signupTitle:'New Account',signupSub:'Create a free account in just 2 minutes',email:'Email address',password:'Password',fullName:'Full name',nid:'NID Number (10 or 17 digits)',remember:'Remember me',forgot:'Forgot password?',or:'OR',noAccount:"Don't have an account?",haveAccount:'Already have an account?',registerHere:'Register',loginHere:'Login'}};
+  document.getElementById('langBtn').textContent=currentLang==='bn'?'EN':'বাং';
+  const map={bn:{login:'লগইন করুন',signup:'রেজিস্টার করুন',welcome:'স্বাগতম!',welcomeSub:'আপনার অ্যাকাউন্টে প্রবেশ করুন অথবা নতুন অ্যাকাউন্ট খুলুন',signupTitle:'নতুন অ্যাকাউন্ট',signupSub:'মাত্র ২ মিনিটে বিনামূল্যে অ্যাকাউন্ট খুলুন',email:'ইমেইল ঠিকানা',password:'পাসওয়ার্ড',fullName:'পূর্ণ নাম',nid:'NID নম্বর (১০ বা ১৭ ডিজিট)',remember:'মনে রাখুন',forgot:'পাসওয়ার্ড ভুলে গেছেন?',or:'অথবা',noAccount:'অ্যাকাউন্ট নেই?',haveAccount:'ইতিমধ্যে অ্যাকাউন্ট আছে?',registerHere:'রেজিস্টার করুন',loginHere:'লগইন করুন'},en:{login:'Login',signup:'Register',welcome:'Welcome!',welcomeSub:'Sign in to your account or create a new one',signupTitle:'New Account',signupSub:'Create a free account in just 2 minutes',email:'Email address',password:'Password',fullName:'Full name',nid:'NID Number (10 or 17 digits)',remember:'Remember me',forgot:'Forgot password?',or:'OR',noAccount:"Don't have an account?",haveAccount:'Already have an account?',registerHere:'Register',loginHere:'Login'}};
   const t=map[currentLang];
   document.getElementById('authBtnLabel').textContent=state.authMode==='signup'?t.signup:t.login;
   document.getElementById('authTitle').textContent=state.authMode==='signup'?t.signupTitle:t.welcome;
@@ -1805,27 +1805,27 @@ function toggleLang(){
   if(labels[3])labels[3].textContent=t.password;
   document.querySelectorAll('.auth-divider')[0].textContent=t.or;
   document.getElementById('authFoot').innerHTML=`${state.authMode==='signup'?t.haveAccount:t.noAccount} <a href="#" onclick="event.preventDefault();switchTab('${state.authMode==='signup'?'signin':'signup'}')">${state.authMode==='signup'?t.loginHere:t.registerHere}</a>`;
-  showToast('info',currentLang==='bn'?'ðŸ‡§ðŸ‡© à¦¬à¦¾à¦‚à¦²à¦¾':'ðŸ‡¬ðŸ‡§ English',currentLang==='bn'?'à¦­à¦¾à¦·à¦¾ à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤':'Language switched.');
+  showToast('info',currentLang==='bn'?'🇧🇩 বাংলা':'🇬🇧 English',currentLang==='bn'?'ভাষা পরিবর্তন করা হয়েছে।':'Language switched.');
 }
-document.getElementById('langBtn').textContent=currentLang==='bn'?'EN':'à¦¬à¦¾à¦‚';
+document.getElementById('langBtn').textContent=currentLang==='bn'?'EN':'বাং';
 
-/* â•â•â• TOAST â•â•â• */
+/* ═══ TOAST ═══ */
 const toastWrap=document.getElementById('toastWrap');
 function showToast(type,title,text,duration=4000){
   const icons={success:'<path d="m5 12 5 5L20 7"/>',error:'<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>',info:'<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',default:'<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'};
   const el=document.createElement('div');
   el.className='toast '+type;
-  el.innerHTML=`<div class="toast-icon"><svg viewBox="0 0 24 24">${icons[type]||icons.default}</svg></div><div class="toast-body"><div class="toast-title">${title}</div>${text?`<div class="toast-text">${text}</div>`:''}</div><button class="toast-close" aria-label="à¦¬à¦¨à§à¦§"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>`;
+  el.innerHTML=`<div class="toast-icon"><svg viewBox="0 0 24 24">${icons[type]||icons.default}</svg></div><div class="toast-body"><div class="toast-title">${title}</div>${text?`<div class="toast-text">${text}</div>`:''}</div><button class="toast-close" aria-label="বন্ধ"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>`;
   toastWrap.appendChild(el);
   const rm=()=>{el.classList.add('removing');setTimeout(()=>el.remove(),300)};
   el.querySelector('.toast-close').addEventListener('click',rm);
   setTimeout(rm,duration);
 }
 
-/* â•â•â• STATE â•â•â• */
+/* ═══ STATE ═══ */
 const state={authMode:'signin',chatOpen:false,balanceVisible:true};
 
-/* â•â•â• SCROLL â•â•â• */
+/* ═══ SCROLL ═══ */
 const navbar=document.getElementById('navbar');
 const scrollProgress=document.getElementById('scrollProgress');
 const backToTop=document.getElementById('backToTop');
@@ -1841,7 +1841,7 @@ window.addEventListener('scroll',onScroll,{passive:true});
 onScroll();
 backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-/* â•â•â• MOBILE MENU â•â•â• */
+/* ═══ MOBILE MENU ═══ */
 const navToggle=document.getElementById('navToggle');
 const mobileMenu=document.getElementById('mobileMenu');
 const menuOverlay=document.getElementById('menuOverlay');
@@ -1849,7 +1849,7 @@ function openMobileMenu(){mobileMenu.classList.add('open');menuOverlay.classList
 function closeMobileMenu(){mobileMenu.classList.remove('open');menuOverlay.classList.remove('show');mobileMenu.setAttribute('aria-hidden','true');document.body.style.overflow=''}
 navToggle.addEventListener('click',()=>{mobileMenu.classList.contains('open')?closeMobileMenu():openMobileMenu()});
 
-/* â•â•â• SMOOTH SCROLL â•â•â• */
+/* ═══ SMOOTH SCROLL ═══ */
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener('click',e=>{
     const href=link.getAttribute('href');
@@ -1862,20 +1862,20 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
   });
 });
 
-/* â•â•â• COMMAND PALETTE â•â•â• */
+/* ═══ COMMAND PALETTE ═══ */
 const cmdkOverlay=document.getElementById('cmdkOverlay');
 const cmdkInput=document.getElementById('cmdkInput');
 const cmdkBody=document.getElementById('cmdkBody');
 const commands=[
-  {icon:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',title:'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨',desc:'à¦¨à¦¤à§à¦¨ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨',action:()=>openAuth('signup')},
-  {icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>',title:'à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨',desc:'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦ªà§à¦°à¦¬à§‡à¦¶ à¦•à¦°à§à¦¨',action:()=>openAuth('signin')},
-  {icon:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',title:'à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨',desc:'à¦¸à§‡à¦•à§‡à¦¨à§à¦¡à§‡ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨',action:()=>openDemo('send')},
-  {icon:'<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',title:'à¦Ÿà¦¾à¦•à¦¾ à¦°à¦¿à¦¸à¦¿à¦­',desc:'QR à¦•à§‹à¦¡ à¦¦à¦¿à¦¯à¦¼à§‡',action:()=>openDemo('receive')},
-  {icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',title:'à¦‹à¦£ à¦¨à¦¿à¦¨',desc:'à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨',action:()=>openDemo('loan')},
-  {icon:'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',title:'à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦‡à¦¤à¦¿à¦¹à¦¾à¦¸',desc:'à¦¸à¦¬ à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¦à§‡à¦–à§à¦¨',action:()=>openDemo('history')},
-  {icon:'<path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/>',title:'à¦…à§à¦¯à¦¾à¦ª à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡',desc:'Android / iOS',action:()=>downloadApp('android')},
-  {icon:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',title:'à¦²à¦¾à¦‡à¦­ à¦šà§à¦¯à¦¾à¦Ÿ',desc:'à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿ à¦Ÿà¦¿à¦®',action:openChat},
-  {icon:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',title:'à¦¥à¦¿à¦® à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨',desc:'à¦¡à¦¾à¦°à§à¦• / à¦²à¦¾à¦‡à¦Ÿ',action:toggleTheme}
+  {icon:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',title:'রেজিস্টার করুন',desc:'নতুন অ্যাকাউন্ট খুলুন',action:()=>openAuth('signup')},
+  {icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>',title:'লগইন করুন',desc:'অ্যাকাউন্টে প্রবেশ করুন',action:()=>openAuth('signin')},
+  {icon:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',title:'টাকা পাঠান',desc:'সেকেন্ডে টাকা পাঠান',action:()=>openDemo('send')},
+  {icon:'<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',title:'টাকা রিসিভ',desc:'QR কোড দিয়ে',action:()=>openDemo('receive')},
+  {icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',title:'ঋণ নিন',desc:'২৪ ঘণ্টায় অনুমোদন',action:()=>openDemo('loan')},
+  {icon:'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',title:'লেনদেনের ইতিহাস',desc:'সব লেনদেন দেখুন',action:()=>openDemo('history')},
+  {icon:'<path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/>',title:'অ্যাপ ডাউনলোড',desc:'Android / iOS',action:()=>downloadApp('android')},
+  {icon:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',title:'লাইভ চ্যাট',desc:'সাপোর্ট টিম',action:openChat},
+  {icon:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',title:'থিম পরিবর্তন',desc:'ডার্ক / লাইট',action:toggleTheme}
 ];
 let cmdkActiveIndex=0,cmdkFiltered=[...commands];
 function openCmdK(){cmdkOverlay.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>cmdkInput.focus(),100);renderCmdk('')}
@@ -1884,8 +1884,8 @@ function renderCmdk(q){
   const query=q.toLowerCase().trim();
   cmdkFiltered=query?commands.filter(c=>c.title.toLowerCase().includes(query)||c.desc.toLowerCase().includes(query)):commands;
   cmdkActiveIndex=0;
-  if(!cmdkFiltered.length){cmdkBody.innerHTML='<div class="cmdk-empty">à¦•à§‹à¦¨à§‹ à¦•à¦®à¦¾à¦¨à§à¦¡ à¦ªà¦¾à¦“à¦¯à¦¼à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿</div>';return}
-  cmdkBody.innerHTML=`<div class="cmdk-section-label">à¦¦à§à¦°à§à¦¤ à¦…à§à¦¯à¦¾à¦•à¦¶à¦¨</div>${cmdkFiltered.map((c,i)=>`<button class="cmdk-item ${i===0?'active':''}" onclick="runCmdk(${i})"><div class="cmdk-item-icon"><svg viewBox="0 0 24 24">${c.icon}</svg></div><div class="cmdk-item-info"><div class="cmdk-item-title">${c.title}</div><div class="cmdk-item-desc">${c.desc}</div></div></button>`).join('')}`;
+  if(!cmdkFiltered.length){cmdkBody.innerHTML='<div class="cmdk-empty">কোনো কমান্ড পাওয়া যায়নি</div>';return}
+  cmdkBody.innerHTML=`<div class="cmdk-section-label">দ্রুত অ্যাকশন</div>${cmdkFiltered.map((c,i)=>`<button class="cmdk-item ${i===0?'active':''}" onclick="runCmdk(${i})"><div class="cmdk-item-icon"><svg viewBox="0 0 24 24">${c.icon}</svg></div><div class="cmdk-item-info"><div class="cmdk-item-title">${c.title}</div><div class="cmdk-item-desc">${c.desc}</div></div></button>`).join('')}`;
 }
 function runCmdk(i){const c=cmdkFiltered[i];if(!c)return;closeCmdK();setTimeout(()=>c.action(),100)}
 cmdkInput.addEventListener('input',e=>renderCmdk(e.target.value));
@@ -1901,7 +1901,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closeMobileMenu();closeAuth();closeChat();closeDlModal();closeDemo();closeCmdK()}
 });
 
-/* â•â•â• ENHANCED AUTH â•â•â• */
+/* ═══ ENHANCED AUTH ═══ */
 const authModal=document.getElementById('authModal');
 const authModalInner=document.getElementById('authModalInner');
 const authForm=document.getElementById('authForm');
@@ -1949,12 +1949,12 @@ function switchTab(mode){
   authTabs.setAttribute('data-mode',mode);
   document.querySelectorAll('.auth-tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===mode));
   authModalInner.classList.toggle('signup-mode',isSignup);
-  authTitle.textContent=isSignup?'à¦¨à¦¤à§à¦¨ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ':'à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®!';
-  authSub.textContent=isSignup?'à¦®à¦¾à¦¤à§à¦° à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡ à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨':'à¦†à¦ªà¦¨à¦¾à¦° à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿà§‡ à¦ªà§à¦°à¦¬à§‡à¦¶ à¦•à¦°à§à¦¨';
-  authBtnLabel.textContent=isSignup?'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨':'à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨';
+  authTitle.textContent=isSignup?'নতুন অ্যাকাউন্ট':'স্বাগতম!';
+  authSub.textContent=isSignup?'মাত্র ২ মিনিটে বিনামূল্যে অ্যাকাউন্ট খুলুন':'আপনার অ্যাকাউন্টে প্রবেশ করুন';
+  authBtnLabel.textContent=isSignup?'রেজিস্টার করুন':'লগইন করুন';
   authFoot.innerHTML=isSignup
-    ?'à¦‡à¦¤à¦¿à¦®à¦§à§à¦¯à§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦†à¦›à§‡? <a href="#" onclick="event.preventDefault();switchTab(\'signin\')">à¦²à¦—à¦‡à¦¨ à¦•à¦°à§à¦¨</a>'
-    :'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¨à§‡à¦‡? <a href="#" onclick="event.preventDefault();switchTab(\'signup\')">à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨</a>';
+    ?'ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" onclick="event.preventDefault();switchTab(\'signin\')">লগইন করুন</a>'
+    :'অ্যাকাউন্ট নেই? <a href="#" onclick="event.preventDefault();switchTab(\'signup\')">রেজিস্টার করুন</a>';
   document.querySelectorAll('.signin-only-option').forEach(el=>{
     el.style.display=isSignup?'none':'flex';
   });
@@ -1976,7 +1976,7 @@ function togglePassword(){
   const btn=document.getElementById('pwToggle');
   if(input.type==='password'){
     input.type='text';
-    btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>';
+    btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.34 4.34"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>';
   }else{
     input.type='password';
     btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
@@ -2001,16 +2001,16 @@ function checkPasswordStrength(pw){
   else toggle?.classList.remove('valid');
   if(s<=2){
     bars[0].classList.add('weak');
-    lbl.innerHTML='âš ï¸ <span style="color:#ef4444">à¦¦à§à¦°à§à¦¬à¦² à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡</span>';
+    lbl.innerHTML='⚠️ <span style="color:#ef4444">দুর্বল পাসওয়ার্ড</span>';
   }else if(s<=3){
     bars[0].classList.add('medium');
     bars[1].classList.add('medium');
-    lbl.innerHTML='ðŸ”¶ <span style="color:#f59e0b">à¦®à¦¾à¦à¦¾à¦°à¦¿ à¦¶à¦•à§à¦¤à¦¿à¦¶à¦¾à¦²à§€</span>';
+    lbl.innerHTML='🔶 <span style="color:#f59e0b">মাঝারি শক্তিশালী</span>';
   }else{
     bars[0].classList.add('strong');
     bars[1].classList.add('strong');
     bars[2].classList.add('strong');
-    lbl.innerHTML='âœ… <span style="color:#16a34a">à¦¶à¦•à§à¦¤à¦¿à¦¶à¦¾à¦²à§€ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡</span>';
+    lbl.innerHTML='✅ <span style="color:#16a34a">শক্তিশালী পাসওয়ার্ড</span>';
   }
 }
 
@@ -2030,7 +2030,7 @@ async function submitAuth(e){
     if(fullName.length<3){showError('fullName','err-fullName');valid=false}
     if(!/^\d{10}$|^\d{17}$/.test(nid)){showError('nidInput','err-nidInput');valid=false}
     if(!/^(?:\+?880|0)?1[3-9]\d{8}$/.test(mobile.replace(/[\s-]/g,''))){showError('mobileInput','err-mobileInput');valid=false}
-    if(!terms){showToast('error','à¦¶à¦°à§à¦¤à¦¾à¦¬à¦²à§€','à¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ à¦¶à¦°à§à¦¤à¦¾à¦¬à¦²à§€à¦¤à§‡ à¦¸à¦®à§à¦®à¦¤à¦¿ à¦¦à¦¿à¦¨à¥¤');valid=false}
+    if(!terms){showToast('error','শর্তাবলী','অনুগ্রহ করে শর্তাবলীতে সম্মতি দিন।');valid=false}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier)){showError('emailInput','err-emailInput');valid=false}
   }else{
     const looksEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
@@ -2071,15 +2071,15 @@ async function submitAuth(e){
     authSubmit.classList.remove('loading');
     authSubmit.disabled=false;
     authSubmit.classList.add('success');
-    authBtnLabel.textContent='à¦¸à¦«à¦²! âœ“';
+    authBtnLabel.textContent='সফল! ✓';
 
     authView.style.display='none';
     authSuccess.classList.add('show');
-    document.getElementById('successTitle').textContent=isSignup?'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà§à¦°à§‡à¦¶à¦¨ à¦¸à¦«à¦²!':'à¦²à¦—à¦‡à¦¨ à¦¸à¦«à¦²!';
+    document.getElementById('successTitle').textContent=isSignup?'রেজিস্ট্রেশন সফল!':'লগইন সফল!';
     document.getElementById('successDesc').textContent=isSignup
-      ?'à¦†à¦ªà¦¨à¦¾à¦° demo account à¦¤à§ˆà¦°à¦¿ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤ à¦à¦–à¦¨ app dashboard-à¦ à¦ªà§à¦°à¦¬à§‡à¦¶ à¦•à¦°à§à¦¨à¥¤'
-      :'à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®! à¦†à¦ªà¦¨à¦¾à¦° app dashboard à¦–à§à¦²à¦›à§‡...';
-    showToast('success',isSignup?'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà§à¦°à§‡à¦¶à¦¨ à¦¸à¦«à¦²!':'à¦²à¦—à¦‡à¦¨ à¦¸à¦«à¦²!',isSignup?'Account à¦¤à§ˆà¦°à¦¿ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤':'Login à¦¸à¦«à¦²à¥¤');
+      ?'আপনার demo account তৈরি হয়েছে। এখন app dashboard-এ প্রবেশ করুন।'
+      :'স্বাগতম! আপনার app dashboard খুলছে...';
+    showToast('success',isSignup?'রেজিস্ট্রেশন সফল!':'লগইন সফল!',isSignup?'Account তৈরি হয়েছে।':'Login সফল।');
 
     setTimeout(()=>{
       window.location.href='/app';
@@ -2095,7 +2095,7 @@ async function submitAuth(e){
 async function forgotPassword(){
   const identifier=document.getElementById('emailInput').value.trim();
   if(!identifier){
-    showToast('error','à¦‡à¦®à§‡à¦‡à¦²/à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦ªà§à¦°à¦¯à¦¼à§‹à¦œà¦¨','à¦ªà§à¦°à¦¥à¦®à§‡ account-à¦à¦° à¦‡à¦®à§‡à¦‡à¦² à¦¬à¦¾ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦²à¦¿à¦–à§à¦¨à¥¤');
+    showToast('error','ইমেইল/মোবাইল প্রয়োজন','প্রথমে account-এর ইমেইল বা মোবাইল লিখুন।');
     document.getElementById('emailInput').focus();
     return;
   }
@@ -2108,10 +2108,10 @@ async function forgotPassword(){
     });
     const data=await res.json().catch(()=>({}));
     if(!res.ok) throw new Error(data.error||'Reset request failed');
-    showToast('success','Demo reset code',`à¦†à¦ªà¦¨à¦¾à¦° verification code: ${data.demo_otp||'123456'} â€” à¦à¦Ÿà¦¿ à¦¶à§à¦§à§ demo environment-à¦à¦° à¦œà¦¨à§à¦¯à¥¤`,7000);
-    const otp=window.prompt('Demo OTP à¦¦à¦¿à¦¨ (à¦à¦‡ prototype-à¦ code: '+(data.demo_otp||'123456')+')');
+    showToast('success','Demo reset code',`আপনার verification code: ${data.demo_otp||'123456'} — এটি শুধু demo environment-এর জন্য।`,7000);
+    const otp=window.prompt('Demo OTP দিন (এই prototype-এ code: '+(data.demo_otp||'123456')+')');
     if(!otp)return;
-    const newPassword=window.prompt('à¦¨à¦¤à§à¦¨ password à¦¦à¦¿à¦¨ (à¦•à¦®à¦ªà¦•à§à¦·à§‡ à§¬ à¦…à¦•à§à¦·à¦°):');
+    const newPassword=window.prompt('নতুন password দিন (কমপক্ষে ৬ অক্ষর):');
     if(!newPassword)return;
     const rr=await fetch('/api/auth/reset',{
       method:'POST',
@@ -2121,7 +2121,7 @@ async function forgotPassword(){
     });
     const rd=await rr.json().catch(()=>({}));
     if(!rr.ok) throw new Error(rd.error||'Password reset failed');
-    showToast('success','Password reset','à¦¨à¦¤à§à¦¨ password à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦¸à§‡à¦Ÿ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤ à¦à¦–à¦¨ login à¦•à¦°à§à¦¨à¥¤',5000);
+    showToast('success','Password reset','নতুন password সফলভাবে সেট হয়েছে। এখন login করুন।',5000);
   }catch(err){
     showToast('error','Reset failed',err.message,5000);
   }
@@ -2152,12 +2152,12 @@ document.getElementById('mobileInput')?.addEventListener('input',function(){
   }else{icon.classList.remove('valid');icon.innerHTML='';}
 });
 
-/* â•â•â• SHAKE ANIMATION â•â•â• */
+/* ═══ SHAKE ANIMATION ═══ */
 const style=document.createElement('style');
 style.textContent=`@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}`;
 document.head.appendChild(style);
 
-/* â•â•â• DEMO PANEL â•â•â• */
+/* ═══ DEMO PANEL ═══ */
 const demoPanel=document.getElementById('demoPanel');
 const demoOverlay=document.getElementById('demoOverlay');
 const demoBody=document.getElementById('demoBody');
@@ -2174,14 +2174,14 @@ const demoIcons={
   step:'<svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>'
 };
 const demoData={
-  send:{title:'à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨',sub:'à¦¸à§‡à¦•à§‡à¦¨à§à¦¡à§‡ à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦¨à¦®à§à¦¬à¦°à§‡',icon:demoIcons.send},
-  receive:{title:'à¦Ÿà¦¾à¦•à¦¾ à¦°à¦¿à¦¸à¦¿à¦­',sub:'QR à¦•à§‹à¦¡ à¦¶à§‡à¦¯à¦¼à¦¾à¦° à¦•à¦°à§à¦¨',icon:demoIcons.receive},
-  history:{title:'à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦‡à¦¤à¦¿à¦¹à¦¾à¦¸',sub:'à¦¸à¦¬ à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤',icon:demoIcons.history},
-  loan:{title:'à¦‹à¦£ à¦¸à§‡à¦¬à¦¾',sub:'à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨',icon:demoIcons.loan},
-  balance:{title:'à¦†à¦ªà¦¨à¦¾à¦° à¦¬à§à¦¯à¦¾à¦²à§‡à¦¨à§à¦¸',sub:'à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤ à¦¹à¦¿à¦¸à¦¾à¦¬',icon:demoIcons.balance}
+  send:{title:'টাকা পাঠান',sub:'সেকেন্ডে যেকোনো নম্বরে',icon:demoIcons.send},
+  receive:{title:'টাকা রিসিভ',sub:'QR কোড শেয়ার করুন',icon:demoIcons.receive},
+  history:{title:'লেনদেনের ইতিহাস',sub:'সব লেনদেনের বিস্তারিত',icon:demoIcons.history},
+  loan:{title:'ঋণ সেবা',sub:'২৪ ঘণ্টায় অনুমোদন',icon:demoIcons.loan},
+  balance:{title:'আপনার ব্যালেন্স',sub:'বিস্তারিত হিসাব',icon:demoIcons.balance}
 };
 function openDemo(type){
-  const data=demoData[type]||{title:'à¦¡à§‡à¦®à§‹',sub:'',icon:demoIcons.feature};
+  const data=demoData[type]||{title:'ডেমো',sub:'',icon:demoIcons.feature};
   demoHeadTitle.textContent=data.title;
   demoHeadSub.textContent=data.sub;
   demoHeadIcon.innerHTML=data.icon;
@@ -2200,109 +2200,109 @@ function closeDemo(){
 
 /* Demo content builders */
 const contacts=[
-  {name:'à¦•à¦°à¦¿à¦® à¦†à¦¹à¦®à§‡à¦¦',phone:'01711-XXXXX',color:'#dc0f68',initial:'à¦•'},
-  {name:'à¦°à¦¹à¦¿à¦®à¦¾ à¦¬à§‡à¦—à¦®',phone:'01812-XXXXX',color:'#8e24aa',initial:'à¦°'},
-  {name:'à¦¸à¦¾à¦¬à§à¦¬à¦¿à¦° à¦¹.',phone:'01913-XXXXX',color:'#29b6f6',initial:'à¦¸'},
-  {name:'à¦¨à¦¾à¦¸à¦°à¦¿à¦¨ à¦†.',phone:'01614-XXXXX',color:'#16a34a',initial:'à¦¨'}
+  {name:'করিম আহমেদ',phone:'01711-XXXXX',color:'#dc0f68',initial:'ক'},
+  {name:'রহিমা বেগম',phone:'01812-XXXXX',color:'#8e24aa',initial:'র'},
+  {name:'সাব্বির হ.',phone:'01913-XXXXX',color:'#29b6f6',initial:'স'},
+  {name:'নাসরিন আ.',phone:'01614-XXXXX',color:'#16a34a',initial:'ন'}
 ];
 const recentAmounts=[100,500,1000,2000];
-function buildDemoContent(type){switch(type){case 'send':return buildSend();case 'receive':return buildReceive();case 'history':return buildHistory();case 'loan':return buildLoan();case 'balance':return buildBalance();default:return '<p>à¦²à§‹à¦¡ à¦¹à¦šà§à¦›à§‡...</p>'}}
+function buildDemoContent(type){switch(type){case 'send':return buildSend();case 'receive':return buildReceive();case 'history':return buildHistory();case 'loan':return buildLoan();case 'balance':return buildBalance();default:return '<p>লোড হচ্ছে...</p>'}}
 
 let sendState={recipient:null,amount:0};
 function buildSend(){
   sendState={recipient:null,amount:0};
   const cH=contacts.map((c,i)=>`<button class="recipient-chip" data-idx="${i}" onclick="selectRecipient(${i})"><div class="recipient-chip-avatar" style="background:${c.color}">${c.initial}</div><div class="recipient-chip-name">${c.name.split(' ')[0]}</div><div class="recipient-chip-phone">${c.phone.slice(0,6)}</div></button>`).join('');
-  const aH=recentAmounts.map(a=>`<button class="quick-amount-btn" onclick="quickAmount(${a})">à§³${formatBn(a)}</button>`).join('');
-  return `<div class="demo-balance-card"><div class="demo-balance-label">à¦‰à¦ªà¦²à¦¬à§à¦§ à¦¬à§à¦¯à¦¾à¦²à§‡à¦¨à§à¦¸</div><div class="demo-balance-amount">à§³ 12,458.50</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>à¦¸à§à¦°à¦•à§à¦·à¦¿à¦¤</span><span><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦•</span></div></div><div class="demo-title">à¦¸à¦¾à¦®à§à¦ªà§à¦°à¦¤à¦¿à¦• à¦ªà§à¦°à¦¾à¦ªà¦•</div><div class="recipient-picker">${cH}</div><div class="demo-form"><div class="amount-input-wrap"><span class="amount-input-currency">à§³</span><input type="text" class="amount-input" id="demoAmount" placeholder="0" inputmode="numeric" oninput="onAmountInput(this)"></div><div class="quick-amounts">${aH}</div><div><label style="font-size:12px;font-weight:600;color:var(--ink-700);display:block;margin-bottom:7px">à¦¨à§‹à¦Ÿ (à¦à¦šà§à¦›à¦¿à¦•)</label><textarea class="demo-textarea" id="demoNote" placeholder="à¦¯à§‡à¦®à¦¨: à¦¬à§à¦¯à¦•à§à¦¤à¦¿à¦—à¦¤ à¦‹à¦£ à¦ªà¦°à¦¿à¦¶à§‹à¦§..." maxlength="60"></textarea></div></div><div class="demo-form"><div class="demo-fee-row"><span class="label">à¦ªà¦°à¦¿à¦®à¦¾à¦£</span><span class="value" id="sumAmount">à§³ à§¦</span></div><div class="demo-fee-row"><span class="label">à¦¸à¦¾à¦°à§à¦­à¦¿à¦¸ à¦šà¦¾à¦°à§à¦œ</span><span class="value"><span class="free-badge"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"><path d="m5 12 5 5L20 7"/></svg>à¦«à§à¦°à¦¿</span></span></div><div class="demo-fee-row total"><span class="label">à¦¸à¦°à§à¦¬à¦®à§‹à¦Ÿ</span><span class="value" id="sumTotal">à§³ à§¦</span></div></div><button class="demo-btn" id="demoSubmitBtn" onclick="submitSend()"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨</span></button>`;
+  const aH=recentAmounts.map(a=>`<button class="quick-amount-btn" onclick="quickAmount(${a})">৳${formatBn(a)}</button>`).join('');
+  return `<div class="demo-balance-card"><div class="demo-balance-label">উপলব্ধ ব্যালেন্স</div><div class="demo-balance-amount">৳ 12,458.50</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>সুরক্ষিত</span><span><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>তাৎক্ষণিক</span></div></div><div class="demo-title">সাম্প্রতিক প্রাপক</div><div class="recipient-picker">${cH}</div><div class="demo-form"><div class="amount-input-wrap"><span class="amount-input-currency">৳</span><input type="text" class="amount-input" id="demoAmount" placeholder="0" inputmode="numeric" oninput="onAmountInput(this)"></div><div class="quick-amounts">${aH}</div><div><label style="font-size:12px;font-weight:600;color:var(--ink-700);display:block;margin-bottom:7px">নোট (ঐচ্ছিক)</label><textarea class="demo-textarea" id="demoNote" placeholder="যেমন: ব্যক্তিগত ঋণ পরিশোধ..." maxlength="60"></textarea></div></div><div class="demo-form"><div class="demo-fee-row"><span class="label">পরিমাণ</span><span class="value" id="sumAmount">৳ ০</span></div><div class="demo-fee-row"><span class="label">সার্ভিস চার্জ</span><span class="value"><span class="free-badge"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"><path d="m5 12 5 5L20 7"/></svg>ফ্রি</span></span></div><div class="demo-fee-row total"><span class="label">সর্বমোট</span><span class="value" id="sumTotal">৳ ০</span></div></div><button class="demo-btn" id="demoSubmitBtn" onclick="submitSend()"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>টাকা পাঠান</span></button>`;
 }
 function selectRecipient(idx){sendState.recipient=contacts[idx];document.querySelectorAll('.recipient-chip').forEach((el,i)=>el.classList.toggle('active',i===idx))}
 function quickAmount(a){const i=document.getElementById('demoAmount');if(i){i.value=a;onAmountInput(i)}}
-function onAmountInput(input){const v=input.value.replace(/[^\d]/g,'');input.value=v;const a=parseInt(v||'0',10);sendState.amount=a;const sA=document.getElementById('sumAmount');const sT=document.getElementById('sumTotal');if(sA)sA.textContent='à§³ '+formatBn(a);if(sT)sT.textContent='à§³ '+formatBn(a)}
+function onAmountInput(input){const v=input.value.replace(/[^\d]/g,'');input.value=v;const a=parseInt(v||'0',10);sendState.amount=a;const sA=document.getElementById('sumAmount');const sT=document.getElementById('sumTotal');if(sA)sA.textContent='৳ '+formatBn(a);if(sT)sT.textContent='৳ '+formatBn(a)}
 
 function submitSend(){
-  if(!sendState.recipient){showToast('error','à¦ªà§à¦°à¦¾à¦ªà¦• à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¨ à¦•à¦°à§à¦¨','à¦à¦•à¦œà¦¨ à¦ªà§à¦°à¦¾à¦ªà¦• à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¨ à¦•à¦°à§à¦¨à¥¤');return}
-  if(!sendState.amount||sendState.amount<1){showToast('error','à¦ªà¦°à¦¿à¦®à¦¾à¦£ à¦²à¦¿à¦–à§à¦¨','à¦¸à¦°à§à¦¬à¦¨à¦¿à¦®à§à¦¨ à§§ à¦Ÿà¦¾à¦•à¦¾à¥¤');return}
-  if(sendState.amount>12458){showToast('error','à¦¬à§à¦¯à¦¾à¦²à§‡à¦¨à§à¦¸ à¦…à¦ªà¦°à§à¦¯à¦¾à¦ªà§à¦¤','à¦¯à¦¥à§‡à¦·à§à¦Ÿ à¦Ÿà¦¾à¦•à¦¾ à¦¨à§‡à¦‡à¥¤');return}
+  if(!sendState.recipient){showToast('error','প্রাপক নির্বাচন করুন','একজন প্রাপক নির্বাচন করুন।');return}
+  if(!sendState.amount||sendState.amount<1){showToast('error','পরিমাণ লিখুন','সর্বনিম্ন ১ টাকা।');return}
+  if(sendState.amount>12458){showToast('error','ব্যালেন্স অপর্যাপ্ত','যথেষ্ট টাকা নেই।');return}
   const btn=document.getElementById('demoSubmitBtn');
   btn.disabled=true;
-  btn.innerHTML='<span class="spinner" style="display:block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite"></span><span>à¦ªà§à¦°à¦¸à§‡à¦¸à¦¿à¦‚...</span>';
+  btn.innerHTML='<span class="spinner" style="display:block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite"></span><span>প্রসেসিং...</span>';
   setTimeout(()=>{
     const tx='TX'+Math.floor(Math.random()*900000+100000);
     const now=new Date();
     const t=toBn(now.getHours().toString().padStart(2,'0'))+':'+toBn(now.getMinutes().toString().padStart(2,'0'));
-    demoBody.innerHTML=`<div class="demo-success"><div class="demo-success-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="demo-success-title">à¦¸à¦«à¦² à¦¹à¦¯à¦¼à§‡à¦›à§‡!</div><div class="demo-success-desc"><strong>à§³ ${formatBn(sendState.amount)}</strong> à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡<br><strong>${escapeHtml(sendState.recipient.name)}</strong>-à¦•à§‡ à¦ªà¦¾à¦ à¦¾à¦¨à§‹ à¦¹à¦¯à¦¼à§‡à¦›à§‡</div><div class="demo-success-receipt"><div class="demo-success-receipt-row"><span class="label">à¦ªà¦°à¦¿à¦®à¦¾à¦£</span><span class="value">à§³ ${formatBn(sendState.amount)}</span></div><div class="demo-success-receipt-row"><span class="label">à¦ªà§à¦°à¦¾à¦ªà¦•</span><span class="value">${escapeHtml(sendState.recipient.name)}</span></div><div class="demo-success-receipt-row"><span class="label">à¦®à§‹à¦¬à¦¾à¦‡à¦²</span><span class="value">${sendState.recipient.phone}</span></div><div class="demo-success-receipt-row"><span class="label">à¦Ÿà§à¦°à¦¾à¦¨à¦œà§‡à¦•à¦¶à¦¨ ID</span><span class="value">${tx}</span></div><div class="demo-success-receipt-row"><span class="label">à¦¸à¦®à¦¯à¦¼</span><span class="value">à¦†à¦œ, ${t}</span></div></div><button class="demo-btn" onclick="openDemo('send')"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>à¦†à¦°à§‡à¦•à¦Ÿà¦¿ à¦ªà¦¾à¦ à¦¾à¦¨</button><button class="demo-btn secondary" style="margin-top:10px" onclick="closeDemo()">à¦¸à¦®à§à¦ªà¦¨à§à¦¨ à¦•à¦°à§à¦¨</button></div>`;
-    showToast('success','à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¸à¦«à¦²','à§³'+formatBn(sendState.amount)+' à¦ªà¦¾à¦ à¦¾à¦¨à§‹ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤');
+    demoBody.innerHTML=`<div class="demo-success"><div class="demo-success-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="demo-success-title">সফল হয়েছে!</div><div class="demo-success-desc"><strong>৳ ${formatBn(sendState.amount)}</strong> সফলভাবে<br><strong>${escapeHtml(sendState.recipient.name)}</strong>-কে পাঠানো হয়েছে</div><div class="demo-success-receipt"><div class="demo-success-receipt-row"><span class="label">পরিমাণ</span><span class="value">৳ ${formatBn(sendState.amount)}</span></div><div class="demo-success-receipt-row"><span class="label">প্রাপক</span><span class="value">${escapeHtml(sendState.recipient.name)}</span></div><div class="demo-success-receipt-row"><span class="label">মোবাইল</span><span class="value">${sendState.recipient.phone}</span></div><div class="demo-success-receipt-row"><span class="label">ট্রানজেকশন ID</span><span class="value">${tx}</span></div><div class="demo-success-receipt-row"><span class="label">সময়</span><span class="value">আজ, ${t}</span></div></div><button class="demo-btn" onclick="openDemo('send')"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>আরেকটি পাঠান</button><button class="demo-btn secondary" style="margin-top:10px" onclick="closeDemo()">সম্পন্ন করুন</button></div>`;
+    showToast('success','লেনদেন সফল','৳'+formatBn(sendState.amount)+' পাঠানো হয়েছে।');
   },1500);
 }
 
 function buildReceive(){
   const phone='01711-123456';
-  return `<div class="demo-qr-card"><div style="font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:6px">à¦†à¦ªà¦¨à¦¾à¦° QR à¦•à§‹à¦¡</div><div style="font-size:12.5px;color:var(--muted);margin-bottom:18px">à¦¸à§à¦•à§à¦¯à¦¾à¦¨ à¦•à¦°à§‡ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨</div><div class="demo-qr-code"><img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&bgcolor=ffffff&color=dc0f68&data=${encodeURIComponent('bd-bank://receive?phone='+phone)}" alt="QR"></div><div class="demo-phone-number">${phone}</div><div style="margin-bottom:14px"><button class="demo-copy-btn" onclick="copyText('${phone}')"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>à¦¨à¦®à§à¦¬à¦° à¦•à¦ªà¦¿ à¦•à¦°à§à¦¨</button></div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">à¦†à¦ªà¦¨à¦¾à¦° à¦¬à§à¦¯à¦¾à¦‚à¦• à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦¥à§‡à¦•à§‡ à¦à¦‡ à¦¨à¦®à§à¦¬à¦°à§‡ à¦ªà¦¾à¦ à¦¾à¦¨à§‹ à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦Ÿà¦¾à¦•à¦¾ à¦¸à§à¦¬à¦¯à¦¼à¦‚à¦•à§à¦°à¦¿à¦¯à¦¼à¦­à¦¾à¦¬à§‡ à¦œà¦®à¦¾ à¦¹à¦¬à§‡à¥¤</div></div>`;
+  return `<div class="demo-qr-card"><div style="font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:6px">আপনার QR কোড</div><div style="font-size:12.5px;color:var(--muted);margin-bottom:18px">স্ক্যান করে টাকা পাঠান</div><div class="demo-qr-code"><img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&bgcolor=ffffff&color=dc0f68&data=${encodeURIComponent('bd-bank://receive?phone='+phone)}" alt="QR"></div><div class="demo-phone-number">${phone}</div><div style="margin-bottom:14px"><button class="demo-copy-btn" onclick="copyText('${phone}')"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>নম্বর কপি করুন</button></div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">আপনার ব্যাংক অ্যাকাউন্ট থেকে এই নম্বরে পাঠানো যেকোনো টাকা স্বয়ংক্রিয়ভাবে জমা হবে।</div></div>`;
 }
 function copyText(t){
   if(navigator.clipboard&&navigator.clipboard.writeText)
-    navigator.clipboard.writeText(t).then(()=>showToast('success','à¦•à¦ªà¦¿ à¦¹à¦¯à¦¼à§‡à¦›à§‡','à¦¨à¦®à§à¦¬à¦° à¦•à§à¦²à¦¿à¦ªà¦¬à§‹à¦°à§à¦¡à§‡ à¦•à¦ªà¦¿à¥¤')).catch(()=>showToast('info','à¦¨à¦®à§à¦¬à¦°',t));
-  else showToast('info','à¦¨à¦®à§à¦¬à¦°',t);
+    navigator.clipboard.writeText(t).then(()=>showToast('success','কপি হয়েছে','নম্বর ক্লিপবোর্ডে কপি।')).catch(()=>showToast('info','নম্বর',t));
+  else showToast('info','নম্বর',t);
 }
 
 const transactions=[
-  {type:'in',title:'à¦°à¦¿à¦¸à¦¿à¦­ â€” à¦•à¦°à¦¿à¦® à¦†à¦¹à¦®à§‡à¦¦',meta:'à¦†à¦œ, à§§à§¦:à§¨à§ª',amt:'+à§³à§«à§¦à§¦',status:'success'},
-  {type:'out',title:'à¦ªà¦¾à¦ à¦¾à¦¨à§‹ â€” à¦°à¦¹à¦¿à¦®à¦¾ à¦¬à§‡à¦—à¦®',meta:'à¦†à¦œ, à§¦à§¯:à§§à§«',amt:'-à§³à§¨à§«à§¦',status:'success'},
-  {type:'bill',title:'à¦¬à¦¿à¦¦à§à¦¯à§à§Ž à¦¬à¦¿à¦²',meta:'à¦†à¦œ, à§¦à§®:à§ªà§¦',amt:'-à§³à§§,à§¨à§¦à§¦',status:'success'},
-  {type:'loan',title:'à¦‹à¦£ à¦ªà¦°à¦¿à¦¶à§‹à¦§',meta:'à¦—à¦¤à¦•à¦¾à¦²',amt:'-à§³à§«,à§¦à§¦à§¦',status:'pending'},
-  {type:'in',title:'à¦°à¦¿à¦¸à¦¿à¦­ â€” à¦¨à¦¾à¦¸à¦°à¦¿à¦¨ à¦†à¦•à§à¦¤à¦¾à¦°',meta:'à¦—à¦¤à¦•à¦¾à¦²',amt:'+à§³à§®à§¦à§¦',status:'success'},
-  {type:'out',title:'à¦ªà¦¾à¦ à¦¾à¦¨à§‹ â€” à¦¤à¦¾à¦¨à¦­à§€à¦° à¦¹à¦¾à¦¸à¦¾à¦¨',meta:'à§¨ à¦¦à¦¿à¦¨ à¦†à¦—à§‡',amt:'-à§³à§§,à§«à§¦à§¦',status:'success'}
+  {type:'in',title:'রিসিভ — করিম আহমেদ',meta:'আজ, ১০:২৪',amt:'+৳৫০০',status:'success'},
+  {type:'out',title:'পাঠানো — রহিমা বেগম',meta:'আজ, ০৯:১৫',amt:'-৳২৫০',status:'success'},
+  {type:'bill',title:'বিদ্যুৎ বিল',meta:'আজ, ০৮:৪০',amt:'-৳১,২০০',status:'success'},
+  {type:'loan',title:'ঋণ পরিশোধ',meta:'গতকাল',amt:'-৳৫,০০০',status:'pending'},
+  {type:'in',title:'রিসিভ — নাসরিন আক্তার',meta:'গতকাল',amt:'+৳৮০০',status:'success'},
+  {type:'out',title:'পাঠানো — তানভীর হাসান',meta:'২ দিন আগে',amt:'-৳১,৫০০',status:'success'}
 ];
 let historyFilter='all';
 function buildHistory(){
   const f=historyFilter==='all'?transactions:transactions.filter(t=>t.type===historyFilter||(historyFilter==='out'&&(t.type==='out'||t.type==='bill')));
-  const filters=[{key:'all',label:'à¦¸à¦¬'},{key:'in',label:'à¦ªà§‡à¦¯à¦¼à§‡à¦›à¦¿'},{key:'out',label:'à¦ªà¦¾à¦ à¦¿à¦¯à¦¼à§‡à¦›à¦¿'},{key:'loan',label:'à¦‹à¦£'},{key:'bill',label:'à¦¬à¦¿à¦²'}];
-  return `<div class="demo-balance-card"><div class="demo-balance-label">à¦à¦‡ à¦®à¦¾à¦¸à§‡</div><div class="demo-balance-amount">à§³ à§ªà§«,à§®à§¨à§¦</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>+à§³à§©à§¨,à§¨à§¦à§¦</span><span><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>-à§³à§§à§©,à§¬à§¨à§¦</span></div></div><div class="tx-filters">${filters.map(x=>`<button class="tx-filter ${historyFilter===x.key?'active':''}" onclick="setHistoryFilter('${x.key}')">${x.label}</button>`).join('')}</div><div class="tx-list">${f.map(t=>`<div class="tx-item" onclick="showTxDetail('${t.title.replace(/'/g,'')}','${t.meta}','${t.amt}','${t.status}')"><div class="tx-item-icon ${t.type}"><svg viewBox="0 0 24 24">${t.type==='in'?'<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>':t.type==='out'?'<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>':t.type==='loan'?'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>':'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>'}</svg></div><div class="tx-item-info"><div class="tx-item-title">${t.title}</div><div class="tx-item-meta">${t.meta}<span class="tx-item-status ${t.status}">${t.status==='success'?'à¦¸à¦®à§à¦ªà¦¨à§à¦¨':'à¦…à¦ªà§‡à¦•à§à¦·à¦®à¦¾à¦£'}</span></div></div><div class="tx-item-amount ${t.type==='in'?'in':''}">${t.amt}</div></div>`).join('')}</div>`;
+  const filters=[{key:'all',label:'সব'},{key:'in',label:'পেয়েছি'},{key:'out',label:'পাঠিয়েছি'},{key:'loan',label:'ঋণ'},{key:'bill',label:'বিল'}];
+  return `<div class="demo-balance-card"><div class="demo-balance-label">এই মাসে</div><div class="demo-balance-amount">৳ ৪৫,৮২০</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>+৳৩২,২০০</span><span><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>-৳১৩,৬২০</span></div></div><div class="tx-filters">${filters.map(x=>`<button class="tx-filter ${historyFilter===x.key?'active':''}" onclick="setHistoryFilter('${x.key}')">${x.label}</button>`).join('')}</div><div class="tx-list">${f.map(t=>`<div class="tx-item" onclick="showTxDetail('${t.title.replace(/'/g,'')}','${t.meta}','${t.amt}','${t.status}')"><div class="tx-item-icon ${t.type}"><svg viewBox="0 0 24 24">${t.type==='in'?'<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>':t.type==='out'?'<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>':t.type==='loan'?'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>':'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>'}</svg></div><div class="tx-item-info"><div class="tx-item-title">${t.title}</div><div class="tx-item-meta">${t.meta}<span class="tx-item-status ${t.status}">${t.status==='success'?'সম্পন্ন':'অপেক্ষমাণ'}</span></div></div><div class="tx-item-amount ${t.type==='in'?'in':''}">${t.amt}</div></div>`).join('')}</div>`;
 }
 function setHistoryFilter(k){historyFilter=k;demoBody.innerHTML=buildHistory()}
-function showTxDetail(t,m,a,s){showToast('info',t,m+' â€¢ '+a+' â€¢ '+(s==='success'?'à¦¸à¦®à§à¦ªà¦¨à§à¦¨':'à¦…à¦ªà§‡à¦•à§à¦·à¦®à¦¾à¦£'))}
+function showTxDetail(t,m,a,s){showToast('info',t,m+' • '+a+' • '+(s==='success'?'সম্পন্ন':'অপেক্ষমাণ'))}
 
 let loanState={type:null,amount:50000};
 const loanTypes=[
-  {key:'agri',name:'à¦•à§ƒà¦·à¦¿ à¦‹à¦£',rate:'à§ª% â€” à§®%',icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'},
-  {key:'business',name:'à¦¬à§à¦¯à¦¬à¦¸à¦¾ à¦‹à¦£',rate:'à§¯% â€” à§§à§¨%',icon:'<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>'},
-  {key:'personal',name:'à¦¬à§à¦¯à¦•à§à¦¤à¦¿à¦—à¦¤ à¦‹à¦£',rate:'à§§à§¨% â€” à§§à§«%',icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>'},
-  {key:'education',name:'à¦¶à¦¿à¦•à§à¦·à¦¾ à¦‹à¦£',rate:'à§«% â€” à§­%',icon:'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>'}
+  {key:'agri',name:'কৃষি ঋণ',rate:'৪% — ৮%',icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'},
+  {key:'business',name:'ব্যবসা ঋণ',rate:'৯% — ১২%',icon:'<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>'},
+  {key:'personal',name:'ব্যক্তিগত ঋণ',rate:'১২% — ১৫%',icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>'},
+  {key:'education',name:'শিক্ষা ঋণ',rate:'৫% — ৭%',icon:'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>'}
 ];
 function buildLoan(){
   loanState={type:null,amount:50000};
-  return `<div class="demo-title">à¦‹à¦£à§‡à¦° à¦§à¦°à¦¨ à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¨ à¦•à¦°à§à¦¨</div><div class="loan-type-grid">${loanTypes.map(t=>`<div class="loan-type" data-key="${t.key}" onclick="selectLoanType('${t.key}')"><div class="loan-type-icon"><svg viewBox="0 0 24 24">${t.icon}</svg></div><div class="loan-type-name">${t.name}</div><div class="loan-type-rate">${t.rate}</div></div>`).join('')}</div><div class="demo-form"><div><label style="font-size:13px;font-weight:600;color:var(--ink-700);display:block;margin-bottom:7px">à¦‹à¦£à§‡à¦° à¦ªà¦°à¦¿à¦®à¦¾à¦£</label><input type="text" id="loanAmount" value="50,000" inputmode="numeric" style="width:100%;padding:13px 15px;border-radius:12px;background:var(--ink-50);border:1.5px solid transparent;font-size:14px" oninput="onLoanAmount(this)"><div style="font-size:11.5px;color:var(--muted);margin-top:6px">à¦¸à¦°à§à¦¬à¦¨à¦¿à¦®à§à¦¨ à§³à§§à§¦,à§¦à§¦à§¦ â€” à¦¸à¦°à§à¦¬à§‹à¦šà§à¦š à§³à§«,à§¦à§¦,à§¦à§¦à§¦</div></div></div><div class="demo-form"><div class="demo-fee-row"><span class="label">à¦‹à¦£à§‡à¦° à¦ªà¦°à¦¿à¦®à¦¾à¦£</span><span class="value" id="loanSumAmount">à§³ à§«à§¦,à§¦à§¦à§¦</span></div><div class="demo-fee-row"><span class="label">à¦¸à§à¦¦à§‡à¦° à¦¹à¦¾à¦°</span><span class="value" id="loanSumRate">à§ª% â€” à§®%</span></div><div class="demo-fee-row"><span class="label">à¦®à¦¾à¦¸à¦¿à¦• à¦•à¦¿à¦¸à§à¦¤à¦¿</span><span class="value" id="loanSumEmi">à§³ à§ª,à§ªà§¦à§¦</span></div><div class="demo-fee-row total"><span class="label">à¦®à§‹à¦Ÿ à¦ªà¦°à¦¿à¦¶à§‹à¦§</span><span class="value" id="loanSumTotal">à§³ à§«à§¨,à§®à§¦à§¦</span></div></div><button class="demo-btn" onclick="submitLoan()"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>à¦†à¦¬à§‡à¦¦à¦¨ à¦•à¦°à§à¦¨</span></button>`;
+  return `<div class="demo-title">ঋণের ধরন নির্বাচন করুন</div><div class="loan-type-grid">${loanTypes.map(t=>`<div class="loan-type" data-key="${t.key}" onclick="selectLoanType('${t.key}')"><div class="loan-type-icon"><svg viewBox="0 0 24 24">${t.icon}</svg></div><div class="loan-type-name">${t.name}</div><div class="loan-type-rate">${t.rate}</div></div>`).join('')}</div><div class="demo-form"><div><label style="font-size:13px;font-weight:600;color:var(--ink-700);display:block;margin-bottom:7px">ঋণের পরিমাণ</label><input type="text" id="loanAmount" value="50,000" inputmode="numeric" style="width:100%;padding:13px 15px;border-radius:12px;background:var(--ink-50);border:1.5px solid transparent;font-size:14px" oninput="onLoanAmount(this)"><div style="font-size:11.5px;color:var(--muted);margin-top:6px">সর্বনিম্ন ৳১০,০০০ — সর্বোচ্চ ৳৫,০০,০০০</div></div></div><div class="demo-form"><div class="demo-fee-row"><span class="label">ঋণের পরিমাণ</span><span class="value" id="loanSumAmount">৳ ৫০,০০০</span></div><div class="demo-fee-row"><span class="label">সুদের হার</span><span class="value" id="loanSumRate">৪% — ৮%</span></div><div class="demo-fee-row"><span class="label">মাসিক কিস্তি</span><span class="value" id="loanSumEmi">৳ ৪,৪০০</span></div><div class="demo-fee-row total"><span class="label">মোট পরিশোধ</span><span class="value" id="loanSumTotal">৳ ৫২,৮০০</span></div></div><button class="demo-btn" onclick="submitLoan()"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>আবেদন করুন</span></button>`;
 }
 function selectLoanType(k){loanState.type=loanTypes.find(t=>t.key===k);document.querySelectorAll('.loan-type').forEach(el=>el.classList.toggle('active',el.dataset.key===k));const r=document.getElementById('loanSumRate');if(r)r.textContent=loanState.type.rate;recalcLoan()}
 function onLoanAmount(i){const v=i.value.replace(/[^\d]/g,'');loanState.amount=parseInt(v||'0',10);i.value=formatBn(loanState.amount);recalcLoan()}
-function recalcLoan(){const a=loanState.amount||0;const r=loanState.type?parseFloat(loanState.type.rate.split('â€”')[0])/100:0.08;const total=a+(a*r);const emi=total/12;const x=document.getElementById('loanSumAmount');const e=document.getElementById('loanSumEmi');const t=document.getElementById('loanSumTotal');if(x)x.textContent='à§³ '+formatBn(a);if(e)e.textContent='à§³ '+formatBn(Math.round(emi));if(t)t.textContent='à§³ '+formatBn(Math.round(total))}
+function recalcLoan(){const a=loanState.amount||0;const r=loanState.type?parseFloat(loanState.type.rate.split('—')[0])/100:0.08;const total=a+(a*r);const emi=total/12;const x=document.getElementById('loanSumAmount');const e=document.getElementById('loanSumEmi');const t=document.getElementById('loanSumTotal');if(x)x.textContent='৳ '+formatBn(a);if(e)e.textContent='৳ '+formatBn(Math.round(emi));if(t)t.textContent='৳ '+formatBn(Math.round(total))}
 function submitLoan(){
-  if(!loanState.type){showToast('error','à¦‹à¦£à§‡à¦° à¦§à¦°à¦¨','à¦à¦•à¦Ÿà¦¿ à¦¨à¦¿à¦°à§à¦¬à¦¾à¦šà¦¨ à¦•à¦°à§à¦¨à¥¤');return}
-  if(!loanState.amount||loanState.amount<10000){showToast('error','à¦ªà¦°à¦¿à¦®à¦¾à¦£ à¦•à¦®','à¦¸à¦°à§à¦¬à¦¨à¦¿à¦®à§à¦¨ à§³à§§à§¦,à§¦à§¦à§¦à¥¤');return}
-  showToast('info','à¦†à¦¬à§‡à¦¦à¦¨ à¦œà¦®à¦¾ à¦¹à¦šà§à¦›à§‡...','à¦…à¦ªà§‡à¦•à§à¦·à¦¾ à¦•à¦°à§à¦¨à¥¤');
+  if(!loanState.type){showToast('error','ঋণের ধরন','একটি নির্বাচন করুন।');return}
+  if(!loanState.amount||loanState.amount<10000){showToast('error','পরিমাণ কম','সর্বনিম্ন ৳১০,০০০।');return}
+  showToast('info','আবেদন জমা হচ্ছে...','অপেক্ষা করুন।');
   setTimeout(()=>{
     const id='LN'+Math.floor(Math.random()*900000+100000);
-    demoBody.innerHTML=`<div class="demo-success"><div class="demo-success-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="demo-success-title">à¦†à¦¬à§‡à¦¦à¦¨ à¦œà¦®à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡!</div><div class="demo-success-desc">à¦†à¦ªà¦¨à¦¾à¦° <strong>${loanState.type.name}</strong> à¦à¦° à¦†à¦¬à§‡à¦¦à¦¨ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦œà¦®à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤</div><div class="demo-success-receipt"><div class="demo-success-receipt-row"><span class="label">à¦†à¦¬à§‡à¦¦à¦¨ à¦¨à¦®à§à¦¬à¦°</span><span class="value">${id}</span></div><div class="demo-success-receipt-row"><span class="label">à¦‹à¦£à§‡à¦° à¦§à¦°à¦¨</span><span class="value">${loanState.type.name}</span></div><div class="demo-success-receipt-row"><span class="label">à¦ªà¦°à¦¿à¦®à¦¾à¦£</span><span class="value">à§³ ${formatBn(loanState.amount)}</span></div><div class="demo-success-receipt-row"><span class="label">à¦¸à§à¦Ÿà§à¦¯à¦¾à¦Ÿà¦¾à¦¸</span><span class="value" style="color:#d97706">à¦¯à¦¾à¦šà¦¾à¦‡ à¦šà¦²à¦›à§‡</span></div></div><button class="demo-btn" onclick="closeDemo()">à¦¸à¦®à§à¦ªà¦¨à§à¦¨ à¦•à¦°à§à¦¨</button></div>`;
-    showToast('success','à¦†à¦¬à§‡à¦¦à¦¨ à¦¸à¦«à¦²','à¦‹à¦£à§‡à¦° à¦†à¦¬à§‡à¦¦à¦¨ à¦œà¦®à¦¾à¥¤');
+    demoBody.innerHTML=`<div class="demo-success"><div class="demo-success-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="demo-success-title">আবেদন জমা হয়েছে!</div><div class="demo-success-desc">আপনার <strong>${loanState.type.name}</strong> এর আবেদন সফলভাবে জমা হয়েছে।</div><div class="demo-success-receipt"><div class="demo-success-receipt-row"><span class="label">আবেদন নম্বর</span><span class="value">${id}</span></div><div class="demo-success-receipt-row"><span class="label">ঋণের ধরন</span><span class="value">${loanState.type.name}</span></div><div class="demo-success-receipt-row"><span class="label">পরিমাণ</span><span class="value">৳ ${formatBn(loanState.amount)}</span></div><div class="demo-success-receipt-row"><span class="label">স্ট্যাটাস</span><span class="value" style="color:#d97706">যাচাই চলছে</span></div></div><button class="demo-btn" onclick="closeDemo()">সম্পন্ন করুন</button></div>`;
+    showToast('success','আবেদন সফল','ঋণের আবেদন জমা।');
   },1500);
 }
 
 function buildBalance(){
-  return `<div class="demo-balance-card"><div class="demo-balance-label">à¦®à§‹à¦Ÿ à¦‰à¦ªà¦²à¦¬à§à¦§ à¦¬à§à¦¯à¦¾à¦²à§‡à¦¨à§à¦¸</div><div class="demo-balance-amount">à§³ 12,458.50</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>à¦†à¦ªà¦¡à§‡à¦Ÿ: à¦à¦–à¦¨</span></div></div><div class="demo-title">à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤ à¦¹à¦¿à¦¸à¦¾à¦¬</div><div class="demo-form"><div class="demo-fee-row"><span class="label">à¦®à§‚à¦² à¦¬à§à¦¯à¦¾à¦²à§‡à¦¨à§à¦¸</span><span class="value">à§³ à§§à§¨,à§¦à§¦à§¦.à§¦à§¦</span></div><div class="demo-fee-row"><span class="label">à¦à¦‡ à¦®à¦¾à¦¸à§‡à¦° à¦•à§à¦¯à¦¾à¦¶à¦¬à§à¦¯à¦¾à¦•</span><span class="value" style="color:var(--green)">+à§³ à§¨à§«à§®.à§«à§¦</span></div><div class="demo-fee-row"><span class="label">à¦¬à§‹à¦¨à¦¾à¦¸ à¦ªà¦¯à¦¼à§‡à¦¨à§à¦Ÿ</span><span class="value">+à§³ à§¨à§¦à§¦.à§¦à§¦</span></div><div class="demo-fee-row total"><span class="label">à¦®à§‹à¦Ÿ</span><span class="value">à§³ à§§à§¨,à§ªà§«à§®.à§«à§¦</span></div></div><div class="demo-title">à¦®à¦¾à¦¸à¦¿à¦• à¦–à¦°à¦š</div><div class="demo-form" style="padding:18px"><div style="display:flex;align-items:flex-end;justify-content:space-between;height:130px;gap:10px">${[{l:'à¦œà¦¾à¦¨à§',h:45,v:'à§¨.à§¨k'},{l:'à¦«à§‡à¦¬',h:65,v:'à§©.à§¨k'},{l:'à¦®à¦¾à¦°à§à¦š',h:35,v:'à§§.à§­k'},{l:'à¦à¦ªà§à¦°à¦¿',h:80,v:'à§ª.à§¦k'},{l:'à¦®à§‡',h:55,v:'à§¨.à§­k'},{l:'à¦œà§à¦¨',h:95,v:'à§ª.à§®k'}].map(d=>`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px"><div style="font-size:10px;font-weight:700;color:var(--ink-600);font-family:Inter,sans-serif">${d.v}</div><div style="width:100%;height:${d.h}%;background:linear-gradient(180deg,#dc0f68,#8e24aa);border-radius:6px 6px 0 0;min-height:8px"></div><div style="font-size:9.5px;color:var(--muted);font-weight:600">${d.l}</div></div>`).join('')}</div></div>`;
+  return `<div class="demo-balance-card"><div class="demo-balance-label">মোট উপলব্ধ ব্যালেন্স</div><div class="demo-balance-amount">৳ 12,458.50</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>আপডেট: এখন</span></div></div><div class="demo-title">বিস্তারিত হিসাব</div><div class="demo-form"><div class="demo-fee-row"><span class="label">মূল ব্যালেন্স</span><span class="value">৳ ১২,০০০.০০</span></div><div class="demo-fee-row"><span class="label">এই মাসের ক্যাশব্যাক</span><span class="value" style="color:var(--green)">+৳ ২৫৮.৫০</span></div><div class="demo-fee-row"><span class="label">বোনাস পয়েন্ট</span><span class="value">+৳ ২০০.০০</span></div><div class="demo-fee-row total"><span class="label">মোট</span><span class="value">৳ ১২,৪৫৮.৫০</span></div></div><div class="demo-title">মাসিক খরচ</div><div class="demo-form" style="padding:18px"><div style="display:flex;align-items:flex-end;justify-content:space-between;height:130px;gap:10px">${[{l:'জানু',h:45,v:'২.২k'},{l:'ফেব',h:65,v:'৩.২k'},{l:'মার্চ',h:35,v:'১.৭k'},{l:'এপ্রি',h:80,v:'৪.০k'},{l:'মে',h:55,v:'২.৭k'},{l:'জুন',h:95,v:'৪.৮k'}].map(d=>`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px"><div style="font-size:10px;font-weight:700;color:var(--ink-600);font-family:Inter,sans-serif">${d.v}</div><div style="width:100%;height:${d.h}%;background:linear-gradient(180deg,#dc0f68,#8e24aa);border-radius:6px 6px 0 0;min-height:8px"></div><div style="font-size:9.5px;color:var(--muted);font-weight:600">${d.l}</div></div>`).join('')}</div></div>`;
 }
 
-/* â•â•â• FEATURE / STEP DETAILS â•â•â• */
+/* ═══ FEATURE / STEP DETAILS ═══ */
 const featureDetails={
-  send:{title:'à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨',icon:demoIcons.send,color:'pink',desc:'à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦¬à¦¾ UID-à¦¤à§‡ à¦¸à§‡à¦•à§‡à¦¨à§à¦¡à§‡à¦° à¦®à¦§à§à¦¯à§‡ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨ â€” à¦à¦•à¦¦à¦® à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡à¥¤',points:['à¦¸à§‡à¦•à§‡à¦¨à§à¦¡à§‡à¦° à¦®à¦§à§à¦¯à§‡ à¦²à§‡à¦¨à¦¦à§‡à¦¨','à¦¸à¦®à§à¦ªà§‚à¦°à§à¦£ à¦¬à¦¿à¦¨à¦¾à¦®à§‚à¦²à§à¦¯à§‡','à§¨à§ª/à§­ à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦¸à¦®à¦¯à¦¼','à¦ªà§à¦°à¦¾à¦ªà¦•à§‡à¦° à¦¨à¦®à§à¦¬à¦° à¦•à¦¨à§à¦Ÿà¦¾à¦•à§à¦Ÿ à¦¥à§‡à¦•à§‡'],action:{label:'à¦à¦–à¦¨à¦‡ à¦ªà¦¾à¦ à¦¾à¦¨',callback:()=>openDemo('send')}},
-  secure:{title:'à§§à§¦à§¦% à¦¨à¦¿à¦°à¦¾à¦ªà¦¦ à¦²à§‡à¦¨à¦¦à§‡à¦¨',icon:'<path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/>',color:'blue',desc:'à¦†à¦¨à§à¦¤à¦°à§à¦œà¦¾à¦¤à¦¿à¦• à¦®à¦¾à¦¨à§‡à¦° à¦¬à§à¦¯à¦¾à¦‚à¦•-à¦—à§à¦°à§‡à¦¡ à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ à¦¬à§à¦¯à¦¬à¦¸à§à¦¥à¦¾à¥¤',points:['à§¨à§«à§¬-à¦¬à¦¿à¦Ÿ AES à¦à¦¨à¦•à§à¦°à¦¿à¦ªà¦¶à¦¨','à¦¬à¦¾à¦¯à¦¼à§‹à¦®à§‡à¦Ÿà§à¦°à¦¿à¦• à¦²à¦—à¦‡à¦¨','à§¨à§ª/à§­ à¦«à§à¦°à¦¡ à¦®à¦¨à¦¿à¦Ÿà¦°à¦¿à¦‚','à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• SMS à¦…à§à¦¯à¦¾à¦²à¦¾à¦°à§à¦Ÿ'],action:{label:'à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ à¦œà¦¾à¦¨à§à¦¨',callback:()=>{closeDemo();setTimeout(()=>{document.getElementById('security')?.scrollIntoView({behavior:'smooth'})},200)}}},
-  loan:{title:'à¦¸à¦¹à¦œ à¦¶à¦°à§à¦¤à§‡ à¦‹à¦£',icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',color:'green',desc:'à¦•à§ƒà¦·à¦¿, à¦¬à§à¦¯à¦¬à¦¸à¦¾, à¦¶à¦¿à¦•à§à¦·à¦¾ à¦¬à¦¾ à¦¬à§à¦¯à¦•à§à¦¤à¦¿à¦—à¦¤ â€” à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨à¥¤',points:['à¦•à¦® à¦¸à§à¦¦ â€” à§ª% à¦¥à§‡à¦•à§‡','à¦¨à§à¦¯à§‚à¦¨à¦¤à¦® à¦•à¦¾à¦—à¦œà¦ªà¦¤à§à¦°','à§§à§¦,à§¦à§¦à§¦ - à§«,à§¦à§¦,à§¦à§¦à§¦ à¦Ÿà¦¾à¦•à¦¾','à¦¨à¦®à¦¨à§€à¦¯à¦¼ à¦•à¦¿à¦¸à§à¦¤à¦¿'],action:{label:'à¦†à¦¬à§‡à¦¦à¦¨ à¦•à¦°à§à¦¨',callback:()=>openDemo('loan')}},
-  history:{title:'à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦‡à¦¤à¦¿à¦¹à¦¾à¦¸',icon:demoIcons.history,color:'purple',desc:'à¦¸à¦¬ à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤ à¦°à§‡à¦•à¦°à§à¦¡ à¦à¦• à¦œà¦¾à¦¯à¦¼à¦—à¦¾à¦¯à¦¼à¥¤',points:['à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¤à¦¥à§à¦¯','à¦«à¦¿à¦²à§à¦Ÿà¦¾à¦° à¦“ à¦¸à¦¾à¦°à§à¦š','PDF à¦¸à§à¦Ÿà§‡à¦Ÿà¦®à§‡à¦¨à§à¦Ÿ','à¦®à¦¾à¦¸à¦¿à¦• à¦“ à¦¬à¦¾à§Žà¦¸à¦°à¦¿à¦• à¦°à¦¿à¦ªà§‹à¦°à§à¦Ÿ'],action:{label:'à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¦à§‡à¦–à§à¦¨',callback:()=>openDemo('history')}},
-  notify:{title:'à¦¸à§à¦®à¦¾à¦°à§à¦Ÿ à¦¨à§‹à¦Ÿà¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨',icon:'<path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',color:'orange',desc:'à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦²à§‡à¦¨à¦¦à§‡à¦¨à§‡à¦° à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦†à¦ªà¦¡à§‡à¦Ÿà¥¤',points:['à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• SMS','à¦¬à¦¿à¦² à¦°à¦¿à¦®à¦¾à¦‡à¦¨à§à¦¡à¦¾à¦°','à¦¨à¦¤à§à¦¨ à¦…à¦«à¦¾à¦°','à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ à¦¸à¦¤à¦°à§à¦•à¦¤à¦¾'],action:{label:'à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨',callback:()=>{showToast('success','à¦¨à§‹à¦Ÿà¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨ à¦šà¦¾à¦²à§','à¦¸à§à¦®à¦¾à¦°à§à¦Ÿ à¦¨à§‹à¦Ÿà¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨ à¦¸à¦•à§à¦°à¦¿à¦¯à¦¼à¥¤');closeDemo()}}}
+  send:{title:'তাৎক্ষণিক টাকা পাঠান',icon:demoIcons.send,color:'pink',desc:'যেকোনো মোবাইল নম্বর বা UID-তে সেকেন্ডের মধ্যে টাকা পাঠান — একদম বিনামূল্যে।',points:['সেকেন্ডের মধ্যে লেনদেন','সম্পূর্ণ বিনামূল্যে','২৪/৭ যেকোনো সময়','প্রাপকের নম্বর কন্টাক্ট থেকে'],action:{label:'এখনই পাঠান',callback:()=>openDemo('send')}},
+  secure:{title:'১০০% নিরাপদ লেনদেন',icon:'<path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/>',color:'blue',desc:'আন্তর্জাতিক মানের ব্যাংক-গ্রেড নিরাপত্তা ব্যবস্থা।',points:['২৫৬-বিট AES এনক্রিপশন','বায়োমেট্রিক লগইন','২৪/৭ ফ্রড মনিটরিং','তাৎক্ষণিক SMS অ্যালার্ট'],action:{label:'নিরাপত্তা জানুন',callback:()=>{closeDemo();setTimeout(()=>{document.getElementById('security')?.scrollIntoView({behavior:'smooth'})},200)}}},
+  loan:{title:'সহজ শর্তে ঋণ',icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',color:'green',desc:'কৃষি, ব্যবসা, শিক্ষা বা ব্যক্তিগত — ২৪ ঘণ্টায় অনুমোদন।',points:['কম সুদ — ৪% থেকে','ন্যূনতম কাগজপত্র','১০,০০০ - ৫,০০,০০০ টাকা','নমনীয় কিস্তি'],action:{label:'আবেদন করুন',callback:()=>openDemo('loan')}},
+  history:{title:'লেনদেনের ইতিহাস',icon:demoIcons.history,color:'purple',desc:'সব লেনদেনের বিস্তারিত রেকর্ড এক জায়গায়।',points:['প্রতিটি লেনদেনের তথ্য','ফিল্টার ও সার্চ','PDF স্টেটমেন্ট','মাসিক ও বাৎসরিক রিপোর্ট'],action:{label:'লেনদেন দেখুন',callback:()=>openDemo('history')}},
+  notify:{title:'স্মার্ট নোটিফিকেশন',icon:'<path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',color:'orange',desc:'প্রতিটি লেনদেনের তাৎক্ষণিক আপডেট।',points:['তাৎক্ষণিক SMS','বিল রিমাইন্ডার','নতুন অফার','নিরাপত্তা সতর্কতা'],action:{label:'চালু করুন',callback:()=>{showToast('success','নোটিফিকেশন চালু','স্মার্ট নোটিফিকেশন সক্রিয়।');closeDemo()}}}
 };
 function openFeatureDetail(k){
   const f=featureDetails[k];if(!f)return;
   demoHeadTitle.textContent=f.title;
-  demoHeadSub.textContent='à¦†à¦°à¦“ à¦œà¦¾à¦¨à§à¦¨';
+  demoHeadSub.textContent='আরও জানুন';
   demoHeadIcon.innerHTML=f.icon;
   demoBody.innerHTML=`<div class="feature-detail-icon ${f.color}"><svg viewBox="0 0 24 24">${f.icon}</svg></div><div class="feature-detail-title">${f.title}</div><div class="feature-detail-desc">${f.desc}</div><div class="feature-detail-points">${f.points.map(p=>`<div class="feature-detail-point"><div class="feature-detail-point-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="feature-detail-point-text">${p}</div></div>`).join('')}</div><button class="demo-btn" id="featureActionBtn"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>${f.action.label}</span></button>`;
   setTimeout(()=>{const b=document.getElementById('featureActionBtn');if(b)b.addEventListener('click',()=>f.action.callback())},0);
@@ -2313,15 +2313,15 @@ function openFeatureDetail(k){
 }
 
 const stepDetails={
-  1:{title:'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà§à¦°à§‡à¦¶à¦¨',desc:'à¦®à¦¾à¦¤à§à¦° à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à§à¦¨à¥¤',points:['à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦¦à¦¿à¦¨ à¦“ OTP à¦¯à¦¾à¦šà¦¾à¦‡','à¦ªà§‚à¦°à§à¦£ à¦¨à¦¾à¦® à¦“ à¦‡à¦®à§‡à¦‡à¦²','à¦¶à¦•à§à¦¤à¦¿à¦¶à¦¾à¦²à§€ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡','à¦¶à¦°à§à¦¤à¦¾à¦¬à¦²à§€à¦¤à§‡ à¦¸à¦®à§à¦®à¦¤à¦¿'],action:{label:'à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦° à¦•à¦°à§à¦¨',callback:()=>{closeDemo();setTimeout(()=>openAuth('signup'),200)}}},
-  2:{title:'KYC à¦­à§‡à¦°à¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨',desc:'à¦ªà¦°à¦¿à¦šà¦¯à¦¼ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤ à¦•à¦°à§à¦¨à¥¤',points:['NID à¦¨à¦®à§à¦¬à¦° à¦¯à¦¾à¦šà¦¾à¦‡','à¦¸à§‡à¦²à¦«à¦¿ à¦†à¦ªà¦²à§‹à¦¡','à¦ à¦¿à¦•à¦¾à¦¨à¦¾à¦° à¦ªà§à¦°à¦®à¦¾à¦£','à¦¬à¦¾à¦¯à¦¼à§‹à¦®à§‡à¦Ÿà§à¦°à¦¿à¦• à¦²à¦—à¦‡à¦¨'],action:{label:'KYC à¦¶à§à¦°à§ à¦•à¦°à§à¦¨',callback:()=>{closeDemo();setTimeout(()=>openAuth('signup'),200)}}},
-  3:{title:'à¦…à§à¦¯à¦¾à¦ª à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡',desc:'Android à¦¬à¦¾ iOS à¦¡à¦¿à¦­à¦¾à¦‡à¦¸à§‡ à¦‡à¦¨à¦¸à§à¦Ÿà¦² à¦•à¦°à§à¦¨à¥¤',points:['Play Store à¦¬à¦¾ App Store','à¦®à¦¾à¦¤à§à¦° à§§à§¨ MB','Android à§¬.à§¦+','iOS à§§à§¨.à§¦+'],action:{label:'Android à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡',callback:()=>{closeDemo();setTimeout(()=>downloadApp('android'),200)}}},
-  4:{title:'à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¶à§à¦°à§',desc:'à¦¸à¦¬ à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤! à¦à¦–à¦¨ à¦²à§‡à¦¨à¦¦à§‡à¦¨ à¦¶à§à¦°à§ à¦•à¦°à§à¦¨à¥¤',points:['à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨','à¦¬à¦¿à¦² à¦ªà§‡à¦®à§‡à¦¨à§à¦Ÿ','à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼ à¦‹à¦£','à¦°à§‡à¦•à¦°à§à¦¡ à¦¦à§‡à¦–à§à¦¨'],action:{label:'à¦¡à§‡à¦®à§‹ à¦¦à§‡à¦–à§à¦¨',callback:()=>openDemo('send')}}
+  1:{title:'রেজিস্ট্রেশন',desc:'মাত্র ২ মিনিটে অ্যাকাউন্ট খুলুন।',points:['মোবাইল নম্বর দিন ও OTP যাচাই','পূর্ণ নাম ও ইমেইল','শক্তিশালী পাসওয়ার্ড','শর্তাবলীতে সম্মতি'],action:{label:'রেজিস্টার করুন',callback:()=>{closeDemo();setTimeout(()=>openAuth('signup'),200)}}},
+  2:{title:'KYC ভেরিফিকেশন',desc:'পরিচয় নিশ্চিত করুন।',points:['NID নম্বর যাচাই','সেলফি আপলোড','ঠিকানার প্রমাণ','বায়োমেট্রিক লগইন'],action:{label:'KYC শুরু করুন',callback:()=>{closeDemo();setTimeout(()=>openAuth('signup'),200)}}},
+  3:{title:'অ্যাপ ডাউনলোড',desc:'Android বা iOS ডিভাইসে ইনস্টল করুন।',points:['Direct Android APK download','Offline assets bundled','Android ৬.০+','Unofficial educational demo'],action:{label:'Android APK ডাউনলোড',callback:()=>{window.location.href='/downloads/probashi-bondhu-demo.apk'}}},
+  4:{title:'লেনদেন শুরু',desc:'সব প্রস্তুত! এখন লেনদেন শুরু করুন।',points:['তাৎক্ষণিক টাকা পাঠান','বিল পেমেন্ট','২৪ ঘণ্টায় ঋণ','রেকর্ড দেখুন'],action:{label:'ডেমো দেখুন',callback:()=>openDemo('send')}}
 };
 function openStepDetail(n){
   const s=stepDetails[n];if(!s)return;
   demoHeadTitle.textContent=s.title;
-  demoHeadSub.textContent='à¦§à¦¾à¦ª '+toBn(n)+' / à§ª';
+  demoHeadSub.textContent='ধাপ '+toBn(n)+' / ৪';
   demoHeadIcon.innerHTML=demoIcons.step;
   demoBody.innerHTML=`<div class="step-detail-num">${toBn(n)}</div><div class="feature-detail-title">${s.title}</div><div class="feature-detail-desc">${s.desc}</div><div class="step-detail-list">${s.points.map((p,i)=>`<div class="step-detail-list-item"><span class="num">${toBn(i+1)}</span>${p}</div>`).join('')}</div><button class="demo-btn" id="stepActionBtn"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>${s.action.label}</span></button>`;
   setTimeout(()=>{const b=document.getElementById('stepActionBtn');if(b)b.addEventListener('click',()=>s.action.callback())},0);
@@ -2331,7 +2331,7 @@ function openStepDetail(n){
   document.body.style.overflow='hidden';
 }
 
-/* â•â•â• DOWNLOAD â•â•â• */
+/* ═══ DOWNLOAD ═══ */
 const dlModal=document.getElementById('dlModal');
 const dlProgressFill=document.getElementById('dlProgressFill');
 const dlProgressPct=document.getElementById('dlProgressPct');
@@ -2344,7 +2344,7 @@ const dlModalSub=document.getElementById('dlModalSub');
 const apps={
   android:{
     name:'Android APK',
-    size:'Latest demo APK',
+    size:'70–80 MB target asset-bundled APK',
     url:'/downloads/probashi-bondhu-demo.apk',
     icon:'<svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:#16a34a"><path d="M3.6 1.8a1.2 1.2 0 0 0-.4.9v18.6a1.2 1.2 0 0 0 .4.9l10.4-10.2L3.6 1.8zm11.8 8.2L5.7 2.4l10.5 6.1-2.8 1.5zm0 4.5-2.8-1.5L5.7 21.6l11.7-6.7-.1-.4zm4.8-3.3-3.3-1.9-3.1 1.7 3.1 1.7 3.3-1.9c.7-.4.7-1.3 0-1.6z"/></svg>'
   },
@@ -2352,7 +2352,7 @@ const apps={
     name:'iOS',
     size:'Store link required',
     url:'',
-    icon:'<svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:#0c0c14"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>'
+    icon:'<svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:#0c0c14"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.35 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>'
   }
 };
 let dlInterval=null;
@@ -2375,28 +2375,29 @@ async function finishDownload(p){
   if(p==='android'){
     const ok=await downloadExists(apps.android.url);
     if(!ok){
-      showToast('info','APK file à¦à¦–à¦¨à§‹ à¦¯à§à¦•à§à¦¤ à¦¹à§Ÿà¦¨à¦¿','Project-à¦à¦° downloads/probashi-bondhu-demo.apk à¦œà¦¾à§Ÿà¦—à¦¾à§Ÿ final APK binary à¦°à¦¾à¦–à¦²à§‡à¦‡ à¦à¦‡ button à¦¸à¦°à¦¾à¦¸à¦°à¦¿ download à¦•à¦°à¦¬à§‡à¥¤',7000);
+      showToast('info','APK file এখনো যুক্ত হয়নি','Project-এর downloads/probashi-bondhu-demo.apk জায়গায় final APK binary রাখলেই এই button সরাসরি download করবে।',7000);
       return;
     }
     triggerDownload(apps.android.url,'probashi-bondhu-demo.apk');
-    showToast('success','APK download started','Android APK download à¦¶à§à¦°à§ à¦¹à¦¯à¦¼à§‡à¦›à§‡à¥¤');
+    showToast('success','APK download started','Android APK download শুরু হয়েছে।');
   }else{
-    showToast('info','iOS','App Store link configure à¦•à¦°à¦¾ à¦¹à¦²à§‡ à¦à¦–à¦¾à¦¨ à¦¥à§‡à¦•à§‡ open à¦¹à¦¬à§‡à¥¤');
+    showToast('info','iOS','App Store link configure করা হলে এখান থেকে open হবে।');
   }
   closeDlModal();
 }
 function downloadApp(p){
   window.__downloadPlatform=p;
+  if(p==='android'){ window.location.href=apps.android.url; return; }
   const a=apps[p];
-  dlPlatformName.textContent='Bangladesh Bank Styled Demo â€” '+a.name;
+  dlPlatformName.textContent='Probashi Bondhu Demo — '+a.name;
   dlPlatformSize.textContent=a.size;
   dlPlatformIcon.innerHTML=a.icon;
   dlModalSub.textContent=p==='android'
-    ?'Android APK download à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤ à¦¹à¦šà§à¦›à§‡...'
-    :'iOS store link configure à¦•à¦°à¦¤à§‡ à¦¹à¦¬à§‡à¥¤';
+    ?'Android APK download প্রস্তুত হচ্ছে...'
+    :'iOS store link configure করতে হবে।';
   dlProgressFill.style.width='0%';
-  dlProgressPct.textContent='à§¦%';
-  dlProgressLabel.textContent='à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤ à¦¹à¦šà§à¦›à§‡...';
+  dlProgressPct.textContent='০%';
+  dlProgressLabel.textContent='প্রস্তুত হচ্ছে...';
   dlDoneBtn.style.display='none';
   dlModal.classList.add('open');
   document.body.style.overflow='hidden';
@@ -2407,10 +2408,10 @@ function downloadApp(p){
     if(pct>=100){
       pct=100;
       clearInterval(dlInterval);
-      dlProgressLabel.textContent='à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤!';
+      dlProgressLabel.textContent='প্রস্তুত!';
       dlDoneBtn.style.display='flex';
     }else{
-      dlProgressLabel.textContent='à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤ à¦¹à¦šà§à¦›à§‡...';
+      dlProgressLabel.textContent='ডাউনলোড প্রস্তুত হচ্ছে...';
     }
     dlProgressFill.style.width=pct+'%';
     dlProgressPct.textContent=toBn(Math.round(pct))+'%';
@@ -2421,22 +2422,22 @@ function closeDlModal(){
   clearInterval(dlInterval);
   if(!authModal.classList.contains('open')&&!state.chatOpen&&!demoPanel.classList.contains('open'))document.body.style.overflow='';
 }
-function toggleBalance(){state.balanceVisible=!state.balanceVisible;const el=document.getElementById('balanceText');el.textContent=state.balanceVisible?'à§³ 12,458.50':'à§³ â€¢â€¢â€¢â€¢â€¢â€¢'}
+function toggleBalance(){state.balanceVisible=!state.balanceVisible;const el=document.getElementById('balanceText');el.textContent=state.balanceVisible?'৳ 12,458.50':'৳ ••••••'}
 
-/* â•â•â• CHAT â•â•â• */
+/* ═══ CHAT ═══ */
 const chatPanel=document.getElementById('chatPanel');
 const chatBody=document.getElementById('chatBody');
 const chatInput=document.getElementById('chatInput');
 const chatWidget=document.getElementById('chatWidget');
 const botReplies={
-  'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ':'à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦–à§à¦²à¦¤à§‡ "à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà¦¾à¦°" à¦¬à¦¾à¦Ÿà¦¨à§‡ à¦•à§à¦²à¦¿à¦• à¦•à¦°à§à¦¨à¥¤ NID à¦à¦¬à¦‚ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦¦à¦¿à¦²à§‡à¦‡ à§¨ à¦®à¦¿à¦¨à¦¿à¦Ÿà§‡à¥¤ ðŸ“±',
-  'à¦‹à¦£':'à¦•à§ƒà¦·à¦¿, à¦¬à§à¦¯à¦¬à¦¸à¦¾ à¦¬à¦¾ à¦¸à§à¦Ÿà¦¾à¦°à§à¦Ÿà¦†à¦ªà§‡à¦° à¦œà¦¨à§à¦¯ à¦‹à¦£ â€” à§¨à§ª à¦˜à¦£à§à¦Ÿà¦¾à¦¯à¦¼ à¦…à¦¨à§à¦®à§‹à¦¦à¦¨à¥¤ ðŸ’°',
-  'à¦¸à§€à¦®à¦¾':'à¦¦à§ˆà¦¨à¦¿à¦• à§¨à§«,à§¦à§¦à§¦ à¦Ÿà¦¾à¦•à¦¾ à¦ªà¦¾à¦ à¦¾à¦¨à§‹, à§«à§¦,à§¦à§¦à§¦ à¦Ÿà¦¾à¦•à¦¾ à¦—à§à¦°à¦¹à¦£à¥¤ ðŸ“Š',
-  'à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾':'à§¨à§«à§¬-à¦¬à¦¿à¦Ÿ AES à¦à¦¨à¦•à§à¦°à¦¿à¦ªà¦¶à¦¨, à¦¬à¦¾à¦¯à¦¼à§‹à¦®à§‡à¦Ÿà§à¦°à¦¿à¦• à¦²à¦—à¦‡à¦¨, à§¨à§ª/à§­ à¦«à§à¦°à¦¡ à¦®à¦¨à¦¿à¦Ÿà¦°à¦¿à¦‚à¥¤ ðŸ”',
-  'à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡':'Play Store à¦¬à¦¾ App Store à¦¥à§‡à¦•à§‡ "à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦•" à¦¸à¦¾à¦°à§à¦š à¦•à¦°à§à¦¨à¥¤ ðŸ“²',
-  'à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡':'à¦²à¦—à¦‡à¦¨ à¦¸à§à¦•à§à¦°à¦¿à¦¨à§‡ "à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦­à§à¦²à§‡ à¦—à§‡à¦›à§‡à¦¨?" à¦•à§à¦²à¦¿à¦• à¦•à¦°à§à¦¨à¥¤ ðŸ”‘',
-  'à¦¯à§‹à¦—à¦¾à¦¯à§‹à¦—':'à¦•à¦²: +à§®à§®à§¦ à§§à§¨à§©à§ª-à§«à§¬à§­à§®à§¯, à¦‡à¦®à§‡à¦‡à¦²: support@bd-bank.com â€” à§¨à§ª/à§­à¥¤ ðŸ“ž',
-  'à¦§à¦¨à§à¦¯à¦¬à¦¾à¦¦':'à¦†à¦ªà¦¨à¦¾à¦•à§‡à¦“ à¦§à¦¨à§à¦¯à¦¬à¦¾à¦¦! ðŸ™'
+  'অ্যাকাউন্ট':'অ্যাকাউন্ট খুলতে "রেজিস্টার" বাটনে ক্লিক করুন। NID এবং মোবাইল নম্বর দিলেই ২ মিনিটে। 📱',
+  'ঋণ':'কৃষি, ব্যবসা বা স্টার্টআপের জন্য ঋণ — ২৪ ঘণ্টায় অনুমোদন। 💰',
+  'সীমা':'দৈনিক ২৫,০০০ টাকা পাঠানো, ৫০,০০০ টাকা গ্রহণ। 📊',
+  'নিরাপত্তা':'২৫৬-বিট AES এনক্রিপশন, বায়োমেট্রিক লগইন, ২৪/৭ ফ্রড মনিটরিং। 🔐',
+  'ডাউনলোড':'Play Store বা App Store থেকে "বাংলাদেশ ব্যাংক" সার্চ করুন। 📲',
+  'পাসওয়ার্ড':'লগইন স্ক্রিনে "পাসওয়ার্ড ভুলে গেছেন?" ক্লিক করুন। 🔑',
+  'যোগাযোগ':'কল: +৮৮০ ১২৩৪-৫৬৭৮৯, ইমেইল: support@bd-bank.com — ২৪/৭। 📞',
+  'ধন্যবাদ':'আপনাকেও ধন্যবাদ! 🙏'
 };
 function openChat(){state.chatOpen=true;chatPanel.classList.add('open');setTimeout(()=>chatInput.focus(),300)}
 function closeChat(){state.chatOpen=false;chatPanel.classList.remove('open')}
@@ -2448,7 +2449,7 @@ function sendChat(e){
   if(!t)return false;
   const u=document.createElement('div');
   u.className='chat-msg user';
-  u.innerHTML=`${escapeHtml(t)}<div class="chat-msg-time">à¦à¦–à¦¨</div>`;
+  u.innerHTML=`${escapeHtml(t)}<div class="chat-msg-time">এখন</div>`;
   chatBody.appendChild(u);
   chatInput.value='';
   chatBody.scrollTop=chatBody.scrollHeight;
@@ -2459,30 +2460,30 @@ function sendChat(e){
   chatBody.scrollTop=chatBody.scrollHeight;
   setTimeout(()=>{
     typ.remove();
-    const reply='à¦§à¦¨à§à¦¯à¦¬à¦¾à¦¦ à¦†à¦ªà¦¨à¦¾à¦° à¦¬à¦¾à¦°à§à¦¤à¦¾à¦° à¦œà¦¨à§à¦¯! à¦†à¦®à¦¾à¦¦à§‡à¦° à¦ªà§à¦°à¦¤à¦¿à¦¨à¦¿à¦§à¦¿ à¦¶à§€à¦˜à§à¦°à¦‡ à¦¯à§‹à¦—à¦¾à¦¯à§‹à¦— à¦•à¦°à¦¬à§‡à¦¨à¥¤ à¦œà¦°à§à¦°à¦¿: <strong>+à§®à§®à§¦ à§§à§¨à§©à§ª-à§«à§¬à§­à§®à§¯</strong>';
+    const reply='ধন্যবাদ আপনার বার্তার জন্য! আমাদের প্রতিনিধি শীঘ্রই যোগাযোগ করবেন। জরুরি: <strong>+৮৮০ ১২৩৪-৫৬৭৮৯</strong>';
     const b=document.createElement('div');
     b.className='chat-msg bot';
-    b.innerHTML=reply+'<div class="chat-msg-time">à¦à¦–à¦¨</div>';
+    b.innerHTML=reply+'<div class="chat-msg-time">এখন</div>';
     chatBody.appendChild(b);
     chatBody.scrollTop=chatBody.scrollHeight;
   },900);
   return false;
 }
 
-/* â•â•â• COOKIE â•â•â• */
+/* ═══ COOKIE ═══ */
 const cookieBanner=document.getElementById('cookieBanner');
 if(!localStorage.getItem('cookieChoice'))setTimeout(()=>cookieBanner.classList.add('show'),2200);
-function acceptCookie(){localStorage.setItem('cookieChoice','accepted');cookieBanner.classList.remove('show');showToast('success','à¦§à¦¨à§à¦¯à¦¬à¦¾à¦¦!','à¦¸à¦‚à¦°à¦•à§à¦·à¦¿à¦¤à¥¤')}
+function acceptCookie(){localStorage.setItem('cookieChoice','accepted');cookieBanner.classList.remove('show');showToast('success','ধন্যবাদ!','সংরক্ষিত।')}
 function dismissCookie(){localStorage.setItem('cookieChoice','dismissed');cookieBanner.classList.remove('show')}
 
-/* â•â•â• TICKER â•â•â• */
+/* ═══ TICKER ═══ */
 const tickerData=[
-  {city:'à¦¢à¦¾à¦•à¦¾',name:'à¦•à¦°à¦¿à¦®',action:'à¦ªà¦¾à¦ à¦¿à¦¯à¦¼à§‡à¦›à§‡à¦¨',amt:'à§³ à§«à§¦à§¦'},
-  {city:'à¦šà¦Ÿà§à¦Ÿà¦—à§à¦°à¦¾à¦®',name:'à¦°à¦¹à¦¿à¦®à¦¾',action:'à¦ªà§‡à¦¯à¦¼à§‡à¦›à§‡à¦¨',amt:'à§³ à§§,à§¨à§¦à§¦'},
-  {city:'à¦°à¦¾à¦œà¦¶à¦¾à¦¹à§€',name:'à¦¸à¦¾à¦¬à§à¦¬à¦¿à¦°',action:'à¦²à§‹à¦¨ à¦¨à¦¿à¦¯à¦¼à§‡à¦›à§‡à¦¨',amt:'à§³ à§©,à§«à§¦à§¦'},
-  {city:'à¦–à§à¦²à¦¨à¦¾',name:'à¦¨à¦¾à¦¸à¦°à¦¿à¦¨',action:'à¦ªà¦¾à¦ à¦¿à¦¯à¦¼à§‡à¦›à§‡à¦¨',amt:'à§³ à§®à§¦à§¦'},
-  {city:'à¦¸à¦¿à¦²à§‡à¦Ÿ',name:'à¦¤à¦¾à¦¨à¦­à§€à¦°',action:'à¦ªà§‡à¦¯à¦¼à§‡à¦›à§‡à¦¨',amt:'à§³ à§¨,à§¦à§¦à§¦'},
-  {city:'à¦¬à¦°à¦¿à¦¶à¦¾à¦²',name:'à¦«à¦¾à¦°à¦¹à¦¾à¦¨à¦¾',action:'à¦ªà¦¾à¦ à¦¿à¦¯à¦¼à§‡à¦›à§‡à¦¨',amt:'à§³ à§§,à§«à§¦à§¦'}
+  {city:'ঢাকা',name:'করিম',action:'পাঠিয়েছেন',amt:'৳ ৫০০'},
+  {city:'চট্টগ্রাম',name:'রহিমা',action:'পেয়েছেন',amt:'৳ ১,২০০'},
+  {city:'রাজশাহী',name:'সাব্বির',action:'লোন নিয়েছেন',amt:'৳ ৩,৫০০'},
+  {city:'খুলনা',name:'নাসরিন',action:'পাঠিয়েছেন',amt:'৳ ৮০০'},
+  {city:'সিলেট',name:'তানভীর',action:'পেয়েছেন',amt:'৳ ২,০০০'},
+  {city:'বরিশাল',name:'ফারহানা',action:'পাঠিয়েছেন',amt:'৳ ১,৫০০'}
 ];
 function buildTicker(){
   const t=document.getElementById('tickerTrack');
@@ -2492,7 +2493,7 @@ function buildTicker(){
 }
 buildTicker();
 
-/* â•â•â• QR â•â•â• */
+/* ═══ QR ═══ */
 function buildQR(){
   const t=document.getElementById('qrCode');
   if(!t)return;
@@ -2501,7 +2502,7 @@ function buildQR(){
 }
 buildQR();
 
-/* â•â•â• REVEAL â•â•â• */
+/* ═══ REVEAL ═══ */
 const revealObserver=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -2518,7 +2519,7 @@ document.querySelectorAll('.feature-card, .step-card, .section-head, .qr-card').
   revealObserver.observe(el);
 });
 
-/* â•â•â• COUNTER â•â•â• */
+/* ═══ COUNTER ═══ */
 function animateCounter(el){
   const target=parseFloat(el.dataset.count);
   const decimals=parseInt(el.dataset.decimal||'0',10);
@@ -2530,7 +2531,7 @@ function animateCounter(el){
     const eased=1-Math.pow(1-progress,3);
     const value=target*eased;
     let display;
-    if(target>=100000)display=toBn((value/100000).toFixed(1))+' à¦²à¦•à§à¦·';
+    if(target>=100000)display=toBn((value/100000).toFixed(1))+' লক্ষ';
     else if(target>=1000)display=toBn(Math.round(value).toLocaleString('en-IN').replace(/,/g,''));
     else if(decimals>0)display=toBn(value.toFixed(decimals));
     else display=toBn(Math.round(value));
@@ -2546,11 +2547,11 @@ const counterObserver=new IntersectionObserver((entries)=>{
 },{threshold:0.4});
 document.querySelectorAll('.stat-number[data-count]').forEach(c=>counterObserver.observe(c));
 
-/* â•â•â• WELCOME â•â•â• */
+/* ═══ WELCOME ═══ */
 window.addEventListener('load',()=>{
   setTimeout(()=>{
     if(!sessionStorage.getItem('welcomed')){
-      showToast('info','à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®! ðŸ‘‹','à¦¬à¦¾à¦‚à¦²à¦¾à¦¦à§‡à¦¶ à¦¬à§à¦¯à¦¾à¦‚à¦• à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¬à§à¦¯à¦¾à¦‚à¦•à¦¿à¦‚-à¦ à¦†à¦ªà¦¨à¦¾à¦•à§‡ à¦¸à§à¦¬à¦¾à¦—à¦¤à¦®à¥¤ âŒ˜K à¦šà§‡à¦ªà§‡ à¦¦à§à¦°à§à¦¤ à¦¨à§‡à¦­à¦¿à¦—à§‡à¦Ÿ à¦•à¦°à§à¦¨à¥¤',5000);
+      showToast('info','স্বাগতম! 👋','বাংলাদেশ ব্যাংক মোবাইল ব্যাংকিং-এ আপনাকে স্বাগতম। ⌘K চেপে দ্রুত নেভিগেট করুন।',5000);
       sessionStorage.setItem('welcomed','1');
     }
   },1200);

@@ -868,6 +868,26 @@ body{padding-top:20px}.app-shell{height:calc(100dvh - 20px)}
 .wallet-modal-box{background:#fff;width:calc(100% - 30px);max-width:380px;border-radius:20px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.28);position:relative}.modal-x{position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:50%;background:#f4f5f8;color:#7b8190}.wallet-modal-head{display:flex;align-items:center;gap:11px;margin-bottom:16px}.wallet-modal-icon{width:46px;height:46px;border-radius:13px;background:#fce4ec;color:#d81b60;display:flex;align-items:center;justify-content:center;font-size:18px}.wallet-modal-title{font-size:17px;font-weight:800}.wallet-modal-sub{font-size:11px;color:#8b91a1;margin-top:2px}.method-form{display:flex;flex-direction:column;gap:11px}.method-form label{font-size:11px;font-weight:700;color:#5a6178;display:flex;flex-direction:column;gap:6px}.kyc-input{width:100%;border:1.5px solid var(--border);background:var(--input-bg);border-radius:11px;padding:11px 12px;font:inherit;font-size:13px;outline:none}.kyc-input:focus{border-color:var(--pink);background:#fff;box-shadow:0 0 0 4px rgba(216,27,96,.08)}.demo-alert{background:#fff8e6;color:#7b5e00;border-radius:11px;padding:10px;font-size:10.5px;line-height:1.5;display:flex;gap:7px}.history-box{max-height:330px;overflow:auto}.history-row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);font-size:12px}.history-row small{display:block;color:var(--muted);font-size:9.5px;margin-top:2px}.empty-state{text-align:center;padding:30px;color:var(--muted);font-size:12px}
 .kyc-status-card{display:flex;align-items:center;gap:12px;margin:14px 16px 0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:13px;box-shadow:var(--shadow)}.kyc-status-icon{width:40px;height:40px;border-radius:11px;background:#e3f2fd;color:#1976d2;display:flex;align-items:center;justify-content:center}.kyc-status-card>div:nth-child(2){flex:1}.kyc-status-card strong{display:block;font-size:13px}.kyc-status-card small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.kyc-pill{padding:5px 9px;border-radius:99px;background:#fff3e0;color:#ef6c00;font-size:9px;font-weight:800}.kyc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kyc-grid label,.kyc-wide{font-size:11px;font-weight:700;color:#5a6178}.kyc-wide{display:block;margin-top:10px}.selfie-card .kyc-note{font-size:11px;color:var(--mid);line-height:1.5;margin-bottom:12px}.camera-box{position:relative;height:360px;border-radius:18px;overflow:hidden;background:#0c1016;display:flex;align-items:center;justify-content:center}.camera-box video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}#kycCanvas{display:none}.face-guide{position:absolute;width:190px;height:255px;border:2px solid rgba(255,255,255,.85);border-radius:50%/55%;box-shadow:0 0 0 9999px rgba(0,0,0,.24)}.camera-countdown{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:rgba(216,27,96,.92);color:#fff;display:none;align-items:center;justify-content:center;font:800 20px Inter}.camera-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:#aeb5c3;font-size:11px}.camera-placeholder i{font-size:28px}.camera-actions{display:flex;gap:10px;margin-top:12px}.camera-actions .btn{flex:1}.selfie-preview{margin-top:12px;display:flex;align-items:center;gap:10px;background:#e8f5e9;border-radius:12px;padding:8px;color:#2e7d32;font-size:11px}.selfie-preview img{width:48px;height:48px;object-fit:cover;border-radius:10px}.selfie-preview span{font-weight:700}.kyc-check{margin:12px 0 14px}
 @media(max-width:380px){.method-grid{grid-template-columns:1fr}.kyc-grid{grid-template-columns:1fr}.camera-box{height:320px}}
+
+/* ================== FINAL 4.4 NOTIFICATION + CARD UI ================== */
+.notify-modal{width:calc(100% - 24px);max-width:390px;background:#fff;border-radius:22px;box-shadow:0 30px 90px rgba(0,0,0,.30);overflow:hidden;border:1px solid #eee6eb}
+.notify-head{display:flex;align-items:center;gap:12px;padding:16px 16px 13px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#fff,#fff5f9)}
+.notify-head .nicon{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 8px 18px rgba(216,27,96,.22)}
+.notify-head .ntitle{flex:1;min-width:0}.notify-head .ntitle b{display:block;font-size:16px}.notify-head .ntitle small{display:block;font-size:10px;color:var(--muted);margin-top:2px}
+.notify-head .nclose{width:34px;height:34px;border-radius:50%;background:#f7f1f5;color:#6f5966;display:flex;align-items:center;justify-content:center}
+.notify-list{max-height:420px;overflow:auto;padding:10px}
+.notify-item{display:flex;gap:11px;padding:12px;border-radius:14px;margin-bottom:7px;background:#fbf9fb;border:1px solid #f0e8ee;transition:.2s}
+.notify-item.unread{background:#fff3f8;border-color:#f3cddd}
+.notify-item .ni{width:38px;height:38px;border-radius:11px;background:#fce4ec;color:#d81b60;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.notify-item .nt{flex:1;min-width:0}.notify-item .nt b{display:block;font-size:12.5px;color:var(--dark)}.notify-item .nt p{font-size:11px;color:var(--mid);line-height:1.45;margin-top:3px}.notify-item .nt time{display:block;font-size:9.5px;color:var(--muted);margin-top:5px}
+.notify-foot{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);background:#fff}
+.notify-foot button{flex:1;padding:11px;border-radius:11px;font-size:11.5px;font-weight:800}
+.card-detail{width:calc(100% - 24px);max-width:390px;background:#fff;border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.34);overflow:hidden}
+.card-detail-hero{padding:18px;background:linear-gradient(135deg,#1d1020,#4b1238);color:#fff}.card-detail-hero .mini-card{border-radius:18px;min-height:185px;padding:17px;position:relative;overflow:hidden;background:linear-gradient(135deg,#d81b60,#7a1544);box-shadow:0 20px 40px rgba(216,27,96,.25)}
+.card-detail-hero .mini-card.master{background:linear-gradient(135deg,#1e2233,#2d3250)}
+.card-detail-hero .mini-top{display:flex;justify-content:space-between;align-items:flex-start}.card-detail-hero .mini-brand{font-size:12px;font-weight:800;letter-spacing:.05em}.card-detail-hero .mini-type{font-size:9px;opacity:.78;margin-top:3px;text-transform:uppercase;letter-spacing:.08em}.card-detail-hero .mini-num{font:700 16px Inter,sans-serif;letter-spacing:.15em;margin-top:28px}.card-detail-hero .mini-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:24px}.card-detail-hero .mini-lbl{font-size:8px;opacity:.68;text-transform:uppercase}.card-detail-hero .mini-v{font:700 12px Inter,sans-serif}.card-detail-body{padding:16px}.card-detail-title{font-size:16px;font-weight:800;margin-bottom:3px}.card-detail-sub{font-size:10.5px;color:var(--muted);margin-bottom:13px}.card-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card-detail-stat{background:#f9f6f8;border:1px solid #eee6eb;border-radius:12px;padding:11px}.card-detail-stat small{display:block;color:var(--muted);font-size:9px}.card-detail-stat b{display:block;font-size:12.5px;margin-top:3px}.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.card-actions button{padding:12px;border-radius:11px;font-size:12px;font-weight:800}.card-actions .primary{background:linear-gradient(135deg,#e91e63,#d81b60);color:#fff}.card-actions .soft{background:#fff3f8;color:#c2185b;border:1px solid #f3d4e2}
+.bank-card{cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}.bank-card:focus-visible{outline:2px solid #e91e63;outline-offset:3px}.bank-card:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(20,25,50,.26)}
+
 </style>
 </head>
 <body>
@@ -893,7 +913,7 @@ body{padding-top:20px}.app-shell{height:calc(100dvh - 20px)}
     <!-- ================= DASHBOARD ================= -->
     <section class="view active" id="view-dashboard">
       <div class="dash-hero">
-        <div class="greet">শালা, আসসালামু আলাইকুম</div>
+        <div class="greet">আসসালামু আলাইকুম</div>
         <div class="name" id="dashboardName">Rakib Hasan</div>
 
         <div class="balance-card">
@@ -1037,7 +1057,7 @@ body{padding-top:20px}.app-shell{height:calc(100dvh - 20px)}
         <div class="section-title" style="margin-bottom:0"><i class="fa-solid fa-credit-card"></i> লিংকড কার্ড</div>
       </div>
       <div class="wallet-cards">
-        <div class="bank-card c1">
+        <div class="bank-card c1" tabindex="0" role="button" onclick="openCardDetails('visa')" onkeydown="if(event.key==='Enter'||event.key===' ')openCardDetails('visa')">
           <div class="bc-top">
             <div>
               <div class="bname">PROBASHI BONDHU</div>
@@ -1057,7 +1077,7 @@ body{padding-top:20px}.app-shell{height:calc(100dvh - 20px)}
             </div>
           </div>
         </div>
-        <div class="bank-card c2">
+        <div class="bank-card c2" tabindex="0" role="button" onclick="openCardDetails('mastercard')" onkeydown="if(event.key==='Enter'||event.key===' ')openCardDetails('mastercard')">
           <div class="bc-top">
             <div>
               <div class="bname">PROBASHI BONDHU</div>
@@ -1797,6 +1817,50 @@ body{padding-top:20px}.app-shell{height:calc(100dvh - 20px)}
     </button>
   </nav>
 
+  <!-- ============================================================ NOTIFICATION CENTER -->
+  <div class="modal-overlay" id="notificationModal" style="z-index:1300">
+    <div class="notify-modal">
+      <div class="notify-head">
+        <div class="nicon"><i class="fa-solid fa-bell"></i></div>
+        <div class="ntitle"><b>নোটিফিকেশন</b><small>Probashi Bondhu • Demo Alerts</small></div>
+        <button class="nclose" onclick="closeNotifications()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="notify-list" id="notificationList"></div>
+      <div class="notify-foot">
+        <button class="btn btn-ghost" onclick="markAllNotificationsRead()"><i class="fa-solid fa-check-double"></i> সব পড়া</button>
+        <button class="btn btn-primary" onclick="closeNotifications()">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ CARD DETAILS -->
+  <div class="modal-overlay" id="cardDetailModal" style="z-index:1310">
+    <div class="card-detail">
+      <div class="card-detail-hero">
+        <div class="mini-card" id="detailMiniCard">
+          <div class="mini-top"><div><div class="mini-brand">PROBASHI BONDHU</div><div class="mini-type" id="detailType">VISA DEBIT</div></div><div id="detailNetwork"><i class="fa-brands fa-cc-visa" style="font-size:24px"></i></div></div>
+          <div class="mini-num" id="detailNumber">•••• •••• •••• 4829</div>
+          <div class="mini-bottom"><div><div class="mini-lbl">CARD HOLDER</div><div class="mini-v" id="detailHolder">RAKIB HASAN</div></div><div><div class="mini-lbl">EXPIRES</div><div class="mini-v" id="detailExpiry">09/29</div></div></div>
+        </div>
+      </div>
+      <div class="card-detail-body">
+        <div class="card-detail-title" id="detailTitle">Virtual Visa Card</div>
+        <div class="card-detail-sub">এটি একটি demo card। কোনো real payment/card authorization করা যাবে না।</div>
+        <div class="card-detail-grid">
+          <div class="card-detail-stat"><small>Status</small><b id="detailStatus">ACTIVE</b></div>
+          <div class="card-detail-stat"><small>Type</small><b id="detailKind">Debit</b></div>
+          <div class="card-detail-stat"><small>Last 4</small><b id="detailLast4">4829</b></div>
+          <div class="card-detail-stat"><small>Limit</small><b>৳ 25,000</b></div>
+        </div>
+        <div class="card-actions">
+          <button class="soft" onclick="copyDemoCardNumber()"><i class="fa-solid fa-copy"></i> Copy masked number</button>
+          <button class="primary" id="freezeCardBtn" onclick="toggleDemoCardFreeze()"><i class="fa-solid fa-snowflake"></i> Freeze Card</button>
+        </div>
+        <button class="btn btn-ghost btn-block" style="margin-top:9px" onclick="closeCardDetails()">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============================================================ LOGOUT MODAL -->
   <div class="modal-overlay" id="logoutModal">
     <div class="modal-box">
@@ -1916,15 +1980,62 @@ function handleHeaderBack(){
   }
 }
 
-function headerActionClick(){
-  if(state.currentView === 'schedule' || state.currentView === 'wallet'){
-    showToast('ডাউনলোড শুরু হয়েছে', 'info');
-  } else if(state.currentView === 'profile'){
-    showToast('অ্যাপ সেটিংস শীঘ্রই আসছে', 'info');
-  } else {
-    showToast('আপনার ২টি নতুন নোটিফিকেশন আছে', 'info');
-  }
+const DEMO_NOTIFICATIONS = [
+  {id:1,icon:'fa-bell',title:'নতুন অ্যাপ আপডেট',text:'Probashi Bondhu 4.4 demo interface এখন প্রস্তুত।',time:'আজ',unread:true},
+  {id:2,icon:'fa-credit-card',title:'Visa card ready',text:'আপনার demo Visa card details দেখতে Wallet > Linked Cards খুলুন।',time:'আজ',unread:true},
+  {id:3,icon:'fa-shield-halved',title:'Security reminder',text:'Demo environment-এ real NID, OTP বা banking password ব্যবহার করবেন না।',time:'গতকাল',unread:false},
+  {id:4,icon:'fa-circle-info',title:'KYC demo status',text:'KYC flow সম্পন্ন করার পর status local demo storage-এ সংরক্ষিত হবে।',time:'২ দিন আগে',unread:false}
+];
+function getDemoNotifications(){try{const r=JSON.parse(localStorage.getItem('pb_notifications')||'null');return Array.isArray(r)?r:DEMO_NOTIFICATIONS.map(x=>({...x}));}catch(e){return DEMO_NOTIFICATIONS.map(x=>({...x}));}}
+function saveDemoNotifications(v){try{localStorage.setItem('pb_notifications',JSON.stringify(v));}catch(e){}}
+function syncNotificationBadge(){const n=getDemoNotifications().filter(x=>x.unread).length;const b=document.getElementById('headerBadge');if(b){b.textContent=String(n);b.style.display=n?'flex':'none';}}
+function openNotifications(){
+  const modal=document.getElementById('notificationModal');
+  const list=document.getElementById('notificationList');
+  if(!modal||!list)return;
+  const items=getDemoNotifications();
+  list.innerHTML=items.map(x=>`<div class="notify-item ${x.unread?'unread':''}" onclick="readNotification(${x.id})"><div class="ni"><i class="fa-solid ${escapeHtml(x.icon)}"></i></div><div class="nt"><b>${escapeHtml(x.title)}</b><p>${escapeHtml(x.text)}</p><time>${escapeHtml(x.time)}${x.unread?' • নতুন':''}</time></div></div>`).join('');
+  modal.classList.add('show');
+  document.body.style.overflow='hidden';
+  try{window.AndroidDemo&&window.AndroidDemo.notifyDemo&&window.AndroidDemo.notifyDemo();}catch(e){}
 }
+function closeNotifications(){const m=document.getElementById('notificationModal');if(m)m.classList.remove('show');if(!document.getElementById('walletModal')?.style.display||document.getElementById('walletModal').style.display!=='flex')document.body.style.overflow='';}
+function readNotification(id){const items=getDemoNotifications().map(x=>x.id===id?{...x,unread:false}:x);saveDemoNotifications(items);openNotifications();syncNotificationBadge();}
+function markAllNotificationsRead(){saveDemoNotifications(getDemoNotifications().map(x=>({...x,unread:false})));openNotifications();syncNotificationBadge();showToast('সব নোটিফিকেশন পড়া হয়েছে ✓','success');}
+function headerActionClick(){
+  if(state.currentView === 'schedule' || state.currentView === 'wallet'){ showToast('এই screen-এর quick action demo হিসেবে দেখানো হয়েছে','info'); }
+  else if(state.currentView === 'profile'){ showToast('অ্যাপ সেটিংস শীঘ্রই আসছে','info'); }
+  else { openNotifications(); }
+}
+
+
+/* ============================================================ CARD DETAILS */
+let activeDemoCard='visa';
+function openCardDetails(type){
+  activeDemoCard=type==='mastercard'?'mastercard':'visa';
+  const visa=activeDemoCard==='visa';
+  const modal=document.getElementById('cardDetailModal');
+  const mini=document.getElementById('detailMiniCard');
+  document.getElementById('detailType').textContent=visa?'VISA DEBIT':'MASTERCARD CREDIT';
+  document.getElementById('detailNetwork').innerHTML=visa?'<i class="fa-brands fa-cc-visa" style="font-size:24px"></i>':'<i class="fa-brands fa-cc-mastercard" style="font-size:24px"></i>';
+  document.getElementById('detailNumber').textContent=visa?'•••• •••• •••• 4829':'•••• •••• •••• 7125';
+  document.getElementById('detailExpiry').textContent=visa?'09/29':'11/27';
+  document.getElementById('detailTitle').textContent=visa?'Virtual Visa Card':'Virtual Mastercard';
+  document.getElementById('detailKind').textContent=visa?'Debit':'Credit';
+  document.getElementById('detailLast4').textContent=visa?'4829':'7125';
+  mini.classList.toggle('master',!visa);
+  const frozen=localStorage.getItem('pb_card_'+activeDemoCard)==='frozen';
+  document.getElementById('detailStatus').textContent=frozen?'FROZEN':'ACTIVE';
+  const btn=document.getElementById('freezeCardBtn');
+  btn.innerHTML=frozen?'<i class="fa-solid fa-lock-open"></i> Unfreeze Card':'<i class="fa-solid fa-snowflake"></i> Freeze Card';
+  modal.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeCardDetails(){const m=document.getElementById('cardDetailModal');if(m)m.classList.remove('show');document.body.style.overflow='';}
+function toggleDemoCardFreeze(){const key='pb_card_'+activeDemoCard;const frozen=localStorage.getItem(key)==='frozen';if(frozen)localStorage.removeItem(key);else localStorage.setItem(key,'frozen');openCardDetails(activeDemoCard);showToast(frozen?'Demo card unfrozen':'Demo card frozen','info');}
+function copyDemoCardNumber(){const n=activeDemoCard==='visa'?'•••• •••• •••• 4829':'•••• •••• •••• 7125';try{navigator.clipboard.writeText(n).then(()=>showToast('Masked card number copied','success')).catch(()=>showToast(n,'info'));}catch(e){showToast(n,'info')}}
+document.addEventListener('click',(e)=>{if(e.target.id==='notificationModal')closeNotifications();if(e.target.id==='cardDetailModal')closeCardDetails();});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){closeNotifications();closeCardDetails();}});
 
 /* ============================================================ STEP NAV */
 function updateProgress(){
@@ -2579,7 +2690,7 @@ setInterval(()=>{if(state.currentView==='support')pollUserChat()},1500);
 const originalSubmitLoan=submitLoan;
 submitLoan=async function(){if(!state.agreed){showToast('শর্তাবলীতে সম্মতি দিন','error');return}const ids=['f_fullName','f_father','f_dob','f_phone','f_nid','f_occupation','f_income','f_address'];const ok=ids.every(id=>{const e=document.getElementById(id);return e&&String(e.value||'').trim()});if(!ok){showToast('Loan form-এর সব required তথ্য দিন','error');return}const btn=document.getElementById('submitBtn');btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> জমা হচ্ছে...';const payload={user_id:demoUser(),amount:state.amount,loan_type:'Personal',purpose:'General',tenure_months:state.tenure,full_name:val('f_fullName'),father_name:val('f_father'),mother_name:val('f_mother'),dob:val('f_dob'),mobile:val('f_phone'),nid:val('f_nid'),occupation:val('f_occupation'),monthly_income:Number(val('f_income')||0),present_address:val('f_address'),permanent_address:val('f_permanent')};try{const r=await fetch('/api/user/loans/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const d=await r.json();if(!r.ok)throw Error(d.error||'Application failed');state.loanSubmitted=true;state.schedule=generateSchedule(state.amount,state.tenure,calcLoan().emi);const loanView=document.getElementById('view-loan');loanView.innerHTML=`<div class="success-view"><div class="circle"><i class="fa-solid fa-check"></i></div><h2>আবেদন সফলভাবে জমা হয়েছে!</h2><p>Application ID: <b>${escapeHtml(d.application_id)}</b><br>বর্তমান status: <b>SUBMITTED</b></p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn btn-primary" onclick="showView('schedule')">কিস্তি সূচি</button><button class="btn btn-outline" onclick="showView('dashboard')">হোম</button></div></div>`;showToast('লোন আবেদন জমা হয়েছে ✓','success')}catch(e){btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> আবেদন জমা দিন';showToast(e.message,'error')}};
 
-document.addEventListener('DOMContentLoaded',()=>{restoreKyc();applyDemoProfile()});
+document.addEventListener('DOMContentLoaded',()=>{restoreKyc();applyDemoProfile();syncNotificationBadge()});
 function applyDemoProfile(){try{const p=JSON.parse(localStorage.getItem('pb_profile')||'{}');if(p.name){const n=document.getElementById('profileName');if(n)n.textContent=p.name;const d=document.getElementById('dashboardName');if(d)d.textContent=p.name}}catch(e){}}
 </script>
 </body>
