@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#dc0f68" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c14" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<title>বাংলাদেশ ব্যাংক — Your Trusted Financial Partner | Mobile Banking</title>
+<meta name="description" content="বাংলাদেশ ব্যাংক মোবাইল ব্যাংকিং — নিরাপদ, দ্রুত ও সহজ আর্থিক সেবা। টাকা পাঠান, রিসিভ করুন, ঋণ নিন — সব এক অ্যাপে।">
+<meta name="keywords" content="বাংলাদেশ ব্যাংক, মোবাইল ব্যাংকিং, Mobile Banking, fintech Bangladesh">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bd-bank.example.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="বাংলাদেশ ব্যাংক — Your Trusted Financial Partner">
+<meta property="og:description" content="নিরাপদ, দ্রুত ও সহজ মোবাইল ব্যাংকিং সেবা।">
+<meta property="og:image" content="https://bd-bank.example.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="বাংলাদেশ ব্যাংক — Your Trusted Financial Partner">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"FinancialService","name":"বাংলাদেশ ব্যাংক মোবাইল ব্যাংকিং","url":"https://bd-bank.example.com/","telephone":"+880-1234-56789","address":{"@type":"PostalAddress","addressLocality":"ঢাকা","addressCountry":"BD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","bestRating":"5","ratingCount":"12458"}},
+{"@type":"MobileApplication","name":"বাংলাদেশ ব্যাংক মোবাইল অ্যাপ","operatingSystem":"Android 6.0+, iOS 12.0+","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"}}
+]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.qrserver.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ DESIGN TOKENS ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Hind Siliguri','Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;text-rendering:optimizeLegibility;transition:background-color .4s var(--ease),color .4s var(--ease)}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea,select{font:inherit;outline:0}
+ul{list-style:none}
+
+:root{
+  --pink:#dc0f68;--pink-600:#c40d5c;--pink-50:#fce4ec;
+  --purple:#8e24aa;--blue:#29b6f6;--green:#16a34a;--green-50:#dcfce7;
+  --amber:#f59e0b;--red:#ef4444;
+  --border:#e6e6ee;--muted:#6b6b7b;
+  --bg:#ffffff;--surface:#ffffff;--text:#12121a;
+  --ink-900:#0c0c14;--ink-800:#12121a;--ink-700:#1f1f2e;--ink-600:#3a3a4a;
+  --ink-500:#6b6b7b;--ink-400:#9595a4;--ink-300:#c7c7d2;--ink-200:#e6e6ee;
+  --ink-100:#f1f1f6;--ink-50:#f8f8fb;
+  --section-alt:linear-gradient(180deg,#fff 0%,#fafafc 100%);
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-xl:28px;--r-2xl:36px;--r-full:999px;
+  --sh-sm:0 4px 14px rgba(12,12,20,.06);
+  --sh-md:0 12px 32px rgba(12,12,20,.08);
+  --sh-lg:0 24px 60px rgba(12,12,20,.12);
+  --sh-xl:0 40px 100px rgba(12,12,20,.16);
+  --grad-brand:linear-gradient(135deg,#dc0f68 0%,#8e24aa 52%,#29b6f6 100%);
+  --grad-pink:linear-gradient(135deg,#dc0f68,#ec407a);
+  --grad-purple:linear-gradient(135deg,#8e24aa,#ab47bc);
+  --grad-blue:linear-gradient(135deg,#29b6f6,#039be5);
+  --grad-green:linear-gradient(135deg,#16a34a,#22c55e);
+  --grad-gold:linear-gradient(135deg,#f59e0b,#fbbf24);
+  --grad-dark:linear-gradient(135deg,#0c0c14 0%,#1c1030 50%,#0c1c2a 100%);
+  --container:1280px;--gutter:24px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --ease-spring:cubic-bezier(.34,1.4,.64,1);
+}
+[data-theme="dark"]{
+  --border:#2a2a3a;--muted:#9595a4;
+  --bg:#0c0c14;--surface:#141420;--text:#f1f1f6;
+  --ink-900:#f1f1f6;--ink-800:#e6e6ee;--ink-700:#c7c7d2;--ink-600:#9595a4;
+  --ink-500:#6b6b7b;--ink-400:#4a4a5a;--ink-300:#3a3a4a;--ink-200:#2a2a3a;
+  --ink-100:#1f1f2e;--ink-50:#141420;
+  --section-alt:linear-gradient(180deg,#0c0c14 0%,#111118 100%);
+  --sh-sm:0 4px 14px rgba(0,0,0,.4);--sh-md:0 12px 32px rgba(0,0,0,.5);
+  --sh-lg:0 24px 60px rgba(0,0,0,.6);--sh-xl:0 40px 100px rgba(0,0,0,.7);
+  --pink-50:rgba(220,15,104,.15);--green-50:rgba(22,163,74,.15);
+}
+[data-theme="dark"] .navbar.scrolled{background:rgba(20,20,32,.86);border-bottom-color:rgba(42,42,58,.6);box-shadow:0 1px 0 rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.3)}
+[data-theme="dark"] .form-input,[data-theme="dark"] .demo-textarea,[data-theme="dark"] .newsletter-input,[data-theme="dark"] .chat-input,[data-theme="dark"] .amount-input,[data-theme="dark"] .calc-input,[data-theme="dark"] .calc-select{background:var(--ink-100);color:var(--ink-900)}
+[data-theme="dark"] .qr-card,[data-theme="dark"] .modal,[data-theme="dark"] .demo-panel,[data-theme="dark"] .cookie-banner,[data-theme="dark"] .chat-panel,[data-theme="dark"] .mobile-menu{background:var(--surface)}
+[data-theme="dark"] .chat-msg.bot,[data-theme="dark"] .chat-typing{background:var(--ink-100)}
+[data-theme="dark"] .screen-phone,[data-theme="dark"] .phone-mockup{background:linear-gradient(145deg,#141420,#000)}
+
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(220,15,104,.25);color:inherit}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--ink-50)}
+::-webkit-scrollbar-thumb{background:var(--ink-300);border-radius:10px;border:2px solid var(--ink-50)}
+::-webkit-scrollbar-thumb:hover{background:var(--ink-400)}
+
+.skip-link{position:fixed;top:-100px;left:20px;z-index:9999;padding:14px 22px;border-radius:12px;background:var(--pink);color:#fff;font-size:14px;font-weight:700;box-shadow:var(--sh-lg);transition:top .3s var(--ease)}
+.skip-link:focus{top:20px}
+
+/* ═══ SCROLL PROGRESS ═══ */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad-brand);z-index:3000;transition:width .1s linear;box-shadow:0 0 12px rgba(220,15,104,.5)}
+
+/* ═══ NAVBAR ═══ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:transparent;transition:padding .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease)}
+.navbar.scrolled{padding:10px 0;background:rgba(255,255,255,.86);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 1px 0 rgba(12,12,20,.06),0 8px 28px rgba(12,12,20,.06);border-bottom:1px solid rgba(230,230,238,.6)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-logo{width:46px;height:46px;border-radius:14px;background:#fff;border:1.5px solid rgba(8,117,47,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(8,117,47,.14);transition:transform .35s var(--ease-spring)}
+.nav-brand:hover .nav-logo{transform:scale(1.06) rotate(-3deg)}
+.nav-logo svg{width:34px;height:34px}
+.nav-brand-text{line-height:1.15}
+.nav-brand-title{font-size:15px;font-weight:700;letter-spacing:-.2px;transition:color .3s var(--ease)}
+.nav-brand-sub{font-size:10.5px;font-weight:600;letter-spacing:.8px;font-family:'Inter',sans-serif;transition:color .3s var(--ease)}
+.navbar:not(.scrolled) .nav-brand-title{color:#fff}
+.navbar:not(.scrolled) .nav-brand-sub{color:rgba(255,255,255,.7)}
+.navbar.scrolled .nav-brand-title{color:var(--ink-900)}
+.navbar.scrolled .nav-brand-sub{color:var(--ink-500)}
+
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{font-size:13.5px;font-weight:600;padding:9px 14px;border-radius:10px;transition:color .2s var(--ease),background .2s var(--ease)}
+.navbar:not(.scrolled) .nav-link{color:rgba(255,255,255,.92)}
+.navbar.scrolled .nav-link{color:var(--ink-600)}
+.nav-link:hover{background:rgba(255,255,255,.12)}
+.navbar.scrolled .nav-link:hover{background:var(--ink-100);color:var(--pink)}
+
+.nav-actions{display:flex;align-items:center;gap:6px}
+.kbd-hint{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);font-size:12px;font-weight:700;color:#fff;transition:background .2s;margin-right:4px}
+.kbd-hint:hover{background:rgba(255,255,255,.22)}
+.navbar.scrolled .kbd-hint{background:var(--ink-100);color:var(--ink-700);border-color:var(--border)}
+.navbar.scrolled .kbd-hint:hover{background:var(--ink-200)}
+.kbd-hint kbd{font-family:'Inter',monospace;font-size:10px;font-weight:800;padding:1px 5px;border-radius:4px;background:rgba(255,255,255,.2);color:inherit}
+.navbar.scrolled .kbd-hint kbd{background:var(--ink-200);color:var(--ink-700)}
+
+.icon-btn{width:40px;height:40px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;transition:all .25s var(--ease);color:rgba(255,255,255,.95)}
+.navbar.scrolled .icon-btn{color:var(--ink-700)}
+.icon-btn:hover{background:rgba(255,255,255,.14)}
+.navbar.scrolled .icon-btn:hover{background:var(--ink-100)}
+.icon-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+.lang-btn{padding:8px 14px;border-radius:11px;font-size:13px;font-weight:800;font-family:'Inter',sans-serif;transition:all .25s var(--ease);color:rgba(255,255,255,.95);letter-spacing:.5px}
+.navbar.scrolled .lang-btn{color:var(--ink-700)}
+.lang-btn:hover{background:rgba(255,255,255,.14)}
+.navbar.scrolled .lang-btn:hover{background:var(--ink-100)}
+
+/* ═══ LOGIN / SIGNUP BUTTONS (ENHANCED) ═══ */
+.btn-login{padding:10px 20px;border-radius:11px;font-size:14px;font-weight:700;transition:all .25s var(--ease);border:1.5px solid transparent}
+.navbar:not(.scrolled) .btn-login{color:rgba(255,255,255,.95);border-color:rgba(255,255,255,.28)}
+.navbar.scrolled .btn-login{color:var(--ink-700);border-color:var(--border)}
+.btn-login:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
+.navbar.scrolled .btn-login:hover{background:var(--ink-100);border-color:var(--ink-300);color:var(--pink)}
+
+.btn-signup{
+  padding:11px 22px;border-radius:11px;font-size:14px;font-weight:800;
+  background:#fff;color:var(--pink);
+  box-shadow:0 4px 16px rgba(0,0,0,.2),0 0 0 1.5px rgba(255,255,255,.4);
+  transition:all .3s var(--ease-spring);
+  display:inline-flex;align-items:center;gap:8px;
+  position:relative;overflow:hidden;
+}
+.btn-signup::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(220,15,104,.2),transparent 70%);
+  opacity:0;transition:opacity .3s var(--ease);
+}
+.btn-signup:hover::before{opacity:1}
+.btn-signup svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
+.btn-signup span{position:relative;z-index:1}
+.navbar.scrolled .btn-signup{
+  background:var(--grad-pink);color:#fff;
+  box-shadow:0 6px 20px rgba(220,15,104,.35);
+  animation:btnGlow 3s ease-in-out infinite;
+}
+.navbar.scrolled .btn-signup::before{display:none}
+@keyframes btnGlow{
+  0%,100%{box-shadow:0 6px 20px rgba(220,15,104,.35)}
+  50%{box-shadow:0 6px 20px rgba(220,15,104,.35),0 0 0 8px rgba(220,15,104,.06)}
+}
+.btn-signup:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 12px 30px rgba(220,15,104,.5)}
+
+.nav-toggle{display:none;width:44px;height:44px;border-radius:12px;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+.navbar:not(.scrolled) .nav-toggle{color:#fff}
+.navbar.scrolled .nav-toggle{color:var(--ink-800)}
+.nav-toggle:hover{background:rgba(255,255,255,.14)}
+.nav-toggle svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ COMMAND PALETTE ═══ */
+.cmdk-overlay{position:fixed;inset:0;z-index:5000;background:rgba(12,12,20,.6);backdrop-filter:blur(8px);display:flex;align-items:flex-start;justify-content:center;padding:12vh 20px 20px;opacity:0;visibility:hidden;transition:all .25s var(--ease)}
+.cmdk-overlay.open{opacity:1;visibility:visible}
+.cmdk{width:100%;max-width:580px;background:var(--surface);border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.4);border:1px solid var(--border);overflow:hidden;transform:scale(.96) translateY(-12px);transition:transform .3s var(--ease-spring)}
+.cmdk-overlay.open .cmdk{transform:scale(1) translateY(0)}
+.cmdk-head{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--border)}
+.cmdk-head svg{width:20px;height:20px;stroke:var(--ink-400);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.cmdk-input{flex:1;background:none;border:0;outline:0;font-size:16px;color:var(--text);font-family:inherit}
+.cmdk-input::placeholder{color:var(--ink-400)}
+.cmdk-esc{padding:4px 9px;border-radius:6px;background:var(--ink-100);color:var(--ink-500);font-family:'Inter',monospace;font-size:11px;font-weight:800;border:1px solid var(--border)}
+.cmdk-body{max-height:60vh;overflow-y:auto;padding:8px}
+.cmdk-section-label{padding:10px 14px 6px;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-400);font-family:'Inter',sans-serif}
+.cmdk-item{display:flex;align-items:center;gap:14px;padding:11px 14px;border-radius:12px;cursor:pointer;transition:background .15s var(--ease);text-align:left;width:100%}
+.cmdk-item:hover,.cmdk-item.active{background:var(--ink-100)}
+.cmdk-item-icon{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:var(--grad-pink);color:#fff;display:flex;align-items:center;justify-content:center}
+.cmdk-item-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cmdk-item-info{flex:1;min-width:0}
+.cmdk-item-title{font-size:14px;font-weight:700;color:var(--ink-900);line-height:1.2}
+.cmdk-item-desc{font-size:12px;color:var(--muted);margin-top:2px;font-family:'Inter',sans-serif}
+.cmdk-item-hint{font-family:'Inter',monospace;font-size:10.5px;padding:3px 7px;border-radius:5px;background:var(--ink-100);color:var(--ink-500);font-weight:800;border:1px solid var(--border)}
+.cmdk-empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:14px}
+
+.theme-icon-light,.theme-icon-dark{display:none}
+[data-theme="light"] .theme-icon-light{display:block}
+[data-theme="dark"] .theme-icon-dark{display:block}
+
+/* ═══ ENHANCED AUTH MODAL ═══ */
+.auth-overlay{
+  position:fixed;inset:0;z-index:3500;
+  background:rgba(12,12,20,.65);
+  backdrop-filter:blur(10px) saturate(180%);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;opacity:0;visibility:hidden;
+  transition:all .35s var(--ease);
+}
+.auth-overlay.open{opacity:1;visibility:visible}
+.auth-modal{
+  background:var(--surface);
+  border-radius:32px;
+  width:100%;max-width:460px;
+  max-height:94vh;overflow-y:auto;
+  box-shadow:0 60px 120px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);
+  transform:scale(.9) translateY(30px);
+  transition:transform .5s var(--ease-spring);
+  position:relative;
+  overflow:hidden;
+}
+.auth-overlay.open .auth-modal{transform:scale(1) translateY(0)}
+.auth-modal::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:var(--grad-brand);
+  z-index:2;
+}
+.auth-close{
+  position:absolute;top:20px;right:20px;
+  width:40px;height:40px;border-radius:12px;
+  background:var(--ink-100);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s var(--ease);z-index:3;
+}
+.auth-close:hover{background:var(--ink-200);transform:rotate(90deg)}
+.auth-close svg{width:18px;height:18px;stroke:var(--ink-700);fill:none;stroke-width:2.5;stroke-linecap:round}
+
+.auth-hero{
+  padding:40px 36px 28px;
+  background:linear-gradient(135deg,rgba(220,15,104,.08),rgba(142,36,170,.06),rgba(41,182,246,.06));
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.auth-hero::before{
+  content:"";position:absolute;top:-50%;right:-20%;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(220,15,104,.18),transparent 70%);
+  pointer-events:none;
+}
+.auth-hero::after{
+  content:"";position:absolute;bottom:-60%;left:-20%;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(41,182,246,.15),transparent 70%);
+  pointer-events:none;
+}
+.auth-logo{
+  width:72px;height:72px;border-radius:22px;
+  background:var(--grad-pink);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+  box-shadow:0 20px 40px rgba(220,15,104,.35);
+  position:relative;z-index:1;
+  animation:authLogoFloat 4s ease-in-out infinite;
+}
+@keyframes authLogoFloat{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(-6px) rotate(-3deg)}
+}
+.auth-logo svg{width:36px;height:36px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.auth-hero h2{
+  font-size:24px;font-weight:800;color:var(--ink-900);
+  letter-spacing:-.6px;margin-bottom:8px;
+  position:relative;z-index:1;
+}
+.auth-hero p{
+  font-size:14px;color:var(--muted);
+  line-height:1.6;max-width:320px;
+  margin:0 auto;position:relative;z-index:1;
+}
+
+.auth-body{padding:28px 36px 36px}
+
+.auth-tabs{
+  display:flex;gap:4px;padding:5px;
+  background:var(--ink-100);border-radius:16px;
+  margin-bottom:26px;
+  position:relative;
+}
+.auth-tab{
+  flex:1;padding:13px;border-radius:12px;
+  font-size:14.5px;font-weight:700;color:var(--ink-500);
+  transition:all .3s var(--ease);
+  position:relative;z-index:1;
+}
+.auth-tab.active{
+  color:#fff;
+}
+.auth-tab-slider{
+  position:absolute;top:5px;left:5px;
+  width:calc(50% - 5px);height:calc(100% - 10px);
+  background:var(--grad-pink);
+  border-radius:12px;
+  transition:transform .35s var(--ease-spring);
+  box-shadow:0 4px 14px rgba(220,15,104,.3);
+  z-index:0;
+}
+.auth-tabs[data-mode="signup"] .auth-tab-slider{transform:translateX(calc(100% + 4px))}
+
+/* Floating label inputs */
+.auth-field{position:relative;margin-bottom:18px}
+.auth-field-input{
+  width:100%;padding:22px 46px 10px 16px;
+  border-radius:14px;
+  background:var(--ink-50);
+  border:1.5px solid transparent;
+  font-size:14.5px;font-weight:500;color:var(--text);
+  transition:all .25s var(--ease);
+  font-family:inherit;
+}
+.auth-field-input::placeholder{color:transparent}
+.auth-field-input:focus{
+  background:var(--surface);
+  border-color:var(--pink);
+  box-shadow:0 0 0 4px rgba(220,15,104,.1);
+}
+.auth-field-input.error{
+  border-color:#ef4444;
+  box-shadow:0 0 0 4px rgba(239,68,68,.1);
+}
+.auth-field-input:not(:placeholder-shown),
+.auth-field-input:focus{
+  padding-top:24px;
+  padding-bottom:8px;
+}
+.auth-field-label{
+  position:absolute;
+  left:16px;top:50%;transform:translateY(-50%);
+  font-size:14.5px;font-weight:500;color:var(--ink-400);
+  pointer-events:none;
+  transition:all .2s var(--ease);
+  background:transparent;
+  padding:0 4px;
+}
+.auth-field-input:focus + .auth-field-label,
+.auth-field-input:not(:placeholder-shown) + .auth-field-label{
+  top:12px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--pink);
+  letter-spacing:.4px;
+  text-transform:uppercase;
+}
+.auth-field-input.error + .auth-field-label{color:#ef4444}
+
+.auth-field-icon{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:30px;height:30px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink-400);
+  transition:all .2s var(--ease);
+  cursor:pointer;
+}
+.auth-field-icon:hover{color:var(--pink);background:var(--pink-50)}
+.auth-field-icon svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.auth-field-icon.valid{color:var(--green)}
+.auth-field-icon.valid svg{stroke:var(--green)}
+
+.auth-error{
+  font-size:12px;color:#ef4444;margin-top:6px;
+  font-weight:600;display:none;
+  align-items:center;gap:5px;
+}
+.auth-error.show{display:flex}
+.auth-error svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.4;flex-shrink:0}
+
+/* Password strength */
+.pw-meter{margin-top:8px;display:none}
+.pw-meter.show{display:block}
+.pw-meter-bars{display:flex;gap:4px;margin-bottom:6px}
+.pw-meter-bar{height:4px;flex:1;border-radius:2px;background:var(--ink-200);transition:background .3s var(--ease)}
+.pw-meter-bar.weak{background:#ef4444}
+.pw-meter-bar.medium{background:#f59e0b}
+.pw-meter-bar.strong{background:var(--green)}
+.pw-meter-label{font-size:11px;font-weight:700;display:flex;align-items:center;gap:5px}
+
+/* Remember + Forgot */
+.auth-options{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;margin:6px 0 22px;flex-wrap:wrap;
+  font-size:13px;
+}
+.auth-check{
+  display:flex;align-items:center;gap:8px;
+  color:var(--ink-600);cursor:pointer;font-weight:500;
+}
+.auth-check input{
+  appearance:none;
+  width:18px;height:18px;border-radius:6px;
+  border:1.5px solid var(--ink-300);
+  background:var(--surface);
+  cursor:pointer;flex-shrink:0;
+  position:relative;
+  transition:all .2s var(--ease);
+}
+.auth-check input:checked{
+  background:var(--grad-pink);
+  border-color:transparent;
+}
+.auth-check input:checked::after{
+  content:"";position:absolute;
+  top:2px;left:5px;
+  width:5px;height:9px;
+  border-right:2.5px solid #fff;
+  border-bottom:2.5px solid #fff;
+  transform:rotate(45deg);
+}
+.auth-link{
+  font-size:13px;font-weight:700;color:var(--pink);
+  transition:color .2s;
+}
+.auth-link:hover{color:var(--pink-600);text-decoration:underline}
+
+/* Submit button */
+.auth-submit{
+  width:100%;padding:16px;border-radius:14px;
+  background:var(--grad-pink);color:#fff;
+  font-size:15.5px;font-weight:800;
+  box-shadow:0 12px 30px rgba(220,15,104,.35);
+  transition:all .3s var(--ease-spring);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  position:relative;overflow:hidden;
+}
+.auth-submit::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+  transform:translateX(-100%);
+  transition:transform .6s var(--ease);
+}
+.auth-submit:hover::before{transform:translateX(100%)}
+.auth-submit:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(220,15,104,.45)}
+.auth-submit:active{transform:translateY(0)}
+.auth-submit:disabled{opacity:.75;cursor:not-allowed;transform:none}
+.auth-submit svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
+.auth-submit .label{position:relative;z-index:1}
+.auth-submit .spinner{
+  width:18px;height:18px;
+  border:2.5px solid rgba(255,255,255,.35);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin .7s linear infinite;
+  display:none;position:relative;z-index:1;
+}
+.auth-submit.loading .label,
+.auth-submit.loading > svg{display:none}
+.auth-submit.loading .spinner{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.auth-submit.success{
+  background:var(--grad-green);
+  box-shadow:0 12px 30px rgba(22,163,74,.4);
+}
+
+/* Divider */
+.auth-divider{
+  display:flex;align-items:center;gap:14px;
+  margin:24px 0 20px;
+  font-size:12px;color:var(--ink-400);font-weight:700;
+  letter-spacing:.5px;
+}
+.auth-divider::before,.auth-divider::after{
+  content:"";flex:1;height:1px;background:var(--border);
+}
+
+/* Social */
+.auth-social{display:flex;gap:10px;margin-bottom:20px}
+.auth-social-btn{
+  flex:1;padding:13px;border-radius:13px;
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  font-size:13.5px;font-weight:700;color:var(--ink-700);
+  transition:all .25s var(--ease);
+}
+.auth-social-btn:hover{
+  border-color:var(--ink-300);
+  transform:translateY(-2px);
+  box-shadow:var(--sh-sm);
+  background:var(--ink-50);
+}
+.auth-social-btn svg{width:19px;height:19px;flex-shrink:0}
+
+/* Terms */
+.auth-terms{
+  display:flex;align-items:flex-start;gap:10px;
+  margin-bottom:20px;font-size:12.5px;line-height:1.5;
+  color:var(--ink-600);
+}
+.auth-terms input{margin-top:2px;appearance:none;width:18px;height:18px;border-radius:6px;border:1.5px solid var(--ink-300);background:var(--surface);cursor:pointer;flex-shrink:0;position:relative;transition:all .2s var(--ease)}
+.auth-terms input:checked{background:var(--grad-pink);border-color:transparent}
+.auth-terms input:checked::after{content:"";position:absolute;top:2px;left:5px;width:5px;height:9px;border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(45deg)}
+.auth-terms a{color:var(--pink);font-weight:700}
+.auth-terms a:hover{text-decoration:underline}
+
+/* Footer */
+.auth-foot{
+  text-align:center;
+  font-size:13.5px;color:var(--muted);
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  margin-top:6px;
+}
+.auth-foot a{color:var(--pink);font-weight:800}
+.auth-foot a:hover{text-decoration:underline}
+
+/* Signup-only fields animation */
+.signup-field{
+  max-height:0;overflow:hidden;
+  opacity:0;
+  transition:max-height .4s var(--ease),opacity .3s var(--ease),margin .3s var(--ease);
+  margin-bottom:0;
+}
+.auth-modal.signup-mode .signup-field{
+  max-height:200px;opacity:1;margin-bottom:18px;
+}
+
+/* Success animation */
+.auth-success{
+  text-align:center;padding:40px 20px;
+  display:none;
+}
+.auth-success.show{display:block;animation:fadeUp .5s var(--ease-spring)}
+.auth-success-icon{
+  width:100px;height:100px;border-radius:50%;
+  background:var(--grad-green);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  box-shadow:0 20px 50px rgba(22,163,74,.4);
+  animation:successBounce .6s var(--ease-spring);
+}
+@keyframes successBounce{
+  0%{transform:scale(0) rotate(-180deg)}
+  60%{transform:scale(1.15) rotate(10deg)}
+  100%{transform:scale(1) rotate(0)}
+}
+.auth-success-icon svg{width:50px;height:50px;stroke:#fff;fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.auth-success h3{font-size:24px;font-weight:800;color:var(--ink-900);margin-bottom:10px}
+.auth-success p{font-size:14.5px;color:var(--muted);line-height:1.7;margin-bottom:26px;max-width:320px;margin-left:auto;margin-right:auto}
+
+/* ═══ CHAT WIDGET ═══ */
+.chat-widget{position:fixed;bottom:26px;left:26px;width:56px;height:56px;border-radius:18px;background:var(--grad-brand);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(220,15,104,.4);z-index:950;transition:all .3s var(--ease-spring);animation:chatPulse 3s ease-in-out infinite}
+.chat-widget:hover{transform:scale(1.08) rotate(-4deg)}
+.chat-widget svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.chat-widget .chat-badge{position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#ef4444;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;font-family:'Inter',sans-serif}
+@keyframes chatPulse{0%,100%{box-shadow:0 16px 40px rgba(220,15,104,.4)}50%{box-shadow:0 16px 40px rgba(220,15,104,.4),0 0 0 12px rgba(220,15,104,.08)}}
+
+.chat-panel{position:fixed;bottom:96px;left:26px;width:360px;max-width:calc(100vw - 52px);background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--sh-xl);border:1px solid var(--border);z-index:960;overflow:hidden;transform:translateY(20px) scale(.96);opacity:0;visibility:hidden;transition:all .35s var(--ease-spring);transform-origin:bottom left}
+.chat-panel.open{transform:translateY(0) scale(1);opacity:1;visibility:visible}
+.chat-head{background:var(--grad-brand);color:#fff;padding:18px 20px;display:flex;align-items:center;gap:12px}
+.chat-head-avatar{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.35);font-weight:800;font-size:15px;font-family:'Inter',sans-serif}
+.chat-head-info{flex:1;min-width:0}
+.chat-head-name{font-size:14.5px;font-weight:700;line-height:1.2}
+.chat-head-status{font-size:11.5px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:5px;margin-top:2px}
+.chat-head-status .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.3)}
+.chat-head-close{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.chat-head-close:hover{background:rgba(255,255,255,.18)}
+.chat-head-close svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round}
+.chat-body{padding:18px;max-height:340px;overflow-y:auto;background:var(--ink-50);display:flex;flex-direction:column;gap:12px}
+.chat-msg{max-width:82%;padding:11px 14px;border-radius:14px;font-size:13.5px;line-height:1.55}
+.chat-msg.bot{background:var(--surface);border:1px solid var(--border);border-bottom-left-radius:4px;align-self:flex-start}
+.chat-msg.user{background:var(--grad-pink);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.chat-msg-time{font-size:10.5px;color:var(--ink-400);margin-top:4px;font-weight:600}
+.chat-msg.user .chat-msg-time{color:rgba(255,255,255,.75)}
+.chat-typing{display:flex;gap:4px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;width:fit-content}
+.chat-typing span{width:7px;height:7px;border-radius:50%;background:var(--ink-300);animation:typing 1.4s infinite}
+.chat-typing span:nth-child(2){animation-delay:.2s}
+.chat-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.chat-quick{display:flex;flex-wrap:wrap;gap:6px;padding:12px 18px;background:var(--ink-50);border-top:1px solid var(--border)}
+.chat-quick-btn{padding:7px 13px;border-radius:var(--r-full);background:var(--surface);border:1px solid var(--border);font-size:12px;font-weight:600;color:var(--ink-600);transition:all .2s var(--ease)}
+.chat-quick-btn:hover{background:var(--pink-50);border-color:rgba(220,15,104,.3);color:var(--pink)}
+.chat-foot{padding:12px 16px;background:var(--surface);border-top:1px solid var(--border);display:flex;gap:8px;align-items:center}
+.chat-input{flex:1;padding:11px 14px;border-radius:var(--r-full);background:var(--ink-100);border:1.5px solid transparent;font-size:13.5px;transition:all .2s var(--ease);color:var(--text)}
+.chat-input:focus{background:var(--surface);border-color:var(--pink);box-shadow:0 0 0 4px rgba(220,15,104,.1)}
+.chat-send{width:42px;height:42px;border-radius:50%;background:var(--grad-pink);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 6px 18px rgba(220,15,104,.3);transition:transform .2s var(--ease)}
+.chat-send:hover{transform:scale(1.08)}
+.chat-send svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ COOKIE + BACK TOP + TOAST ═══ */
+.cookie-banner{position:fixed;bottom:26px;right:26px;max-width:380px;width:calc(100% - 52px);background:var(--surface);border-radius:var(--r-lg);padding:22px 24px;box-shadow:var(--sh-xl);border:1px solid var(--border);z-index:1200;transform:translateY(140%);transition:transform .5s cubic-bezier(.34,1.2,.64,1)}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad-brand);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.cookie-icon{width:44px;height:44px;border-radius:12px;background:var(--grad-pink);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.cookie-icon svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cookie-title{font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:6px}
+.cookie-text{font-size:13px;line-height:1.65;color:var(--muted);margin-bottom:16px}
+.cookie-actions{display:flex;gap:8px}
+.cookie-btn{flex:1;padding:10px;border-radius:10px;font-size:13px;font-weight:700;transition:all .25s var(--ease)}
+.cookie-btn.primary{background:var(--grad-pink);color:#fff;box-shadow:0 6px 18px rgba(220,15,104,.3)}
+.cookie-btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(220,15,104,.4)}
+.cookie-btn.secondary{background:var(--ink-100);color:var(--ink-700)}
+
+.back-to-top{position:fixed;bottom:26px;right:26px;width:48px;height:48px;border-radius:14px;background:var(--grad-pink);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(220,15,104,.35);opacity:0;visibility:hidden;transform:translateY(12px);transition:all .3s var(--ease);z-index:900}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(220,15,104,.45)}
+.back-to-top svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+.toast-wrap{position:fixed;top:100px;right:24px;z-index:4000;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.toast{background:var(--surface);border-radius:var(--r-md);padding:14px 18px;min-width:280px;max-width:360px;box-shadow:var(--sh-lg);border:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;pointer-events:auto;animation:toastIn .4s var(--ease-spring);border-left:4px solid var(--pink)}
+.toast.success{border-left-color:var(--green)}
+.toast.error{border-left-color:#ef4444}
+.toast.info{border-left-color:var(--blue)}
+.toast.removing{animation:toastOut .3s var(--ease) forwards}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes toastOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(40px)}}
+.toast-icon{width:36px;height:36px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--pink-50)}
+.toast.success .toast-icon{background:var(--green-50)}
+.toast.error .toast-icon{background:#fee2e2}
+.toast.info .toast-icon{background:#e3f2fd}
+.toast-icon svg{width:18px;height:18px;stroke:var(--pink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.toast.success .toast-icon svg{stroke:var(--green)}
+.toast.error .toast-icon svg{stroke:#ef4444}
+.toast.info .toast-icon svg{stroke:var(--blue)}
+.toast-body{flex:1;min-width:0}
+.toast-title{font-size:13.5px;font-weight:700;color:var(--ink-900);margin-bottom:2px}
+.toast-text{font-size:12.5px;color:var(--muted);line-height:1.5}
+.toast-close{width:22px;height:22px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.toast-close:hover{background:var(--ink-100)}
+.toast-close svg{width:12px;height:12px;stroke:var(--ink-500);fill:none;stroke-width:2.6;stroke-linecap:round}
+
+/* ═══ DEMO PANEL ═══ */
+.demo-overlay{position:fixed;inset:0;z-index:3300;background:rgba(12,12,20,.5);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:all .3s var(--ease)}
+.demo-overlay.show{opacity:1;visibility:visible}
+.demo-panel{position:fixed;top:0;right:-460px;width:min(440px,92vw);height:100vh;background:var(--surface);z-index:3400;box-shadow:-20px 0 60px rgba(0,0,0,.2);transition:right .4s cubic-bezier(.34,1.2,.64,1);display:flex;flex-direction:column;overflow:hidden}
+.demo-panel.open{right:0}
+.demo-head{padding:22px 24px;background:var(--grad-brand);color:#fff;display:flex;align-items:center;gap:14px;flex-shrink:0}
+.demo-head-icon{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);flex-shrink:0}
+.demo-head-icon svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.demo-head-info{flex:1;min-width:0}
+.demo-head-title{font-size:16px;font-weight:800;line-height:1.2}
+.demo-head-sub{font-size:12px;color:rgba(255,255,255,.82);margin-top:2px}
+.demo-head-close{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.demo-head-close:hover{background:rgba(255,255,255,.2)}
+.demo-head-close svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round}
+.demo-body{flex:1;overflow-y:auto;padding:24px;background:var(--ink-50)}
+
+.demo-balance-card{background:var(--grad-brand);color:#fff;border-radius:var(--r-lg);padding:22px 24px;margin-bottom:20px;box-shadow:0 14px 40px rgba(220,15,104,.28);position:relative;overflow:hidden}
+.demo-balance-card::before{content:"";position:absolute;top:-40%;right:-20%;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%)}
+.demo-balance-label{font-size:12px;opacity:.85;margin-bottom:6px;position:relative}
+.demo-balance-amount{font-family:'Inter',sans-serif;font-size:30px;font-weight:800;letter-spacing:-1.2px;line-height:1;margin-bottom:12px;position:relative}
+.demo-balance-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:rgba(255,255,255,.82);position:relative}
+.demo-balance-meta span{display:flex;align-items:center;gap:5px}
+.demo-balance-meta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+.demo-title{font-size:14px;font-weight:800;color:var(--ink-900);margin-bottom:12px;letter-spacing:-.2px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.demo-form{background:var(--surface);border-radius:var(--r-lg);padding:20px;border:1px solid var(--border);margin-bottom:16px}
+.recipient-picker{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px;scrollbar-width:none}
+.recipient-picker::-webkit-scrollbar{display:none}
+.recipient-chip{flex-shrink:0;padding:10px 12px;border-radius:14px;background:var(--surface);border:1.5px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:all .25s var(--ease);min-width:80px}
+.recipient-chip:hover{border-color:var(--pink);transform:translateY(-2px)}
+.recipient-chip.active{border-color:var(--pink);background:var(--pink-50);box-shadow:0 6px 18px rgba(220,15,104,.15)}
+.recipient-chip-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;font-family:'Inter',sans-serif}
+.recipient-chip-name{font-size:11px;font-weight:600;color:var(--ink-700);text-align:center;line-height:1.2}
+.recipient-chip-phone{font-size:9.5px;color:var(--ink-400);font-family:'Inter',sans-serif}
+
+.amount-input-wrap{position:relative;margin-bottom:14px}
+.amount-input-currency{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:800;color:var(--ink-400);font-family:'Inter',sans-serif;pointer-events:none}
+.amount-input{width:100%;padding:18px 18px 18px 44px;border-radius:14px;background:var(--ink-50);border:1.5px solid transparent;font-size:26px;font-weight:800;color:var(--text);font-family:'Inter',sans-serif;letter-spacing:-.8px;transition:all .2s var(--ease)}
+.amount-input:focus{background:var(--surface);border-color:var(--pink);box-shadow:0 0 0 4px rgba(220,15,104,.1)}
+
+.quick-amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.quick-amount-btn{padding:10px 6px;border-radius:11px;background:var(--ink-100);border:1px solid transparent;font-size:12.5px;font-weight:700;color:var(--ink-700);transition:all .2s var(--ease);font-family:'Inter',sans-serif}
+.quick-amount-btn:hover{background:var(--pink-50);color:var(--pink)}
+.demo-textarea{width:100%;padding:12px 14px;border-radius:12px;background:var(--ink-50);border:1.5px solid transparent;font-size:13.5px;color:var(--text);font-family:inherit;resize:none;transition:all .2s var(--ease);min-height:60px}
+.demo-textarea:focus{background:var(--surface);border-color:var(--pink);box-shadow:0 0 0 4px rgba(220,15,104,.1)}
+
+.demo-fee-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;font-size:13px;border-bottom:1px dashed var(--border)}
+.demo-fee-row:last-child{border-bottom:0;padding-bottom:0}
+.demo-fee-row .label{color:var(--muted);font-weight:500}
+.demo-fee-row .value{color:var(--ink-800);font-weight:700;font-family:'Inter',sans-serif}
+.demo-fee-row.total .value{color:var(--pink);font-size:16px}
+.demo-fee-row .free-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--r-full);background:var(--green-50);color:var(--green);font-size:10.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
+
+.demo-btn{width:100%;padding:15px;border-radius:13px;background:var(--grad-pink);color:#fff;font-size:15px;font-weight:700;box-shadow:0 8px 24px rgba(220,15,104,.3);transition:all .3s var(--ease);display:flex;align-items:center;justify-content:center;gap:8px}
+.demo-btn:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(220,15,104,.4)}
+.demo-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.demo-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.demo-btn.secondary{background:var(--ink-100);color:var(--ink-800);box-shadow:none}
+.demo-btn.secondary:hover{background:var(--ink-200)}
+.demo-btn.secondary svg{stroke:var(--ink-800)}
+
+.demo-qr-card{background:var(--surface);border-radius:var(--r-lg);padding:24px;text-align:center;border:1px solid var(--border);margin-bottom:16px}
+.demo-qr-code{width:200px;height:200px;margin:0 auto 16px;background:#fff;border-radius:14px;padding:10px;border:1px solid var(--border)}
+.demo-qr-code img{width:100%;height:100%;border-radius:8px}
+.demo-phone-number{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:var(--r-full);background:var(--ink-100);font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--ink-900);letter-spacing:.5px;margin-bottom:12px}
+.demo-copy-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--r-full);background:var(--pink-50);color:var(--pink);font-size:12.5px;font-weight:700;transition:all .2s var(--ease)}
+.demo-copy-btn:hover{background:rgba(220,15,104,.2)}
+.demo-copy-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+.tx-filters{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.tx-filters::-webkit-scrollbar{display:none}
+.tx-filter{flex-shrink:0;padding:8px 14px;border-radius:var(--r-full);background:var(--surface);border:1.5px solid var(--border);font-size:12.5px;font-weight:700;color:var(--ink-600);transition:all .2s var(--ease)}
+.tx-filter.active{background:var(--grad-pink);color:#fff;border-color:transparent}
+.tx-list{display:flex;flex-direction:column;gap:10px}
+.tx-item{background:var(--surface);border-radius:var(--r-md);padding:14px 16px;border:1px solid var(--border);display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .25s var(--ease)}
+.tx-item:hover{border-color:var(--pink);transform:translateX(4px);box-shadow:var(--sh-sm)}
+.tx-item-icon{width:44px;height:44px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.tx-item-icon.in{background:var(--green-50)}
+.tx-item-icon.out{background:rgba(239,68,68,.15)}
+.tx-item-icon.loan{background:rgba(41,182,246,.15)}
+.tx-item-icon.bill{background:rgba(255,152,0,.15)}
+.tx-item-icon svg{width:20px;height:20px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tx-item-icon.in svg{stroke:var(--green)}
+.tx-item-icon.out svg{stroke:#ef4444}
+.tx-item-icon.loan svg{stroke:var(--blue)}
+.tx-item-icon.bill svg{stroke:#ff9800}
+.tx-item-info{flex:1;min-width:0}
+.tx-item-title{font-size:14px;font-weight:700;color:var(--ink-900);line-height:1.2;margin-bottom:3px}
+.tx-item-meta{font-size:11.5px;color:var(--muted);font-family:'Inter',sans-serif;display:flex;align-items:center;gap:8px}
+.tx-item-status{display:inline-flex;align-items:center;gap:3px;padding:1px 7px;border-radius:var(--r-full);font-size:9.5px;font-weight:800;letter-spacing:.3px;text-transform:uppercase}
+.tx-item-status.success{background:var(--green-50);color:var(--green)}
+.tx-item-status.pending{background:rgba(245,158,11,.18);color:#d97706}
+.tx-item-amount{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;text-align:right;flex-shrink:0}
+.tx-item-amount.in{color:var(--green)}
+
+.loan-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.loan-type{padding:16px 14px;border-radius:var(--r-md);background:var(--surface);border:1.5px solid var(--border);text-align:center;cursor:pointer;transition:all .25s var(--ease)}
+.loan-type:hover{border-color:var(--pink);transform:translateY(-3px)}
+.loan-type.active{border-color:var(--pink);background:var(--pink-50)}
+.loan-type-icon{width:44px;height:44px;border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+.loan-type:nth-child(1) .loan-type-icon{background:linear-gradient(135deg,#dcfce7,#bbf7d0)}
+.loan-type:nth-child(2) .loan-type-icon{background:linear-gradient(135deg,#dbeafe,#bfdbfe)}
+.loan-type:nth-child(3) .loan-type-icon{background:linear-gradient(135deg,#fef3c7,#fde68a)}
+.loan-type:nth-child(4) .loan-type-icon{background:linear-gradient(135deg,#fce7f3,#fbcfe8)}
+.loan-type-icon svg{width:22px;height:22px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.loan-type-name{font-size:13.5px;font-weight:700;color:var(--ink-900);line-height:1.2;margin-bottom:3px}
+.loan-type-rate{font-size:11px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:600}
+
+.feature-detail-icon{width:70px;height:70px;border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.feature-detail-icon svg{width:32px;height:32px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feature-detail-icon.pink{background:linear-gradient(135deg,#fce4ec,#ffd9e6)}
+.feature-detail-icon.pink svg{stroke:var(--pink)}
+.feature-detail-icon.blue{background:linear-gradient(135deg,#e3f2fd,#d6ecfa)}
+.feature-detail-icon.blue svg{stroke:var(--blue)}
+.feature-detail-icon.green{background:linear-gradient(135deg,#e8f5e9,#d4edda)}
+.feature-detail-icon.green svg{stroke:var(--green)}
+.feature-detail-icon.purple{background:linear-gradient(135deg,#f3e5f5,#e9d5eb)}
+.feature-detail-icon.purple svg{stroke:var(--purple)}
+.feature-detail-icon.orange{background:linear-gradient(135deg,#fff3e0,#ffe6cc)}
+.feature-detail-icon.orange svg{stroke:#ff9800}
+.feature-detail-title{font-size:22px;font-weight:800;color:var(--ink-900);letter-spacing:-.5px;margin-bottom:10px}
+.feature-detail-desc{font-size:14.5px;line-height:1.75;color:var(--muted);margin-bottom:22px}
+.feature-detail-points{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+.feature-detail-point{display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--border)}
+.feature-detail-point-icon{width:30px;height:30px;border-radius:9px;flex-shrink:0;background:var(--green-50);display:flex;align-items:center;justify-content:center}
+.feature-detail-point-icon svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.feature-detail-point-text{font-size:13.5px;line-height:1.6;color:var(--ink-700)}
+
+.step-detail-num{width:70px;height:70px;border-radius:50%;background:var(--grad-pink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;font-family:'Inter',sans-serif;margin-bottom:18px;box-shadow:0 14px 34px rgba(220,15,104,.3)}
+.step-detail-list{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.step-detail-list-item{display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--border);font-size:13.5px;line-height:1.6;color:var(--ink-700)}
+.step-detail-list-item .num{width:24px;height:24px;border-radius:50%;background:var(--ink-100);color:var(--ink-700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;font-family:'Inter',sans-serif}
+
+.demo-success{text-align:center;padding:30px 10px}
+.demo-success-icon{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#dcfce7,#bbf7d0);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;box-shadow:0 16px 40px rgba(22,163,74,.28);animation:successPop .5s var(--ease-spring)}
+@keyframes successPop{0%{transform:scale(0)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.demo-success-icon svg{width:44px;height:44px;stroke:var(--green);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.demo-success-title{font-size:22px;font-weight:800;color:var(--ink-900);margin-bottom:8px}
+.demo-success-desc{font-size:14.5px;color:var(--muted);line-height:1.65;margin-bottom:24px}
+.demo-success-receipt{background:var(--surface);border-radius:var(--r-md);padding:18px 20px;border:1px solid var(--border);margin-bottom:22px;text-align:left}
+.demo-success-receipt-row{display:flex;justify-content:space-between;padding:9px 0;font-size:13.5px;border-bottom:1px dashed var(--border)}
+.demo-success-receipt-row:last-child{border-bottom:0;padding-bottom:0}
+.demo-success-receipt-row .label{color:var(--muted);font-weight:500}
+.demo-success-receipt-row .value{color:var(--ink-900);font-weight:700;font-family:'Inter',sans-serif}
+
+/* ═══ ANNOUNCEMENT ═══ */
+.announcement{background:var(--ink-900);color:#fff;padding:10px 0;font-size:13px;position:relative;z-index:1100}
+[data-theme="dark"] .announcement{background:#000;border-bottom:1px solid var(--border)}
+.announcement-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center}
+.announcement-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-full);background:var(--grad-pink);font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;font-family:'Inter',sans-serif}
+.announcement-badge svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:2.6}
+.announcement-text{color:rgba(255,255,255,.85);font-weight:500}
+.announcement-text strong{color:#fff;font-weight:700}
+.announcement-link{color:#ffb3d1;font-weight:700;display:inline-flex;align-items:center;gap:4px;transition:gap .25s var(--ease)}
+.announcement-link:hover{color:#fff;gap:8px}
+.announcement-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:100vh;padding:calc(72px + 90px) 0 90px;display:flex;align-items:center;background:radial-gradient(circle at 12% 18%,rgba(255,44,139,.38) 0%,transparent 42%),radial-gradient(circle at 88% 28%,rgba(41,182,246,.30) 0%,transparent 42%),radial-gradient(circle at 50% 105%,rgba(142,36,170,.40) 0%,transparent 52%),linear-gradient(135deg,#b8004f 0%,#dc0f68 38%,#8e24aa 72%,#5c6bc0 100%);overflow:hidden;color:#fff;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.09) 1px,transparent 0);background-size:34px 34px;opacity:.55;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.18) 100%);pointer-events:none}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:blobFloat 14s ease-in-out infinite;will-change:transform}
+.hero-blob.b1{width:520px;height:520px;background:rgba(255,44,139,.42);top:-140px;left:-160px}
+.hero-blob.b2{width:420px;height:420px;background:rgba(41,182,246,.32);bottom:-120px;right:-140px;animation-delay:-5s}
+.hero-blob.b3{width:320px;height:320px;background:rgba(255,255,255,.14);top:42%;left:46%;animation-delay:-9s}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.08)}}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px 8px 12px;border-radius:var(--r-full);background:rgba(255,255,255,.13);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);font-size:12.5px;font-weight:600;margin-bottom:26px;animation:fadeUp .7s .1s backwards}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25);animation:pulseDot 2s infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 4px rgba(74,222,128,.25)}50%{box-shadow:0 0 0 9px rgba(74,222,128,.08)}}
+.hero-title{font-size:clamp(36px,5.4vw,66px);font-weight:800;line-height:1.06;letter-spacing:-1.8px;margin-bottom:22px;animation:fadeUp .7s .18s backwards}
+.hero-title .gradient-text{background:linear-gradient(135deg,#fff 0%,#ffd9ec 48%,#b3e5fc 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero-desc{font-size:clamp(15.5px,1.55vw,17.5px);line-height:1.72;color:rgba(255,255,255,.92);max-width:560px;margin-bottom:34px;animation:fadeUp .7s .26s backwards}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;animation:fadeUp .7s .34s backwards}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:14px;font-size:15px;font-weight:700;background:#fff;color:var(--pink);box-shadow:0 12px 30px rgba(0,0,0,.22);transition:all .3s var(--ease-spring)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(0,0,0,.3)}
+.btn-primary svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:14px;font-size:15px;font-weight:700;background:rgba(255,255,255,.11);backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,.28);color:#fff;transition:all .3s var(--ease)}
+.btn-secondary:hover{background:rgba(255,255,255,.2);transform:translateY(-3px);border-color:rgba(255,255,255,.45)}
+.btn-secondary svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:640px;padding-top:28px;border-top:1px solid rgba(255,255,255,.16);animation:fadeUp .7s .42s backwards}
+.hero-stat-value{font-family:'Inter',sans-serif;font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-.8px;margin-bottom:4px;display:flex;align-items:baseline;gap:2px;line-height:1}
+.hero-stat-value .unit{font-size:.6em;font-weight:700;opacity:.82}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,.78);font-weight:500;line-height:1.4}
+.hero-visual{position:relative;display:flex;justify-content:center;animation:fadeUp .7s .36s backwards}
+.phone-mockup{position:relative;width:min(340px,100%);aspect-ratio:9/18.5;background:linear-gradient(145deg,#1c1c28,#08080e);border-radius:46px;padding:12px;box-shadow:0 50px 100px rgba(0,0,0,.5),0 0 0 1.5px rgba(255,255,255,.08);animation:phoneFloat 7s ease-in-out infinite}
+@keyframes phoneFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-18px) rotate(1deg)}}
+.phone-screen{width:100%;height:100%;border-radius:36px;overflow:hidden;background:linear-gradient(180deg,#dc0f68 0%,#8e24aa 42%,#29b6f6 100%);position:relative;display:flex;flex-direction:column;padding:20px 18px}
+.phone-notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:92px;height:22px;border-radius:12px;background:#08080e;z-index:2}
+.phone-status{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:#fff;font-family:'Inter',sans-serif;margin-bottom:26px;position:relative;z-index:3}
+.phone-balance-card{background:linear-gradient(135deg,rgba(255,255,255,.24),rgba(255,255,255,.07));backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:18px 16px;margin-bottom:14px;color:#fff}
+.phone-balance-label{font-size:11px;opacity:.85;margin-bottom:6px}
+.phone-balance-amount{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;letter-spacing:-.6px;display:flex;align-items:center;gap:8px}
+.phone-balance-amount .eye{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.phone-balance-amount .eye:hover{background:rgba(255,255,255,.35)}
+.phone-balance-amount .eye svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.5}
+.phone-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.phone-action{background:rgba(255,255,255,.17);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px 4px;display:flex;flex-direction:column;align-items:center;gap:5px;color:#fff;cursor:pointer;transition:all .25s var(--ease)}
+.phone-action:hover{background:rgba(255,255,255,.28);transform:translateY(-2px)}
+.phone-action svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.phone-action span{font-size:8.5px;font-weight:600}
+.phone-tx{background:rgba(255,255,255,.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:9px}
+.phone-tx-item{display:flex;align-items:center;gap:9px;color:#fff;cursor:pointer;transition:opacity .2s}
+.phone-tx-item:hover{opacity:.85}
+.phone-tx-icon{width:28px;height:28px;border-radius:9px;flex-shrink:0;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center}
+.phone-tx-icon svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.phone-tx-info{flex:1;min-width:0}
+.phone-tx-title{font-size:10px;font-weight:600;line-height:1.2}
+.phone-tx-amt{font-size:9px;opacity:.75;margin-top:1px}
+.phone-tx-value{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700}
+.float-badge{position:absolute;background:var(--surface);border-radius:16px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 20px 44px rgba(0,0,0,.22);animation:badgeFloat 5.5s ease-in-out infinite;z-index:5}
+.float-badge.b-1{top:15%;right:-14px;animation-delay:-1s}
+.float-badge.b-2{bottom:20%;left:-20px;animation-delay:-2.5s}
+.float-badge.b-3{bottom:6%;right:0;animation-delay:-4s}
+@keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-badge .fb-icon{width:34px;height:34px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.float-badge .fb-icon.green{background:#e8f5e9}
+.float-badge .fb-icon.green svg{stroke:#16a34a}
+.float-badge .fb-icon.blue{background:#e3f2fd}
+.float-badge .fb-icon.blue svg{stroke:#2196f3}
+.float-badge .fb-icon.pink{background:#fce4ec}
+.float-badge .fb-icon.pink svg{stroke:#ec407a}
+.float-badge .fb-icon svg{width:18px;height:18px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.float-badge .fb-title{font-size:11.5px;font-weight:700;color:var(--ink-900)}
+.float-badge .fb-sub{font-size:10px;color:var(--ink-400);font-weight:500;margin-top:1px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.scroll-indicator{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:10.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;animation:fadeUp 1s 1.1s backwards}
+.scroll-indicator .mouse{width:22px;height:36px;border-radius:12px;border:2px solid rgba(255,255,255,.45);position:relative}
+.scroll-indicator .mouse::after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:8px;border-radius:2px;background:rgba(255,255,255,.85);animation:scrollDown 1.8s ease-in-out infinite}
+@keyframes scrollDown{0%{transform:translate(-50%,0);opacity:1}100%{transform:translate(-50%,14px);opacity:0}}
+
+/* ═══ SIMPLIFIED OTHER SECTIONS (kept from prior work) ═══ */
+.trust-bar{background:var(--bg);padding:32px 0;border-bottom:1px solid var(--border)}
+.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.trust-label{font-size:11.5px;font-weight:700;letter-spacing:1.6px;color:var(--ink-400);text-transform:uppercase;font-family:'Inter',sans-serif}
+.trust-logos{display:flex;align-items:center;gap:40px;flex-wrap:wrap;flex:1;justify-content:flex-end}
+.trust-logo{display:flex;align-items:center;gap:8px;color:var(--ink-400);font-size:14px;font-weight:700;transition:color .25s var(--ease)}
+.trust-logo:hover{color:var(--pink)}
+.trust-logo svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.marquee{padding:26px 0;background:var(--ink-50);border-bottom:1px solid var(--border);overflow:hidden;position:relative}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--ink-50),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--ink-50),transparent)}
+.marquee-track{display:flex;gap:60px;width:max-content;animation:marqueeScroll 40s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:10px;color:var(--ink-400);font-size:15px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.marquee-item svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+.ticker{background:var(--bg);padding:0;border-bottom:1px solid var(--border)}
+.ticker-inner{display:flex;align-items:center;gap:14px;padding:14px 0;overflow:hidden}
+.ticker-label{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:var(--r-full);background:var(--green-50);color:var(--green);font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;font-family:'Inter',sans-serif;flex-shrink:0}
+.ticker-label .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(22,163,74,.2);animation:pulseDot 1.8s infinite}
+.ticker-track-wrap{flex:1;overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.ticker-track{display:flex;gap:44px;width:max-content;animation:tickerScroll 60s linear infinite}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-500);white-space:nowrap;flex-shrink:0}
+.ticker-item .amt{color:var(--green);font-weight:800;font-family:'Inter',sans-serif}
+.ticker-item .dot-sep{width:4px;height:4px;border-radius:50%;background:var(--ink-300)}
+
+.section{padding:110px 0}
+.section--alt{background:var(--section-alt)}
+.section-head{text-align:center;max-width:760px;margin:0 auto 64px}
+.section-tag{display:inline-block;padding:7px 16px;border-radius:var(--r-full);background:rgba(220,15,104,.08);color:var(--pink);font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:18px;font-family:'Inter',sans-serif}
+.section-title{font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.12;letter-spacing:-1.4px;color:var(--ink-900);margin-bottom:16px}
+.section-desc{font-size:16.5px;line-height:1.72;color:var(--muted);max-width:640px;margin:0 auto}
+
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature-card{background:var(--surface);border-radius:var(--r-lg);padding:34px 28px;border:1px solid var(--border);box-shadow:var(--sh-sm);transition:all .35s var(--ease);position:relative;overflow:hidden;cursor:pointer}
+.feature-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-pink);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:transparent}
+.feature-card:hover::before{transform:scaleX(1)}
+.feature-icon{width:58px;height:58px;border-radius:17px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:transform .3s var(--ease-spring)}
+.feature-card:hover .feature-icon{transform:scale(1.08) rotate(-4deg)}
+.feature-icon.pink{background:linear-gradient(135deg,#fce4ec,#ffd9e6)}
+.feature-icon.pink svg{stroke:var(--pink)}
+.feature-icon.blue{background:linear-gradient(135deg,#e3f2fd,#d6ecfa)}
+.feature-icon.blue svg{stroke:var(--blue)}
+.feature-icon.green{background:linear-gradient(135deg,#e8f5e9,#d4edda)}
+.feature-icon.green svg{stroke:var(--green)}
+.feature-icon.purple{background:linear-gradient(135deg,#f3e5f5,#e9d5eb)}
+.feature-icon.purple svg{stroke:var(--purple)}
+.feature-icon.orange{background:linear-gradient(135deg,#fff3e0,#ffe6cc)}
+.feature-icon.orange svg{stroke:#ff9800}
+.feature-icon.red{background:linear-gradient(135deg,#ffebee,#ffd9dd)}
+.feature-icon.red svg{stroke:#ef5350}
+.feature-icon svg{width:27px;height:27px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feature-title{font-size:19px;font-weight:700;color:var(--ink-900);margin-bottom:9px}
+.feature-desc{font-size:14.5px;line-height:1.68;color:var(--muted)}
+
+.stats-band{position:relative;padding:80px 0;background:var(--grad-brand);color:#fff;overflow:hidden}
+.stats-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.1) 1px,transparent 0);background-size:32px 32px;opacity:.6;pointer-events:none}
+.stats-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.stat-item{text-align:center;padding:0 12px}
+.stat-icon{width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.stat-icon svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stat-number{font-family:'Inter',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:8px;display:flex;align-items:baseline;justify-content:center;gap:4px}
+.stat-number .unit{font-size:.45em;font-weight:700;opacity:.85}
+.stat-label{font-size:14px;color:rgba(255,255,255,.85);font-weight:500}
+
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps-grid::before{content:"";position:absolute;top:44px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,transparent,var(--pink),var(--purple),var(--blue),transparent);opacity:.22;z-index:0}
+.step-card{position:relative;z-index:1;text-align:center;padding:0 12px;cursor:pointer;transition:transform .3s var(--ease)}
+.step-card:hover{transform:translateY(-4px)}
+.step-number{width:88px;height:88px;border-radius:50%;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:2px solid var(--border);box-shadow:var(--sh-sm);position:relative;transition:all .35s var(--ease)}
+.step-card:hover .step-number{transform:translateY(-6px) scale(1.05);border-color:var(--pink);box-shadow:0 16px 40px rgba(220,15,104,.2)}
+.step-number svg{width:36px;height:36px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.step-card:nth-child(1) .step-number svg{stroke:var(--pink)}
+.step-card:nth-child(2) .step-number svg{stroke:var(--purple)}
+.step-card:nth-child(3) .step-number svg{stroke:var(--blue)}
+.step-card:nth-child(4) .step-number svg{stroke:var(--green)}
+.step-number .badge{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--grad-pink);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(220,15,104,.35);font-family:'Inter',sans-serif;border:3px solid var(--bg)}
+.step-title{font-size:17px;font-weight:700;color:var(--ink-900);margin-bottom:8px}
+.step-desc{font-size:13.5px;line-height:1.62;color:var(--muted)}
+
+/* Download */
+.download{position:relative;padding:110px 0;background:radial-gradient(circle at 80% 30%,rgba(255,44,139,.24) 0%,transparent 50%),radial-gradient(circle at 10% 80%,rgba(41,182,246,.24) 0%,transparent 50%),linear-gradient(135deg,#141420 0%,#251436 50%,#0f1e2e 100%);color:#fff;overflow:hidden}
+.download::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:36px 36px;pointer-events:none}
+.download-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.download-content .section-tag{background:rgba(255,255,255,.1);color:#fff}
+.download-content .section-title{color:#fff;text-align:left;margin-bottom:18px}
+.download-content .section-desc{color:rgba(255,255,255,.78);margin:0 0 34px;text-align:left;max-width:520px}
+.download-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.store-btn{display:flex;align-items:center;gap:12px;padding:13px 22px;border-radius:14px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);transition:all .3s var(--ease);text-align:left}
+.store-btn:hover{background:rgba(255,255,255,.14);transform:translateY(-3px);border-color:rgba(255,255,255,.35)}
+.store-btn.primary{background:#fff;color:var(--ink-900);border-color:#fff}
+.store-btn svg{width:26px;height:26px;flex-shrink:0;fill:currentColor}
+.store-btn.primary svg{fill:var(--ink-900)}
+.store-btn-sub{font-size:10px;color:rgba(255,255,255,.68);font-weight:600;letter-spacing:.5px;text-transform:uppercase;line-height:1.2;font-family:'Inter',sans-serif}
+.store-btn.primary .store-btn-sub{color:var(--ink-500)}
+.store-btn-title{font-size:15.5px;font-weight:700;font-family:'Inter',sans-serif;letter-spacing:-.3px;line-height:1.2;margin-top:2px}
+.download-features{display:flex;gap:24px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.11)}
+.dl-feature{display:flex;align-items:center;gap:9px;font-size:13.5px;color:rgba(255,255,255,.82);font-weight:500}
+.dl-feature svg{width:18px;height:18px;stroke:#4ade80;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.download-visual{display:flex;justify-content:center;position:relative}
+.qr-card{background:#fff;border-radius:24px;padding:32px;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.4);max-width:340px;width:100%;position:relative}
+.qr-card::before{content:"";position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;border-radius:26px;background:var(--grad-brand);z-index:-1;opacity:.5;filter:blur(22px)}
+.qr-title{font-size:16px;font-weight:700;color:var(--ink-900);margin-bottom:6px}
+.qr-sub{font-size:12.5px;color:var(--muted);margin-bottom:20px}
+.qr-code{width:200px;height:200px;margin:0 auto 18px;background:#fff;border-radius:16px;padding:10px;box-shadow:0 4px 16px rgba(12,12,20,.06);display:flex;align-items:center;justify-content:center}
+.qr-code img{width:100%;height:100%;border-radius:12px}
+.qr-footer{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--muted);font-weight:600}
+.qr-footer .dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.2);animation:pulseDot 2s infinite}
+
+/* CTA */
+.cta-banner{padding:80px 0;background:var(--bg)}
+.cta-inner{background:var(--grad-brand);border-radius:36px;padding:80px 60px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:0 30px 80px rgba(220,15,104,.32)}
+.cta-inner::before,.cta-inner::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.cta-inner::before{top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%)}
+.cta-inner::after{bottom:-50%;left:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)}
+.cta-inner h2{position:relative;z-index:1;font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1.2px;margin-bottom:16px;line-height:1.18}
+.cta-inner p{position:relative;z-index:1;font-size:16.5px;line-height:1.68;color:rgba(255,255,255,.92);max-width:560px;margin:0 auto 34px}
+.cta-buttons{position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-trust{position:relative;z-index:1;margin-top:28px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.78);font-weight:500}
+.cta-trust-item{display:flex;align-items:center;gap:7px}
+.cta-trust-item svg{width:15px;height:15px;stroke:#4ade80;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Footer */
+.footer{background:var(--ink-900);color:#fff;padding:72px 0 30px;position:relative;overflow:hidden}
+[data-theme="dark"] .footer{background:#000;border-top:1px solid var(--border)}
+.footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-brand)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:52px}
+.footer-brand{max-width:340px}
+.footer-brand-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.footer-logo{width:48px;height:48px;border-radius:14px;background:#fff;border:1.5px solid rgba(8,117,47,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.footer-logo svg{width:34px;height:34px}
+.footer-brand-title{font-size:16px;font-weight:700}
+.footer-brand-sub{font-size:11px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.5px;font-family:'Inter',sans-serif;margin-top:3px}
+.footer-brand-desc{font-size:14px;line-height:1.75;color:rgba(255,255,255,.62);margin-bottom:24px}
+.social-links{display:flex;gap:10px}
+.social-link{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:all .25s var(--ease)}
+.social-link:hover{background:var(--grad-pink);transform:translateY(-3px)}
+.social-link svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.social-link svg.fill{fill:#fff;stroke:none}
+.footer-col h4{font-size:14.5px;font-weight:700;margin-bottom:20px}
+.footer-col li{margin-bottom:12px}
+.footer-col a{font-size:13.5px;color:rgba(255,255,255,.58);transition:all .22s var(--ease);display:inline-flex;align-items:center;gap:6px}
+.footer-col a:hover{color:#fff;transform:translateX(4px)}
+.footer-contact li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.55;margin-bottom:14px}
+.footer-contact svg{width:16px;height:16px;stroke:var(--pink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:3px}
+.footer-contact a{color:rgba(255,255,255,.62)}
+.footer-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.48)}
+.footer-bottom-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-bottom-links a:hover{color:#fff}
+.footer-badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding-top:24px;margin-top:24px;border-top:1px solid rgba(255,255,255,.08);justify-content:center}
+.footer-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:var(--r-full);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.7);font-weight:600;font-family:'Inter',sans-serif}
+.footer-badge svg{width:13px;height:13px;stroke:#4ade80;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;top:0;right:-100%;width:min(340px,86vw);height:100vh;background:var(--surface);z-index:2000;padding:90px 28px 32px;box-shadow:-20px 0 60px rgba(0,0,0,.22);transition:right .4s cubic-bezier(.34,1.2,.64,1);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-menu.open{right:0}
+.mobile-menu-close{position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:12px;background:var(--ink-100);display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+.mobile-menu-close svg{width:22px;height:22px;stroke:var(--ink-700);fill:none;stroke-width:2.5;stroke-linecap:round}
+.mobile-menu-links{display:flex;flex-direction:column;gap:4px;flex:1}
+.mobile-menu-link{padding:15px 18px;border-radius:12px;font-size:15.5px;font-weight:600;color:var(--ink-900);transition:background .2s var(--ease);display:flex;align-items:center;justify-content:space-between}
+.mobile-menu-link:hover{background:var(--ink-100)}
+.mobile-menu-link svg{width:18px;height:18px;stroke:var(--ink-400);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.mobile-menu-actions{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--border);margin-top:20px}
+.mobile-menu-actions button{padding:15px;border-radius:14px;font-size:15px;font-weight:700;transition:all .25s var(--ease)}
+.mobile-menu-actions .m-login{background:var(--ink-100);color:var(--ink-900)}
+.mobile-menu-actions .m-signup{background:var(--grad-pink);color:#fff;box-shadow:0 8px 24px rgba(220,15,104,.3)}
+.menu-overlay{position:fixed;inset:0;background:rgba(10,10,15,.5);backdrop-filter:blur(4px);z-index:1500;opacity:0;visibility:hidden;transition:all .3s var(--ease)}
+.menu-overlay.show{opacity:1;visibility:visible}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:60px;text-align:center}
+  .hero-desc{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-stats{margin:0 auto}
+  .hero-visual{order:-1}
+  .phone-mockup{width:min(300px,75vw)}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(2,1fr);gap:40px 24px}
+  .steps-grid::before{display:none}
+  .download-grid{grid-template-columns:1fr;gap:50px}
+  .download-content{text-align:center}
+  .download-content .section-title,.download-content .section-desc{text-align:center;margin-left:auto;margin-right:auto}
+  .download-actions{justify-content:center}
+  .download-features{justify-content:center}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:40px 24px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .footer-brand{grid-column:1 / -1;max-width:100%}
+}
+@media(max-width:768px){
+  :root{--gutter:20px}
+  .nav-links{display:none}
+  .nav-actions .btn-login,.nav-actions .btn-signup{display:none}
+  .kbd-hint{display:none}
+  .nav-toggle{display:flex}
+  .hero{padding:130px 0 70px;min-height:auto}
+  .hero-stats{grid-template-columns:repeat(2,1fr);gap:20px;max-width:100%}
+  .section{padding:76px 0}
+  .section-head{margin-bottom:44px}
+  .features-grid{grid-template-columns:1fr;gap:16px}
+  .steps-grid{grid-template-columns:1fr;gap:36px}
+  .step-number{width:76px;height:76px;margin-bottom:18px}
+  .download{padding:76px 0}
+  .cta-inner{padding:56px 26px;border-radius:24px}
+  .footer{padding:52px 0 24px}
+  .footer-grid{grid-template-columns:1fr;gap:36px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:16px}
+  .trust-inner{flex-direction:column;text-align:center}
+  .trust-logos{justify-content:center;gap:26px}
+  .scroll-indicator{display:none}
+  .hero-stat-value{font-size:20px}
+  .back-to-top{bottom:18px;right:18px;width:44px;height:44px}
+  .chat-widget{bottom:18px;left:18px;width:52px;height:52px}
+  .chat-panel{bottom:84px;left:18px;right:18px;width:auto;max-width:none}
+  .cookie-banner{bottom:80px;right:18px;left:18px;width:auto;max-width:none}
+  .announcement{font-size:12px;padding:8px 0}
+  .announcement-text{display:none}
+  .toast-wrap{top:80px;left:16px;right:16px}
+  .toast{max-width:none;min-width:0}
+  .auth-body{padding:24px 24px 28px}
+  .auth-hero{padding:32px 24px 24px}
+  .auth-hero h2{font-size:21px}
+}
+@media(max-width:480px){
+  .hero-cta{gap:10px}
+  .btn-primary,.btn-secondary{padding:14px 20px;font-size:14px;flex:1;justify-content:center;min-width:0}
+  .download-actions{width:100%}
+  .store-btn{flex:1 1 100%}
+  .float-badge{padding:8px 11px}
+  .float-badge.b-1{right:0;top:10%}
+  .float-badge.b-2{left:0;bottom:25%}
+  .float-badge.b-3{display:none}
+  .auth-modal{border-radius:24px}
+  .auth-body{padding:20px 20px 24px}
+  .auth-hero{padding:26px 20px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">মূল কনটেন্টে যান</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  <div class="container announcement-inner">
+    <span class="announcement-badge">
+      <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      নতুন
+    </span>
+    <span class="announcement-text">সংস্করণ <strong>২.০</strong> চালু — <strong>৫০% ক্যাশব্যাক</strong> প্রথম লেনদেনে</span>
+    <a href="#download" class="announcement-link">বিস্তারিত <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-brand" aria-label="হোম">
+      <div class="nav-logo">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs><path id="topArcNav" d="M 72 192 A 132 132 0 0 1 328 192"/></defs>
+          <text fill="#08752f" font-size="34" font-weight="700" font-family="Arial">
+            <textPath href="#topArcNav" startOffset="50%" text-anchor="middle">বাংলাদেশ ব্যাংক</textPath>
+          </text>
+          <g fill="none" stroke="#08752f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 140 154 L 200 111 L 260 154 Z" fill="#fff"/>
+            <path d="M 145 154 L 255 154"/>
+            <path d="M 151 161 C 155 184 174 197 177 220 L 177 273 L 223 273 L 223 220 C 226 197 245 184 249 161"/>
+            <path d="M 164 274 L 236 274 L 242 286 L 158 286 Z" fill="#fff"/>
+          </g>
+        </svg>
+      </div>
+      <div class="nav-brand-text">
+        <div class="nav-brand-title">বাংলাদেশ ব্যাংক</div>
+        <div class="nav-brand-sub">MOBILE BANKING</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#features" class="nav-link">সেবাসমূহ</a>
+      <a href="#security" class="nav-link">নিরাপত্তা</a>
+      <a href="#how" class="nav-link">কিভাবে কাজ করে</a>
+      <a href="#download" class="nav-link">ডাউনলোড</a>
+      <a href="#faq" class="nav-link">প্রশ্নোত্তর</a>
+    </div>
+    <div class="nav-actions">
+      <button class="kbd-hint" onclick="openCmdK()" aria-label="কমান্ড প্যালেট">
+        <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="থিম">
+        <svg class="theme-icon-light" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-icon-dark" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+      </button>
+      <button class="btn-login" onclick="openAuth('signin')">লগইন</button>
+      <button class="btn-signup" onclick="openAuth('signup')">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+        <span>রেজিস্টার</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="মেনু">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- CMDK -->
+<div class="cmdk-overlay" id="cmdkOverlay" onclick="if(event.target===this)closeCmdK()">
+  <div class="cmdk" role="dialog" aria-modal="true">
+    <div class="cmdk-head">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="cmdk-input" id="cmdkInput" placeholder="কমান্ড খুঁজুন..." autocomplete="off">
+      <span class="cmdk-esc">ESC</span>
+    </div>
+    <div class="cmdk-body" id="cmdkBody"></div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMobileMenu()"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="বন্ধ">
+    <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="mobile-menu-links">
+    <a href="#features" class="mobile-menu-link" onclick="closeMobileMenu()">সেবাসমূহ <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#security" class="mobile-menu-link" onclick="closeMobileMenu()">নিরাপত্তা <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#how" class="mobile-menu-link" onclick="closeMobileMenu()">কিভাবে কাজ করে <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#download" class="mobile-menu-link" onclick="closeMobileMenu()">ডাউনলোড <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#faq" class="mobile-menu-link" onclick="closeMobileMenu()">প্রশ্নোত্তর <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="mobile-menu-actions">
+    <button class="m-login" onclick="closeMobileMenu();openAuth('signin')">লগইন করুন</button>
+    <button class="m-signup" onclick="closeMobileMenu();openAuth('signup')">রেজিস্টার করুন</button>
+  </div>
+</aside>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span><span>১০ লক্ষ+ ব্যবহারকারীর বিশ্বস্ত প্ল্যাটফর্ম</span></div>
+      <h1 class="hero-title">আপনার <span class="gradient-text">আর্থিক স্বাধীনতা</span><br>এখন হাতের মুঠোয়</h1>
+      <p class="hero-desc">বাংলাদেশ ব্যাংকের মোবাইল অ্যাপের মাধ্যমে নিরাপদ, দ্রুত ও সহজে টাকা পাঠান, রিসিভ করুন, ঋণ নিন এবং আপনার সব আর্থিক লেনদেন এক জায়গায় পরিচালনা করুন।</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openAuth('signup')">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <span>বিনামূল্যে শুরু করুন</span>
+        </button>
+        <a href="#download" class="btn-secondary">
+          <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
+          <span>অ্যাপ ডাউনলোড</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-value">১০<span class="unit">লক্ষ+</span></div><div class="hero-stat-label">সক্রিয় ব্যবহারকারী</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">৳৫০০<span class="unit">কোটি+</span></div><div class="hero-stat-label">নিরাপদ লেনদেন</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">৪.৯<span class="unit">/৫</span></div><div class="hero-stat-label">গ্রাহক সন্তুষ্টি</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">২৪<span class="unit">/৭</span></div><div class="hero-stat-label">সাপোর্ট সেবা</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-status"><span>৯:৪১</span><span>●●● 🔋</span></div>
+          <div class="phone-balance-card">
+            <div class="phone-balance-label">উপলব্ধ ব্যালেন্স</div>
+            <div class="phone-balance-amount">
+              <span id="balanceText">৳ 12,458.50</span>
+              <span class="eye" onclick="toggleBalance()"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            </div>
+          </div>
+          <div class="phone-actions">
+            <div class="phone-action" onclick="openDemo('send')"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>পাঠান</span></div>
+            <div class="phone-action" onclick="openDemo('receive')"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg><span>রিসিভ</span></div>
+            <div class="phone-action" onclick="openDemo('history')"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg><span>লেনদেন</span></div>
+            <div class="phone-action" onclick="openDemo('loan')"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>লোন</span></div>
+          </div>
+          <div class="phone-tx">
+            <div class="phone-tx-item" onclick="openDemo('history')">
+              <div class="phone-tx-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></div>
+              <div class="phone-tx-info"><div class="phone-tx-title">রিসিভ — করিম</div><div class="phone-tx-amt">আজ, ১০:২৪</div></div>
+              <div class="phone-tx-value">+৳৫০০</div>
+            </div>
+            <div class="phone-tx-item" onclick="openDemo('history')">
+              <div class="phone-tx-icon"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></div>
+              <div class="phone-tx-info"><div class="phone-tx-title">পাঠানো — রহিম</div><div class="phone-tx-amt">আজ, ০৯:১৫</div></div>
+              <div class="phone-tx-value">-৳২৫০</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-badge b-1"><div class="fb-icon green"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div><div class="fb-title">টাকা পাঠানো হয়েছে</div><div class="fb-sub">সফলভাবে সম্পন্ন</div></div></div>
+      <div class="float-badge b-2"><div class="fb-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><div><div class="fb-title">১০০% নিরাপদ</div><div class="fb-sub">এনক্রিপ্টেড</div></div></div>
+      <div class="float-badge b-3"><div class="fb-icon pink"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><div class="fb-title">তাৎক্ষণিক ঋণ</div><div class="fb-sub">২৪ ঘণ্টায়</div></div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="mouse"></div><span>স্ক্রল করুন</span></div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-bar">
+  <div class="container trust-inner">
+    <div class="trust-label">Trusted &amp; Secured By</div>
+    <div class="trust-logos">
+      <div class="trust-logo"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>SSL Secured</div>
+      <div class="trust-logo"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Bank Grade</div>
+      <div class="trust-logo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24/7 Support</div>
+      <div class="trust-logo"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/><circle cx="12" cy="12" r="10"/></svg>ISO Certified</div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>বাংলাদেশ ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>ডাচ্-বাংলা ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>ব্র্যাক ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>ইস্টার্ন ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>সিটি ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>ইসলামী ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>বাংলাদেশ ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>ডাচ্-বাংলা ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>ব্র্যাক ব্যাংক</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg>ইস্টার্ন ব্যাংক</div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="container ticker-inner">
+    <span class="ticker-label"><span class="pulse"></span>লাইভ</span>
+    <div class="ticker-track-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section section--alt" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">আমাদের সেবাসমূহ</div>
+      <h2 class="section-title">যা যা করতে পারবেন</h2>
+      <p class="section-desc">আধুনিক প্রযুক্তি এবং নিরাপত্তার সমন্বয়ে আপনার প্রতিদিনের আর্থিক চাহিদা পূরণের সব সুবিধা এক অ্যাপে।</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" onclick="openFeatureDetail('send')"><div class="feature-icon pink"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div><h3 class="feature-title">তাৎক্ষণিক টাকা পাঠান</h3><p class="feature-desc">মোবাইল নম্বর বা UID দিয়ে সেকেন্ডের মধ্যে টাকা পাঠান — কোন চার্জ ছাড়াই।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('secure')"><div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="feature-title">১০০% নিরাপদ লেনদেন</h3><p class="feature-desc">ব্যাংক-গ্রেড এনক্রিপশন এবং বায়োমেট্রিক লগইন দিয়ে আপনার অর্থ সুরক্ষিত।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('loan')"><div class="feature-icon green"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="feature-title">সহজ শর্তে ঋণ</h3><p class="feature-desc">কৃষি, ক্ষুদ্র ব্যবসা বা স্টার্টআপের জন্য ২৪ ঘণ্টায় ঋণ অনুমোদন।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('history')"><div class="feature-icon purple"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div><h3 class="feature-title">লেনদেনের ইতিহাস</h3><p class="feature-desc">প্রতিটি লেনদেনের বিস্তারিত রেকর্ড এবং স্টেটমেন্ট ডাউনলোড সুবিধা।</p></div>
+      <div class="feature-card" onclick="openFeatureDetail('notify')"><div class="feature-icon orange"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3 class="feature-title">স্মার্ট নোটিফিকেশন</h3><p class="feature-desc">প্রতিটি লেনদেনের তাৎক্ষণিক আপডেট এবং গুরুত্বপূর্ণ তথ্য সরাসরি ফোনে।</p></div>
+      <div class="feature-card" onclick="openChat()"><div class="feature-icon red"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><h3 class="feature-title">২৪/৭ গ্রাহক সেবা</h3><p class="feature-desc">যেকোনো সমস্যায় হোয়াটসঅ্যাপ বা টেলিগ্রামে সাথে সাথে সাহায্য পান।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div><div class="stat-number" data-count="1000000">০</div><div class="stat-label">সক্রিয় ব্যবহারকারী</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-number" data-count="5000" data-suffix="+">০</div><div class="stat-label">কোটি টাকা লেনদেন</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div><div class="stat-number" data-count="64">০</div><div class="stat-label">জেলায় সেবা</div></div>
+    <div class="stat-item"><div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="stat-number" data-count="99.9" data-suffix="%" data-decimal="1">০</div><div class="stat-label">আপটাইম</div></div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">সহজ ৪ ধাপ</div>
+      <h2 class="section-title">কিভাবে শুরু করবেন</h2>
+      <p class="section-desc">মাত্র কয়েক মিনিটে অ্যাকাউন্ট খুলুন এবং সাথে সাথে লেনদেন শুরু করুন।</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card" onclick="openStepDetail(1)"><div class="step-number"><span class="badge">১</span><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div><h3 class="step-title">রেজিস্ট্রেশন</h3><p class="step-desc">নাম, ফোন এবং NID দিয়ে ২ মিনিটে অ্যাকাউন্ট খুলুন।</p></div>
+      <div class="step-card" onclick="openStepDetail(2)"><div class="step-number"><span class="badge">২</span><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="step-title">KYC ভেরিফিকেশন</h3><p class="step-desc">OTP যাচাই করে সহজেই আপনার পরিচয় নিশ্চিত করুন।</p></div>
+      <div class="step-card" onclick="openStepDetail(3)"><div class="step-number"><span class="badge">৩</span><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg></div><h3 class="step-title">অ্যাপ ডাউনলোড</h3><p class="step-desc">Android বা iOS ডিভাইসে অ্যাপ ইনস্টল করুন।</p></div>
+      <div class="step-card" onclick="openStepDetail(4)"><div class="step-number"><span class="badge">৪</span><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="step-title">লেনদেন শুরু</h3><p class="step-desc">টাকা পাঠান, রিসিভ করুন, ঋণ নিন — সবকিছু এক জায়গায়।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download" id="download">
+  <div class="container download-grid">
+    <div class="download-content">
+      <div class="section-tag">মোবাইল অ্যাপ</div>
+      <h2 class="section-title">আপনার ফোনে নিয়ে যান</h2>
+      <p class="section-desc">Android এবং iOS এর জন্য আমাদের অফিসিয়াল অ্যাপ ডাউনলোড করুন।</p>
+      <div class="download-actions">
+        <a href="#" class="store-btn primary" onclick="event.preventDefault();downloadApp('android')">
+          <svg viewBox="0 0 24 24"><path d="M3.6 1.8a1.2 1.2 0 0 0-.4.9v18.6a1.2 1.2 0 0 0 .4.9l10.4-10.2L3.6 1.8zm11.8 8.2L5.7 2.4l10.5 6.1-2.8 1.5zm0 4.5-2.8-1.5L5.7 21.6l11.7-6.7-.1-.4zm4.8-3.3-3.3-1.9-3.1 1.7 3.1 1.7 3.3-1.9c.7-.4.7-1.3 0-1.6z"/></svg>
+          <div><div class="store-btn-sub">Get it on</div><div class="store-btn-title">Google Play</div></div>
+        </a>
+        <a href="#" class="store-btn" onclick="event.preventDefault();downloadApp('ios')">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><div class="store-btn-sub">Download on the</div><div class="store-btn-title">App Store</div></div>
+        </a>
+      </div>
+      <div class="download-features">
+        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ফ্রি ডাউনলোড</div>
+        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>মাত্র ১২ MB</div>
+        <div class="dl-feature"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Android 6.0+</div>
+      </div>
+    </div>
+    <div class="download-visual">
+      <div class="qr-card">
+        <div class="qr-title">স্ক্যান করে ডাউনলোড করুন</div>
+        <div class="qr-sub">ক্যামেরা দিয়ে QR কোড স্ক্যান করুন</div>
+        <div class="qr-code" id="qrCode"></div>
+        <div class="qr-footer"><span class="dot"></span><span>Version 2.0.0 — Latest</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>আজই শুরু করুন আপনার আর্থিক যাত্রা</h2>
+      <p>বিনামূল্যে অ্যাকাউন্ট খুলুন — মাত্র ২ মিনিটে। কোনো লুকানো চার্জ নেই, কোনো ঝামেলা নেই।</p>
+      <div class="cta-buttons">
+        <button class="btn-primary" onclick="openAuth('signup')">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <span>ফ্রি অ্যাকাউন্ট খুলুন</span>
+        </button>
+        <a href="#download" class="btn-secondary">
+          <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
+          <span>অ্যাপ ডাউনলোড</span>
+        </a>
+      </div>
+      <div class="cta-trust">
+        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>কোনো লুকানো চার্জ নেই</span>
+        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>১০০% নিরাপদ</span>
+        <span class="cta-trust-item"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>২৪/৭ সাপোর্ট</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">প্রশ্নোত্তর</div>
+      <h2 class="section-title">সাধারণ জিজ্ঞাসা</h2>
+      <p class="section-desc">আপনার প্রশ্নের উত্তর এখানে না পেলে আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।</p>
+    </div>
+    <div style="max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">অ্যাকাউন্ট খুলতে কি খরচ হয়? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">না, সম্পূর্ণ বিনামূল্যে অ্যাকাউন্ট খোলা যায়। কোনো লুকানো চার্জ নেই। শুধুমাত্র NID এবং মোবাইল নম্বর দিয়ে ২ মিনিটে রেজিস্ট্রেশন সম্পন্ন করুন।</div>
+      </details>
+      <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">দৈনিক কত টাকা লেনদেন করা যায়? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">আপনার অ্যাকাউন্টের ধরন অনুযায়ী দৈনিক লেনদেনের সীমা নির্ধারিত হয়। সাধারণত ২৫,০০০ টাকা পর্যন্ত পাঠানো এবং ৫০,০০০ টাকা পর্যন্ত গ্রহণ করা যায়।</div>
+      </details>
+      <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">পাসওয়ার্ড ভুলে গেলে কি করব? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">লগইন স্ক্রিনে "পাসওয়ার্ড ভুলে গেছেন?" অপশনে ক্লিক করে আপনার নিবন্ধিত মোবাইল নম্বরে OTP পাঠান। OTP যাচাই করে সহজেই নতুন পাসওয়ার্ড সেট করতে পারবেন।</div>
+      </details>
+      <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">ঋণ পেতে কত সময় লাগে? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">KYC সম্পন্ন থাকলে সাধারণত ২৪ ঘণ্টার মধ্যে ঋণ আবেদন যাচাই ও অনুমোদন হয়। অনুমোদনের পর তাৎক্ষণিকভাবে টাকা আপনার অ্যাকাউন্টে জমা হয়।</div>
+      </details>
+      <details style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+        <summary style="padding:22px 26px;font-size:16px;font-weight:700;color:var(--ink-900);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px">আমার তথ্য কি নিরাপদ? <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--ink-500);fill:none;stroke-width:2.4"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div style="padding:0 26px 24px;font-size:14.5px;line-height:1.75;color:var(--muted)">হ্যাঁ, ১০০%। আমরা ২৫৬-বিট AES এনক্রিপশন, বায়োমেট্রিক লগইন এবং ২৪/৭ ফ্রড মনিটরিং ব্যবহার করি। আপনার কোনো তথ্য তৃতীয় পক্ষের সাথে শেয়ার করা হয় না।</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-head">
+          <div class="footer-logo">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <defs><path id="topArcF" d="M 72 192 A 132 132 0 0 1 328 192"/></defs>
+              <text fill="#08752f" font-size="34" font-weight="700" font-family="Arial"><textPath href="#topArcF" startOffset="50%" text-anchor="middle">বাংলাদেশ ব্যাংক</textPath></text>
+              <g fill="none" stroke="#08752f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 140 154 L 200 111 L 260 154 Z" fill="#fff"/>
+                <path d="M 145 154 L 255 154"/>
+                <path d="M 151 161 C 155 184 174 197 177 220 L 177 273 L 223 273 L 223 220 C 226 197 245 184 249 161"/>
+                <path d="M 164 274 L 236 274 L 242 286 L 158 286 Z" fill="#fff"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="footer-brand-title">বাংলাদেশ ব্যাংক</div>
+            <div class="footer-brand-sub">MOBILE BANKING</div>
+          </div>
+        </div>
+        <p class="footer-brand-desc">আপনার বিশ্বস্ত আর্থিক সঙ্গী। নিরাপদ, দ্রুত এবং সহজ মোবাইল ব্যাংকিং সেবা সবার জন্য।</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" class="fill"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07"/></svg></a>
+          <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" class="fill"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.96 6.82H1.69l7.73-8.84L1.25 2.25h6.82l4.71 6.23 5.46-6.23zm-1.16 17.52h1.83L7.01 4.13H5.04l12.04 15.64z"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" class="fill"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>সেবাসমূহ</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">টাকা পাঠান</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">টাকা রিসিভ</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">ঋণ সেবা</a></li>
+          <li><a href="#" onclick="event.preventDefault();openAuth('signup')">বিল পেমেন্ট</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>কোম্পানি</h4>
+        <ul>
+          <li><a href="#">আমাদের সম্পর্কে</a></li>
+          <li><a href="#">ক্যারিয়ার</a></li>
+          <li><a href="#">প্রেস কিট</a></li>
+          <li><a href="#">ব্লগ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>সহায়তা</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();openChat()">যোগাযোগ</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">প্রাইভেসি পলিসি</a></li>
+          <li><a href="#">শর্তাবলী</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>যোগাযোগ</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+880123456789">+৮৮০ ১২৩৪-৫৬৭৮৯</a></li>
+          <li><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:support@bd-bank.com">support@bd-bank.com</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>ঢাকা, বাংলাদেশ</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-badges">
+      <span class="footer-badge"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>SSL Secured</span>
+      <span class="footer-badge"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ISO 27001</span>
+      <span class="footer-badge"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>PCI DSS</span>
+      <span class="footer-badge"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Bangladesh Bank Licensed</span>
+    </div>
+    <div class="footer-bottom">
+      <div>© ২০২৫ বাংলাদেশ ব্যাংক মোবাইল ব্যাংকিং। সর্বস্বত্ব সংরক্ষিত।</div>
+      <div class="footer-bottom-links">
+        <a href="#">গোপনীয়তা</a>
+        <a href="#">শর্তাবলী</a>
+        <a href="#">কুকি</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="উপরে যান"><svg viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg></button>
+<button class="chat-widget" id="chatWidget" aria-label="চ্যাট"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="chat-badge">১</span></button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div class="chat-head-avatar">বআ</div>
+    <div class="chat-head-info"><div class="chat-head-name">বাংলাদেশ ব্যাংক সাপোর্ট</div><div class="chat-head-status"><span class="dot"></span>অনলাইনে আছি</div></div>
+    <button class="chat-head-close" onclick="closeChat()"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">আসসালামু আলাইকুম! 👋<br>আমি বাংলাদেশ ব্যাংকের ডিজিটাল সহকারী। কীভাবে সাহায্য করতে পারি?<div class="chat-msg-time">এখন</div></div>
+  </div>
+  <div class="chat-quick">
+    <button class="chat-quick-btn" onclick="sendQuick('অ্যাকাউন্ট খুলতে চাই')">অ্যাকাউন্ট খুলতে চাই</button>
+    <button class="chat-quick-btn" onclick="sendQuick('ঋণ নিতে চাই')">ঋণ নিতে চাই</button>
+    <button class="chat-quick-btn" onclick="sendQuick('লেনদেন সীমা কত?')">লেনদেন সীমা</button>
+    <button class="chat-quick-btn" onclick="sendQuick('ডাউনলোড লিংক')">ডাউনলোড</button>
+  </div>
+  <form class="chat-foot" onsubmit="return sendChat(event)">
+    <input type="text" class="chat-input" id="chatInput" placeholder="আপনার প্রশ্ন লিখুন..." autocomplete="off">
+    <button type="submit" class="chat-send" aria-label="পাঠান"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+  </form>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1.2" fill="#fff" stroke="none"/><circle cx="15" cy="10" r="1.2" fill="#fff" stroke="none"/><circle cx="10" cy="15" r="1.2" fill="#fff" stroke="none"/></svg></div>
+  <div class="cookie-title">কুকি ব্যবহার</div>
+  <div class="cookie-text">আমরা আপনার অভিজ্ঞতা উন্নত করতে কুকি ব্যবহার করি।</div>
+  <div class="cookie-actions">
+    <button class="cookie-btn secondary" onclick="dismissCookie()">পরে</button>
+    <button class="cookie-btn primary" onclick="acceptCookie()">সম্মত আছি</button>
+  </div>
+</div>
+
+<!-- DEMO PANEL -->
+<div class="demo-overlay" id="demoOverlay" onclick="closeDemo()"></div>
+<aside class="demo-panel" id="demoPanel" aria-hidden="true">
+  <div class="demo-head">
+    <div class="demo-head-icon" id="demoHeadIcon"></div>
+    <div class="demo-head-info"><div class="demo-head-title" id="demoHeadTitle">বাংলাদেশ ব্যাংক</div><div class="demo-head-sub" id="demoHeadSub">ডেমো মোড</div></div>
+    <button class="demo-head-close" onclick="closeDemo()"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="demo-body" id="demoBody"></div>
+</aside>
+
+<!-- ENHANCED AUTH MODAL -->
+<div class="auth-overlay" id="authModal" onclick="if(event.target===this)closeAuth()">
+  <div class="auth-modal" id="authModalInner">
+    <button class="auth-close" onclick="closeAuth()" aria-label="বন্ধ করুন">
+      <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+
+    <!-- Normal Auth View -->
+    <div id="authView">
+      <div class="auth-hero">
+        <div class="auth-logo">
+          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+        </div>
+        <h2 id="authTitle">স্বাগতম!</h2>
+        <p id="authSub">আপনার অ্যাকাউন্টে প্রবেশ করুন অথবা নতুন অ্যাকাউন্ট খুলুন</p>
+      </div>
+
+      <div class="auth-body">
+        <div class="auth-tabs" data-mode="signin" id="authTabs">
+          <div class="auth-tab-slider"></div>
+          <button class="auth-tab active" data-tab="signin" onclick="switchTab('signin')">লগইন</button>
+          <button class="auth-tab" data-tab="signup" onclick="switchTab('signup')">রেজিস্টার</button>
+        </div>
+
+        <form id="authForm" onsubmit="return submitAuth(event)" autocomplete="on">
+          <!-- Signup-only fields -->
+          <div class="signup-field">
+            <div class="auth-field">
+              <input type="text" class="auth-field-input" id="fullName" placeholder=" " autocomplete="name">
+              <label class="auth-field-label" for="fullName">পূর্ণ নাম</label>
+            </div>
+            <div class="auth-error" id="err-fullName"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>অনুগ্রহ করে পূর্ণ নাম লিখুন</span></div>
+          </div>
+
+          <div class="signup-field">
+            <div class="auth-field">
+              <input type="text" class="auth-field-input" id="nidInput" placeholder=" " inputmode="numeric" autocomplete="off">
+              <label class="auth-field-label" for="nidInput">NID নম্বর (১০ বা ১৭ ডিজিট)</label>
+            </div>
+            <div class="auth-error" id="err-nidInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>বৈধ NID নম্বর লিখুন</span></div>
+          </div>
+
+          <!-- Email -->
+          <div class="auth-field">
+            <input type="email" class="auth-field-input" id="emailInput" placeholder=" " autocomplete="email">
+            <label class="auth-field-label" for="emailInput">ইমেইল ঠিকানা</label>
+            <div class="auth-field-icon" id="emailIcon"></div>
+          </div>
+          <div class="auth-error" id="err-emailInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>বৈধ ইমেইল ঠিকানা লিখুন</span></div>
+
+          <!-- Password -->
+          <div class="auth-field" style="margin-top:18px">
+            <input type="password" class="auth-field-input" id="passwordInput" placeholder=" " autocomplete="current-password" oninput="checkPasswordStrength(this.value)">
+            <label class="auth-field-label" for="passwordInput">পাসওয়ার্ড</label>
+            <div class="auth-field-icon" id="pwToggle" onclick="togglePassword()">
+              <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+          </div>
+          <div class="pw-meter" id="pwMeter">
+            <div class="pw-meter-bars">
+              <div class="pw-meter-bar" id="pwb1"></div>
+              <div class="pw-meter-bar" id="pwb2"></div>
+              <div class="pw-meter-bar" id="pwb3"></div>
+            </div>
+            <div class="pw-meter-label" id="pwLabel"></div>
+          </div>
+          <div class="auth-error" id="err-passwordInput"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে</span></div>
+
+          <!-- Terms (signup only) -->
+          <div class="signup-field">
+            <label class="auth-terms">
+              <input type="checkbox" id="termsCheck">
+              <span>আমি <a href="#" onclick="event.preventDefault()">শর্তাবলী</a> ও <a href="#" onclick="event.preventDefault()">প্রাইভেসি পলিসি</a> তে সম্মত আছি</span>
+            </label>
+          </div>
+
+          <!-- Options -->
+          <div class="auth-options">
+            <label class="auth-check signin-only-option">
+              <input type="checkbox" id="rememberMe" checked>
+              <span>মনে রাখুন</span>
+            </label>
+            <a href="#" class="auth-link signin-only-option" onclick="event.preventDefault();forgotPassword()">পাসওয়ার্ড ভুলে গেছেন?</a>
+          </div>
+
+          <button type="submit" class="auth-submit" id="authSubmit">
+            <span class="spinner"></span>
+            <span class="label" id="authBtnLabel">লগইন করুন</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="auth-divider">অথবা</div>
+
+        <div class="auth-social">
+          <button type="button" class="auth-social-btn" onclick="socialLogin('Google')">
+            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </button>
+          <button type="button" class="auth-social-btn" onclick="socialLogin('Facebook')">
+            <svg viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07"/></svg>
+            Facebook
+          </button>
+        </div>
+
+        <div class="auth-foot" id="authFoot">
+          অ্যাকাউন্ট নেই? <a href="#" onclick="event.preventDefault();switchTab('signup')">রেজিস্টার করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success View -->
+    <div class="auth-success" id="authSuccess">
+      <div class="auth-success-icon">
+        <svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>
+      </div>
+      <h3 id="successTitle">সফল হয়েছে!</h3>
+      <p id="successDesc">আপনার অ্যাকাউন্ট তৈরি হয়েছে। KYC সম্পন্ন করুন।</p>
+      <button class="auth-submit" onclick="closeAuth()" style="max-width:240px;margin:0 auto">
+        <span class="label">শুরু করুন</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- DOWNLOAD MODAL -->
+<div class="auth-overlay" id="dlModal" onclick="if(event.target===this)closeDlModal()">
+  <div class="auth-modal" style="max-width:420px">
+    <button class="auth-close" onclick="closeDlModal()" aria-label="বন্ধ করুন"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <div class="auth-hero" style="background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(41,182,246,.06))">
+      <div class="auth-logo" style="background:var(--grad-green);box-shadow:0 20px 40px rgba(22,163,74,.35)">
+        <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>
+      </div>
+      <h2>ডাউনলোড শুরু হচ্ছে</h2>
+      <p id="dlModalSub">অনুগ্রহ করে অপেক্ষা করুন...</p>
+    </div>
+    <div class="auth-body">
+      <div class="demo-form" style="margin-bottom:20px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div id="dlPlatformIcon" style="width:52px;height:52px;border-radius:14px;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-sm);flex-shrink:0"></div>
+          <div style="flex:1">
+            <div style="font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:2px" id="dlPlatformName">বাংলাদেশ ব্যাংক অ্যাপ</div>
+            <div style="font-size:12.5px;color:var(--muted)" id="dlPlatformSize">১২.৪ MB</div>
+          </div>
+        </div>
+      </div>
+      <div style="height:8px;border-radius:4px;background:var(--ink-100);overflow:hidden;margin-bottom:10px">
+        <div id="dlProgressFill" style="height:100%;width:0;border-radius:4px;background:var(--grad-pink);transition:width .3s var(--ease);box-shadow:0 0 12px rgba(220,15,104,.4)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:22px">
+        <span id="dlProgressLabel">ডাউনলোড হচ্ছে...</span>
+        <span class="pct" id="dlProgressPct" style="color:var(--pink);font-family:'Inter',sans-serif">০%</span>
+      </div>
+      <button class="auth-submit" id="dlDoneBtn" style="display:none;background:var(--grad-green)" onclick="closeDlModal();showToast('success','ইনস্টলেশন','অ্যাপ ইনস্টল পেজে নিয়ে যাওয়া হচ্ছে...')">
+        <svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>
+        <span class="label">ইনস্টল করুন</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══ HELPERS ═══ */
+function toBn(n){const m=['০','১','২','৩','৪','৫','৬','৭','৮','৯'];return String(n).split('').map(c=>m[+c]!==undefined?m[+c]:c).join('')}
+function formatBn(n){return toBn(n.toLocaleString('en-IN'))}
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+/* ═══ THEME ═══ */
+const htmlEl=document.documentElement;
+const savedTheme=localStorage.getItem('theme');
+const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+htmlEl.setAttribute('data-theme',savedTheme==='dark'||(!savedTheme&&prefersDark)?'dark':'light');
+function toggleTheme(){const c=htmlEl.getAttribute('data-theme');const n=c==='dark'?'light':'dark';htmlEl.setAttribute('data-theme',n);localStorage.setItem('theme',n);showToast('info',n==='dark'?'🌙 ডার্ক মোড':'☀️ লাইট মোড',n==='dark'?'ডার্ক থিম সক্রিয় করা হয়েছে।':'লাইট থিম সক্রিয় করা হয়েছে।')}
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',e=>{if(!localStorage.getItem('theme'))htmlEl.setAttribute('data-theme',e.matches?'dark':'light')});
+
+/* ═══ LANGUAGE ═══ */
+let currentLang=localStorage.getItem('lang')||'bn';
+function toggleLang(){
+  currentLang=currentLang==='bn'?'en':'bn';
+  localStorage.setItem('lang',currentLang);
+  document.documentElement.setAttribute('lang',currentLang);
+  document.getElementById('langBtn').textContent=currentLang==='bn'?'EN':'বাং';
+  const map={bn:{login:'লগইন করুন',signup:'রেজিস্টার করুন',welcome:'স্বাগতম!',welcomeSub:'আপনার অ্যাকাউন্টে প্রবেশ করুন অথবা নতুন অ্যাকাউন্ট খুলুন',signupTitle:'নতুন অ্যাকাউন্ট',signupSub:'মাত্র ২ মিনিটে বিনামূল্যে অ্যাকাউন্ট খুলুন',email:'ইমেইল ঠিকানা',password:'পাসওয়ার্ড',fullName:'পূর্ণ নাম',nid:'NID নম্বর (১০ বা ১৭ ডিজিট)',remember:'মনে রাখুন',forgot:'পাসওয়ার্ড ভুলে গেছেন?',or:'অথবা',noAccount:'অ্যাকাউন্ট নেই?',haveAccount:'ইতিমধ্যে অ্যাকাউন্ট আছে?',registerHere:'রেজিস্টার করুন',loginHere:'লগইন করুন'},en:{login:'Login',signup:'Register',welcome:'Welcome!',welcomeSub:'Sign in to your account or create a new one',signupTitle:'New Account',signupSub:'Create a free account in just 2 minutes',email:'Email address',password:'Password',fullName:'Full name',nid:'NID Number (10 or 17 digits)',remember:'Remember me',forgot:'Forgot password?',or:'OR',noAccount:"Don't have an account?",haveAccount:'Already have an account?',registerHere:'Register',loginHere:'Login'}};
+  const t=map[currentLang];
+  document.getElementById('authBtnLabel').textContent=state.authMode==='signup'?t.signup:t.login;
+  document.getElementById('authTitle').textContent=state.authMode==='signup'?t.signupTitle:t.welcome;
+  document.getElementById('authSub').textContent=state.authMode==='signup'?t.signupSub:t.welcomeSub;
+  const labels=document.querySelectorAll('.auth-field-label');
+  if(labels[0])labels[0].textContent=t.fullName;
+  if(labels[1])labels[1].textContent=t.nid;
+  if(labels[2])labels[2].textContent=t.email;
+  if(labels[3])labels[3].textContent=t.password;
+  document.querySelectorAll('.auth-divider')[0].textContent=t.or;
+  document.getElementById('authFoot').innerHTML=`${state.authMode==='signup'?t.haveAccount:t.noAccount} <a href="#" onclick="event.preventDefault();switchTab('${state.authMode==='signup'?'signin':'signup'}')">${state.authMode==='signup'?t.loginHere:t.registerHere}</a>`;
+  showToast('info',currentLang==='bn'?'🇧🇩 বাংলা':'🇬🇧 English',currentLang==='bn'?'ভাষা পরিবর্তন করা হয়েছে।':'Language switched.');
+}
+document.getElementById('langBtn').textContent=currentLang==='bn'?'EN':'বাং';
+
+/* ═══ TOAST ═══ */
+const toastWrap=document.getElementById('toastWrap');
+function showToast(type,title,text,duration=4000){
+  const icons={success:'<path d="m5 12 5 5L20 7"/>',error:'<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>',info:'<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',default:'<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'};
+  const el=document.createElement('div');
+  el.className='toast '+type;
+  el.innerHTML=`<div class="toast-icon"><svg viewBox="0 0 24 24">${icons[type]||icons.default}</svg></div><div class="toast-body"><div class="toast-title">${title}</div>${text?`<div class="toast-text">${text}</div>`:''}</div><button class="toast-close" aria-label="বন্ধ"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>`;
+  toastWrap.appendChild(el);
+  const rm=()=>{el.classList.add('removing');setTimeout(()=>el.remove(),300)};
+  el.querySelector('.toast-close').addEventListener('click',rm);
+  setTimeout(rm,duration);
+}
+
+/* ═══ STATE ═══ */
+const state={authMode:'signin',chatOpen:false,balanceVisible:true};
+
+/* ═══ SCROLL ═══ */
+const navbar=document.getElementById('navbar');
+const scrollProgress=document.getElementById('scrollProgress');
+const backToTop=document.getElementById('backToTop');
+function onScroll(){
+  const y=window.scrollY;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  const pct=h>0?(y/h)*100:0;
+  scrollProgress.style.width=pct+'%';
+  if(y>40)navbar.classList.add('scrolled');else navbar.classList.remove('scrolled');
+  if(y>600)backToTop.classList.add('show');else backToTop.classList.remove('show');
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ═══ MOBILE MENU ═══ */
+const navToggle=document.getElementById('navToggle');
+const mobileMenu=document.getElementById('mobileMenu');
+const menuOverlay=document.getElementById('menuOverlay');
+function openMobileMenu(){mobileMenu.classList.add('open');menuOverlay.classList.add('show');mobileMenu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeMobileMenu(){mobileMenu.classList.remove('open');menuOverlay.classList.remove('show');mobileMenu.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+navToggle.addEventListener('click',()=>{mobileMenu.classList.contains('open')?closeMobileMenu():openMobileMenu()});
+
+/* ═══ SMOOTH SCROLL ═══ */
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',e=>{
+    const href=link.getAttribute('href');
+    if(href==='#'||href.length<2)return;
+    const t=document.querySelector(href);
+    if(!t)return;
+    e.preventDefault();
+    const top=t.getBoundingClientRect().top+window.scrollY-90;
+    window.scrollTo({top,behavior:'smooth'});
+  });
+});
+
+/* ═══ COMMAND PALETTE ═══ */
+const cmdkOverlay=document.getElementById('cmdkOverlay');
+const cmdkInput=document.getElementById('cmdkInput');
+const cmdkBody=document.getElementById('cmdkBody');
+const commands=[
+  {icon:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',title:'রেজিস্টার করুন',desc:'নতুন অ্যাকাউন্ট খুলুন',action:()=>openAuth('signup')},
+  {icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>',title:'লগইন করুন',desc:'অ্যাকাউন্টে প্রবেশ করুন',action:()=>openAuth('signin')},
+  {icon:'<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',title:'টাকা পাঠান',desc:'সেকেন্ডে টাকা পাঠান',action:()=>openDemo('send')},
+  {icon:'<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',title:'টাকা রিসিভ',desc:'QR কোড দিয়ে',action:()=>openDemo('receive')},
+  {icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',title:'ঋণ নিন',desc:'২৪ ঘণ্টায় অনুমোদন',action:()=>openDemo('loan')},
+  {icon:'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',title:'লেনদেনের ইতিহাস',desc:'সব লেনদেন দেখুন',action:()=>openDemo('history')},
+  {icon:'<path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/>',title:'অ্যাপ ডাউনলোড',desc:'Android / iOS',action:()=>downloadApp('android')},
+  {icon:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',title:'লাইভ চ্যাট',desc:'সাপোর্ট টিম',action:openChat},
+  {icon:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',title:'থিম পরিবর্তন',desc:'ডার্ক / লাইট',action:toggleTheme}
+];
+let cmdkActiveIndex=0,cmdkFiltered=[...commands];
+function openCmdK(){cmdkOverlay.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>cmdkInput.focus(),100);renderCmdk('')}
+function closeCmdK(){cmdkOverlay.classList.remove('open');cmdkInput.value='';if(!state.chatOpen&&!authModal.classList.contains('open')&&!demoPanel.classList.contains('open'))document.body.style.overflow=''}
+function renderCmdk(q){
+  const query=q.toLowerCase().trim();
+  cmdkFiltered=query?commands.filter(c=>c.title.toLowerCase().includes(query)||c.desc.toLowerCase().includes(query)):commands;
+  cmdkActiveIndex=0;
+  if(!cmdkFiltered.length){cmdkBody.innerHTML='<div class="cmdk-empty">কোনো কমান্ড পাওয়া যায়নি</div>';return}
+  cmdkBody.innerHTML=`<div class="cmdk-section-label">দ্রুত অ্যাকশন</div>${cmdkFiltered.map((c,i)=>`<button class="cmdk-item ${i===0?'active':''}" onclick="runCmdk(${i})"><div class="cmdk-item-icon"><svg viewBox="0 0 24 24">${c.icon}</svg></div><div class="cmdk-item-info"><div class="cmdk-item-title">${c.title}</div><div class="cmdk-item-desc">${c.desc}</div></div></button>`).join('')}`;
+}
+function runCmdk(i){const c=cmdkFiltered[i];if(!c)return;closeCmdK();setTimeout(()=>c.action(),100)}
+cmdkInput.addEventListener('input',e=>renderCmdk(e.target.value));
+cmdkInput.addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown'){e.preventDefault();cmdkActiveIndex=Math.min(cmdkActiveIndex+1,cmdkFiltered.length-1);updateCmdkActive()}
+  else if(e.key==='ArrowUp'){e.preventDefault();cmdkActiveIndex=Math.max(cmdkActiveIndex-1,0);updateCmdkActive()}
+  else if(e.key==='Enter'){e.preventDefault();runCmdk(cmdkActiveIndex)}
+  else if(e.key==='Escape')closeCmdK();
+});
+function updateCmdkActive(){document.querySelectorAll('.cmdk-item').forEach((el,i)=>{el.classList.toggle('active',i===cmdkActiveIndex);if(i===cmdkActiveIndex)el.scrollIntoView({block:'nearest'})})}
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();cmdkOverlay.classList.contains('open')?closeCmdK():openCmdK()}
+  if(e.key==='Escape'){closeMobileMenu();closeAuth();closeChat();closeDlModal();closeDemo();closeCmdK()}
+});
+
+/* ═══ ENHANCED AUTH ═══ */
+const authModal=document.getElementById('authModal');
+const authModalInner=document.getElementById('authModalInner');
+const authForm=document.getElementById('authForm');
+const authTitle=document.getElementById('authTitle');
+const authSub=document.getElementById('authSub');
+const authBtnLabel=document.getElementById('authBtnLabel');
+const authSubmit=document.getElementById('authSubmit');
+const authFoot=document.getElementById('authFoot');
+const authTabs=document.getElementById('authTabs');
+const authSuccess=document.getElementById('authSuccess');
+const authView=document.getElementById('authView');
+
+function openAuth(mode){
+  authSuccess.classList.remove('show');
+  authView.style.display='block';
+  switchTab(mode||'signin');
+  authModal.classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>{
+    const firstInput=authForm.querySelector('input:not([type=checkbox]):not([style*="display:none"])');
+    if(firstInput)firstInput.focus();
+  },300);
+}
+
+function closeAuth(){
+  authModal.classList.remove('open');
+  if(!state.chatOpen&&!demoPanel.classList.contains('open')&&!mobileMenu.classList.contains('open'))
+    document.body.style.overflow='';
+  setTimeout(()=>{
+    authSuccess.classList.remove('show');
+    authView.style.display='block';
+    authForm.reset();
+    clearErrors();
+    const pwMeter=document.getElementById('pwMeter');if(pwMeter)pwMeter.classList.remove('show');
+    const pwToggle=document.getElementById('pwToggle');
+    if(pwToggle)pwToggle.classList.remove('valid');
+    const pwInput=document.getElementById('passwordInput');
+    if(pwInput)pwInput.type='password';
+  },400);
+}
+
+function switchTab(mode){
+  state.authMode=mode;
+  const isSignup=mode==='signup';
+  authTabs.setAttribute('data-mode',mode);
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===mode));
+  authModalInner.classList.toggle('signup-mode',isSignup);
+  authTitle.textContent=isSignup?'নতুন অ্যাকাউন্ট':'স্বাগতম!';
+  authSub.textContent=isSignup?'মাত্র ২ মিনিটে বিনামূল্যে অ্যাকাউন্ট খুলুন':'আপনার অ্যাকাউন্টে প্রবেশ করুন';
+  authBtnLabel.textContent=isSignup?'রেজিস্টার করুন':'লগইন করুন';
+  authFoot.innerHTML=isSignup
+    ?'ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" onclick="event.preventDefault();switchTab(\'signin\')">লগইন করুন</a>'
+    :'অ্যাকাউন্ট নেই? <a href="#" onclick="event.preventDefault();switchTab(\'signup\')">রেজিস্টার করুন</a>';
+  document.querySelectorAll('.signin-only-option').forEach(el=>{
+    el.style.display=isSignup?'none':'flex';
+  });
+  clearErrors();
+}
+
+function clearErrors(){
+  document.querySelectorAll('.auth-error').forEach(el=>el.classList.remove('show'));
+  document.querySelectorAll('.auth-field-input').forEach(el=>el.classList.remove('error'));
+}
+
+function showError(id,errId){
+  document.getElementById(id)?.classList.add('error');
+  document.getElementById(errId)?.classList.add('show');
+}
+
+function togglePassword(){
+  const input=document.getElementById('passwordInput');
+  const btn=document.getElementById('pwToggle');
+  if(input.type==='password'){
+    input.type='text';
+    btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>';
+  }else{
+    input.type='password';
+    btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+  }
+}
+
+function checkPasswordStrength(pw){
+  const meter=document.getElementById('pwMeter');
+  const lbl=document.getElementById('pwLabel');
+  const bars=[document.getElementById('pwb1'),document.getElementById('pwb2'),document.getElementById('pwb3')];
+  const toggle=document.getElementById('pwToggle');
+  if(!pw){meter.classList.remove('show');if(toggle)toggle.classList.remove('valid');return}
+  meter.classList.add('show');
+  let s=0;
+  if(pw.length>=6)s++;
+  if(pw.length>=10)s++;
+  if(/[A-Z]/.test(pw)&&/[a-z]/.test(pw))s++;
+  if(/\d/.test(pw))s++;
+  if(/[!@#$%^&*(),.?":{}|<>]/.test(pw))s++;
+  bars.forEach(b=>b.className='pw-meter-bar');
+  if(pw.length>=6)toggle?.classList.add('valid');
+  else toggle?.classList.remove('valid');
+  if(s<=2){
+    bars[0].classList.add('weak');
+    lbl.innerHTML='⚠️ <span style="color:#ef4444">দুর্বল পাসওয়ার্ড</span>';
+  }else if(s<=3){
+    bars[0].classList.add('medium');
+    bars[1].classList.add('medium');
+    lbl.innerHTML='🔶 <span style="color:#f59e0b">মাঝারি শক্তিশালী</span>';
+  }else{
+    bars[0].classList.add('strong');
+    bars[1].classList.add('strong');
+    bars[2].classList.add('strong');
+    lbl.innerHTML='✅ <span style="color:#16a34a">শক্তিশালী পাসওয়ার্ড</span>';
+  }
+}
+
+function submitAuth(e){
+  e.preventDefault();
+  clearErrors();
+  const isSignup=state.authMode==='signup';
+  const email=document.getElementById('emailInput').value.trim();
+  const password=document.getElementById('passwordInput').value;
+  let valid=true;
+
+  if(isSignup){
+    const fullName=document.getElementById('fullName').value.trim();
+    const nid=document.getElementById('nidInput').value.trim();
+    const terms=document.getElementById('termsCheck').checked;
+    if(fullName.length<3){showError('fullName','err-fullName');valid=false}
+    if(!/^\d{10}$|^\d{17}$/.test(nid)){showError('nidInput','err-nidInput');valid=false}
+    if(!terms){showToast('error','শর্তাবলী','অনুগ্রহ করে শর্তাবলীতে সম্মতি দিন।');valid=false}
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showError('emailInput','err-emailInput');valid=false}
+  if(password.length<6){showError('passwordInput','err-passwordInput');valid=false}
+
+  if(!valid){
+    // Shake animation on invalid
+    authModalInner.style.animation='none';
+    setTimeout(()=>{
+      authModalInner.style.animation='shake .4s';
+    },10);
+    return false;
+  }
+
+  authSubmit.classList.add('loading');
+  authSubmit.disabled=true;
+
+  setTimeout(()=>{
+    authSubmit.classList.remove('loading');
+    authSubmit.disabled=false;
+    authSubmit.classList.add('success');
+    authBtnLabel.textContent='সফল! ✓';
+
+    setTimeout(()=>{
+      // Show success view
+      authView.style.display='none';
+      authSuccess.classList.add('show');
+      document.getElementById('successTitle').textContent=isSignup?'রেজিস্ট্রেশন সফল!':'লগইন সফল!';
+      document.getElementById('successDesc').textContent=isSignup
+        ?'আপনার অ্যাকাউন্ট তৈরি হয়েছে। KYC সম্পন্ন করুন।'
+        :'স্বাগতম! আপনার ড্যাশবোর্ডে নিয়ে যাওয়া হচ্ছে...';
+      authSubmit.classList.remove('success');
+      showToast('success',isSignup?'রেজিস্ট্রেশন সফল!':'লগইন সফল!',
+        isSignup?'আপনার অ্যাকাউন্ট তৈরি হয়েছে।':'স্বাগতম!');
+      setTimeout(()=>closeAuth(),2000);
+    },600);
+  },1400);
+
+  return false;
+}
+
+function socialLogin(provider){
+  showToast('info',provider+' লগইন',provider+' এর সাথে সংযোগ করা হচ্ছে...');
+  setTimeout(()=>{
+    closeAuth();
+    showToast('success','সফল',provider+' লগইন সম্পন্ন হয়েছে।');
+  },1200);
+}
+
+function forgotPassword(){
+  const email=document.getElementById('emailInput').value.trim();
+  if(!email){
+    showToast('error','ইমেইল প্রয়োজন','প্রথমে আপনার ইমেইল লিখুন।');
+    document.getElementById('emailInput').focus();
+    return;
+  }
+  showToast('success','রিসেট লিংক পাঠানো হয়েছে',email+' এ পাসওয়ার্ড রিসেট লিংক পাঠানো হয়েছে।');
+}
+
+/* Email live validation */
+document.getElementById('emailInput')?.addEventListener('input',function(){
+  const icon=document.getElementById('emailIcon');
+  const valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+  if(this.value.length>0){
+    icon.classList.toggle('valid',valid);
+    icon.innerHTML=valid
+      ?'<svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>'
+      :'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>';
+  }else{
+    icon.classList.remove('valid');
+    icon.innerHTML='';
+  }
+});
+
+/* ═══ SHAKE ANIMATION ═══ */
+const style=document.createElement('style');
+style.textContent=`@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}`;
+document.head.appendChild(style);
+
+/* ═══ DEMO PANEL ═══ */
+const demoPanel=document.getElementById('demoPanel');
+const demoOverlay=document.getElementById('demoOverlay');
+const demoBody=document.getElementById('demoBody');
+const demoHeadIcon=document.getElementById('demoHeadIcon');
+const demoHeadTitle=document.getElementById('demoHeadTitle');
+const demoHeadSub=document.getElementById('demoHeadSub');
+const demoIcons={
+  send:'<svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>',
+  receive:'<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>',
+  history:'<svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+  loan:'<svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  balance:'<svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  feature:'<svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+  step:'<svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>'
+};
+const demoData={
+  send:{title:'টাকা পাঠান',sub:'সেকেন্ডে যেকোনো নম্বরে',icon:demoIcons.send},
+  receive:{title:'টাকা রিসিভ',sub:'QR কোড শেয়ার করুন',icon:demoIcons.receive},
+  history:{title:'লেনদেনের ইতিহাস',sub:'সব লেনদেনের বিস্তারিত',icon:demoIcons.history},
+  loan:{title:'ঋণ সেবা',sub:'২৪ ঘণ্টায় অনুমোদন',icon:demoIcons.loan},
+  balance:{title:'আপনার ব্যালেন্স',sub:'বিস্তারিত হিসাব',icon:demoIcons.balance}
+};
+function openDemo(type){
+  const data=demoData[type]||{title:'ডেমো',sub:'',icon:demoIcons.feature};
+  demoHeadTitle.textContent=data.title;
+  demoHeadSub.textContent=data.sub;
+  demoHeadIcon.innerHTML=data.icon;
+  demoBody.innerHTML=buildDemoContent(type);
+  demoPanel.classList.add('open');
+  demoPanel.setAttribute('aria-hidden','false');
+  demoOverlay.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeDemo(){
+  demoPanel.classList.remove('open');
+  demoPanel.setAttribute('aria-hidden','true');
+  demoOverlay.classList.remove('show');
+  if(!authModal.classList.contains('open')&&!state.chatOpen&&!mobileMenu.classList.contains('open'))document.body.style.overflow='';
+}
+
+/* Demo content builders */
+const contacts=[
+  {name:'করিম আহমেদ',phone:'01711-XXXXX',color:'#dc0f68',initial:'ক'},
+  {name:'রহিমা বেগম',phone:'01812-XXXXX',color:'#8e24aa',initial:'র'},
+  {name:'সাব্বির হ.',phone:'01913-XXXXX',color:'#29b6f6',initial:'স'},
+  {name:'নাসরিন আ.',phone:'01614-XXXXX',color:'#16a34a',initial:'ন'}
+];
+const recentAmounts=[100,500,1000,2000];
+function buildDemoContent(type){switch(type){case 'send':return buildSend();case 'receive':return buildReceive();case 'history':return buildHistory();case 'loan':return buildLoan();case 'balance':return buildBalance();default:return '<p>লোড হচ্ছে...</p>'}}
+
+let sendState={recipient:null,amount:0};
+function buildSend(){
+  sendState={recipient:null,amount:0};
+  const cH=contacts.map((c,i)=>`<button class="recipient-chip" data-idx="${i}" onclick="selectRecipient(${i})"><div class="recipient-chip-avatar" style="background:${c.color}">${c.initial}</div><div class="recipient-chip-name">${c.name.split(' ')[0]}</div><div class="recipient-chip-phone">${c.phone.slice(0,6)}</div></button>`).join('');
+  const aH=recentAmounts.map(a=>`<button class="quick-amount-btn" onclick="quickAmount(${a})">৳${formatBn(a)}</button>`).join('');
+  return `<div class="demo-balance-card"><div class="demo-balance-label">উপলব্ধ ব্যালেন্স</div><div class="demo-balance-amount">৳ 12,458.50</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>সুরক্ষিত</span><span><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>তাৎক্ষণিক</span></div></div><div class="demo-title">সাম্প্রতিক প্রাপক</div><div class="recipient-picker">${cH}</div><div class="demo-form"><div class="amount-input-wrap"><span class="amount-input-currency">৳</span><input type="text" class="amount-input" id="demoAmount" placeholder="0" inputmode="numeric" oninput="onAmountInput(this)"></div><div class="quick-amounts">${aH}</div><div><label style="font-size:12px;font-weight:600;color:var(--ink-700);display:block;margin-bottom:7px">নোট (ঐচ্ছিক)</label><textarea class="demo-textarea" id="demoNote" placeholder="যেমন: ব্যক্তিগত ঋণ পরিশোধ..." maxlength="60"></textarea></div></div><div class="demo-form"><div class="demo-fee-row"><span class="label">পরিমাণ</span><span class="value" id="sumAmount">৳ ০</span></div><div class="demo-fee-row"><span class="label">সার্ভিস চার্জ</span><span class="value"><span class="free-badge"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"><path d="m5 12 5 5L20 7"/></svg>ফ্রি</span></span></div><div class="demo-fee-row total"><span class="label">সর্বমোট</span><span class="value" id="sumTotal">৳ ০</span></div></div><button class="demo-btn" id="demoSubmitBtn" onclick="submitSend()"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>টাকা পাঠান</span></button>`;
+}
+function selectRecipient(idx){sendState.recipient=contacts[idx];document.querySelectorAll('.recipient-chip').forEach((el,i)=>el.classList.toggle('active',i===idx))}
+function quickAmount(a){const i=document.getElementById('demoAmount');if(i){i.value=a;onAmountInput(i)}}
+function onAmountInput(input){const v=input.value.replace(/[^\d]/g,'');input.value=v;const a=parseInt(v||'0',10);sendState.amount=a;const sA=document.getElementById('sumAmount');const sT=document.getElementById('sumTotal');if(sA)sA.textContent='৳ '+formatBn(a);if(sT)sT.textContent='৳ '+formatBn(a)}
+
+function submitSend(){
+  if(!sendState.recipient){showToast('error','প্রাপক নির্বাচন করুন','একজন প্রাপক নির্বাচন করুন।');return}
+  if(!sendState.amount||sendState.amount<1){showToast('error','পরিমাণ লিখুন','সর্বনিম্ন ১ টাকা।');return}
+  if(sendState.amount>12458){showToast('error','ব্যালেন্স অপর্যাপ্ত','যথেষ্ট টাকা নেই।');return}
+  const btn=document.getElementById('demoSubmitBtn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spinner" style="display:block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite"></span><span>প্রসেসিং...</span>';
+  setTimeout(()=>{
+    const tx='TX'+Math.floor(Math.random()*900000+100000);
+    const now=new Date();
+    const t=toBn(now.getHours().toString().padStart(2,'0'))+':'+toBn(now.getMinutes().toString().padStart(2,'0'));
+    demoBody.innerHTML=`<div class="demo-success"><div class="demo-success-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="demo-success-title">সফল হয়েছে!</div><div class="demo-success-desc"><strong>৳ ${formatBn(sendState.amount)}</strong> সফলভাবে<br><strong>${escapeHtml(sendState.recipient.name)}</strong>-কে পাঠানো হয়েছে</div><div class="demo-success-receipt"><div class="demo-success-receipt-row"><span class="label">পরিমাণ</span><span class="value">৳ ${formatBn(sendState.amount)}</span></div><div class="demo-success-receipt-row"><span class="label">প্রাপক</span><span class="value">${escapeHtml(sendState.recipient.name)}</span></div><div class="demo-success-receipt-row"><span class="label">মোবাইল</span><span class="value">${sendState.recipient.phone}</span></div><div class="demo-success-receipt-row"><span class="label">ট্রানজেকশন ID</span><span class="value">${tx}</span></div><div class="demo-success-receipt-row"><span class="label">সময়</span><span class="value">আজ, ${t}</span></div></div><button class="demo-btn" onclick="openDemo('send')"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>আরেকটি পাঠান</button><button class="demo-btn secondary" style="margin-top:10px" onclick="closeDemo()">সম্পন্ন করুন</button></div>`;
+    showToast('success','লেনদেন সফল','৳'+formatBn(sendState.amount)+' পাঠানো হয়েছে।');
+  },1500);
+}
+
+function buildReceive(){
+  const phone='01711-123456';
+  return `<div class="demo-qr-card"><div style="font-size:15px;font-weight:700;color:var(--ink-900);margin-bottom:6px">আপনার QR কোড</div><div style="font-size:12.5px;color:var(--muted);margin-bottom:18px">স্ক্যান করে টাকা পাঠান</div><div class="demo-qr-code"><img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&bgcolor=ffffff&color=dc0f68&data=${encodeURIComponent('bd-bank://receive?phone='+phone)}" alt="QR"></div><div class="demo-phone-number">${phone}</div><div style="margin-bottom:14px"><button class="demo-copy-btn" onclick="copyText('${phone}')"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>নম্বর কপি করুন</button></div><div style="font-size:12.5px;color:var(--muted);line-height:1.6">আপনার ব্যাংক অ্যাকাউন্ট থেকে এই নম্বরে পাঠানো যেকোনো টাকা স্বয়ংক্রিয়ভাবে জমা হবে।</div></div>`;
+}
+function copyText(t){
+  if(navigator.clipboard&&navigator.clipboard.writeText)
+    navigator.clipboard.writeText(t).then(()=>showToast('success','কপি হয়েছে','নম্বর ক্লিপবোর্ডে কপি।')).catch(()=>showToast('info','নম্বর',t));
+  else showToast('info','নম্বর',t);
+}
+
+const transactions=[
+  {type:'in',title:'রিসিভ — করিম আহমেদ',meta:'আজ, ১০:২৪',amt:'+৳৫০০',status:'success'},
+  {type:'out',title:'পাঠানো — রহিমা বেগম',meta:'আজ, ০৯:১৫',amt:'-৳২৫০',status:'success'},
+  {type:'bill',title:'বিদ্যুৎ বিল',meta:'আজ, ০৮:৪০',amt:'-৳১,২০০',status:'success'},
+  {type:'loan',title:'ঋণ পরিশোধ',meta:'গতকাল',amt:'-৳৫,০০০',status:'pending'},
+  {type:'in',title:'রিসিভ — নাসরিন আক্তার',meta:'গতকাল',amt:'+৳৮০০',status:'success'},
+  {type:'out',title:'পাঠানো — তানভীর হাসান',meta:'২ দিন আগে',amt:'-৳১,৫০০',status:'success'}
+];
+let historyFilter='all';
+function buildHistory(){
+  const f=historyFilter==='all'?transactions:transactions.filter(t=>t.type===historyFilter||(historyFilter==='out'&&(t.type==='out'||t.type==='bill')));
+  const filters=[{key:'all',label:'সব'},{key:'in',label:'পেয়েছি'},{key:'out',label:'পাঠিয়েছি'},{key:'loan',label:'ঋণ'},{key:'bill',label:'বিল'}];
+  return `<div class="demo-balance-card"><div class="demo-balance-label">এই মাসে</div><div class="demo-balance-amount">৳ ৪৫,৮২০</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>+৳৩২,২০০</span><span><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>-৳১৩,৬২০</span></div></div><div class="tx-filters">${filters.map(x=>`<button class="tx-filter ${historyFilter===x.key?'active':''}" onclick="setHistoryFilter('${x.key}')">${x.label}</button>`).join('')}</div><div class="tx-list">${f.map(t=>`<div class="tx-item" onclick="showTxDetail('${t.title.replace(/'/g,'')}','${t.meta}','${t.amt}','${t.status}')"><div class="tx-item-icon ${t.type}"><svg viewBox="0 0 24 24">${t.type==='in'?'<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>':t.type==='out'?'<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>':t.type==='loan'?'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>':'<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>'}</svg></div><div class="tx-item-info"><div class="tx-item-title">${t.title}</div><div class="tx-item-meta">${t.meta}<span class="tx-item-status ${t.status}">${t.status==='success'?'সম্পন্ন':'অপেক্ষমাণ'}</span></div></div><div class="tx-item-amount ${t.type==='in'?'in':''}">${t.amt}</div></div>`).join('')}</div>`;
+}
+function setHistoryFilter(k){historyFilter=k;demoBody.innerHTML=buildHistory()}
+function showTxDetail(t,m,a,s){showToast('info',t,m+' • '+a+' • '+(s==='success'?'সম্পন্ন':'অপেক্ষমাণ'))}
+
+let loanState={type:null,amount:50000};
+const loanTypes=[
+  {key:'agri',name:'কৃষি ঋণ',rate:'৪% — ৮%',icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'},
+  {key:'business',name:'ব্যবসা ঋণ',rate:'৯% — ১২%',icon:'<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>'},
+  {key:'personal',name:'ব্যক্তিগত ঋণ',rate:'১২% — ১৫%',icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/>'},
+  {key:'education',name:'শিক্ষা ঋণ',rate:'৫% — ৭%',icon:'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>'}
+];
+function buildLoan(){
+  loanState={type:null,amount:50000};
+  return `<div class="demo-title">ঋণের ধরন নির্বাচন করুন</div><div class="loan-type-grid">${loanTypes.map(t=>`<div class="loan-type" data-key="${t.key}" onclick="selectLoanType('${t.key}')"><div class="loan-type-icon"><svg viewBox="0 0 24 24">${t.icon}</svg></div><div class="loan-type-name">${t.name}</div><div class="loan-type-rate">${t.rate}</div></div>`).join('')}</div><div class="demo-form"><div><label style="font-size:13px;font-weight:600;color:var(--ink-700);display:block;margin-bottom:7px">ঋণের পরিমাণ</label><input type="text" id="loanAmount" value="50,000" inputmode="numeric" style="width:100%;padding:13px 15px;border-radius:12px;background:var(--ink-50);border:1.5px solid transparent;font-size:14px" oninput="onLoanAmount(this)"><div style="font-size:11.5px;color:var(--muted);margin-top:6px">সর্বনিম্ন ৳১০,০০০ — সর্বোচ্চ ৳৫,০০,০০০</div></div></div><div class="demo-form"><div class="demo-fee-row"><span class="label">ঋণের পরিমাণ</span><span class="value" id="loanSumAmount">৳ ৫০,০০০</span></div><div class="demo-fee-row"><span class="label">সুদের হার</span><span class="value" id="loanSumRate">৪% — ৮%</span></div><div class="demo-fee-row"><span class="label">মাসিক কিস্তি</span><span class="value" id="loanSumEmi">৳ ৪,৪০০</span></div><div class="demo-fee-row total"><span class="label">মোট পরিশোধ</span><span class="value" id="loanSumTotal">৳ ৫২,৮০০</span></div></div><button class="demo-btn" onclick="submitLoan()"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>আবেদন করুন</span></button>`;
+}
+function selectLoanType(k){loanState.type=loanTypes.find(t=>t.key===k);document.querySelectorAll('.loan-type').forEach(el=>el.classList.toggle('active',el.dataset.key===k));const r=document.getElementById('loanSumRate');if(r)r.textContent=loanState.type.rate;recalcLoan()}
+function onLoanAmount(i){const v=i.value.replace(/[^\d]/g,'');loanState.amount=parseInt(v||'0',10);i.value=formatBn(loanState.amount);recalcLoan()}
+function recalcLoan(){const a=loanState.amount||0;const r=loanState.type?parseFloat(loanState.type.rate.split('—')[0])/100:0.08;const total=a+(a*r);const emi=total/12;const x=document.getElementById('loanSumAmount');const e=document.getElementById('loanSumEmi');const t=document.getElementById('loanSumTotal');if(x)x.textContent='৳ '+formatBn(a);if(e)e.textContent='৳ '+formatBn(Math.round(emi));if(t)t.textContent='৳ '+formatBn(Math.round(total))}
+function submitLoan(){
+  if(!loanState.type){showToast('error','ঋণের ধরন','একটি নির্বাচন করুন।');return}
+  if(!loanState.amount||loanState.amount<10000){showToast('error','পরিমাণ কম','সর্বনিম্ন ৳১০,০০০।');return}
+  showToast('info','আবেদন জমা হচ্ছে...','অপেক্ষা করুন।');
+  setTimeout(()=>{
+    const id='LN'+Math.floor(Math.random()*900000+100000);
+    demoBody.innerHTML=`<div class="demo-success"><div class="demo-success-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="demo-success-title">আবেদন জমা হয়েছে!</div><div class="demo-success-desc">আপনার <strong>${loanState.type.name}</strong> এর আবেদন সফলভাবে জমা হয়েছে।</div><div class="demo-success-receipt"><div class="demo-success-receipt-row"><span class="label">আবেদন নম্বর</span><span class="value">${id}</span></div><div class="demo-success-receipt-row"><span class="label">ঋণের ধরন</span><span class="value">${loanState.type.name}</span></div><div class="demo-success-receipt-row"><span class="label">পরিমাণ</span><span class="value">৳ ${formatBn(loanState.amount)}</span></div><div class="demo-success-receipt-row"><span class="label">স্ট্যাটাস</span><span class="value" style="color:#d97706">যাচাই চলছে</span></div></div><button class="demo-btn" onclick="closeDemo()">সম্পন্ন করুন</button></div>`;
+    showToast('success','আবেদন সফল','ঋণের আবেদন জমা।');
+  },1500);
+}
+
+function buildBalance(){
+  return `<div class="demo-balance-card"><div class="demo-balance-label">মোট উপলব্ধ ব্যালেন্স</div><div class="demo-balance-amount">৳ 12,458.50</div><div class="demo-balance-meta"><span><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>আপডেট: এখন</span></div></div><div class="demo-title">বিস্তারিত হিসাব</div><div class="demo-form"><div class="demo-fee-row"><span class="label">মূল ব্যালেন্স</span><span class="value">৳ ১২,০০০.০০</span></div><div class="demo-fee-row"><span class="label">এই মাসের ক্যাশব্যাক</span><span class="value" style="color:var(--green)">+৳ ২৫৮.৫০</span></div><div class="demo-fee-row"><span class="label">বোনাস পয়েন্ট</span><span class="value">+৳ ২০০.০০</span></div><div class="demo-fee-row total"><span class="label">মোট</span><span class="value">৳ ১২,৪৫৮.৫০</span></div></div><div class="demo-title">মাসিক খরচ</div><div class="demo-form" style="padding:18px"><div style="display:flex;align-items:flex-end;justify-content:space-between;height:130px;gap:10px">${[{l:'জানু',h:45,v:'২.২k'},{l:'ফেব',h:65,v:'৩.২k'},{l:'মার্চ',h:35,v:'১.৭k'},{l:'এপ্রি',h:80,v:'৪.০k'},{l:'মে',h:55,v:'২.৭k'},{l:'জুন',h:95,v:'৪.৮k'}].map(d=>`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px"><div style="font-size:10px;font-weight:700;color:var(--ink-600);font-family:Inter,sans-serif">${d.v}</div><div style="width:100%;height:${d.h}%;background:linear-gradient(180deg,#dc0f68,#8e24aa);border-radius:6px 6px 0 0;min-height:8px"></div><div style="font-size:9.5px;color:var(--muted);font-weight:600">${d.l}</div></div>`).join('')}</div></div>`;
+}
+
+/* ═══ FEATURE / STEP DETAILS ═══ */
+const featureDetails={
+  send:{title:'তাৎক্ষণিক টাকা পাঠান',icon:demoIcons.send,color:'pink',desc:'যেকোনো মোবাইল নম্বর বা UID-তে সেকেন্ডের মধ্যে টাকা পাঠান — একদম বিনামূল্যে।',points:['সেকেন্ডের মধ্যে লেনদেন','সম্পূর্ণ বিনামূল্যে','২৪/৭ যেকোনো সময়','প্রাপকের নম্বর কন্টাক্ট থেকে'],action:{label:'এখনই পাঠান',callback:()=>openDemo('send')}},
+  secure:{title:'১০০% নিরাপদ লেনদেন',icon:'<path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/><path d="m9 12 2 2 4-4"/>',color:'blue',desc:'আন্তর্জাতিক মানের ব্যাংক-গ্রেড নিরাপত্তা ব্যবস্থা।',points:['২৫৬-বিট AES এনক্রিপশন','বায়োমেট্রিক লগইন','২৪/৭ ফ্রড মনিটরিং','তাৎক্ষণিক SMS অ্যালার্ট'],action:{label:'নিরাপত্তা জানুন',callback:()=>{closeDemo();setTimeout(()=>{document.getElementById('security')?.scrollIntoView({behavior:'smooth'})},200)}}},
+  loan:{title:'সহজ শর্তে ঋণ',icon:'<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',color:'green',desc:'কৃষি, ব্যবসা, শিক্ষা বা ব্যক্তিগত — ২৪ ঘণ্টায় অনুমোদন।',points:['কম সুদ — ৪% থেকে','ন্যূনতম কাগজপত্র','১০,০০০ - ৫,০০,০০০ টাকা','নমনীয় কিস্তি'],action:{label:'আবেদন করুন',callback:()=>openDemo('loan')}},
+  history:{title:'লেনদেনের ইতিহাস',icon:demoIcons.history,color:'purple',desc:'সব লেনদেনের বিস্তারিত রেকর্ড এক জায়গায়।',points:['প্রতিটি লেনদেনের তথ্য','ফিল্টার ও সার্চ','PDF স্টেটমেন্ট','মাসিক ও বাৎসরিক রিপোর্ট'],action:{label:'লেনদেন দেখুন',callback:()=>openDemo('history')}},
+  notify:{title:'স্মার্ট নোটিফিকেশন',icon:'<path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>',color:'orange',desc:'প্রতিটি লেনদেনের তাৎক্ষণিক আপডেট।',points:['তাৎক্ষণিক SMS','বিল রিমাইন্ডার','নতুন অফার','নিরাপত্তা সতর্কতা'],action:{label:'চালু করুন',callback:()=>{showToast('success','নোটিফিকেশন চালু','স্মার্ট নোটিফিকেশন সক্রিয়।');closeDemo()}}}
+};
+function openFeatureDetail(k){
+  const f=featureDetails[k];if(!f)return;
+  demoHeadTitle.textContent=f.title;
+  demoHeadSub.textContent='আরও জানুন';
+  demoHeadIcon.innerHTML=f.icon;
+  demoBody.innerHTML=`<div class="feature-detail-icon ${f.color}"><svg viewBox="0 0 24 24">${f.icon}</svg></div><div class="feature-detail-title">${f.title}</div><div class="feature-detail-desc">${f.desc}</div><div class="feature-detail-points">${f.points.map(p=>`<div class="feature-detail-point"><div class="feature-detail-point-icon"><svg viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div><div class="feature-detail-point-text">${p}</div></div>`).join('')}</div><button class="demo-btn" id="featureActionBtn"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>${f.action.label}</span></button>`;
+  setTimeout(()=>{const b=document.getElementById('featureActionBtn');if(b)b.addEventListener('click',()=>f.action.callback())},0);
+  demoPanel.classList.add('open');
+  demoPanel.setAttribute('aria-hidden','false');
+  demoOverlay.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+const stepDetails={
+  1:{title:'রেজিস্ট্রেশন',desc:'মাত্র ২ মিনিটে অ্যাকাউন্ট খুলুন।',points:['মোবাইল নম্বর দিন ও OTP যাচাই','পূর্ণ নাম ও ইমেইল','শক্তিশালী পাসওয়ার্ড','শর্তাবলীতে সম্মতি'],action:{label:'রেজিস্টার করুন',callback:()=>{closeDemo();setTimeout(()=>openAuth('signup'),200)}}},
+  2:{title:'KYC ভেরিফিকেশন',desc:'পরিচয় নিশ্চিত করুন।',points:['NID নম্বর যাচাই','সেলফি আপলোড','ঠিকানার প্রমাণ','বায়োমেট্রিক লগইন'],action:{label:'KYC শুরু করুন',callback:()=>{closeDemo();setTimeout(()=>openAuth('signup'),200)}}},
+  3:{title:'অ্যাপ ডাউনলোড',desc:'Android বা iOS ডিভাইসে ইনস্টল করুন।',points:['Play Store বা App Store','মাত্র ১২ MB','Android ৬.০+','iOS ১২.০+'],action:{label:'Android ডাউনলোড',callback:()=>{closeDemo();setTimeout(()=>downloadApp('android'),200)}}},
+  4:{title:'লেনদেন শুরু',desc:'সব প্রস্তুত! এখন লেনদেন শুরু করুন।',points:['তাৎক্ষণিক টাকা পাঠান','বিল পেমেন্ট','২৪ ঘণ্টায় ঋণ','রেকর্ড দেখুন'],action:{label:'ডেমো দেখুন',callback:()=>openDemo('send')}}
+};
+function openStepDetail(n){
+  const s=stepDetails[n];if(!s)return;
+  demoHeadTitle.textContent=s.title;
+  demoHeadSub.textContent='ধাপ '+toBn(n)+' / ৪';
+  demoHeadIcon.innerHTML=demoIcons.step;
+  demoBody.innerHTML=`<div class="step-detail-num">${toBn(n)}</div><div class="feature-detail-title">${s.title}</div><div class="feature-detail-desc">${s.desc}</div><div class="step-detail-list">${s.points.map((p,i)=>`<div class="step-detail-list-item"><span class="num">${toBn(i+1)}</span>${p}</div>`).join('')}</div><button class="demo-btn" id="stepActionBtn"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span>${s.action.label}</span></button>`;
+  setTimeout(()=>{const b=document.getElementById('stepActionBtn');if(b)b.addEventListener('click',()=>s.action.callback())},0);
+  demoPanel.classList.add('open');
+  demoPanel.setAttribute('aria-hidden','false');
+  demoOverlay.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+/* ═══ DOWNLOAD ═══ */
+const dlModal=document.getElementById('dlModal');
+const dlProgressFill=document.getElementById('dlProgressFill');
+const dlProgressPct=document.getElementById('dlProgressPct');
+const dlProgressLabel=document.getElementById('dlProgressLabel');
+const dlDoneBtn=document.getElementById('dlDoneBtn');
+const dlPlatformName=document.getElementById('dlPlatformName');
+const dlPlatformSize=document.getElementById('dlPlatformSize');
+const dlPlatformIcon=document.getElementById('dlPlatformIcon');
+const dlModalSub=document.getElementById('dlModalSub');
+const apps={
+  android:{name:'Google Play',size:'১২.৪ MB',icon:'<svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:#16a34a"><path d="M3.6 1.8a1.2 1.2 0 0 0-.4.9v18.6a1.2 1.2 0 0 0 .4.9l10.4-10.2L3.6 1.8zm11.8 8.2L5.7 2.4l10.5 6.1-2.8 1.5zm0 4.5-2.8-1.5L5.7 21.6l11.7-6.7-.1-.4zm4.8-3.3-3.3-1.9-3.1 1.7 3.1 1.7 3.3-1.9c.7-.4.7-1.3 0-1.6z"/></svg>'},
+  ios:{name:'App Store',size:'১৪.২ MB',icon:'<svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:#0c0c14"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>'}
+};
+let dlInterval=null;
+function downloadApp(p){
+  const a=apps[p];
+  dlPlatformName.textContent='বাংলাদেশ ব্যাংক — '+a.name;
+  dlPlatformSize.textContent=a.size;
+  dlPlatformIcon.innerHTML=a.icon;
+  dlModalSub.textContent=a.name+' থেকে ডাউনলোড শুরু হচ্ছে...';
+  dlProgressFill.style.width='0%';
+  dlProgressPct.textContent='০%';
+  dlProgressLabel.textContent='ডাউনলোড হচ্ছে...';
+  dlDoneBtn.style.display='none';
+  dlModal.classList.add('open');
+  document.body.style.overflow='hidden';
+  let pct=0;
+  clearInterval(dlInterval);
+  dlInterval=setInterval(()=>{
+    pct+=Math.random()*12+4;
+    if(pct>=100){pct=100;clearInterval(dlInterval);dlProgressLabel.textContent='ডাউনলোড সম্পন্ন!';dlDoneBtn.style.display='flex'}
+    dlProgressFill.style.width=pct+'%';
+    dlProgressPct.textContent=toBn(Math.round(pct))+'%';
+  },220);
+}
+function closeDlModal(){
+  dlModal.classList.remove('open');
+  clearInterval(dlInterval);
+  if(!authModal.classList.contains('open')&&!state.chatOpen&&!demoPanel.classList.contains('open'))document.body.style.overflow='';
+}
+
+function toggleBalance(){state.balanceVisible=!state.balanceVisible;const el=document.getElementById('balanceText');el.textContent=state.balanceVisible?'৳ 12,458.50':'৳ ••••••'}
+
+/* ═══ CHAT ═══ */
+const chatPanel=document.getElementById('chatPanel');
+const chatBody=document.getElementById('chatBody');
+const chatInput=document.getElementById('chatInput');
+const chatWidget=document.getElementById('chatWidget');
+const botReplies={
+  'অ্যাকাউন্ট':'অ্যাকাউন্ট খুলতে "রেজিস্টার" বাটনে ক্লিক করুন। NID এবং মোবাইল নম্বর দিলেই ২ মিনিটে। 📱',
+  'ঋণ':'কৃষি, ব্যবসা বা স্টার্টআপের জন্য ঋণ — ২৪ ঘণ্টায় অনুমোদন। 💰',
+  'সীমা':'দৈনিক ২৫,০০০ টাকা পাঠানো, ৫০,০০০ টাকা গ্রহণ। 📊',
+  'নিরাপত্তা':'২৫৬-বিট AES এনক্রিপশন, বায়োমেট্রিক লগইন, ২৪/৭ ফ্রড মনিটরিং। 🔐',
+  'ডাউনলোড':'Play Store বা App Store থেকে "বাংলাদেশ ব্যাংক" সার্চ করুন। 📲',
+  'পাসওয়ার্ড':'লগইন স্ক্রিনে "পাসওয়ার্ড ভুলে গেছেন?" ক্লিক করুন। 🔑',
+  'যোগাযোগ':'কল: +৮৮০ ১২৩৪-৫৬৭৮৯, ইমেইল: support@bd-bank.com — ২৪/৭। 📞',
+  'ধন্যবাদ':'আপনাকেও ধন্যবাদ! 🙏'
+};
+function openChat(){state.chatOpen=true;chatPanel.classList.add('open');setTimeout(()=>chatInput.focus(),300)}
+function closeChat(){state.chatOpen=false;chatPanel.classList.remove('open')}
+chatWidget.addEventListener('click',()=>{state.chatOpen?closeChat():openChat()});
+function sendQuick(t){chatInput.value=t;sendChat(new Event('submit'))}
+function sendChat(e){
+  if(e&&e.preventDefault)e.preventDefault();
+  const t=chatInput.value.trim();
+  if(!t)return false;
+  const u=document.createElement('div');
+  u.className='chat-msg user';
+  u.innerHTML=`${escapeHtml(t)}<div class="chat-msg-time">এখন</div>`;
+  chatBody.appendChild(u);
+  chatInput.value='';
+  chatBody.scrollTop=chatBody.scrollHeight;
+  const typ=document.createElement('div');
+  typ.className='chat-typing';
+  typ.innerHTML='<span></span><span></span><span></span>';
+  chatBody.appendChild(typ);
+  chatBody.scrollTop=chatBody.scrollHeight;
+  setTimeout(()=>{
+    typ.remove();
+    const reply='ধন্যবাদ আপনার বার্তার জন্য! আমাদের প্রতিনিধি শীঘ্রই যোগাযোগ করবেন। জরুরি: <strong>+৮৮০ ১২৩৪-৫৬৭৮৯</strong>';
+    const b=document.createElement('div');
+    b.className='chat-msg bot';
+    b.innerHTML=reply+'<div class="chat-msg-time">এখন</div>';
+    chatBody.appendChild(b);
+    chatBody.scrollTop=chatBody.scrollHeight;
+  },900);
+  return false;
+}
+
+/* ═══ COOKIE ═══ */
+const cookieBanner=document.getElementById('cookieBanner');
+if(!localStorage.getItem('cookieChoice'))setTimeout(()=>cookieBanner.classList.add('show'),2200);
+function acceptCookie(){localStorage.setItem('cookieChoice','accepted');cookieBanner.classList.remove('show');showToast('success','ধন্যবাদ!','সংরক্ষিত।')}
+function dismissCookie(){localStorage.setItem('cookieChoice','dismissed');cookieBanner.classList.remove('show')}
+
+/* ═══ TICKER ═══ */
+const tickerData=[
+  {city:'ঢাকা',name:'করিম',action:'পাঠিয়েছেন',amt:'৳ ৫০০'},
+  {city:'চট্টগ্রাম',name:'রহিমা',action:'পেয়েছেন',amt:'৳ ১,২০০'},
+  {city:'রাজশাহী',name:'সাব্বির',action:'লোন নিয়েছেন',amt:'৳ ৩,৫০০'},
+  {city:'খুলনা',name:'নাসরিন',action:'পাঠিয়েছেন',amt:'৳ ৮০০'},
+  {city:'সিলেট',name:'তানভীর',action:'পেয়েছেন',amt:'৳ ২,০০০'},
+  {city:'বরিশাল',name:'ফারহানা',action:'পাঠিয়েছেন',amt:'৳ ১,৫০০'}
+];
+function buildTicker(){
+  const t=document.getElementById('tickerTrack');
+  if(!t)return;
+  const h=tickerData.map(i=>`<div class="ticker-item">${i.city} <span class="dot-sep"></span> ${i.name} <span class="amt">${i.amt}</span> ${i.action}</div>`).join('');
+  t.innerHTML=h+h;
+}
+buildTicker();
+
+/* ═══ QR ═══ */
+function buildQR(){
+  const t=document.getElementById('qrCode');
+  if(!t)return;
+  const url='https://bd-bank.example.com/app/download?ref=qr';
+  t.innerHTML=`<img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&bgcolor=ffffff&color=0c0c14&margin=0&data=${encodeURIComponent(url)}" alt="QR">`;
+}
+buildQR();
+
+/* ═══ REVEAL ═══ */
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+      revealObserver.unobserve(e.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.feature-card, .step-card, .section-head, .qr-card').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(30px)';
+  el.style.transition='opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1)';
+  revealObserver.observe(el);
+});
+
+/* ═══ COUNTER ═══ */
+function animateCounter(el){
+  const target=parseFloat(el.dataset.count);
+  const decimals=parseInt(el.dataset.decimal||'0',10);
+  const suffix=el.dataset.suffix||'';
+  const duration=1800;
+  const start=performance.now();
+  function tick(now){
+    const progress=Math.min((now-start)/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    const value=target*eased;
+    let display;
+    if(target>=100000)display=toBn((value/100000).toFixed(1))+' লক্ষ';
+    else if(target>=1000)display=toBn(Math.round(value).toLocaleString('en-IN').replace(/,/g,''));
+    else if(decimals>0)display=toBn(value.toFixed(decimals));
+    else display=toBn(Math.round(value));
+    el.innerHTML=display+(suffix?`<span class="unit">${suffix}</span>`:'');
+    if(progress<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){animateCounter(e.target);counterObserver.unobserve(e.target)}
+  });
+},{threshold:0.4});
+document.querySelectorAll('.stat-number[data-count]').forEach(c=>counterObserver.observe(c));
+
+/* ═══ WELCOME ═══ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    if(!sessionStorage.getItem('welcomed')){
+      showToast('info','স্বাগতম! 👋','বাংলাদেশ ব্যাংক মোবাইল ব্যাংকিং-এ আপনাকে স্বাগতম। ⌘K চেপে দ্রুত নেভিগেট করুন।',5000);
+      sessionStorage.setItem('welcomed','1');
+    }
+  },1200);
+});
+</script>
+
+</body>
+</html>
